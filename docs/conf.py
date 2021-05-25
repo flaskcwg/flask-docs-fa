@@ -46,6 +46,7 @@ html_context = {
         ProjectLink("Website", "https://palletsprojects.com/p/flask/"),
         ProjectLink("Twitter", "https://twitter.com/PalletsTeam"),
         ProjectLink("Chat", "https://discord.gg/pallets"),
+        ProjectLink("Docs Translation Source", "<UPDATE THIS>"),
     ]
 }
 html_sidebars = {
