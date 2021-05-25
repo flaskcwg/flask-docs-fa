@@ -142,20 +142,6 @@ the new branch. Click the "Compare & pull request" button to create a PR.
 - The translation coordinator will review your PR very soon. Thank you!
 
 
-### Tips
-
-**If you use translator.** Do not put the whole content of a file into the
-translator, this can cause problems with code snippets, reserved words of the
-programming language, special ReStructuredText tags and so on, the best way is to
-translate paragraph by paragraph, header by header.
-
-**Maintaining the essence.** Although the translator does a large part of the work,
-sometimes the resulting translation does not match the meaning of the original
-resource. It is important to correct this so that the original meaning is not lost.
-Do not change names of functions, classes, variables methods etc in the codes, it
-is possible that they will stop working.
-
-
 ## Translation To-do List
 
 Be sure only mark one chapter at a time, mark another one when the former
