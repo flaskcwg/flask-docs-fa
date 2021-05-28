@@ -63,6 +63,10 @@ You can link the username to your GitHub profile:
 "Create a new branch for this commit and start a pull request" and click the
 "Commit changes" button to create a PR.
 
+### Recommended Translation software
+
+As explained below, translations are done using .po files. One good editor is 
+[POEdit](https://poedit.net/) (not to be confused with POEditor)
 
 ### Translation
 
