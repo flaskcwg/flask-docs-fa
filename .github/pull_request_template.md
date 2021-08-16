@@ -20,5 +20,8 @@ For assignment PR, you can delete the checklist below.
 Checklist:
 
 - [ ] Fill the checkbox of the related file entry in the README.md with an "x".
+- [ ] Update the `FIRST AUTHOR <EMAIL@ADDRESS>` comment in the `.po` file if you
+are the first translator.
+- [ ] Update the `Last-Translator` field value in the `.po` file.
 - [ ] Run `pre-commit` hooks and fix any issues.
 - [ ] Build docs locally, no warnings or errors.

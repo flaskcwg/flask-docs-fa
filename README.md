@@ -105,7 +105,8 @@ Please be careful not to break reST notation. Most
 - [x] example @your_username Your Name
 ```
 
-- Update the `Last-Translator` field at the top of the `.po` file.
+- If you are the first translator, update the `FIRST AUTHOR <EMAIL@ADDRESS>` comment at the top of the `.po` file.
+- Update the `Last-Translator` field value at the top of the `.po` file.
 - Commit the changes:
 
 ```
