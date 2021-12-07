@@ -61,7 +61,7 @@ You can link the username to your GitHub profile:
 
 ### Recommended Translation software
 
-As explained below, translations are done using .po files. One good editor is 
+As explained below, translations are done using .po files. One good editor is
 [POEdit](https://poedit.net/) (not to be confused with POEditor)
 
 ### Translation

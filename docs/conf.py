@@ -101,9 +101,9 @@ def setup(app):
 
 # Translation ----------------------------------------------------------
 
-locale_dirs = ['locales']   # path is example but recommended.
-gettext_compact = False     # optional.
+locale_dirs = ["locales"]  # path is example but recommended.
+gettext_compact = False  # optional.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language
-language = ''  # update this
+language = ""  # update this
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_search_language
-html_search_language = ''  # update this
+html_search_language = ""  # update this
