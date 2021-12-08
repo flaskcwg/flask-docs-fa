@@ -3,178 +3,201 @@
 # This file is distributed under the same license as the Flask package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-08 19:03+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../installation.rst:2
 msgid "Installation"
-msgstr ""
+msgstr "نصب و راه اندازی"
 
 #: ../../installation.rst:6
 msgid "Python Version"
-msgstr ""
+msgstr "نسخه پایتون"
 
 #: ../../installation.rst:8
 msgid ""
-"We recommend using the latest version of Python. Flask supports Python "
-"3.6 and newer."
+"We recommend using the latest version of Python. Flask supports Python 3.6 and "
+"newer."
 msgstr ""
+"ما پیشنهاد میکنیم که از آخرین نسخه پایتون استفاده کنید. فلاسک از پایتون نسخه "
+"۳.۶ و جدیدتر پشتیبانی میکند."
 
 #: ../../installation.rst:11
 msgid ""
-"``async`` support in Flask requires Python 3.7+ for "
-"``contextvars.ContextVar``."
+"``async`` support in Flask requires Python 3.7+ for ``contextvars.ContextVar``."
 msgstr ""
+"``async`` در فلاسک به پایتون ۳.۹ یا بالاتر برای ``contextvars.ContextVar``. "
+"نیاز دارد."
 
 #: ../../installation.rst:15
 msgid "Dependencies"
-msgstr ""
+msgstr "وابستگی ها"
 
 #: ../../installation.rst:17
 msgid "These distributions will be installed automatically when installing Flask."
-msgstr ""
+msgstr "این توزیع ها به صورت خودکار هنگام نصب فلاسک، نصب میشوند."
 
 #: ../../installation.rst:19
 msgid ""
-"`Werkzeug`_ implements WSGI, the standard Python interface between "
-"applications and servers."
+"`Werkzeug`_ implements WSGI, the standard Python interface between applications "
+"and servers."
 msgstr ""
+"`Werkzeug`_ . رابط استاندارد پایتون بین برنامه‌ها و سرورها را پیاده‌سازی می‌کند."
 
 #: ../../installation.rst:21
 msgid ""
-"`Jinja`_ is a template language that renders the pages your application "
-"serves."
+"`Jinja`_ is a template language that renders the pages your application serves."
 msgstr ""
+"`Jinja`_ یک زبان قالب است که صفحاتی را که برنامه شما رندر میکند را ارائه میدهد."
 
 #: ../../installation.rst:23
 msgid ""
-"`MarkupSafe`_ comes with Jinja. It escapes untrusted input when rendering"
-" templates to avoid injection attacks."
+"`MarkupSafe`_ comes with Jinja. It escapes untrusted input when rendering "
+"templates to avoid injection attacks."
 msgstr ""
+"«MarkupSafe» با Jinja همراه است. هنگام رندر قالب ها برای جلوگیری از حملات XSS، "
+"از ورودی نامعتبرجلوگیری میکند."
 
 #: ../../installation.rst:25
 msgid ""
-"`ItsDangerous`_ securely signs data to ensure its integrity. This is used"
-" to protect Flask's session cookie."
+"`ItsDangerous`_ securely signs data to ensure its integrity. This is used to "
+"protect Flask's session cookie."
 msgstr ""
+"\"ItsDangerous\"_ داده ها را به صورت ایمن امضا می کند تا از یکپارچگی آن اطمینان "
+"حاصل کند. این برای محافظت از کوکی جلسه Flask استفاده می شود."
 
 #: ../../installation.rst:27
 msgid ""
-"`Click`_ is a framework for writing command line applications. It "
-"provides the ``flask`` command and allows adding custom management "
-"commands."
+"`Click`_ is a framework for writing command line applications. It provides the "
+"``flask`` command and allows adding custom management commands."
 msgstr ""
+"'Click'_ چارچوبی برای نوشتن برنامه های خط فرمان است. این دستور \"flask\" را "
+"ارائه می دهد و اجازه می دهد تا دستورات مدیریت سفارشی را اضافه کنید."
 
 #: ../../installation.rst:38
 msgid "Optional dependencies"
-msgstr ""
+msgstr "وابستگی های اختیاری"
 
 #: ../../installation.rst:40
 msgid ""
-"These distributions will not be installed automatically. Flask will "
-"detect and use them if you install them."
+"These distributions will not be installed automatically. Flask will detect and "
+"use them if you install them."
 msgstr ""
+"این توزیع ها به صورت خودکار نصب نمی شوند. در صورت نصب فلاسک آنها را شناسایی و "
+"استفاده می کند."
 
 #: ../../installation.rst:43
 msgid "`Blinker`_ provides support for :doc:`signals`."
-msgstr ""
+msgstr "`Blinker`_ از :doc:`signals` پشتیبانی می کند."
 
 #: ../../installation.rst:44
 msgid ""
-"`python-dotenv`_ enables support for :ref:`dotenv` when running ``flask``"
-" commands."
+"`python-dotenv`_ enables support for :ref:`dotenv` when running ``flask`` "
+"commands."
 msgstr ""
+"`python-dotenv`_ پشتیبانی از :ref:`dotenv`  را هنگام اجرای دستورات ``flask`` "
+"فعال می کند."
 
 #: ../../installation.rst:46
 msgid ""
-"`Watchdog`_ provides a faster, more efficient reloader for the "
-"development server."
+"`Watchdog`_ provides a faster, more efficient reloader for the development "
+"server."
 msgstr ""
+"`Watchdog`_  یک بارگیری مجدد سریعتر و کارآمدتر برای سرور توسعه ارائه می دهد."
 
 #: ../../installation.rst:55
 msgid "Virtual environments"
-msgstr ""
+msgstr "محیط های مجازی"
 
 #: ../../installation.rst:57
 msgid ""
-"Use a virtual environment to manage the dependencies for your project, "
-"both in development and in production."
+"Use a virtual environment to manage the dependencies for your project, both in "
+"development and in production."
 msgstr ""
+"از یک محیط مجازی برای مدیریت وابستگی های پروژه خود چه در توسعه و چه در تولید "
+"استفاده کنید."
 
 #: ../../installation.rst:60
 msgid ""
-"What problem does a virtual environment solve? The more Python projects "
-"you have, the more likely it is that you need to work with different "
-"versions of Python libraries, or even Python itself. Newer versions of "
-"libraries for one project can break compatibility in another project."
+"What problem does a virtual environment solve? The more Python projects you "
+"have, the more likely it is that you need to work with different versions of "
+"Python libraries, or even Python itself. Newer versions of libraries for one "
+"project can break compatibility in another project."
 msgstr ""
+"محیط مجازی چه مشکلی را حل می کند؟ هر چه تعداد پروژه های پایتون بیشتر باشد، "
+"احتمال اینکه نیاز باشد با نسخه های مختلف کتابخانه های پایتون یا حتی خود پایتون "
+"کار کنید، بیشتر می شود. نسخه های جدیدتر کتابخانه ها برای یک پروژه می توانند "
+"سازگاری در پروژه دیگر را از بین ببرند."
 
 #: ../../installation.rst:65
 msgid ""
-"Virtual environments are independent groups of Python libraries, one for "
-"each project. Packages installed for one project will not affect other "
-"projects or the operating system's packages."
+"Virtual environments are independent groups of Python libraries, one for each "
+"project. Packages installed for one project will not affect other projects or "
+"the operating system's packages."
 msgstr ""
+"محیط های مجازی گروه های مستقلی از کتابخانه های پایتون هستند که برای هر پروژه "
+"یکی هستند. بسته های نصب شده برای یک پروژه روی پروژه های دیگر یا بسته های سیستم "
+"عامل تأثیری نخواهد داشت."
 
 #: ../../installation.rst:69
 msgid ""
-"Python comes bundled with the :mod:`venv` module to create virtual "
-"environments."
-msgstr ""
+"Python comes bundled with the :mod:`venv` module to create virtual environments."
+msgstr "پایتون همراه با ماژول :mod:`venv`برای ایجاد محیط های مجازی ارائه می شود."
 
 #: ../../installation.rst:76
 msgid "Create an environment"
-msgstr ""
+msgstr "ساخت یک محیط"
 
 #: ../../installation.rst:78
 msgid "Create a project folder and a :file:`venv` folder within:"
-msgstr ""
+msgstr "یک پوشه پروژه و یک پوشه :file:`venv` با دستور زیر ایجاد کنید:"
 
 #: ../../installation.rst:82 ../../installation.rst:108
 msgid "macOS/Linux"
-msgstr ""
+msgstr "مک/لینوکس"
 
 #: ../../installation.rst:90 ../../installation.rst:114
 msgid "Windows"
-msgstr ""
+msgstr "ویندوز"
 
 #: ../../installation.rst:102
 msgid "Activate the environment"
-msgstr ""
+msgstr "فعال سازی یک محیط"
 
 #: ../../installation.rst:104
 msgid "Before you work on your project, activate the corresponding environment:"
-msgstr ""
+msgstr "قبل از اینکه روی پروژه خود کار کنید، محیط مربوطه را فعال کنید:"
 
 #: ../../installation.rst:120
 msgid ""
-"Your shell prompt will change to show the name of the activated "
-"environment."
-msgstr ""
+"Your shell prompt will change to show the name of the activated environment."
+msgstr "پوسته شما برای نشان دادن نام محیط فعال تغییر میکند."
 
 #: ../../installation.rst:125
 msgid "Install Flask"
-msgstr ""
+msgstr "نصب فلاسک"
 
 #: ../../installation.rst:127
 msgid ""
-"Within the activated environment, use the following command to install "
-"Flask:"
-msgstr ""
+"Within the activated environment, use the following command to install Flask:"
+msgstr "در محیط فعال شده، از دستور زیر برای نصب فلاسک استفاده کنید:"
 
 #: ../../installation.rst:134
 msgid ""
-"Flask is now installed. Check out the :doc:`/quickstart` or go to the "
-":doc:`Documentation Overview </index>`."
+"Flask is now installed. Check out the :doc:`/quickstart` or go to the :doc:"
+"`Documentation Overview </index>`."
 msgstr ""
+"فلاسک اکنون نصب شده است. :doc:`/quickstart` را بررسی کنید یا به :doc:"
+"`Documentation Overview </index>`. بروید."
