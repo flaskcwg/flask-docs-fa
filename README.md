@@ -115,7 +115,7 @@ msgstr ""
 <div dir="rtl">
 
 لطفا مراقب باشید که نماد reST را نقض نکنید. [^6]
-اکثر [po-editors](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html) میتوانند به شما کمک کنند.
+اکثر [ادیتور های po](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html) میتوانند به شما کمک کنند.
 
 * فصل را به عنوان تمام شده علامت بزنید (چک باکس را با "x" پر کنید):
 
