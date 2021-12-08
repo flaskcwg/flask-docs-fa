@@ -202,7 +202,7 @@ $ git push origin your-branch-name
 * [ ] extensions
 * [ ] foreword (reserved)
 * [ ] htmlfaq
-* [ ] index (reserved)
+* [X] index @mmdbalkhi
 * [ ] installation (reserved)
 * [ ] logging
 * [ ] quickstart (reserved)

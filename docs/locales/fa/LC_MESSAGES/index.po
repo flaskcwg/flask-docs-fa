@@ -1,79 +1,94 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-08 12:22+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: Mohamad Balkhi <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: ../../index.rst:4
 msgid "Welcome to Flask"
-msgstr ""
+msgstr "به فلاسک خوش آمدید"
 
 msgid "Flask: web development, one drop at a time"
-msgstr ""
+msgstr "فلاسک: توسعه وب، در کوتاه ترین زمان ممکن"
 
 #: ../../index.rst:11
 msgid ""
-"Welcome to Flask's documentation. Get started with :doc:`installation` "
-"and then get an overview with the :doc:`quickstart`. There is also a more"
-" detailed :doc:`tutorial/index` that shows how to create a small but "
-"complete application with Flask. Common patterns are described in the "
-":doc:`patterns/index` section. The rest of the docs describe each "
-"component of Flask in detail, with a full reference in the :doc:`api` "
-"section."
+"Welcome to Flask's documentation. Get started with :doc:`installation` and then "
+"get an overview with the :doc:`quickstart`. There is also a more detailed :doc:"
+"`tutorial/index` that shows how to create a small but complete application with "
+"Flask. Common patterns are described in the :doc:`patterns/index` section. The "
+"rest of the docs describe each component of Flask in detail, with a full "
+"reference in the :doc:`api` section."
 msgstr ""
+"به مستندات فلاسک خوش آمدید. با  :doc:`installation` شروع کنید و سپس یک نمای کلی "
+"با :doc:`quickstart` دریافت کنید. همچنین بیشترdoc:`tutorial/index` با جزئیات "
+"بیشتری موجود است که نحوه ایجاد یک برنامه کوچک ولی کامل را با فلاسک نشان میدهد. "
+"الگو های رایح نیز در  :doc:`patterns/index` توضیح داده شده است. بقیه اسناد هر "
+"جزء از فلاسک را با یک مرجع کامل در بخش :doc:`api` به تفصیل شرح داده شده است."
 
+# template: محرک
+# لطفا حل شوند
 #: ../../index.rst:19
 msgid ""
-"Flask depends on the `Jinja`_ template engine and the `Werkzeug`_ WSGI "
-"toolkit. The documentation for these libraries can be found at:"
+"Flask depends on the `Jinja`_ template engine and the `Werkzeug`_ WSGI toolkit. "
+"The documentation for these libraries can be found at:"
 msgstr ""
+"فلاسک به  `Jinja`_ برای محرک قالب‌ها و `Werkzeug`_ برای ابزار WSGI. مستندات "
+"هرکدام از این کتابخانه‌ها را میتوانید در اینجا بیابید:"
 
 #: ../../index.rst:22
 msgid "`Jinja documentation <https://jinja.palletsprojects.com/>`_"
-msgstr ""
+msgstr "‍`مستندات jinja <https://jinja.palletsprojects.com/>`_"
 
 #: ../../index.rst:23
 msgid "`Werkzeug documentation <https://werkzeug.palletsprojects.com/>`_"
-msgstr ""
+msgstr "`مستندات Werkzeug<https://werkzeug.palletsprojects.com/>`_"
 
 #: ../../index.rst:30
 msgid "User's Guide"
-msgstr ""
+msgstr "راهنمای کاربر"
 
 #: ../../index.rst:32
 msgid ""
 "This part of the documentation, which is mostly prose, begins with some "
-"background information about Flask, then focuses on step-by-step "
-"instructions for web development with Flask."
+"background information about Flask, then focuses on step-by-step instructions "
+"for web development with Flask."
 msgstr ""
+"این قسمت از مستندات بیشتر متن هستند و با برخی از اطلاعات پس‌زمینه ای فلاسک شروع "
+"میشود. سپس بر روی دستور عمل های گام به گام توسعه وب با فلاسک تمرکز میکند."
 
 #: ../../index.rst:66
 msgid "API Reference"
-msgstr ""
+msgstr "مرجع API"
 
 #: ../../index.rst:68
 msgid ""
-"If you are looking for information on a specific function, class or "
-"method, this part of the documentation is for you."
+"If you are looking for information on a specific function, class or method, "
+"this part of the documentation is for you."
 msgstr ""
+"اگر به دنبال اطلاعاتی در مورد یک تابع، کلاس یا روش خاص هستید، این بخش از "
+"مستندات مناسب شماست."
 
 #: ../../index.rst:78
 msgid "Additional Notes"
-msgstr ""
+msgstr "یادداشت های اضافی"
 
 #: ../../index.rst:80
 msgid "Design notes, legal information and changelog are here for the interested."
-msgstr ""
+msgstr "یادداشت های طراحی، اطلاعات حقوقی و تغییرات در اینجا برای علاقمندان است."
