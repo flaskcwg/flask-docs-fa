@@ -1,23 +1,28 @@
-# Flask Docs Translation
+<div dir="rtl">
 
+# ترجمه مستندات فلاسک(Flask)
 
-## Contributing Guide
+## راهنمای مشارکت
 
+### نصب
 
-### Installation
+* روی  دکمه "Fork" برای گرفتن یک انشعاب از این مخزن کلیک کنید
+* انشعاب مخزن را به صورت محلی شبیه سازی کنید [^1] (نام کاربری خود را با `{username}`  جایگزین کنید):
 
-- Click the "Fork" button to fork this repository on GitHub.
-- Clone your fork repository locally (replace `{username}` with your username):
+</div>
 
 ```
-$ git clone https://github.com/{username}/flask-docs-<UPDATE THIS>
-$ cd flask-docs-<UPDATE THIS>
-$ git remote add upstream https://github.com/<UPDATE THIS>/flask-docs-<UPDATE THIS>
+$ git clone https://github.com/{username}/flask-docs-fa
+$ cd flask-docs-mmdbalkhi
+$ git remote add upstream https://github.com/mmdbalkhi/flask-docs-fa
 ```
 
-- Create a virtual environment and install requirements:
+<div dir="rtl">
 
-For Linux/macOS:
+* یک محیط مجازی ایجاد کنید و الزامات را نصب کنید
+
+برای Linux/macOS:
+</div>
 
 ```
 $ python3 -m venv env
@@ -28,7 +33,10 @@ $ pip install -e .
 $ pre-commit install
 ```
 
-For Windows:
+<div dir="rtl">
+
+برای Windows:
+</div>
 
 ```
 > python -m venv env
@@ -39,44 +47,49 @@ For Windows:
 > pre-commit install
 ```
 
+<div dir="rtl">
 
-### Self-Assignment
+###  واگذاری[^2]
 
-- Open <https://github.com/<UPDATE THIS>/flask-docs-<UPDATE THIS>/edit/main/README.md>.
-- Find the "Translation To-do List" section, mark the chapter you want to
-translate in following format:
-
-```
-- [ ] example @your_username Your Name
-```
-
-You can link the username to your GitHub profile:
+* <https://github.com/mmdbalkhi/flask-docs-mmdbalkhi/edit/main/README.md> را باز کنید
+* "فهرست کار[^3] های  ترجمه" را پیدا کنید, فصلی را که میخواهید علامت بزنید.
 
 ```
-- [ ] example [@your_username](https://github.com/your_username) Your Name
+- [ ] مثال @نام‌کاربری_شما اسم شما
 ```
 
-- Leave a commit message (e.g., "Assign example to @your_username"), then click the
-"Propose changes" button to create a PR.
+میتوانید نام کاربری را به نمایه گیت‌هاب خودتان پیوند دهید.:
 
-### Recommended Translation software
+```
+- [ ] مثال [@نام‌کاربری_شما](https://github.com/your_username) نام شما
+```
 
-As explained below, translations are done using .po files. One good editor is 
-[POEdit](https://poedit.net/) (not to be confused with POEditor)
+* یک کامیت بنویسید(به عنوان مثال "تخصیص مثال به @نام‌کاربری_شما") سپس روی دکمه "Propose changes" کلیک کنید تا یک PR [^4] ساخته شود.
 
-### Translation
+### نرم افزار های پیشنهادی برای ترجمه
 
-- When the self-assignment PR is merged, create a new branch locally
-(be sure to update the example branch name, for example, `translate-cli`):
+همانطور که در زیر توضیح داده شده است، ترجمه ها با استفاده از فایل های .po انجام می شود.
+[POEdit](https://poedit.net/) یک نرم افزار خوب برای اینکار است. ( نباید با POEditor اشتباه گرفته شود.)
+
+### ترجمه
+
+* وقتی  که  PR واگذاری شده ادغام   یک شاخه جدید به صورت محلی ایجاد کنید
+(حتما نام شاخه را بروزرسانی کنید. , به عنوان مثال, `translate-cli` ):
+
+</div>
 
 ```
 $ git fetch upstream
 $ git checkout -b your-branch-name upstream/main
 ```
 
-- Translate the `.po` file in the `docs/locales/<LANG>/LC_MESSAGES` directory.
+<div dir="rtl">
 
-An example of one such file, from docs/.../index.po, is given below.
+* فایل های `.po`  در   دایرکتوری `docs/locales/fa/LC_MESSAGES`  ترجمه کنید.
+
+نمونه‌ای از یکی از این فایل‌ها، از `docs/.../index.po` ، در زیر آورده شده است.
+
+</div>
 
 ```po
 #: ../../index.rst:4
@@ -84,7 +97,10 @@ msgid "Welcome to Flask"
 msgstr "<FILL HERE BY TARGET LANGUAGE>"
 ```
 
-Another case, msgid is multi-line text and contains reStructuredText syntax:
+<div dir="rtl">
+
+یک مورد دیگر msgid که یک متن چند خطی است و حاوی  سینتکس[^5] reStructuredText است:
+</div>
 
 ```po
 #: ../../index.rst:11
@@ -96,160 +112,188 @@ msgstr ""
 "FILL HERE BY TARGET LANGUAGE :doc:`quickstart`."
 ```
 
-Please be careful not to break reST notation. Most
-[po-editors](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html) will help you with that.
+<div dir="rtl">
 
-- Mark the chapter as finished (fill the checkbox with "x"):
+لطفا مراقب باشید که نماد reST را نقض نکنید. [^6]
+اکثر [po-editors](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html) میتوانند به شما کمک کنند.
 
-```
-- [x] example @your_username Your Name
-```
-
-- If you are the first translator, update the `FIRST AUTHOR <EMAIL@ADDRESS>` comment at the top of the `.po` file.
-- Update the `Last-Translator` field value at the top of the `.po` file.
-- Commit the changes:
+* فصل را به عنوان تمام شده علامت بزنید (چک باکس را با "x" پر کنید):
 
 ```
-$ git add docs/locales/<LANG>/LC_MESSAGES/example.po README.md
+- [x] مثال @نام‌کاربری_شما نام شما
+```
+
+* اگر اولین مترجم هستید،   `FIRST AUTHOR <EMAIL@ADDRESS>` را در بالای فایل های `.po` کامنت کنید.
+* مقدار فیلد «Last-Translator» را در بالای فایل «.po» به‌روزرسانی کنید.
+* تغییرات را کامیت کنید.:
+
+</div>
+
+```
+$ git add docs/locales/fa/LC_MESSAGES/example.po README.md
 $ git commit -m "Translate docs/example"
 ```
 
-- Build the docs and preview the changes:
+<div dir="rtl">
 
-For Linux/macOS:
+*اسناد [^7] را بسازید و تغییرات  را بررسی [^8] کنید:
+
+در Linux یا macOS:
+
+</div>
 
 ```
 $ cd docs
 $ make html
 ```
 
-For Windows:
+<div dir="rtl">
+
+در ویندوز:
+</div>
 
 ```
 > cd docs
 > .\make.bat html
 ```
 
-Open `{project_location}/docs/_build/html/index.html` in your browser to view the docs.
+<div dir="rtl">
 
-- If everything is working as expected, push the changes to GitHub:
+`flask-docs-fa/docs/_build/html/index.html` را باز کنید تا اسناد را ببنید.
+
+* اگر همه چیز همانطور که انتظار می رود کار می کند، تغییرات را به GitHub پوش کنید:
+
+</div>
 
 ```
 $ git push origin your-branch-name
 ```
 
-- Open the home page of your forked repository, you will see a notice about
-the new branch. Click the "Compare & pull request" button to create a PR.
-- The translation coordinator will review your PR very soon. Thank you!
+<div dir="rtl">
 
+* صفحه اصلی مخزن انشعاب خود را باز کنید، اعلانی در مورد آن خواهید دید
+شعبه جدید برای ایجاد PR، روی دکمه Compare & pull request» کلیک کنید.
+* هماهنگ کننده ترجمه به زودی PR شما را بررسی خواهد کرد. متشکرم!
 
-## Translation To-do List
+## فهرست کارهای ترجمه
 
-Be sure only mark one chapter at a time, mark another one when the former
-PR is created. Unless it's a long chapter, we may reset the assignment
-if you doesn't finish the translation in ten days.
+مطمئن شوید که هر بار فقط یک فصل را علامت گذاری کنید، در صورت اتمام فصل اول، یکی دیگر را علامت بزنید
+روابط عمومی ایجاد می شود. مگر اینکه فصل طولانی باشد، ممکن است تکلیف[^9] را بازنشانی کنیم.(اگر تا ده روز دیگر ترجمه را تمام نکنید.)
 
+</div>
 
 ### docs/
 
-- [ ] advanced_foreword (reserved)
-- [ ] appcontext
-- [ ] async-await
-- [ ] becomingbig
-- [ ] blueprints
-- [ ] changes
-- [ ] cli
-- [ ] config
-- [ ] contributing
-- [ ] debugging
-- [ ] design
-- [ ] errorhandling
-- [ ] extensiondev
-- [ ] extensions
-- [ ] foreword (reserved)
-- [ ] htmlfaq
-- [ ] index (reserved)
-- [ ] installation (reserved)
-- [ ] logging
-- [ ] quickstart (reserved)
-- [ ] reqcontext
-- [ ] security
-- [ ] server
-- [ ] shell
-- [ ] signals
-- [ ] templating
-- [ ] testing
-- [ ] views
-
+* [ ] advanced_foreword (reserved)
+* [ ] appcontext
+* [ ] async-await
+* [ ] becomingbig
+* [ ] blueprints
+* [ ] changes
+* [ ] cli
+* [ ] config
+* [ ] contributing
+* [ ] debugging
+* [ ] design
+* [ ] errorhandling
+* [ ] extensiondev
+* [ ] extensions
+* [ ] foreword (reserved)
+* [ ] htmlfaq
+* [ ] index (reserved)
+* [ ] installation (reserved)
+* [ ] logging
+* [ ] quickstart (reserved)
+* [ ] reqcontext
+* [ ] security
+* [ ] server
+* [ ] shell
+* [ ] signals
+* [ ] templating
+* [ ] testing
+* [ ] views
 
 ### docs/tutorial/ (reserved)
 
-- [ ] blog
-- [ ] database
-- [ ] deploy
-- [ ] factory
-- [ ] index
-- [ ] install
-- [ ] layout
-- [ ] next
-- [ ] static
-- [ ] templates
-- [ ] tests
-- [ ] views
-
+* [ ] blog
+* [ ] database
+* [ ] deploy
+* [ ] factory
+* [ ] index
+* [ ] install
+* [ ] layout
+* [ ] next
+* [ ] static
+* [ ] templates
+* [ ] tests
+* [ ] views
 
 ### docs/deploying/
 
-- [ ] asgi
-- [ ] cgi
-- [ ] fastcgi
-- [ ] index
-- [ ] mod_wsgi
-- [ ] uwsgi
-- [ ] wsgi-standalone
-
+* [ ] asgi
+* [ ] cgi
+* [ ] fastcgi
+* [ ] index
+* [ ] mod_wsgi
+* [ ] uwsgi
+* [ ] wsgi-standalone
 
 ### docs/patterns/
 
-- [ ] appdispatch
-- [ ] appfactories
-- [ ] caching
-- [ ] celery
-- [ ] deferredcallbacks
-- [ ] distribute
-- [ ] fabric
-- [ ] favicon
-- [ ] fileuploads
-- [ ] flashing
-- [ ] index
-- [ ] jquery
-- [ ] lazyloading
-- [ ] methodoverrides
-- [ ] mongoengine
-- [ ] packages
-- [ ] requestchecksum
-- [ ] singlepageapplications
-- [ ] sqlalchemy
-- [ ] sqlite3
-- [ ] streaming
-- [ ] subclassing
-- [ ] templateinheritance
-- [ ] urlprocessors
-- [ ] viewdecorators
-- [ ] wtforms
-
+* [ ] appdispatch
+* [ ] appfactories
+* [ ] caching
+* [ ] celery
+* [ ] deferredcallbacks
+* [ ] distribute
+* [ ] fabric
+* [ ] favicon
+* [ ] fileuploads
+* [ ] flashing
+* [ ] index
+* [ ] jquery
+* [ ] lazyloading
+* [ ] methodoverrides
+* [ ] mongoengine
+* [ ] packages
+* [ ] requestchecksum
+* [ ] singlepageapplications
+* [ ] sqlalchemy
+* [ ] sqlite3
+* [ ] streaming
+* [ ] subclassing
+* [ ] templateinheritance
+* [ ] urlprocessors
+* [ ] viewdecorators
+* [ ] wtforms
 
 ## docs/api
 
-- [ ] L0~L1000
-- [ ] L1000~L1500
-- [ ] L1500~L2000
-- [ ] L2000~L2500
-- [ ] L2500~L3000
-- [ ] L3000~L3500
-- [ ] L3500~L4000
-- [ ] L4000~L4500
-- [ ] L4500~L5000
-- [ ] L5000~L5500
-- [ ] L5500~L6000
-- [ ] L6000~L6500
+* [ ] L0~L1000
+* [ ] L1000~L1500
+* [ ] L1500~L2000
+* [ ] L2000~L2500
+* [ ] L2500~L3000
+* [ ] L3000~L3500
+* [ ] L3500~L4000
+* [ ] L4000~L4500
+* [ ] L4500~L5000
+* [ ] L5000~L5500
+* [ ] L5500~L6000
+* [ ] L6000~L6500
+
+</div>
+
+## یاداشت ها و پی نوشت
+
+[^1]:  Clone your fork repository locally
+[^2]: self-assignment
+[^3]: ToDo
+[^4]: مخفف Pull request
+[^5]: Syntax
+[^6]: Please be careful not to break reST notation
+[^7]: docs/documents
+[^8]: preview
+[^9]: assignment
+
+</div>
