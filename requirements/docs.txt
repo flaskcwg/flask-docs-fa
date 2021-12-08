@@ -54,8 +54,6 @@ sphinx-intl==2.0.1
     # via -r requirements/docs.in
 sphinx-issues==1.2.0
     # via -r requirements/docs.in
-sphinx-tabs==3.0.0
-    # via -r requirements/docs.in
 sphinx==4.0.2
     # via
     #   -r requirements/docs.in
