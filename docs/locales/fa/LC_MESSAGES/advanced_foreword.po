@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: 2021-12-08 18:37+0330\n"
+"PO-Revision-Date: 2021-12-08 19:03+0330\n"
 "Last-Translator: Mohamad Balkhi <ahmdparsh129@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -23,39 +23,35 @@ msgid "Foreword for Experienced Programmers"
 msgstr "پیشگفتار برای برنامه نویسان با تجربه"
 
 #: ../../advanced_foreword.rst:5
-#, fuzzy
 msgid "Thread-Locals in Flask"
 msgstr "رشته های محلی در فلاسک"
 
 #: ../../advanced_foreword.rst:7
-#, fuzzy
 msgid ""
 "One of the design decisions in Flask was that simple tasks should be "
 "simple; they should not take a lot of code and yet they should not limit "
 "you. Because of that, Flask has a few design choices that some people "
-"might find surprising or unorthodox. For example, Flask uses thread-"
-"local objects internally so that you don’t have to pass objects around "
-"from function to function within a request in order to stay threadsafe. "
-"This approach is convenient, but requires a valid request context for "
+"might find surprising or unorthodox. For example, Flask uses thread-local "
+"objects internally so that you don’t have to pass objects around from "
+"function to function within a request in order to stay threadsafe. This "
+"approach is convenient, but requires a valid request context for "
 "dependency injection or when attempting to reuse code which uses a value "
 "pegged to the request.  The Flask project is honest about thread-locals, "
-"does not hide them, and calls out in the code and documentation where "
-"they are used."
+"does not hide them, and calls out in the code and documentation where they "
+"are used."
 msgstr ""
-"یکی از تصمیمات طراحی در فلاسک این بود که کارهای ساده باید ساده باشند."
-"آنها نباید با کد زیادی نوشته شوند و در عین حال نباید شما را محدود کنند."
-"به همین دلیل، فلاسک چند انتخاب طراحی دارد که ممکن است برای برخی افراد "
-"شگفت‌انگیز یا غیرعادی باشد. برای مثال، فلاسک از اشیای رشته های محلی به "
-"صورت داخلی استفاده میکند به طوری که شما مجبور نیستید اشیا را از تابعی به "
-"تابع دیگر در یک درخواست منتقل کنید تا در انتظار رشته امن بمانید. این "
-"رویکرد راحت است، اما به یک زمینه درخواست معتبر برای تزریق وابستگی یا "
-"هنگام تلاش برای استفاده مجدد از کدی که از یک مقدار متصل به درخواست "
-"استفاده می‌کند، نیاز دارد. پروژه فلاسک در مورد رشته های محلی صادق است، "
-"آنها را پنهان نمی کند و در کد و اسنادی که از آنها استفاده می شود "
-"فراخوانی می کند."
+"یکی از تصمیمات طراحی در فلاسک این بود که کارهای ساده باید ساده باشند.آنها "
+"نباید با کد زیادی نوشته شوند و در عین حال نباید شما را محدود کنند.به همین "
+"دلیل، فلاسک چند انتخاب طراحی دارد که ممکن است برای برخی افراد شگفت‌انگیز یا "
+"غیرعادی باشد. برای مثال، فلاسک از اشیای رشته های محلی به صورت داخلی "
+"استفاده میکند به طوری که شما مجبور نیستید اشیا را از تابعی به تابع دیگر در "
+"یک درخواست منتقل کنید تا در انتظار رشته امن بمانید. این رویکرد راحت است، "
+"اما به یک زمینه درخواست معتبر برای تزریق وابستگی یا هنگام تلاش برای "
+"استفاده مجدد از کدی که از یک مقدار متصل به درخواست استفاده می‌کند، نیاز "
+"دارد. پروژه فلاسک در مورد رشته های محلی صادق است، آنها را پنهان نمی کند و "
+"در کد و اسنادی که از آنها استفاده می شود فراخوانی می کند."
 
 #: ../../advanced_foreword.rst:20
-#, fuzzy
 msgid "Develop for the Web with Caution"
 msgstr "وب را  با احتیاط توسعه دهید"
 
@@ -67,22 +63,22 @@ msgstr "هنگام ساخت برنامه های وب، همیشه امنیت ر�
 msgid ""
 "If you write a web application, you are probably allowing users to "
 "register and leave their data on your server.  The users are entrusting "
-"you with data. And even if you are the only user that might leave data "
-"in your application, you still want that data to be stored securely."
+"you with data. And even if you are the only user that might leave data in "
+"your application, you still want that data to be stored securely."
 msgstr ""
 "اگر شما یک برنامه وب مینویسید، احتمالاً به کاربران اجازه می دهید ثبت نام "
-"کنند و داده های خود را در سرور شما بگذارند. کاربران داده های خود را به "
-"شما میسپارند و حتی اگر شما تنها کاربری هستید که ممکن است داده های خود را "
-"در برنامه بگذارد، همچنان میخواهید داده ها به صورت امن ذخیره شوند."
+"کنند و داده های خود را در سرور شما بگذارند. کاربران داده های خود را به شما "
+"میسپارند و حتی اگر شما تنها کاربری هستید که ممکن است داده های خود را در "
+"برنامه بگذارد، همچنان میخواهید داده ها به صورت امن ذخیره شوند."
 
 #: ../../advanced_foreword.rst:29
 msgid ""
 "Unfortunately, there are many ways the security of a web application can "
 "be compromised.  Flask protects you against one of the most common "
-"security problems of modern web applications: cross-site scripting "
-"(XSS).  Unless you deliberately mark insecure HTML as secure, Flask and "
-"the underlying Jinja2 template engine have you covered.  But there are "
-"many more ways to cause security problems."
+"security problems of modern web applications: cross-site scripting (XSS).  "
+"Unless you deliberately mark insecure HTML as secure, Flask and the "
+"underlying Jinja2 template engine have you covered.  But there are many "
+"more ways to cause security problems."
 msgstr ""
 "متأسفانه راه‌های زیادی وجود دارد که می‌توان امنیت یک برنامه وب را به خطر "
 "انداخت. Flask از شما در برابر یکی از رایج ترین مشکلات امنیتی برنامه های "
@@ -95,22 +91,22 @@ msgstr ""
 msgid ""
 "The documentation will warn you about aspects of web development that "
 "require attention to security.  Some of these security concerns are far "
-"more complex than one might think, and we all sometimes underestimate "
-"the likelihood that a vulnerability will be exploited - until a clever "
+"more complex than one might think, and we all sometimes underestimate the "
+"likelihood that a vulnerability will be exploited - until a clever "
 "attacker figures out a way to exploit our applications.  And don't think "
 "that your application is not important enough to attract an attacker.  "
 "Depending on the kind of attack, chances are that automated bots are "
 "probing for ways to fill your database with spam, links to malicious "
 "software, and the like."
 msgstr ""
-"اسناد به شما در مورد جنبه هایی از توسعه وب که نیاز به توجه به امنیت "
-"دارند هشدار می دهد. برخی از این نگرانی‌های امنیتی بسیار پیچیده‌تر از آن "
-"چیزی هستند که تصور می‌شود، و همه ما گاهی اوقات احتمال سوء استفاده از یک "
-"آسیب‌پذیری را دست‌کم می‌گیریم - تا زمانی که یک مهاجم باهوش راهی برای سوء "
-"استفاده از برنامه‌های ما پیدا کند. و فکر نکنید که برنامه شما به اندازه "
-"کافی برای جذب مهاجم مهم نیست. بسته به نوع حمله، این احتمال وجود دارد که "
-"ربات‌های خودکار راه‌هایی را برای پر کردن پایگاه داده شما با هرزنامه، "
-"لینک‌هایی به نرم‌افزارهای مخرب و موارد مشابه جستجو کنند."
+"اسناد به شما در مورد جنبه هایی از توسعه وب که نیاز به توجه به امنیت دارند "
+"هشدار می دهد. برخی از این نگرانی‌های امنیتی بسیار پیچیده‌تر از آن چیزی هستند "
+"که تصور می‌شود، و همه ما گاهی اوقات احتمال سوء استفاده از یک آسیب‌پذیری را "
+"دست‌کم می‌گیریم - تا زمانی که یک مهاجم باهوش راهی برای سوء استفاده از "
+"برنامه‌های ما پیدا کند. و فکر نکنید که برنامه شما به اندازه کافی برای جذب "
+"مهاجم مهم نیست. بسته به نوع حمله، این احتمال وجود دارد که ربات‌های خودکار "
+"راه‌هایی را برای پر کردن پایگاه داده شما با هرزنامه، لینک‌هایی به "
+"نرم‌افزارهای مخرب و موارد مشابه جستجو کنند."
 
 #: ../../advanced_foreword.rst:45
 msgid ""

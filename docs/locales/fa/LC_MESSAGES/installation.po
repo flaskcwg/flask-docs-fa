@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: 2021-12-08 19:03+0330\n"
+"PO-Revision-Date: 2021-12-08 19:29+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -67,7 +67,7 @@ msgid ""
 "`MarkupSafe`_ comes with Jinja. It escapes untrusted input when rendering "
 "templates to avoid injection attacks."
 msgstr ""
-"«MarkupSafe» با Jinja همراه است. هنگام رندر قالب ها برای جلوگیری از حملات XSS، "
+"`MarkupSafe`_ با Jinja همراه است. هنگام رندر قالب ها برای جلوگیری از حملات XSS، "
 "از ورودی نامعتبرجلوگیری میکند."
 
 #: ../../installation.rst:25
@@ -75,7 +75,7 @@ msgid ""
 "`ItsDangerous`_ securely signs data to ensure its integrity. This is used to "
 "protect Flask's session cookie."
 msgstr ""
-"\"ItsDangerous\"_ داده ها را به صورت ایمن امضا می کند تا از یکپارچگی آن اطمینان "
+"`ItsDangerous`_ داده ها را به صورت ایمن امضا می کند تا از یکپارچگی آن اطمینان "
 "حاصل کند. این برای محافظت از کوکی جلسه Flask استفاده می شود."
 
 #: ../../installation.rst:27
@@ -83,7 +83,7 @@ msgid ""
 "`Click`_ is a framework for writing command line applications. It provides the "
 "``flask`` command and allows adding custom management commands."
 msgstr ""
-"'Click'_ چارچوبی برای نوشتن برنامه های خط فرمان است. این دستور \"flask\" را "
+"`Click`_ چارچوبی برای نوشتن برنامه های خط فرمان است. این دستور \"flask\" را "
 "ارائه می دهد و اجازه می دهد تا دستورات مدیریت سفارشی را اضافه کنید."
 
 #: ../../installation.rst:38
@@ -154,7 +154,7 @@ msgstr ""
 #: ../../installation.rst:69
 msgid ""
 "Python comes bundled with the :mod:`venv` module to create virtual environments."
-msgstr "پایتون همراه با ماژول :mod:`venv`برای ایجاد محیط های مجازی ارائه می شود."
+msgstr "پایتون همراه با ماژول :mod:`venv` برای ایجاد محیط های مجازی ارائه می شود."
 
 #: ../../installation.rst:76
 msgid "Create an environment"
