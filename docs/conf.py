@@ -59,7 +59,7 @@ singlehtml_sidebars = {"index": ["project.html", "localtoc.html", "ethicalads.ht
 html_static_path = ["_static"]
 html_favicon = "_static/flask-icon.png"
 html_logo = "_static/flask-icon.png"
-html_title = f"Flask Documentation ({version})"
+html_title = f"مستندات فلاسک ({version})"
 html_show_sourcelink = False
 
 # LaTeX ----------------------------------------------------------------
