@@ -46,7 +46,9 @@ html_context = {
         ProjectLink("Website", "https://palletsprojects.com/p/flask/"),
         ProjectLink("Twitter", "https://twitter.com/PalletsTeam"),
         ProjectLink("Chat", "https://discord.gg/pallets"),
-        ProjectLink("Docs Translation Source", "<UPDATE THIS>"),
+        ProjectLink(
+            "Docs Translation Source", "https://github.com/mmdbalkhi/flask-docs-fa"
+        ),
     ]
 }
 html_sidebars = {
@@ -101,9 +103,11 @@ def setup(app):
 
 # Translation ----------------------------------------------------------
 
-locale_dirs = ['locales']   # path is example but recommended.
-gettext_compact = False     # optional.
+locale_dirs = ["locales"]  # path is example but recommended.
+gettext_compact = False  # optional.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language
-language = ''  # update this
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_search_language
-html_search_language = ''  # update this
+language = "fa"
+"""https://www.sphinx-doc.org/en/master/usage/configuration.html\
+        #confval-html_search_language
+"""
+html_search_language = "fa"
