@@ -1,27 +1,27 @@
+<div dir="rtl">
+
 <!--
-Before opening a PR, make sure you have claimed to translate a file by
-adding your username after the file entry in the README.md.
+قبل از باز کردن یک PR، مطمئن شوید که ادعا کرده اید که یک فایل را ترجمه کرده اید
+نام کاربری خود را پس از ورود فایل در README.md اضافه کنید.
 -->
 
 <!--
-Link to relevant issues or previous PRs, one per line. Use "fixes" to
-automatically close an issue.
+پیوند به مسائل مرتبط یا PR قبلی، یکی در هر خط از "fiexes" استفاده کنید
+ تا به طور خودکار یک موضوع را ببندید.
 -->
 
 - fixes #<issue number>
 
 <!--
-For translation PR, ensure each step in the "Contrubuting Guide" of
-the README.md is complete by adding an "x" to each box below.
-
-For assignment PR, you can delete the checklist below.
+برای روابط عمومی ترجمه، اطمینان حاصل کنید که هر مرحله در "راهنمای مشارکت" README.md با افزودن یک "x" به هر کادر زیر کامل شده است. برای PR تکلیف، می توانید چک لیست زیر را حذف کنید.
 -->
 
-Checklist:
+چک لیست:
 
-- [ ] Fill the checkbox of the related file entry in the README.md with an "x".
-- [ ] Update the `FIRST AUTHOR <EMAIL@ADDRESS>` comment in the `.po` file if you
-are the first translator.
-- [ ] Update the `Last-Translator` field value in the `.po` file.
-- [ ] Run `pre-commit` hooks and fix any issues.
-- [ ] Build docs locally, no warnings or errors.
+- [ ] چک باکس ورودی فایل مرتبط در README.md را با یک "x" پر کنید.
+- [ ] اگر اولین مترجم هستید، کامنت «FIRST AUTHOR <EMAIL@ADDRESS>» را در فایل «.po» به‌روزرسانی کنید.
+- [ ] مقدار فیلد «Last-Translator» را در فایل «.po» به‌روزرسانی کنید.
+- [ ]  «pre-commit» را اجرا کنید و مشکلات را برطرف کنید.
+- [ ] اسناد را به صورت محلی بسازید، (باید بدون هشدار یا خطا باشد).
+
+</div>
