@@ -186,7 +186,7 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 
 ### docs/
 
-* [ ] advanced_foreword (reserved)
+* [X] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)
 * [ ] appcontext
 * [ ] async-await
 * [ ] becomingbig
@@ -200,10 +200,10 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 * [ ] errorhandling
 * [ ] extensiondev
 * [ ] extensions
-* [ ] foreword (reserved)
+* [X] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)
 * [ ] htmlfaq
-* [X] index @mmdbalkhi
-* [ ] installation (reserved)
+* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)
+* [X] installation [@mmdbalkhi](https://github.com/mmdbalkhi/)
 * [ ] logging
 * [ ] quickstart (reserved)
 * [ ] reqcontext

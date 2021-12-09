@@ -101,13 +101,11 @@ def setup(app):
     app.add_role("gh", github_link)
 
 
-# Translation ----------------------------------------------------------
-
-locale_dirs = ["locales"]  # path is example but recommended.
-gettext_compact = False  # optional.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language
 language = "fa"
 """https://www.sphinx-doc.org/en/master/usage/configuration.html\
         #confval-html_search_language
 """
 html_search_language = "fa"
+locale_dirs = ["locales"]  # path is example but recommended.
+gettext_compact = False  # optional.
