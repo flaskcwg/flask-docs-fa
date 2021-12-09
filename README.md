@@ -2,6 +2,8 @@
 
 # ترجمه مستندات فلاسک(Flask)
 
+> __**یاداشت**__  فعلا readthedocs با زبان فارسی مشکل داره تا حل مشکلش ترجمه به صورت موقت در [اینجا](https://mmdbalkhi.github.io/flask-docs-fa) خواهد بود.
+
 ## راهنمای مشارکت
 
 ### نصب
@@ -186,7 +188,7 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 
 ### docs/
 
-* [X] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)
+* [X] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
 * [ ] appcontext
 * [ ] async-await
 * [ ] becomingbig
@@ -200,12 +202,12 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 * [ ] errorhandling
 * [ ] extensiondev
 * [ ] extensions
-* [X] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)
+* [X] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
 * [ ] htmlfaq
-* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)
-* [X] installation [@mmdbalkhi](https://github.com/mmdbalkhi/)
+* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi 
+* [X] installation [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
 * [ ] logging
-* [ ] quickstart (reserved)
+* [ ] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
 * [ ] reqcontext
 * [ ] security
 * [ ] server
@@ -215,7 +217,7 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 * [ ] testing
 * [ ] views
 
-### docs/tutorial/ (reserved)
+### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
 
 * [ ] blog
 * [ ] database
