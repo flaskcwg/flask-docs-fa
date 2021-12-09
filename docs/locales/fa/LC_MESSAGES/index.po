@@ -21,10 +21,6 @@ msgstr ""
 #: ../../index.rst:4
 msgid "Welcome to Flask"
 msgstr "به فلاسک خوش آمدید"
-
-msgid "فلاسک: توسعه وب، در کوتاه ترین زمان ممکن"
-msgstr ""
-
 #: ../../index.rst:11
 msgid ""
 "Welcome to Flask's documentation. Get started with :doc:`installation` "
