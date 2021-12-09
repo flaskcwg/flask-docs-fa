@@ -298,4 +298,5 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 [^8]: preview
 [^9]: assignment
 
+[discord server](https://discord.gg/svFmgBXY9d)
 </div>
