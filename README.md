@@ -2,8 +2,6 @@
 
 # ترجمه مستندات فلاسک(Flask)
 
-> __**یاداشت**__  فعلا readthedocs با زبان فارسی مشکل داره تا حل مشکلش ترجمه به صورت موقت در [اینجا](https://mmdbalkhi.github.io/flask-docs-fa) خواهد بود.
-
 ## راهنمای مشارکت
 
 ### نصب
@@ -24,6 +22,7 @@ $ git remote add upstream https://github.com/mmdbalkhi/flask-docs-fa
 * یک محیط مجازی ایجاد کنید و الزامات را نصب کنید
 
 برای Linux/macOS:
+
 </div>
 
 ```
@@ -104,6 +103,7 @@ msgstr "<FILL HERE BY TARGET LANGUAGE>"
 <div dir="rtl">
 
 یک مورد دیگر msgid که یک متن چند خطی است و حاوی  سینتکس[^5] reStructuredText است:
+
 </div>
 
 ```po
@@ -188,7 +188,7 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 
 ### docs/
 
-* [X] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
+* [X] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 * [ ] appcontext
 * [ ] async-await
 * [ ] becomingbig
@@ -202,12 +202,12 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 * [ ] errorhandling
 * [ ] extensiondev
 * [ ] extensions
-* [X] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
+* [X] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 * [ ] htmlfaq
-* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi 
-* [X] installation [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
+* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [X] installation [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 * [ ] logging
-* [ ] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
+* [ ] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 * [ ] reqcontext
 * [ ] security
 * [ ] server
@@ -217,7 +217,7 @@ PR ایجاد می شود. مگر اینکه فصل طولانی باشد، مم
 * [ ] testing
 * [ ] views
 
-### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi 
+### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 
 * [ ] blog
 * [ ] database
