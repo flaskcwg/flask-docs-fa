@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-11 23:45+0330\n"
+"POT-Creation-Date: 2021-12-13 18:07+0330\n"
 "PO-Revision-Date: 2021-12-12 20:26+0330\n"
 "Last-Translator: Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -257,8 +257,8 @@ msgstr ""
 "راه‌اندازی میشود و در صورت بروز خطا در هنگام درخواست، یک دیباگر تعاملی را"
 " در مرورگر نشان می دهد."
 
-msgid "اشکال زدای تعاملی در عمل."
-msgstr ""
+msgid "The interactive debugger in action."
+msgstr "اشکال زدای تعاملی در عمل."
 
 #: ../../quickstart.rst:152
 msgid ""
@@ -1225,6 +1225,3 @@ msgstr "وب را  با احتیاط توسعه دهید"
 #: ../../quickstart.rst:943
 msgid "Ready to deploy your new Flask app? See :doc:`deploying/index`."
 msgstr ""
-
-#~ msgid "The interactive debugger in action."
-#~ msgstr "اشکال زدای تعاملی در عمل."

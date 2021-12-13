@@ -39,15 +39,15 @@ html_theme = "flask"
 html_theme_options = {"index_sidebar_logo": False}
 html_context = {
     "project_links": [
-        ProjectLink("Donate", "https://palletsprojects.com/donate"),
-        ProjectLink("PyPI Releases", "https://pypi.org/project/Flask/"),
-        ProjectLink("Source Code", "https://github.com/pallets/flask/"),
-        ProjectLink("Issue Tracker", "https://github.com/pallets/flask/issues/"),
-        ProjectLink("Website", "https://palletsprojects.com/p/flask/"),
-        ProjectLink("Twitter", "https://twitter.com/PalletsTeam"),
-        ProjectLink("Chat", "https://discord.gg/pallets"),
+        ProjectLink("حمایت مالی", "https://palletsprojects.com/donate"),
+        ProjectLink("نسخه های منتشر شده در PyPi", "https://pypi.org/project/Flask/"),
+        ProjectLink("سورس کد", "https://github.com/pallets/flask/"),
+        ProjectLink("گزارش مشکلات", "https://github.com/pallets/flask/issues/"),
+        ProjectLink("وب‌سایت", "https://palletsprojects.com/p/flask/"),
+        ProjectLink("توییتر", "https://twitter.com/PalletsTeam"),
+        ProjectLink("چت", "https://discord.gg/pallets"),
         ProjectLink(
-            "Docs Translation Source", "https://github.com/mmdbalkhi/flask-docs-fa"
+            "سورس کد ترجمه مستنندات", "https://github.com/mmdbalkhi/flask-docs-fa"
         ),
     ]
 }
