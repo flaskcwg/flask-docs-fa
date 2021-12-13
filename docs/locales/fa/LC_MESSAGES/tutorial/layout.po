@@ -1,107 +1,125 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-13 15:16+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/layout.rst:2
 msgid "Project Layout"
-msgstr ""
+msgstr "طرح بندی پروژه"
 
 #: ../../tutorial/layout.rst:4
 msgid "Create a project directory and enter it:"
-msgstr ""
+msgstr "یک دایرکتوری برای پروژه بسازید و وارد آن شوید:"
 
 #: ../../tutorial/layout.rst:11
 msgid ""
-"Then follow the :doc:`installation instructions </installation>` to set "
-"up a Python virtual environment and install Flask for your project."
+"Then follow the :doc:`installation instructions </installation>` to set up a "
+"Python virtual environment and install Flask for your project."
 msgstr ""
+"سپس :doc:`مقدمه نصب</installation>` را ببنید تا محیط های مجازی را راه‌اندازی "
+"کنید و فلاسک را برای پروژه خودتان نصب کنید."
 
 #: ../../tutorial/layout.rst:14
 msgid ""
-"The tutorial will assume you're working from the ``flask-tutorial`` "
-"directory from now on. The file names at the top of each code block are "
-"relative to this directory."
+"The tutorial will assume you're working from the ``flask-tutorial`` directory "
+"from now on. The file names at the top of each code block are relative to this "
+"directory."
 msgstr ""
+"این آموزش فرض میکند که شما الان در دایرکتوری ``flask-tutorial`` کار میکنید. "
+"اسم فایل ها در بالای هر قطعه کد است و در این دایرکتوری هستند."
 
 #: ../../tutorial/layout.rst:20
 msgid "A Flask application can be as simple as a single file."
-msgstr ""
+msgstr "یک برنامه فلاسک میتواند ساده و یک فایل باشد."
 
 #: ../../tutorial/layout.rst:22
 msgid "``hello.py``"
-msgstr ""
+msgstr "``hello.py``"
 
 #: ../../tutorial/layout.rst:34
 msgid ""
-"However, as a project gets bigger, it becomes overwhelming to keep all "
-"the code in one file. Python projects use *packages* to organize code "
-"into multiple modules that can be imported where needed, and the tutorial"
-" will do this as well."
+"However, as a project gets bigger, it becomes overwhelming to keep all the "
+"code in one file. Python projects use *packages* to organize code into "
+"multiple modules that can be imported where needed, and the tutorial will do "
+"this as well."
 msgstr ""
+"با این حال، با بزرگتر شدن یک پروژه، نگه داشتن تمام کدها در یک فایل بسیار سخت "
+"می شود. پروژه‌های پایتون از *پکیج ها* برای سازماندهی کدها در چندین ماژول "
+"استفاده می‌کنند که می‌توانند در صورت نیاز وارد شوند و این آموزش این کار را "
+"میخواهد انجام دهد."
 
 #: ../../tutorial/layout.rst:39
 msgid "The project directory will contain:"
-msgstr ""
+msgstr "دایرکتوری پروژه شامل موارد زیر خواهد بود:"
 
 #: ../../tutorial/layout.rst:41
 msgid "``flaskr/``, a Python package containing your application code and files."
-msgstr ""
+msgstr "``flaskr/`` یک پکیج پایتون حاوی کد بزنامه شما و فایل ها است."
 
 #: ../../tutorial/layout.rst:43
 msgid "``tests/``, a directory containing test modules."
-msgstr ""
+msgstr "``tests/`` یک دایرکتوری حاوی ماژول های تست است."
 
 #: ../../tutorial/layout.rst:44
 msgid ""
-"``venv/``, a Python virtual environment where Flask and other "
-"dependencies are installed."
+"``venv/``, a Python virtual environment where Flask and other dependencies are "
+"installed."
 msgstr ""
+"``venv/`` یک محیط مجازی پایتون است که فلاسک و سایر وابستگی ها در آنجا نصب "
+"هستند."
 
 #: ../../tutorial/layout.rst:46
 msgid "Installation files telling Python how to install your project."
-msgstr ""
+msgstr "فایل های نصبی که به پایتون می گویند چگونه پروژه شما را نصب کند."
 
 #: ../../tutorial/layout.rst:47
 msgid ""
-"Version control config, such as `git`_. You should make a habit of using "
-"some type of version control for all your projects, no matter the size."
+"Version control config, such as `git`_. You should make a habit of using some "
+"type of version control for all your projects, no matter the size."
 msgstr ""
+"شما باید عادت کنید که از هر نوع ورژن کنترلی برای پروژه های خود صرف نظر از "
+"اندازه آن استفاده کنید، مثل ورژن کنترل `git`_."
 
 #: ../../tutorial/layout.rst:50
 msgid "Any other project files you might add in the future."
-msgstr ""
+msgstr "هر فایل پروژه دیگری که ممکن است در آینده اضافه کنید."
 
 #: ../../tutorial/layout.rst:54
 msgid "By the end, your project layout will look like this:"
-msgstr ""
+msgstr "در پایان، طرح پروژه شما به شکل زیر خواهد بود:"
 
 #: ../../tutorial/layout.rst:87
 msgid ""
-"If you're using version control, the following files that are generated "
-"while running your project should be ignored. There may be other files "
-"based on the editor you use. In general, ignore files that you didn't "
-"write. For example, with git:"
+"If you're using version control, the following files that are generated while "
+"running your project should be ignored. There may be other files based on the "
+"editor you use. In general, ignore files that you didn't write. For example, "
+"with git:"
 msgstr ""
+"اگر از کنترل نسخه استفاده می کنید، فایل های زیر که در حین اجرای پروژه شما "
+"تولید می شوند باید نادیده گرفته شوند. ممکن است فایل های دیگری بر اساس ویرایشگر "
+"مورد استفاده شما وجود داشته باشد. به طور کلی فایل هایی را که ننوشته اید نادیده "
+"بگیرید. به عنوان مثال، با git:"
 
 #: ../../tutorial/layout.rst:92
 msgid "``.gitignore``"
-msgstr ""
+msgstr "``.gitignore``"
 
 #: ../../tutorial/layout.rst:110
 msgid "Continue to :doc:`factory`."
-msgstr ""
+msgstr "با :doc:`factory` ادامه دهید."

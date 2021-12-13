@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-12 22:17+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/deploy.rst:2
 msgid "Deploy to Production"
@@ -28,8 +30,8 @@ msgid ""
 "distribution file and install it, but won't go into specifics about what "
 "server or software to use. You can set up a new environment on your "
 "development computer to try out the instructions below, but probably "
-"shouldn't use it for hosting a real public application. See "
-":doc:`/deploying/index` for a list of many different ways to host your "
+"shouldn't use it for hosting a real public application. See :doc:`/"
+"deploying/index` for a list of many different ways to host your "
 "application."
 msgstr ""
 
@@ -54,9 +56,9 @@ msgstr ""
 
 #: ../../tutorial/deploy.rst:34
 msgid ""
-"You can find the file in ``dist/flaskr-1.0.0-py3-none-any.whl``. The file"
-" name is in the format of {project name}-{version}-{python tag} -{abi "
-"tag}-{platform tag}."
+"You can find the file in ``dist/flaskr-1.0.0-py3-none-any.whl``. The "
+"file name is in the format of {project name}-{version}-{python tag} -"
+"{abi tag}-{platform tag}."
 msgstr ""
 
 #: ../../tutorial/deploy.rst:38
@@ -90,8 +92,8 @@ msgstr ""
 #: ../../tutorial/deploy.rst:74
 msgid ""
 "When Flask detects that it's installed (not in editable mode), it uses a "
-"different directory for the instance folder. You can find it at "
-"``venv/var/flaskr-instance`` instead."
+"different directory for the instance folder. You can find it at ``venv/"
+"var/flaskr-instance`` instead."
 msgstr ""
 
 #: ../../tutorial/deploy.rst:80
@@ -100,10 +102,10 @@ msgstr ""
 
 #: ../../tutorial/deploy.rst:82
 msgid ""
-"In the beginning of the tutorial that you gave a default value for "
-":data:`SECRET_KEY`. This should be changed to some random bytes in "
-"production. Otherwise, attackers could use the public ``'dev'`` key to "
-"modify the session cookie, or anything else that uses the secret key."
+"In the beginning of the tutorial that you gave a default value for :data:"
+"`SECRET_KEY`. This should be changed to some random bytes in production. "
+"Otherwise, attackers could use the public ``'dev'`` key to modify the "
+"session cookie, or anything else that uses the secret key."
 msgstr ""
 
 #: ../../tutorial/deploy.rst:87

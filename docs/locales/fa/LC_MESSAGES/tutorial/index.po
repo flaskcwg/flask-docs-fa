@@ -1,29 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-13 15:05+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/index.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "فهرست:"
 
 #: ../../tutorial/index.rst:2
 msgid "Tutorial"
-msgstr ""
+msgstr "آموزش"
 
 #: ../../tutorial/index.rst:20
 msgid ""
@@ -32,15 +34,21 @@ msgid ""
 "edit or delete their own posts. You will be able to package and install "
 "the application on other computers."
 msgstr ""
+"این آموزش شما را در ایجاد یک برنامه وبلاگ پایه به نام Flaskr راهنمایی می "
+"کند. کاربران می توانند ثبت نام کنند، وارد شوند، پست ایجاد کنند و پست های "
+"خود را ویرایش یا حذف کنند. شما قادر خواهید بود برنامه را بر روی رایانه "
+"های دیگر بسته بندی و نصب کنید."
 
 msgid "screenshot of index page"
-msgstr ""
+msgstr "اسکرین شات های صفحه اصلی"
 
 #: ../../tutorial/index.rst:30
 msgid ""
 "It's assumed that you're already familiar with Python. The `official "
 "tutorial`_ in the Python docs is a great way to learn or review first."
 msgstr ""
+"این آموزش فرض میکند که شما به زبان پایتون آشنا هستید. `official "
+"tutorial`_ یک راه عالی برای یادگیری یا بررسی اولیه پایتون است."
 
 #: ../../tutorial/index.rst:35
 msgid ""
@@ -48,12 +56,18 @@ msgid ""
 "cover all of Flask's features. Check out the :doc:`/quickstart` for an "
 "overview of what Flask can do, then dive into the docs to find out more. "
 "The tutorial only uses what's provided by Flask and Python. In another "
-"project, you might decide to use :doc:`/extensions` or other libraries to"
-" make some tasks simpler."
+"project, you might decide to use :doc:`/extensions` or other libraries "
+"to make some tasks simpler."
 msgstr ""
+"در حالی این آموزش برای یک نقطه شروع خوب طراحی شده است اما همه قابلیت های "
+"فلاسک را پوشش نمیدهد. برای بررسی اولیه اینکه فلاسک چکار میکند، :doc:`/"
+"quickstart` را ببینید سپس به سایر مستندات بروید تا چیز های دیگر را پیدا "
+"کنید. این آموزش فقط برای پایتون و چیستی فلاسک تهیه شده است. برای سایر "
+"پروژه ها شما میتوانید تصمیم بگیرید که از :doc:`/extensions` یا سایر "
+"کتابخانه ها اندک ساخته شده استفاده کنید."
 
 msgid "screenshot of login page"
-msgstr ""
+msgstr "اسکرین شات های صفحه ورود"
 
 #: ../../tutorial/index.rst:47
 msgid ""
@@ -62,20 +76,31 @@ msgid ""
 "structured approach. This means that the tutorial will require a bit of "
 "boilerplate up front, but it's done to avoid many common pitfalls that "
 "new developers encounter, and it creates a project that's easy to expand "
-"on. Once you become more comfortable with Flask, you can step out of this"
-" structure and take full advantage of Flask's flexibility."
+"on. Once you become more comfortable with Flask, you can step out of "
+"this structure and take full advantage of Flask's flexibility."
 msgstr ""
+"فلاسک انعطاف پذیر است. در شروع نیازی به طرح بندی خاص برای پروژه یا کد "
+"ندارد. این کمک میکند تا از بیشتر رویکرد های ساختار یافته استفاده کرد. "
+"این به این معنی است که این آموزش از قبل به مقداری تکرار واضحات نیاز دارد "
+"اما این کار برای جلوگیری از بسیاری از دام های رایجی که توسعه دهندگان "
+"جدید با آن مواجه می شوند انجام می شود و پروژه ای را ایجاد می کند که به "
+"راحتی می توان آن را گسترش داد. هنگامی که با فلاسک راحت تر شدید، می "
+"توانید از این ساختار خارج شوید و از انعطاف پذیری فلاسک نهایت استفاده را "
+"ببرید."
 
 msgid "screenshot of edit page"
-msgstr ""
+msgstr "اسکرین شات های صفحه ویرایش"
 
 #: ../../tutorial/index.rst:60
 msgid ""
 ":gh:`The tutorial project is available as an example in the Flask "
-"repository <examples/tutorial>`, if you want to compare your project with"
-" the final product as you follow the tutorial."
+"repository <examples/tutorial>`, if you want to compare your project "
+"with the final product as you follow the tutorial."
 msgstr ""
+":gh:`آموزش این پروژه در مثال های مخزن فلاسک در دسترس است <examples/"
+"tutorial>`. اگر شما میخواهید که پروژه خودتان و پروداکشن نهایی را مقایسه "
+"کنید، این لینک را دنبال کنید."
 
 #: ../../tutorial/index.rst:64
 msgid "Continue to :doc:`layout`."
-msgstr ""
+msgstr "با :doc:`layout` ادامه دهید."
