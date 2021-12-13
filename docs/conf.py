@@ -62,6 +62,12 @@ html_logo = "_static/flask-icon.png"
 html_title = f"مستندات فلاسک ({version})"
 html_show_sourcelink = False
 
+# custom css ----------------------------------------------------------
+
+html_css_files = [
+    "css/custom.css",
+]
+
 # LaTeX ----------------------------------------------------------------
 
 latex_documents = [(master_doc, f"Flask-{version}.tex", html_title, author, "manual")]
