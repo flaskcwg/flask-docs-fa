@@ -1,7 +1,7 @@
 <div align="center">
 
 [![Tests](https://github.com/mmdbalkhi/flask-docs-fa/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/mmdbalkhi/flask-docs-fa/actions/workflows/tests.yaml)
-[![Documentation Status](https://readthedocs.org/projects/flask-fa/badge/?version=latest)](https://flask-fa.readthedocs.io/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/flask-fa/badge/?version=latest)](https://flask-fa.readthedocs.io)
 
 </div>
 
@@ -226,7 +226,7 @@ $ git push origin your-branch-name
 ### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 
 * [ ] blog
-* [ ] database
+* [X] database
 * [ ] deploy
 * [X] factory
 * [X] index
