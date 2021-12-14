@@ -236,7 +236,7 @@ $ git push origin your-branch-name
 * [ ] static
 * [ ] templates
 * [ ] tests
-* [ ] views
+* [X] views
 
 ### docs/deploying/
 
