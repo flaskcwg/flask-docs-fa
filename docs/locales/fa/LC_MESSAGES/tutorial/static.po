@@ -1,25 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-16 18:00+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/static.rst:2
 msgid "Static Files"
-msgstr ""
+msgstr "فایل های استاتیک"
 
 #: ../../tutorial/static.rst:4
 msgid ""
@@ -28,54 +30,74 @@ msgid ""
 "constructed. The style won't change, so it's a *static* file rather than "
 "a template."
 msgstr ""
+"نماها و الگوهای احراز هویت کار می کنند، اما در حال حاضر بسیار ساده به "
+"نظر می رسند. مقداری `CSS`_ را می‌توان برای افزودن سبک به طرح‌بندی HTML که "
+"ساخته‌اید اضافه کرد. سبک تغییر نمی کند، بنابراین به جای یک الگو، یک فایل "
+"*استاتیک* است."
 
 #: ../../tutorial/static.rst:9
 msgid ""
 "Flask automatically adds a ``static`` view that takes a path relative to "
-"the ``flaskr/static`` directory and serves it. The ``base.html`` template"
-" already has a link to the ``style.css`` file:"
+"the ``flaskr/static`` directory and serves it. The ``base.html`` "
+"template already has a link to the ``style.css`` file:"
 msgstr ""
+"فلاسک به طور خودکار یک نمای  ``static``  را اضافه می کند که مسیری را "
+"نسبت به دایرکتوری ``flaskr/static`` می گیرد و آن را ارائه می کند. الگوی "
+"``base.html`` قبلاً پیوندی به فایل ``style.css`` دارد:"
 
 #: ../../tutorial/static.rst:17
 msgid ""
 "Besides CSS, other types of static files might be files with JavaScript "
-"functions, or a logo image. They are all placed under the "
-"``flaskr/static`` directory and referenced with ``url_for('static', "
+"functions, or a logo image. They are all placed under the ``flaskr/"
+"static`` directory and referenced with ``url_for('static', "
 "filename='...')``."
 msgstr ""
+"علاوه بر CSS، انواع دیگری از فایل‌های ثابت ممکن است فایل‌هایی با توابع "
+"جاوا اسکریپت یا یک تصویر لوگو باشند. همه آنها در فهرست ``flaskr/static`` "
+"قرار می گیرند و با ``url_for('static', filename='...')`` ارجاع داده می "
+"شوند."
 
 #: ../../tutorial/static.rst:22
 msgid ""
-"This tutorial isn't focused on how to write CSS, so you can just copy the"
-" following into the ``flaskr/static/style.css`` file:"
+"This tutorial isn't focused on how to write CSS, so you can just copy "
+"the following into the ``flaskr/static/style.css`` file:"
 msgstr ""
+"این آموزش بر نحوه نوشتن CSS متمرکز نیست، بنابراین می‌توانید موارد زیر را "
+"در فایل ``flaskr/static/style.css`` کپی کنید:"
 
 #: ../../tutorial/static.rst:25
 msgid "``flaskr/static/style.css``"
-msgstr ""
+msgstr "``flaskr/static/style.css``"
 
 #: ../../tutorial/static.rst:55
 msgid ""
 "You can find a less compact version of ``style.css`` in the :gh:`example "
 "code <examples/tutorial/flaskr/static/style.css>`."
 msgstr ""
+"می‌توانید یک نسخه کم حجم از ``style.css`` را در :gh:`نمونه کد <examples/"
+"tutorial/flaskr/static/style.css>` بیابید."
 
 #: ../../tutorial/static.rst:58
 msgid ""
 "Go to http://127.0.0.1:5000/auth/login and the page should look like the "
 "screenshot below."
 msgstr ""
+"به http://127.0.0.1:5000/auth/login بروید و صفحه باید مانند تصویر زیر "
+"باشد."
 
 msgid "screenshot of login page"
-msgstr ""
+msgstr "اسکرین شات از صفحه ورود"
 
 #: ../../tutorial/static.rst:66
 msgid ""
 "You can read more about CSS from `Mozilla's documentation <CSS_>`_. If "
-"you change a static file, refresh the browser page. If the change doesn't"
-" show up, try clearing your browser's cache."
+"you change a static file, refresh the browser page. If the change "
+"doesn't show up, try clearing your browser's cache."
 msgstr ""
+"می‌توانید اطلاعات بیشتری درباره CSS را از `مستندات موزیلا <CSS_>`_  "
+"بخوانید. اگر یک فایل استاتیک را تغییر دادید، صفحه مرورگر را بازخوانی "
+"کنید. اگر تغییر نشان داده نشد، سعی کنید کش مرورگر خود را پاک کنید."
 
 #: ../../tutorial/static.rst:72
 msgid "Continue to :doc:`blog`."
-msgstr ""
+msgstr "با :doc:`blog` ادامه دهید."

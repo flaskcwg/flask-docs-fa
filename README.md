@@ -233,8 +233,8 @@ $ git push origin your-branch-name
 * [ ] install
 * [X] layout
 * [ ] next
-* [ ] static
-* [ ] templates
+* [X] static
+* [X] templates
 * [ ] tests
 * [X] views
 
