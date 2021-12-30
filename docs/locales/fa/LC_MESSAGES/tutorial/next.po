@@ -1,91 +1,110 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-30 21:11+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: per\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/next.rst:2
 msgid "Keep Developing!"
-msgstr ""
+msgstr "به توسعه ادامه دهید!"
 
 #: ../../tutorial/next.rst:4
 msgid ""
-"You've learned about quite a few Flask and Python concepts throughout the"
-" tutorial. Go back and review the tutorial and compare your code with the"
-" steps you took to get there. Compare your project to the :gh:`example "
-"project <examples/tutorial>`, which might look a bit different due to the"
-" step-by-step nature of the tutorial."
+"You've learned about quite a few Flask and Python concepts throughout "
+"the tutorial. Go back and review the tutorial and compare your code with "
+"the steps you took to get there. Compare your project to the :gh:"
+"`example project <examples/tutorial>`, which might look a bit different "
+"due to the step-by-step nature of the tutorial."
 msgstr ""
+"شما در طول آموزش با چند مفهوم فلاسک و پایتون آشنا شده اید. برگردید و "
+"آموزش را مرور کنید و کد خود را با مراحلی که برای رسیدن به آنجا طی کردید "
+"مقایسه کنید. پروژه خود را با :gh:`پروژه مثال <examples/tutorial>` مقایسه "
+"کنید، که ممکن است به دلیل ماهیت گام به گام آموزش کمی متفاوت به نظر برسد."
 
 #: ../../tutorial/next.rst:10
 msgid ""
-"There's a lot more to Flask than what you've seen so far. Even so, you're"
-" now equipped to start developing your own web applications. Check out "
-"the :doc:`/quickstart` for an overview of what Flask can do, then dive "
-"into the docs to keep learning. Flask uses `Jinja`_, `Click`_, "
+"There's a lot more to Flask than what you've seen so far. Even so, "
+"you're now equipped to start developing your own web applications. Check "
+"out the :doc:`/quickstart` for an overview of what Flask can do, then "
+"dive into the docs to keep learning. Flask uses `Jinja`_, `Click`_, "
 "`Werkzeug`_, and `ItsDangerous`_ behind the scenes, and they all have "
-"their own documentation too. You'll also be interested in "
-":doc:`/extensions` which make tasks like working with the database or "
+"their own documentation too. You'll also be interested in :doc:`/"
+"extensions` which make tasks like working with the database or "
 "validating form data easier and more powerful."
 msgstr ""
+"چیزهای بیشتری در فلاسک نسبت به آنچه تاکنون دیده اید وجود دارد. با این "
+"حال، شما اکنون برای شروع توسعه برنامه های کاربردی وب خود مجهز شده اید. "
+"برای مروری بر کارهایی که Flask می‌تواند انجام دهد، :doc:`/quickstart`  را "
+"بررسی کنید، سپس برای ادامه یادگیری در اسناد شیرجه بزنید. فلاسک در پشت "
+"صحنه از `Jinja`_, `Click`_, `Werkzeug`_, و  `ItsDangerous`_ استفاده می "
+"کند و همه آنها نیز مستندات خاص خود را دارند. شما همچنین به :doc:`/"
+"extensions` علاقه مند خواهید بود که کارهایی مانند کار با پایگاه داده یا "
+"اعتبارسنجی داده های فرم را آسان تر و قدرتمندتر می کند."
 
 #: ../../tutorial/next.rst:19
 msgid ""
 "If you want to keep developing your Flaskr project, here are some ideas "
 "for what to try next:"
 msgstr ""
+"اگر می‌خواهید به توسعه پروژه Flaskr خود ادامه دهید، در اینجا چند ایده "
+"برای آنچه در مرحله بعد امتحان کنید وجود دارد:"
 
 #: ../../tutorial/next.rst:22
 msgid ""
 "A detail view to show a single post. Click a post's title to go to its "
 "page."
 msgstr ""
+"نمایش جزئیات برای نمایش یک پست واحد. روی عنوان یک پست کلیک کنید تا به "
+"صفحه آن بروید."
 
 #: ../../tutorial/next.rst:24
 msgid "Like / unlike a post."
-msgstr ""
+msgstr "لایک/آنلایک کردن یک پست."
 
 #: ../../tutorial/next.rst:25
 msgid "Comments."
-msgstr ""
+msgstr "نظرات."
 
 #: ../../tutorial/next.rst:26
 msgid "Tags. Clicking a tag shows all the posts with that tag."
 msgstr ""
+"برچسب ها. با کلیک بر روی یک برچسب، تمام پست های دارای آن برچسب نشان داده "
+"می شود."
 
 #: ../../tutorial/next.rst:27
 msgid "A search box that filters the index page by name."
-msgstr ""
+msgstr "یک کادر جستجو که صفحه فهرست را بر اساس نام فیلتر می کند."
 
 #: ../../tutorial/next.rst:28
 msgid "Paged display. Only show 5 posts per page."
-msgstr ""
+msgstr "صفحه نمایش. فقط 5 پست در هر صفحه نمایش داده شود."
 
 #: ../../tutorial/next.rst:29
 msgid "Upload an image to go along with a post."
-msgstr ""
+msgstr "برای هر پست بتوان عکسی آپلود کرد."
 
 #: ../../tutorial/next.rst:30
 msgid "Format posts using Markdown."
-msgstr ""
+msgstr "قالب بندی پست ها با استفاده از Markdown انجام شود."
 
 #: ../../tutorial/next.rst:31
 msgid "An RSS feed of new posts."
-msgstr ""
+msgstr "فید RSS از پست های جدید وجود داشته باشد."
 
 #: ../../tutorial/next.rst:33
 msgid "Have fun and make awesome applications!"
-msgstr ""
+msgstr "از آن لذت ببرید و برنامه های عالی بسازید!"

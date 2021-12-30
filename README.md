@@ -227,12 +227,12 @@ $ git push origin your-branch-name
 
 * [X] blog
 * [X] database
-* [ ] deploy
+* [X] deploy
 * [X] factory
 * [X] index
 * [X] install
 * [X] layout
-* [ ] next
+* [X] next
 * [X] static
 * [X] templates
 * [ ] tests
