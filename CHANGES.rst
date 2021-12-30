@@ -6,6 +6,18 @@ Version 2.1.0
 Unreleased
 
 -   Update Click dependency to >= 8.0.
+-   The test client's ``as_tuple`` parameter is deprecated and will be
+    removed in Werkzeug 2.1. It is now also deprecated in Flask, to be
+    removed in Flask 2.1, while remaining compatible with both in
+    2.0.x. Use ``response.request.environ`` instead. :pr:`4341`
+-   Fix type annotation for ``errorhandler`` decorator. :issue:`4295`
+-   Revert a change to the CLI that caused it to hide ``ImportError``
+    tracebacks when importing the application. :issue:`4307`
+-   ``app.json_encoder`` and ``json_decoder`` are only passed to
+    ``dumps`` and ``loads`` if they have custom behavior. This improves
+    performance, mainly on PyPy. :issue:`4349`
+-   Clearer error message when ``after_this_request`` is used outside a
+    request context. :issue:`4333`
 
 
 Version 2.0.2
