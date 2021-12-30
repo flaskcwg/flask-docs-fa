@@ -230,7 +230,7 @@ $ git push origin your-branch-name
 * [ ] deploy
 * [X] factory
 * [X] index
-* [ ] install
+* [X] install
 * [X] layout
 * [ ] next
 * [X] static

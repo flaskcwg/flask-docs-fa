@@ -1,135 +1,169 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-12-30 19:57+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/install.rst:2
 msgid "Make the Project Installable"
-msgstr ""
+msgstr "پروژه را قابل نصب کنید"
 
 #: ../../tutorial/install.rst:4
 msgid ""
-"Making your project installable means that you can build a *distribution*"
-" file and install that in another environment, just like you installed "
-"Flask in your project's environment. This makes deploying your project "
-"the same as installing any other library, so you're using all the "
-"standard Python tools to manage everything."
+"Making your project installable means that you can build a *distribution* "
+"file and install that in another environment, just like you installed Flask "
+"in your project's environment. This makes deploying your project the same "
+"as installing any other library, so you're using all the standard Python "
+"tools to manage everything."
 msgstr ""
+"قابل نصب کردن پروژه به این معنی است که شما می توانید یک فایل *distribution* "
+"بسازید و آن را در محیط دیگری نصب کنید، درست همانطور که فلاسک را در محیط "
+"پروژه خود نصب کرده اید. این باعث می‌شود که پروژه شما مانند نصب هر کتابخانه "
+"دیگری باشد، بنابراین شما از تمام ابزارهای استاندارد پایتون برای مدیریت همه "
+"چیز استفاده می‌کنید."
 
 #: ../../tutorial/install.rst:10
 msgid ""
 "Installing also comes with other benefits that might not be obvious from "
 "the tutorial or as a new Python user, including:"
 msgstr ""
+"نصب همچنین دارای مزایای دیگری است که ممکن است از طریق آموزش یا به عنوان یک "
+"کاربر جدید پایتون مشخص نباشد، از جمله:"
 
 #: ../../tutorial/install.rst:13
 msgid ""
 "Currently, Python and Flask understand how to use the ``flaskr`` package "
-"only because you're running from your project's directory. Installing "
-"means you can import it no matter where you run from."
+"only because you're running from your project's directory. Installing means "
+"you can import it no matter where you run from."
 msgstr ""
+"در حال حاضر، پایتون و فلاسک نحوه استفاده از بسته ``flaskr`` را فقط به این "
+"دلیل می‌دانند که شما از دایرکتوری پروژه خود در حال اجرا هستید. نصب به این "
+"معنی است که می توانید آن را بدون توجه به اینکه از کجا اجرا می کنید، وارد "
+"کنید."
 
 #: ../../tutorial/install.rst:17
 msgid ""
-"You can manage your project's dependencies just like other packages do, "
-"so ``pip install yourproject.whl`` installs them."
+"You can manage your project's dependencies just like other packages do, so "
+"``pip install yourproject.whl`` installs them."
 msgstr ""
+"شما می توانید وابستگی های پروژه خود را درست مانند سایر بسته ها مدیریت کنید، "
+"بنابراین  ``pip install yourproject.whl`` آنها را نصب می کند."
 
 #: ../../tutorial/install.rst:20
 msgid ""
 "Test tools can isolate your test environment from your development "
 "environment."
-msgstr ""
+msgstr "ابزارهای تست می توانند محیط تست شما را از محیط توسعه شما جدا کنند."
 
 #: ../../tutorial/install.rst:24
 msgid ""
-"This is being introduced late in the tutorial, but in your future "
-"projects you should always start with this."
+"This is being introduced late in the tutorial, but in your future projects "
+"you should always start with this."
 msgstr ""
+"این در اواخر آموزش معرفی شده است، اما در پروژه های آینده خود همیشه باید با "
+"این شروع کنید."
 
 #: ../../tutorial/install.rst:29
 msgid "Describe the Project"
-msgstr ""
+msgstr "پروژه را شرح دهید"
 
 #: ../../tutorial/install.rst:31
 msgid ""
-"The ``setup.py`` file describes your project and the files that belong to"
-" it."
-msgstr ""
+"The ``setup.py`` file describes your project and the files that belong to "
+"it."
+msgstr "فایل ``setup.py`` پروژه شما و فایل های متعلق به آن را توصیف می کند."
 
 #: ../../tutorial/install.rst:34
 msgid "``setup.py``"
-msgstr ""
+msgstr "``setup.py``"
 
 #: ../../tutorial/install.rst:51
 msgid ""
 "``packages`` tells Python what package directories (and the Python files "
 "they contain) to include. ``find_packages()`` finds these directories "
-"automatically so you don't have to type them out. To include other files,"
-" such as the static and templates directories, ``include_package_data`` "
-"is set. Python needs another file named ``MANIFEST.in`` to tell what this"
-" other data is."
+"automatically so you don't have to type them out. To include other files, "
+"such as the static and templates directories, ``include_package_data`` is "
+"set. Python needs another file named ``MANIFEST.in`` to tell what this "
+"other data is."
 msgstr ""
+"``packages`` به پایتون می‌گویند که چه دایرکتوری‌های بسته (و فایل‌های پایتون "
+"موجود در آنها) را شامل شود. ``find_packages()`` این دایرکتوری ها را به طور "
+"خودکار پیدا می کند، بنابراین شما مجبور نیستید آنها را تایپ کنید. برای "
+"گنجاندن فایل‌های دیگر، مانند فهرست‌های استاتیک و الگوها، "
+"``include_package_data``  تنظیم شده است. پایتون به فایل دیگری به نام "
+"``MANIFEST.in`` نیاز دارد تا بگوید این داده های دیگر چیست."
 
 #: ../../tutorial/install.rst:58
 msgid "``MANIFEST.in``"
-msgstr ""
+msgstr "``MANIFEST.in``"
 
 #: ../../tutorial/install.rst:66
 msgid ""
 "This tells Python to copy everything in the ``static`` and ``templates`` "
-"directories, and the ``schema.sql`` file, but to exclude all bytecode "
-"files."
+"directories, and the ``schema.sql`` file, but to exclude all bytecode files."
 msgstr ""
+"این به پایتون می‌گوید همه چیز را در دایرکتوری‌های ``static`` و ``templates`` "
+"و فایل ``schema.sql`` کپی کند، اما همه فایل‌های بایت کد را حذف کند."
 
 #: ../../tutorial/install.rst:70
 msgid ""
 "See the `official packaging guide`_ for another explanation of the files "
 "and options used."
 msgstr ""
+"برای توضیح دیگری درباره فایل‌ها و گزینه‌های استفاده شده، به `official "
+"packaging guide`_  مراجعه کنید."
 
 #: ../../tutorial/install.rst:77
 msgid "Install the Project"
-msgstr ""
+msgstr "نصب پروژه"
 
 #: ../../tutorial/install.rst:79
 msgid "Use ``pip`` to install your project in the virtual environment."
-msgstr ""
+msgstr "برای نصب پروژه خود در محیط مجازی از ``pip`` استفاده کنید."
 
 #: ../../tutorial/install.rst:85
 msgid ""
-"This tells pip to find ``setup.py`` in the current directory and install "
-"it in *editable* or *development* mode. Editable mode means that as you "
-"make changes to your local code, you'll only need to re-install if you "
-"change the metadata about the project, such as its dependencies."
+"This tells pip to find ``setup.py`` in the current directory and install it "
+"in *editable* or *development* mode. Editable mode means that as you make "
+"changes to your local code, you'll only need to re-install if you change "
+"the metadata about the project, such as its dependencies."
 msgstr ""
+"این به pip می‌گوید ``setup.py``  را در فهرست فعلی پیدا کند و آن را در حالت "
+"*editable* یا *development* نصب کند. حالت قابل ویرایش به این معنی است که با "
+"ایجاد تغییرات در کد محلی خود، تنها در صورتی نیاز به نصب مجدد دارید که "
+"متادیتای پروژه، مانند وابستگی های آن را تغییر دهید."
 
 #: ../../tutorial/install.rst:90
 msgid "You can observe that the project is now installed with ``pip list``."
-msgstr ""
+msgstr "می توانید مشاهده کنید که پروژه اکنون با  ``pip list`` نصب شده است."
 
 #: ../../tutorial/install.rst:109
 msgid ""
 "Nothing changes from how you've been running your project so far. "
-"``FLASK_APP`` is still set to ``flaskr`` and ``flask run`` still runs the"
-" application, but you can call it from anywhere, not just the ``flask-"
+"``FLASK_APP`` is still set to ``flaskr`` and ``flask run`` still runs the "
+"application, but you can call it from anywhere, not just the ``flask-"
 "tutorial`` directory."
 msgstr ""
+"هیچ چیز نسبت به نحوه اجرای پروژه خود تاکنون تغییر نکرده است. ``FLASK_APP`` "
+"همچنان روی ``flaskr`` تنظیم شده است و ``flask run`` همچنان برنامه را اجرا "
+"می‌کند، اما می‌توانید آن را از هرجایی فراخوانی کنید، نه فقط از دایرکتوری "
+"``flask-tutorial`` ."
 
 #: ../../tutorial/install.rst:114
 msgid "Continue to :doc:`tests`."
-msgstr ""
+msgstr "با :doc:`tests` ادامه دهید."
