@@ -225,7 +225,7 @@ $ git push origin your-branch-name
 
 ### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 
-* [ ] blog
+* [X] blog
 * [X] database
 * [ ] deploy
 * [X] factory
