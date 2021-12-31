@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: مشکلات خود فلاسک
+    url: https://github.com/pallets/flask/issues/new/choose
+    about: اگر مشکلی در فلاسک میشناسید آن را در مخزن رسمی فلاسک گزارش دهید.
+  - name: چت و پرسش و پاسخ
+    url: https://discord.gg/svFmgBXY9d
+    about: صحبت درباره ترجمه و پرسش و پاسخ درباره فلاسک به زبان فارسی
