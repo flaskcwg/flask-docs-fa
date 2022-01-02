@@ -122,15 +122,12 @@ six==1.16.0
     #   virtualenv
 snowballstemmer==2.2.0
     # via sphinx
-<<<<<<< HEAD
 sphinx-intl==2.0.1
     # via -r requirements/docs.in
 sphinx-issues==1.2.0
     # via -r requirements/docs.in
 sphinx==4.0.2
-=======
 sphinx==4.3.2
->>>>>>> upstream/2.0.x
     # via
     #   -r requirements/docs.in
     #   pallets-sphinx-themes
