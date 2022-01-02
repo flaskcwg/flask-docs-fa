@@ -206,7 +206,7 @@ $ git push origin your-branch-name
 - [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] logging
-- [ ] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+- [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] reqcontext
 - [ ] security
 - [ ] server
