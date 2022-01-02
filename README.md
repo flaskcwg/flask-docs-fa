@@ -229,7 +229,7 @@ $ git push origin your-branch-name
 - [x] next
 - [x] static
 - [x] templates
-- [ ] tests
+- [X] tests
 - [x] views
 
 ### docs/deploying/
