@@ -201,7 +201,7 @@ $ git push origin your-branch-name
 - [ ] design
 - [ ] errorhandling
 - [ ] extensiondev
-- [ ] extensions
+- [x] extensions [@mdk1384](https://github.com/mdk1384) MDK
 - [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] htmlfaq
 - [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
