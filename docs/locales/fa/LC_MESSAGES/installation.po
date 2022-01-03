@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
@@ -200,4 +200,4 @@ msgid ""
 "`Documentation Overview </index>`."
 msgstr ""
 "فلاسک اکنون نصب شده است. :doc:`/quickstart` را بررسی کنید یا به :doc:`بررسی کلی "
-"مستند </index>`. بروید."
+"مستند </index>` بروید."
