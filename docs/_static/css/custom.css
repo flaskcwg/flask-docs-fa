@@ -1,7 +1,13 @@
-h1, h2, h3, h4, h5, h6, p, a, ul, ol, li {
+@import url(https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css);
+
+body {
     direction: rtl;
+    font-family: 'Vazir', sans-serif;
+
 }
 
 pre {
-    direction: ltl;
+    direction: ltr;
+    font-family: 'Vazir', sans-serif;
+
 }
