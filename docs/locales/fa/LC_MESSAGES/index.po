@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-11 23:45+0330\n"
+"POT-Creation-Date: 2022-01-02 18:39+0330\n"
 "PO-Revision-Date: 2021-12-08 19:04+0330\n"
 "Last-Translator: Mohamad Balkhi <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -17,13 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../index.rst:4
 msgid "Welcome to Flask"
 msgstr "به فلاسک خوش آمدید"
-
-msgid "Flask: web development, one drop at a time"
-msgstr "ُفلاسک: توسعه وب، در کوتاهترین زمان"
 
 #: ../../index.rst:11
 msgid ""
@@ -47,8 +48,8 @@ msgid ""
 "Flask depends on the `Jinja`_ template engine and the `Werkzeug`_ WSGI "
 "toolkit. The documentation for these libraries can be found at:"
 msgstr ""
-"فلاسک به `Jinja`_ برای موتور قالب‌ها و `Werkzeug`_ برای ابزار WSGI. "
-"مستندات هرکدام از این کتابخانه‌ها را میتوانید در اینجا بیابید:"
+"فلاسک از `Jinja`_ برای موتور قالب‌ها و `Werkzeug`_ برای ابزار WSGI استفاده می‌کند. "
+"مستندات هرکدام از این کتابخانه‌ها را میتوانید در اینجا ببنید.:"
 
 #: ../../index.rst:22
 msgid "`Jinja documentation <https://jinja.palletsprojects.com/>`_"
@@ -91,6 +92,3 @@ msgstr "یادداشت های اضافی"
 #: ../../index.rst:80
 msgid "Design notes, legal information and changelog are here for the interested."
 msgstr "یادداشت های طراحی، اطلاعات حقوقی و تغییرات در اینجا برای علاقمندان است."
-
-#~ msgid "Flask: web development, one drop at a time"
-#~ msgstr "فلاسک: توسعه وب، در کوتاه ترین زمان ممکن"

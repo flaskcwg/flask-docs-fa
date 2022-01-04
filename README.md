@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Tests](https://github.com/mmdbalkhi/flask-docs-fa/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/mmdbalkhi/flask-docs-fa/actions/workflows/tests.yaml)
+[![Tests](https://github.com/flaskcwg/flask-docs-fa/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/flaskcwg/flask-docs-fa/actions/workflows/tests.yaml)
 [![Documentation Status](https://readthedocs.org/projects/flask-fa/badge/?version=latest)](https://flask-fa.readthedocs.io)
 [![Discord Community](https://img.shields.io/discord/918444189400846336.svg?&logo=Discord&style=flat-square)](https://discord.gg/svFmgBXY9d)
 
@@ -14,7 +14,7 @@
 
 ### نصب
 
-- روی دکمه [Fork](https://github.com/mmdbalkhi/flask-docs-fa/fork) برای گرفتن یک انشعاب از این مخزن کلیک کنید
+- روی دکمه [Fork](https://github.com/flaskcwg/flask-docs-fa/fork) برای گرفتن یک انشعاب از این مخزن کلیک کنید
 - انشعاب مخزن را به صورت محلی شبیه سازی کنید [^1] (نام کاربری خود را با `{username}` جایگزین کنید):
 
 </div>
@@ -22,7 +22,7 @@
 ```
 $ git clone https://github.com/{username}/flask-docs-fa
 $ cd flask-docs-mmdbalkhi
-$ git remote add upstream https://github.com/mmdbalkhi/flask-docs-fa
+$ git remote add upstream https://github.com/flaskcwg/flask-docs-fa
 ```
 
 <div dir="rtl">
@@ -197,7 +197,7 @@ $ git push origin your-branch-name
 - [ ] cli
 - [ ] config
 - [ ] contributing
-- [ ] debugging
+- [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] design
 - [ ] errorhandling
 - [ ] extensiondev
@@ -206,14 +206,14 @@ $ git push origin your-branch-name
 - [ ] htmlfaq
 - [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] logging
+- [X] logging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] reqcontext
 - [ ] security
 - [ ] server
 - [ ] shell
 - [ ] signals
-- [ ] templating
+- [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] testing
 - [ ] views
 
@@ -229,7 +229,7 @@ $ git push origin your-branch-name
 - [x] next
 - [x] static
 - [x] templates
-- [ ] tests
+- [X] tests
 - [x] views
 
 ### docs/deploying/

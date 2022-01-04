@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-01-02 18:39+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -109,31 +109,35 @@ msgstr ""
 
 #: ../../server.rst:83
 msgid ""
-"You can use ``netstat`` to identify what process id is using a port, then"
-" use other operating system tools stop that process. The following "
-"example shows that process id 6847 is using port 5000."
+"You can use ``netstat`` or ``lsof`` to identify what process id is using "
+"a port, then use other operating system tools stop that process. The "
+"following example shows that process id 6847 is using port 5000."
 msgstr ""
 
 #: ../../server.rst:89
-msgid "Linux/Mac"
+msgid "``netstat`` (Linux)"
 msgstr ""
 
 #: ../../server.rst:96
-msgid "Windows"
+msgid "``lsof`` (macOS / Linux)"
 msgstr ""
 
 #: ../../server.rst:103
+msgid "``netstat`` (Windows)"
+msgstr ""
+
+#: ../../server.rst:110
 msgid ""
-"MacOS Monterey and later automatically starts a service that uses port "
-"5000. To disable the service, got to System Preferences, Sharing, and "
+"macOS Monterey and later automatically starts a service that uses port "
+"5000. To disable the service, go to System Preferences, Sharing, and "
 "disable \"AirPlay Receiver\"."
 msgstr ""
 
-#: ../../server.rst:109
+#: ../../server.rst:116
 msgid "Lazy or Eager Loading"
 msgstr ""
 
-#: ../../server.rst:111
+#: ../../server.rst:118
 msgid ""
 "When using the ``flask run`` command with the reloader, the server will "
 "continue to run even if you introduce syntax errors or other "
@@ -142,7 +146,7 @@ msgid ""
 " feature is called \"lazy loading\"."
 msgstr ""
 
-#: ../../server.rst:117
+#: ../../server.rst:124
 msgid ""
 "If a syntax error is already present when calling ``flask run``, it will "
 "fail immediately and show the traceback rather than waiting until the "
@@ -150,18 +154,18 @@ msgid ""
 "while still allowing the server to handle errors on reload."
 msgstr ""
 
-#: ../../server.rst:122
+#: ../../server.rst:129
 msgid ""
 "To override this behavior and always fail immediately, even on reload, "
 "pass the ``--eager-loading`` option. To always keep the server running, "
 "even on the initial call, pass ``--lazy-loading``."
 msgstr ""
 
-#: ../../server.rst:128
+#: ../../server.rst:135
 msgid "In Code"
 msgstr ""
 
-#: ../../server.rst:130
+#: ../../server.rst:137
 msgid ""
 "As an alternative to the ``flask run`` command, the development server "
 "can also be started from Python with the :meth:`Flask.run` method. This "
@@ -170,15 +174,38 @@ msgid ""
 " there are errors when reloading."
 msgstr ""
 
-#: ../../server.rst:136
+#: ../../server.rst:143
 msgid ""
 "``debug=True`` can be passed to enable the debugger and reloader, but the"
 " ``FLASK_ENV=development`` environment variable is still required to "
 "fully enable development mode."
 msgstr ""
 
-#: ../../server.rst:140
+#: ../../server.rst:147
 msgid ""
 "Place the call in a main block, otherwise it will interfere when trying "
 "to import and run the application with a production server later."
 msgstr ""
+
+#~ msgid ""
+#~ "You can use ``netstat`` to identify "
+#~ "what process id is using a port,"
+#~ " then use other operating system "
+#~ "tools stop that process. The following"
+#~ " example shows that process id 6847"
+#~ " is using port 5000."
+#~ msgstr ""
+
+#~ msgid "Linux/Mac"
+#~ msgstr ""
+
+#~ msgid "Windows"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MacOS Monterey and later automatically "
+#~ "starts a service that uses port "
+#~ "5000. To disable the service, got "
+#~ "to System Preferences, Sharing, and "
+#~ "disable \"AirPlay Receiver\"."
+#~ msgstr ""

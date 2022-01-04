@@ -1,29 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-01-04 17:43+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../debugging.rst:2
 msgid "Debugging Application Errors"
-msgstr ""
+msgstr "اشکال زدایی خطاهای برنامه"
 
 #: ../../debugging.rst:6
 msgid "In Production"
-msgstr ""
+msgstr "در تولید"
 
 #: ../../debugging.rst:8
 msgid ""
@@ -32,13 +33,19 @@ msgid ""
 "Python code from the browser. It's protected by a pin, but that should "
 "not be relied on for security."
 msgstr ""
+"**سرور توسعه را اجرا نکنید یا اشکال زدا داخلی را در محیط تولید فعال "
+"نکنید.** دیباگر اجازه می دهد کد پایتون دلخواه را از مرورگر اجرا کنید. "
+"توسط یک پین محافظت می شود، اما برای امنیت نباید به آن اعتماد کرد."
 
 #: ../../debugging.rst:13
 msgid ""
 "Use an error logging tool, such as Sentry, as described in :ref:`error-"
-"logging-tools`, or enable logging and notifications as described in "
-":doc:`/logging`."
+"logging-tools`, or enable logging and notifications as described in :doc:"
+"`/logging`."
 msgstr ""
+"از یک ابزار ثبت خطا، مانند Sentry، همانطور که در :ref:`error-logging-"
+"tools` توضیح داده شده است استفاده کنید، یا ثبت و اعلان ها را همانطور که "
+"در :doc:`/logging` توضیح داده شده فعال کنید."
 
 #: ../../debugging.rst:17
 msgid ""
@@ -47,10 +54,15 @@ msgid ""
 "debuggers also have a remote mode so breakpoints on the server can be "
 "interacted with locally. Only enable a debugger temporarily."
 msgstr ""
+"اگر به سرور دسترسی دارید و ``request.remote_addr`` مطابق با IP شما باشد، "
+"می‌توانید کدی برای راه‌اندازی یک اشکال‌زدای خارجی اضافه کنید. برخی از اشکال "
+"زداهای IDE یک حالت راه دور نیز دارند، بنابراین نقاط شکست در سرور می "
+"توانند به صورت محلی با آنها تعامل داشته باشند. فقط یک دیباگر را به طور "
+"موقت فعال کنید."
 
 #: ../../debugging.rst:24
 msgid "The Built-In Debugger"
-msgstr ""
+msgstr "دیباگر داخلی"
 
 #: ../../debugging.rst:26
 msgid ""
@@ -58,36 +70,46 @@ msgid ""
 "an interactive traceback in the browser when an unhandled error occurs "
 "during a request. This debugger should only be used during development."
 msgstr ""
+"سرور توسعه داخلی Werkzeug یک دیباگر را ارائه می دهد که در صورت بروز خطای "
+"کنترل نشده در طول یک درخواست، یک دیباگر را در مرورگر نشان می دهد. این "
+"دیباگر فقط باید در طول توسعه استفاده شود."
 
 msgid "screenshot of debugger in action"
-msgstr ""
+msgstr "screenshot of debugger in action"
 
 #: ../../debugging.rst:37
 msgid ""
 "The debugger allows executing arbitrary Python code from the browser. It "
-"is protected by a pin, but still represents a major security risk. Do not"
-" run the development server or debugger in a production environment."
+"is protected by a pin, but still represents a major security risk. Do "
+"not run the development server or debugger in a production environment."
 msgstr ""
+"دیباگر اجازه می دهد تا کد پایتون دلخواه را از مرورگر اجرا کنید. توسط یک "
+"پین محافظت می شود، اما همچنان یک خطر امنیتی بزرگ است. سرور توسعه یا "
+"دیباگر را در محیط تولید اجرا نکنید."
 
 #: ../../debugging.rst:42
 msgid ""
-"To enable the debugger, run the development server with the ``FLASK_ENV``"
-" environment variable set to ``development``. This puts Flask in debug "
-"mode, which changes how it handles some errors, and enables the debugger "
-"and reloader."
+"To enable the debugger, run the development server with the "
+"``FLASK_ENV`` environment variable set to ``development``. This puts "
+"Flask in debug mode, which changes how it handles some errors, and "
+"enables the debugger and reloader."
 msgstr ""
+"برای فعال کردن دیباگر، سرور توسعه را با متغیر محیطی ``FLASK_ENV``  که "
+"روی ``development`` تنظیم شده است اجرا کنید. این فلاسک را در حالت اشکال "
+"زدایی قرار می دهد، که نحوه رسیدگی به برخی از خطاها را تغییر می دهد و "
+"اشکال زدا و بارگذاری مجدد را فعال می کند."
 
 #: ../../debugging.rst:49 ../../debugging.rst:102
 msgid "Bash"
-msgstr ""
+msgstr "بش(Bash)"
 
 #: ../../debugging.rst:56 ../../debugging.rst:109
 msgid "CMD"
-msgstr ""
+msgstr "سی ام دی(CMD)"
 
 #: ../../debugging.rst:63 ../../debugging.rst:116
 msgid "Powershell"
-msgstr ""
+msgstr "پاورشل(Powershell)"
 
 #: ../../debugging.rst:70
 msgid ""
@@ -96,18 +118,26 @@ msgid ""
 "mostly equivalent. Debug mode can be controlled separately from "
 "``FLASK_ENV`` with the ``FLASK_DEBUG`` environment variable as well."
 msgstr ""
+"``FLASK_ENV`` را فقط می توان به عنوان یک متغیر محیطی تنظیم کرد. هنگام "
+"اجرا از کد پایتون، ارسال ``debug=True`` حالت اشکال زدایی را فعال می کند، "
+"که اکثراً معادل است. حالت اشکال زدایی را می توان به طور جداگانه از "
+"``FLASK_ENV`` با متغیر محیطی ``FLASK_DEBUG`` نیز کنترل کرد."
 
 #: ../../debugging.rst:79
 msgid ""
 ":doc:`/server` and :doc:`/cli` have more information about running the "
 "debugger, debug mode, and development mode. More information about the "
-"debugger can be found in the `Werkzeug documentation "
-"<https://werkzeug.palletsprojects.com/debug/>`__."
+"debugger can be found in the `Werkzeug documentation <https://werkzeug."
+"palletsprojects.com/debug/>`__."
 msgstr ""
+":doc:`/server` و :doc:`/cli` اطلاعات بیشتری در مورد اجرای دیباگر، حالت "
+"اشکال زدایی و حالت توسعه دارند. اطلاعات بیشتر درباره اشکال‌زدا را "
+"می‌توانید در «مستندات `مستندات Werkzeug <https://werkzeug.palletsprojects."
+"com/debug/>`__ بیابید."
 
 #: ../../debugging.rst:86
 msgid "External Debuggers"
-msgstr ""
+msgstr "اشکال زدای خارجی"
 
 #: ../../debugging.rst:88
 msgid ""
@@ -117,27 +147,40 @@ msgid ""
 "or if no error is raised. Some even have a remote mode so you can debug "
 "code running on another machine."
 msgstr ""
+"اشکال زداهای خارجی، مانند آنهایی که توسط IDE ها ارائه می شوند، می توانند "
+"تجربه اشکال زدایی قدرتمندتری نسبت به دیباگر داخلی ارائه دهند. همچنین "
+"می‌توان از آن‌ها برای گذر از کد در طول درخواست قبل از مطرح شدن خطا یا در "
+"صورت عدم بروز خطا استفاده کرد. برخی از آنها حتی یک حالت راه دور دارند تا "
+"بتوانید کدهای در حال اجرا روی دستگاه دیگری را اشکال زدایی کنید."
 
 #: ../../debugging.rst:94
 msgid ""
 "When using an external debugger, the app should still be in debug mode, "
-"but it can be useful to disable the built-in debugger and reloader, which"
-" can interfere."
+"but it can be useful to disable the built-in debugger and reloader, "
+"which can interfere."
 msgstr ""
+"هنگام استفاده از یک اشکال‌زدای خارجی، برنامه همچنان باید در حالت "
+"اشکال‌زدایی باشد، اما غیرفعال کردن اشکال‌زدای داخلی و بارگذاری مجدد، که "
+"می‌تواند تداخل ایجاد کند، می‌تواند مفید باشد."
 
 #: ../../debugging.rst:98
 msgid "When running from the command line:"
-msgstr ""
+msgstr "هنگام اجرا از خط فرمان:"
 
 #: ../../debugging.rst:123
 msgid "When running from Python:"
-msgstr ""
+msgstr "هنگام اجرا از پایتون:"
 
 #: ../../debugging.rst:129
 msgid ""
 "Disabling these isn't required, an external debugger will continue to "
 "work with the following caveats. If the built-in debugger is not "
-"disabled, it will catch unhandled exceptions before the external debugger"
-" can. If the reloader is not disabled, it could cause an unexpected "
-"reload if code changes during debugging."
+"disabled, it will catch unhandled exceptions before the external "
+"debugger can. If the reloader is not disabled, it could cause an "
+"unexpected reload if code changes during debugging."
 msgstr ""
+"غیرفعال کردن این موارد ضروری نیست، یک اشکال‌زدای خارجی با اخطارهای زیر به "
+"کار خود ادامه می‌دهد. اگر اشکال‌زدای داخلی غیرفعال نباشد، قبل از اینکه "
+"اشکال‌زدای خارجی بتواند استثنائات کنترل نشده را پیدا کند. اگر بارگذاری "
+"مجدد غیرفعال نباشد، اگر کد در حین اشکال زدایی تغییر کند، می تواند "
+"بارگیری مجدد غیرمنتظره ایجاد کند."

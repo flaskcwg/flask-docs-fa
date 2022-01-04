@@ -47,7 +47,7 @@ html_context = {
         ProjectLink("توییتر", "https://twitter.com/PalletsTeam"),
         ProjectLink("چت", "https://discord.gg/pallets"),
         ProjectLink(
-            "سورس کد ترجمه مستنندات", "https://github.com/mmdbalkhi/flask-docs-fa"
+            "سورس کد ترجمه مستنندات", "https://github.com/flaskcwg/flask-docs-fa"
         ),
     ]
 }
