@@ -185,7 +185,7 @@ $ git push origin your-branch-name
 
 </div>
 
-- [X] flask-logo.png MDK [@MDK1384](https://github.com/mdk1384)
+- [X] flask-logo.png [@MDK1384](https://github.com/mdk1384) MDK
 
 ### docs/
 
