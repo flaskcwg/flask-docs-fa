@@ -6,7 +6,7 @@ body {
 
 }
 
-pre {
+pre, .code-block-caption {
     direction: ltr;
     font-family: 'Vazir', sans-serif;
 
