@@ -197,7 +197,7 @@ $ git push origin your-branch-name
 - [ ] cli
 - [ ] config
 - [ ] contributing
-- [ ] debugging
+- [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] design
 - [ ] errorhandling
 - [ ] extensiondev
@@ -206,7 +206,7 @@ $ git push origin your-branch-name
 - [ ] htmlfaq
 - [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] logging
+- [X] logging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] reqcontext
 - [ ] security
