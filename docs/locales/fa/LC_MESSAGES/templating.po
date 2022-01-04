@@ -1,33 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-01-04 17:06+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../templating.rst:2
 msgid "Templates"
-msgstr ""
+msgstr "قالب ها"
 
 #: ../../templating.rst:4
 msgid ""
-"Flask leverages Jinja2 as its template engine.  You are obviously free to"
-" use a different template engine, but you still have to install Jinja2 to"
-" run Flask itself.  This requirement is necessary to enable rich "
+"Flask leverages Jinja2 as its template engine.  You are obviously free to "
+"use a different template engine, but you still have to install Jinja2 to "
+"run Flask itself.  This requirement is necessary to enable rich "
 "extensions. An extension can depend on Jinja2 being present."
 msgstr ""
+"فلاسک از Jinja2 به عنوان موتور قالب خود استفاده می کند. بدیهی است که شما "
+"آزاد هستید که از یک موتور قالب متفاوت استفاده کنید، اما همچنان باید Jinja2 "
+"را برای اجرای خود فلاسک نصب کنید. این نیاز برای فعال کردن افزونه‌های غنی "
+"ضروری است. یک برنامه افزودنی می تواند به حضور Jinja2 بستگی داشته باشد."
 
 #: ../../templating.rst:9
 msgid ""
@@ -36,71 +41,86 @@ msgid ""
 "syntax itself, head over to the official `Jinja2 Template Documentation "
 "<https://jinja.palletsprojects.com/templates/>`_ for more information."
 msgstr ""
+"این بخش فقط یک مقدمه بسیار سریع در مورد نحوه ادغام Jinja2 در فلاسک ارائه "
+"می دهد. اگر اطلاعاتی در مورد نحو موتور قالب می‌خواهید، برای اطلاعات بیشتر "
+"به `مستدات Jinja2 <https://jinja.palletsprojects.com/templates/>`_ بروید."
 
 #: ../../templating.rst:16
 msgid "Jinja Setup"
-msgstr ""
+msgstr "راه‌اندازی Jinja"
 
 #: ../../templating.rst:18
 msgid "Unless customized, Jinja2 is configured by Flask as follows:"
-msgstr ""
+msgstr "Jinja2 به صورت پیش فرض در فلاسک به صورت زیر پیکربندی می‌شود:"
 
 #: ../../templating.rst:20
 msgid ""
 "autoescaping is enabled for all templates ending in ``.html``, ``.htm``, "
-"``.xml`` as well as ``.xhtml`` when using "
-":func:`~flask.templating.render_template`."
+"``.xml`` as well as ``.xhtml`` when using :func:`~flask.templating."
+"render_template`."
 msgstr ""
+"هنگام استفاده از :func:`~flask.templating.render_template` ، فرار خودکار "
+"برای همه قالب هایی که پسوند ``.html`` ، ``.htm`` ، ``.xml.`` و همچنین ``."
+"xhtml`` فعال است."
 
 #: ../../templating.rst:23
 msgid ""
-"autoescaping is enabled for all strings when using "
-":func:`~flask.templating.render_template_string`."
+"autoescaping is enabled for all strings when using :func:`~flask."
+"templating.render_template_string`."
 msgstr ""
+"هنگام استفاده از :func:`~flask.templating.render_template_string`، فرار "
+"خودکار برای همه رشته ها فعال است."
 
 #: ../../templating.rst:25
 msgid ""
 "a template has the ability to opt in/out autoescaping with the ``{% "
 "autoescape %}`` tag."
 msgstr ""
+"یک الگو این قابلیت را دارد که با تگ  ``{% autoescape %}``  از فرار خودکار "
+"خارج شود."
 
 #: ../../templating.rst:27
 msgid ""
 "Flask inserts a couple of global functions and helpers into the Jinja2 "
 "context, additionally to the values that are present by default."
 msgstr ""
+"فلاسک علاوه بر مقادیری که به طور پیش فرض وجود دارند، چند تابع و کمک کننده "
+"سراسری را در زمینه Jinja2 وارد می کند."
 
 #: ../../templating.rst:32
 msgid "Standard Context"
-msgstr ""
+msgstr "زمینه استاندارد(Standard Context)"
 
 #: ../../templating.rst:34
 msgid ""
 "The following global variables are available within Jinja2 templates by "
 "default:"
 msgstr ""
+"متغیرهای سراسری زیر به طور پیش فرض در قالب های Jinja2 در دسترس هستند:"
 
 #: ../../templating.rst:40
 msgid "The current configuration object (:data:`flask.Flask.config`)"
-msgstr ""
+msgstr "شیء پیکربندی فعلی (:data:`flask.Flask.config`)"
 
 #: ../../templating.rst:44
 msgid "This is now always available, even in imported templates."
-msgstr ""
+msgstr "این در حال حاضر همیشه در دسترس است، حتی در قالب های وارداتی."
 
 #: ../../templating.rst:50
 msgid ""
 "The current request object (:class:`flask.request`).  This variable is "
-"unavailable if the template was rendered without an active request "
-"context."
+"unavailable if the template was rendered without an active request context."
 msgstr ""
+"شی درخواست فعلی (:class:`flask.request`) . اگر الگو بدون زمینه درخواست "
+"فعال ارائه شده باشد، این متغیر در دسترس نیست."
 
 #: ../../templating.rst:57
 msgid ""
 "The current session object (:class:`flask.session`).  This variable is "
-"unavailable if the template was rendered without an active request "
-"context."
+"unavailable if the template was rendered without an active request context."
 msgstr ""
+"شی جلسه فعلی (:class:`flask.session`). اگر الگو بدون زمینه درخواست فعال "
+"ارائه شده باشد، این متغیر در دسترس نیست."
 
 #: ../../templating.rst:64
 msgid ""
@@ -108,74 +128,93 @@ msgid ""
 "variable is unavailable if the template was rendered without an active "
 "request context."
 msgstr ""
+"شیء محدود به درخواست برای متغیرهای سراسری (:data:`flask.g`). اگر الگو بدون "
+"زمینه درخواست فعال ارائه شده باشد، این متغیر در دسترس نیست."
 
 #: ../../templating.rst:71
 msgid "The :func:`flask.url_for` function."
-msgstr ""
+msgstr "تابع :func:`flask.url_for` ."
 
 #: ../../templating.rst:76
 msgid "The :func:`flask.get_flashed_messages` function."
-msgstr ""
+msgstr "تابع :func:`flask.get_flashed_messages` ."
 
 #: ../../templating.rst:78
 msgid "The Jinja Context Behavior"
-msgstr ""
+msgstr "رفتار زمینه Jinja"
 
 #: ../../templating.rst:80
 msgid ""
-"These variables are added to the context of variables, they are not "
-"global variables.  The difference is that by default these will not show "
-"up in the context of imported templates.  This is partially caused by "
+"These variables are added to the context of variables, they are not global "
+"variables.  The difference is that by default these will not show up in "
+"the context of imported templates.  This is partially caused by "
 "performance considerations, partially to keep things explicit."
 msgstr ""
+"این متغیرها به بافت متغیرها اضافه می شوند، متغیرهای سراسری نیستند. تفاوت "
+"این است که به طور پیش‌فرض اینها در قالب قالب‌های وارد شده نشان داده نمی‌شوند. "
+"این تا حدی ناشی از ملاحظات عملکرد است، تا حدی برای روشن نگه داشتن چیزها."
 
 #: ../../templating.rst:85
 msgid ""
-"What does this mean for you?  If you have a macro you want to import, "
-"that needs to access the request object you have two possibilities:"
+"What does this mean for you?  If you have a macro you want to import, that "
+"needs to access the request object you have two possibilities:"
 msgstr ""
+"این برای شما چه معنایی دارد؟ اگر ماکرویی دارید که می‌خواهید وارد کنید، باید "
+"به شی درخواست دسترسی پیدا کند، دو امکان دارید:"
 
 #: ../../templating.rst:88
 msgid ""
 "you explicitly pass the request to the macro as parameter, or the "
 "attribute of the request object you are interested in."
 msgstr ""
+"شما صریحاً درخواست را به ماکرو به عنوان پارامتر یا ویژگی شی درخواستی مورد "
+"علاقه خود ارسال می کنید."
 
 #: ../../templating.rst:90
 msgid "you import the macro \"with context\"."
-msgstr ""
+msgstr "شما ماکرو را با «زمینه» وارد می کنید."
 
 #: ../../templating.rst:92
 msgid "Importing with context looks like this:"
-msgstr ""
+msgstr "وارد کردن با زمینه به این شکل است:"
 
 #: ../../templating.rst:100
 msgid "Controlling Autoescaping"
-msgstr ""
+msgstr "کنترل خودکار فرار"
 
 #: ../../templating.rst:102
 msgid ""
 "Autoescaping is the concept of automatically escaping special characters "
-"for you.  Special characters in the sense of HTML (or XML, and thus "
-"XHTML) are ``&``, ``>``, ``<``, ``\"`` as well as ``'``.  Because these "
+"for you.  Special characters in the sense of HTML (or XML, and thus XHTML) "
+"are ``&``, ``>``, ``<``, ``\"`` as well as ``'``.  Because these "
 "characters carry specific meanings in documents on their own you have to "
-"replace them by so called \"entities\" if you want to use them for text."
-"  Not doing so would not only cause user frustration by the inability to "
-"use these characters in text, but can also lead to security problems.  "
-"(see :ref:`security-xss`)"
+"replace them by so called \"entities\" if you want to use them for text.  "
+"Not doing so would not only cause user frustration by the inability to use "
+"these characters in text, but can also lead to security problems.  (see :"
+"ref:`security-xss`)"
 msgstr ""
+"فرار خودکار یعنی برنامه طوری کار کند که کاراکتر های خاص در HTML عمل نکنند. "
+"کاراکترهای خاص HTML (یا XML و همچنین XHTML) ``&`` ، ``>`` ، ``<`` ، ``\"`` "
+"و همچنین  ``'`` است. این کاراکتر ها به تنهایی دارای معانی خاصی در اسناد "
+"هستند. اگر میخواهید از آنها در متن استفاده کنید، باید آنها را با \"entities"
+"\"جایگزین کنید ولی این موجب مشکل امنیتی می شود. ( :ref:`security-xss` را "
+"نگاه کنید. )"
 
 #: ../../templating.rst:111
 msgid ""
-"Sometimes however you will need to disable autoescaping in templates. "
-"This can be the case if you want to explicitly inject HTML into pages, "
-"for example if they come from a system that generates secure HTML like a "
+"Sometimes however you will need to disable autoescaping in templates. This "
+"can be the case if you want to explicitly inject HTML into pages, for "
+"example if they come from a system that generates secure HTML like a "
 "markdown to HTML converter."
 msgstr ""
+"با این حال، گاهی اوقات لازم است که فرار خودکار در قالب ها را غیرفعال کنید. "
+"اگر بخواهید صریحاً HTML را به صفحات تزریق کنید، می‌تواند صدق کند، برای مثال "
+"اگر از سیستمی می‌آیند که HTML ایمن مانند مبدل علامت‌گذاری به HTML ایجاد "
+"می‌کند."
 
 #: ../../templating.rst:116
 msgid "There are three ways to accomplish that:"
-msgstr ""
+msgstr "سه راه برای انجام آن وجود دارد:"
 
 #: ../../templating.rst:118
 msgid ""
@@ -183,56 +222,71 @@ msgid ""
 "object before passing it to the template.  This is in general the "
 "recommended way."
 msgstr ""
+"در کد پایتون، رشته HTML را قبل از آنکه در قالب بگذارید، در شی :class:"
+"`~flask.Markup` قرار دهید. این روش به طور کلی توصیه می شود."
 
 #: ../../templating.rst:121
 msgid ""
-"Inside the template, use the ``|safe`` filter to explicitly mark a string"
-" as safe HTML (``{{ myvariable|safe }}``)"
+"Inside the template, use the ``|safe`` filter to explicitly mark a string "
+"as safe HTML (``{{ myvariable|safe }}``)"
 msgstr ""
+"در داخل الگو، از فیلتر ``|safe`` استفاده کنید تا صریحاً یک رشته را به عنوان "
+"HTML ایمن علامت گذاری کنید ( ``{{ myvariable|safe }}`` )"
 
 #: ../../templating.rst:123
 msgid "Temporarily disable the autoescape system altogether."
-msgstr ""
+msgstr "سیستم فرار خودکار را بطور موقت غیرفعال کنید."
 
 #: ../../templating.rst:125
 msgid ""
 "To disable the autoescape system in templates, you can use the ``{% "
 "autoescape %}`` block:"
 msgstr ""
+"برای غیرفعال کردن سیستم فرار خودکار در قالب ها، می توانید از بلوک ``{% "
+"autoescape %}`` استفاده کنید:"
 
 #: ../../templating.rst:135
 msgid ""
-"Whenever you do this, please be very cautious about the variables you are"
-" using in this block."
+"Whenever you do this, please be very cautious about the variables you are "
+"using in this block."
 msgstr ""
+"هر زمان که این کار را انجام می دهید، لطفاً در مورد متغیرهایی که در این بلوک "
+"استفاده می کنید بسیار محتاط باشید."
 
 #: ../../templating.rst:141
 msgid "Registering Filters"
-msgstr ""
+msgstr "ثبت فیلترها"
 
 #: ../../templating.rst:143
 msgid ""
-"If you want to register your own filters in Jinja2 you have two ways to "
-"do that.  You can either put them by hand into the "
-":attr:`~flask.Flask.jinja_env` of the application or use the "
-":meth:`~flask.Flask.template_filter` decorator."
+"If you want to register your own filters in Jinja2 you have two ways to do "
+"that.  You can either put them by hand into the :attr:`~flask.Flask."
+"jinja_env` of the application or use the :meth:`~flask.Flask."
+"template_filter` decorator."
 msgstr ""
+"اگر می خواهید فیلترهای خود را در Jinja2 ثبت کنید، دو راه برای این کار "
+"دارید. می توانید آنها را با دست در :attr:`~flask.Flask.jinja_env` برنامه "
+"قرار دهید یا از دکوراتور :meth:`~flask.Flask.template_filter` استفاده کنید."
 
 #: ../../templating.rst:148
 msgid "The two following examples work the same and both reverse an object::"
-msgstr ""
+msgstr "دو مثال زیر یکسان عمل می کنند و هر دو یک شی را معکوس می کنند:"
 
 #: ../../templating.rst:158
 msgid ""
 "In case of the decorator the argument is optional if you want to use the "
 "function name as name of the filter.  Once registered, you can use the "
-"filter in your templates in the same way as Jinja2's builtin filters, for"
-" example if you have a Python list in context called `mylist`::"
+"filter in your templates in the same way as Jinja2's builtin filters, for "
+"example if you have a Python list in context called `mylist`::"
 msgstr ""
+"اگر می‌خواهید از نام تابع به عنوان نام فیلتر استفاده کنید، در مورد "
+"دکوراتور، آرگومان اختیاری است. پس از ثبت نام، می توانید از فیلتر در قالب "
+"های خود مانند فیلترهای داخلی Jinja2 استفاده کنید، برای مثال اگر یک لیست "
+"پایتون در زمینه به نام mylist دارید::"
 
 #: ../../templating.rst:168
 msgid "Context Processors"
-msgstr ""
+msgstr "پردازشگرهای زمینه"
 
 #: ../../templating.rst:170
 msgid ""
@@ -243,14 +297,22 @@ msgid ""
 "dictionary.  The keys and values of this dictionary are then merged with "
 "the template context, for all templates in the app::"
 msgstr ""
+"برای تزریق متغیرهای جدید به طور خودکار در زمینه یک الگو، پردازنده های "
+"زمینه در فلاسک وجود دارند. پردازنده‌های زمینه قبل از رندر شدن الگو اجرا "
+"می‌شوند و توانایی تزریق مقادیر جدید به بافت قالب را دارند. پردازنده زمینه "
+"تابعی است که یک فرهنگ لغت را برمی گرداند. سپس کلیدها و مقادیر این فرهنگ "
+"لغت با زمینه قالب، برای همه الگوهای موجود در برنامه ادغام می شوند::"
 
 #: ../../templating.rst:181
 msgid ""
 "The context processor above makes a variable called `user` available in "
 "the template with the value of `g.user`.  This example is not very "
-"interesting because `g` is available in templates anyways, but it gives "
-"an idea how this works."
+"interesting because `g` is available in templates anyways, but it gives an "
+"idea how this works."
 msgstr ""
+"پردازشگر زمینه در بالا متغیری به نام `user` را با مقدار `g.user` در قالب "
+"موجود می کند. این مثال خیلی جالب نیست زیرا `g` به هر حال در قالب ها موجود "
+"است، اما ایده ای را ارائه می دهد که چگونه کار می کند."
 
 #: ../../templating.rst:186
 msgid ""
@@ -258,16 +320,24 @@ msgid ""
 "functions available to templates (since Python allows passing around "
 "functions)::"
 msgstr ""
+"متغیرها محدود به مقادیر نیستند. یک پردازنده زمینه همچنین می‌تواند توابع را "
+"برای قالب‌ها در دسترس قرار دهد (زیرا پایتون اجازه می‌دهد توابع را منتقل "
+"کند)::"
 
 #: ../../templating.rst:196
 msgid ""
-"The context processor above makes the `format_price` function available "
-"to all templates::"
+"The context processor above makes the `format_price` function available to "
+"all templates::"
 msgstr ""
+"پردازشگر زمینه بالا تابع `format_price` را برای همه قالب‌ها در دسترس قرار "
+"می‌دهد:"
 
 #: ../../templating.rst:201
 msgid ""
-"You could also build `format_price` as a template filter (see :ref"
-":`registering-filters`), but this demonstrates how to pass functions in a"
-" context processor."
+"You could also build `format_price` as a template filter (see :ref:"
+"`registering-filters`), but this demonstrates how to pass functions in a "
+"context processor."
 msgstr ""
+"همچنین می‌توانید `format_price` را به‌عنوان یک فیلتر قالب بسازید (به :ref:"
+"`registering-filters` مراجعه کنید)، اما این نشان می‌دهد که چگونه می‌توان "
+"توابع را در یک پردازنده زمینه ارسال کرد."

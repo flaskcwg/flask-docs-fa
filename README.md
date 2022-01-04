@@ -213,7 +213,7 @@ $ git push origin your-branch-name
 - [ ] server
 - [ ] shell
 - [ ] signals
-- [ ] templating
+- [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] testing
 - [ ] views
 
