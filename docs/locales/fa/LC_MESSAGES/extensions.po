@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# MDK <dzhbanmhmdamyn@gmail.com>, 2022.
 #
 #, fuzzy
 msgid ""
@@ -9,17 +9,19 @@ msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-01-02 20:50+0330\n"
+"Last-Translator: MDK <dzhbanmhmdamyn@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../extensions.rst:2
 msgid "Extensions"
-msgstr ""
+msgstr "افزونه ها"
 
 #: ../../extensions.rst:4
 msgid ""
@@ -28,33 +30,46 @@ msgid ""
 "email or connecting to a database. Some extensions add entire new "
 "frameworks to help build certain types of applications, like a REST API."
 msgstr ""
+"افزونه ها بسته های اضافی هستند که قابلیت هایی را به یک برنامه فلاسک "
+"اضافه می کنند. به عنوان مثال، یک افزونه ممکن است پشتیبانی برای ارسال "
+"ایمیل یا اتصال به یک پایگاه داده (database) را اضافه کند. برخی از افزونه "
+"ها تمام چارچوب های جدید را برای کمک به ساخت انواع خاصی از برنامه های "
+"کاربردی اضافه می کنند، مانند API REST."
 
 #: ../../extensions.rst:11
 msgid "Finding Extensions"
-msgstr ""
+msgstr "یافتن افزونه ها"
 
 #: ../../extensions.rst:13
 msgid ""
 "Flask extensions are usually named \"Flask-Foo\" or \"Foo-Flask\". You "
 "can search PyPI for packages tagged with `Framework :: Flask <pypi_>`_."
 msgstr ""
+"افزونه های فلاسک معمولا \"Flask-Foo\" یا \"Foo-Flask\" نام دارند. شما می "
+"توانید PyPI.org را برای یافتن افزونه های فلاسک که با برچسب`Framework :: "
+"Flask <pypi_>`_."
 
 #: ../../extensions.rst:18
 msgid "Using Extensions"
-msgstr ""
+msgstr "استفاده از افزونه ها"
 
 #: ../../extensions.rst:20
 msgid ""
 "Consult each extension's documentation for installation, configuration, "
 "and usage instructions. Generally, extensions pull their own "
-"configuration from :attr:`app.config <flask.Flask.config>` and are passed"
-" an application instance during initialization. For example, an extension"
-" called \"Flask-Foo\" might be used like this::"
+"configuration from :attr:`app.config <flask.Flask.config>` and are "
+"passed an application instance during initialization. For example, an "
+"extension called \"Flask-Foo\" might be used like this::"
 msgstr ""
+"برای نصب، پیکربندی و دستورالعمل های استفاده، به مستندات هر افزونه مراجعه "
+"کنید. به طور کلی، پسوندها پیکربندی خود را از :attr:'app.config <flask."
+"Flask.config> دریافت می کنند و یک نمونه برنامه در طول حروف اول منتقل می "
+"شوند. به عنوان مثال، ممکن است از پسوند به نام \"Flask-Foo\" به این صورت "
+"استفاده شود::"
 
 #: ../../extensions.rst:40
 msgid "Building Extensions"
-msgstr ""
+msgstr "ساختن افزونه ها"
 
 #: ../../extensions.rst:42
 msgid ""
@@ -63,3 +78,7 @@ msgid ""
 "create your own. Read :doc:`/extensiondev` to develop your own Flask "
 "extension."
 msgstr ""
+"در حالی که PyPI شامل بسیاری از افزونه های فلاسک است, شما ممکن است "
+"نتوانید افزونه متناسب با نیاز خود را پیدا کنید. اگر این طور باشد، می "
+"توانید افزونه خودتان را ایجاد کنید. به صفحه :d oc:'/extensiondev' مراجعه "
+"کنید تا افزونه فلاسک خود را توسعه دهید."
