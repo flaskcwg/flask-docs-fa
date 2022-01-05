@@ -172,11 +172,6 @@ $ git push origin your-branch-name
 - سپس PR خود را به Isuse ای که برای ترجمه نوشته اید لینک کنید. برای راحتی میتوانید در PR #شماره_issue را بنویسید.
 - هماهنگ کننده ترجمه به زودی PR شما را بررسی خواهد کرد. متشکرم!
 
-## هماهنگ کنندگان
-
-- Mohamad Balkhi [@mmdbalkhi](https://github.com/mmdbalkhi)
-- MDK [@MDK1384](https://github.com/mdk1384)
-
 ## فهرست کارهای ترجمه
 
 مطمئن شوید که هر بار فقط یک فصل را علامت گذاری کنید، در صورت اتمام فصل اول، یکی دیگر را علامت بزنید تا PR ایجاد شود. مگر اینکه فصل طولانی باشد، ممکن است تکلیف[^9] را بازنشانی کنیم.(اگر تا ده روز دیگر ترجمه را تمام نکنید.)
@@ -200,7 +195,7 @@ $ git push origin your-branch-name
 - [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] design
 - [ ] errorhandling
-- [ ] extensiondev
+- [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [x] extensions [@mdk1384](https://github.com/mdk1384) MDK
 - [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 - [ ] htmlfaq

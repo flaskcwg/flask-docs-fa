@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: 2022-01-04 21:25+0330\n"
+"PO-Revision-Date: 2022-01-05 11:48+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -40,9 +40,8 @@ msgid ""
 "extension to behave."
 msgstr ""
 "اگر می خواهید افزونه فلاسک خود را برای چیزی که هنوز وجود ندارد ایجاد کنید، "
-"این راهنمای توسعه برنامه افزودنی به شما کمک می کند تا برنامه افزودنی خود را "
-"در کوتاه ترین زمان اجرا کنید و احساس کنید که کاربران انتظار دارند برنامه "
-"افزودنی شما رفتار کند."
+"این راهنمای توسعه افزونه به شما کمک می کند تا افزونه خود را در کوتاه ترین "
+"زمان اجرا کنید و احساس کنید که کاربران انتظار دارند افزونه شما رفتار کند."
 
 #: ../../extensiondev.rst:14
 msgid "Anatomy of an Extension"
@@ -58,7 +57,7 @@ msgstr ""
 "افزونه ها همه در بسته‌ای به نام ``flask_something`` قرار دارند که در آن "
 "«something» نام کتابخانه‌ای است که می‌خواهید پل بزنید. بنابراین، برای مثال، "
 "اگر قصد دارید برای کتابخانه‌ای به نام `simplexml` به فلاسک پشتیبانی اضافه "
-"کنید، نام بسته برنامه افزودنی خود را ``flask_simplexml`` بگذارید."
+"کنید، نام بسته افزونه خود را ``flask_simplexml`` بگذارید."
 
 #: ../../extensiondev.rst:21
 msgid ""
@@ -82,12 +81,12 @@ msgid ""
 "unittests and to support multiple configurations. Because of that it is "
 "crucial that your application supports that kind of behavior."
 msgstr ""
-"اما افزونه ها خودش چه شکلی هستند؟ یک برنامه افزودنی باید اطمینان حاصل کند "
-"که با چندین نمونه برنامه فلاسک به طور همزمان کار می کند. این یک الزام است "
-"زیرا بسیاری از افراد از الگوهایی مانند الگوی :doc:`/patterns/appfactories` "
-"برای ایجاد برنامه کاربردی خود در صورت نیاز برای کمک به تست های واحد و "
-"پشتیبانی از چندین پیکربندی استفاده می کنند. به همین دلیل بسیار مهم است که "
-"برنامه شما از این نوع رفتار پشتیبانی کند."
+"اما افزونه ها خودش چه شکلی هستند؟ یک افزونه باید اطمینان حاصل کند که با "
+"چندین نمونه برنامه فلاسک به طور همزمان کار می کند. این یک الزام است زیرا "
+"بسیاری از افراد از الگوهایی مانند الگوی :doc:`/patterns/appfactories` برای "
+"ایجاد برنامه کاربردی خود در صورت نیاز برای کمک به تست های واحد و پشتیبانی "
+"از چندین پیکربندی استفاده می کنند. به همین دلیل بسیار مهم است که برنامه شما "
+"از این نوع رفتار پشتیبانی کند."
 
 #: ../../extensiondev.rst:35
 msgid ""
@@ -180,9 +179,8 @@ msgid ""
 "extension know the name of the application object?"
 msgstr ""
 "بسیاری از افزونه ها به نوعی مرحله اولیه سازی نیاز دارند. برای مثال، "
-"برنامه‌ای را در نظر بگیرید که در حال حاضر به SQLite متصل است( همانطور که "
-"مستندات نشان می‌دهد :doc:`/patterns/sqlite3` ). پس چگونه افزونه ها نام شی "
-"برنامه را می داند؟"
+"برنامه‌ای را در نظر بگیرید که در حال حاضر به SQLite متصل است( :doc:`/"
+"patterns/sqlite3` ). پس چگونه افزونه ها نام شی برنامه را می داند؟"
 
 #: ../../extensiondev.rst:124
 msgid "Quite simple: you pass it to it."
@@ -202,10 +200,10 @@ msgid ""
 "``init_helloworld(app[, extra_args])`` that initializes the extension for "
 "that application.  It could attach before / after handlers etc."
 msgstr ""
-"اگر برنامه افزودنی شم `helloworld` نام دارد، ممکن است تابعی به نام "
-"``init_helloworld(app[, extra_args])`` داشته باشید که برنامه افزودنی را "
-"برای آن برنامه مقداردهی اولیه می کند. می تواند قبل یا بعد از کنترل کننده ها "
-"و غیره متصل شود."
+"اگر افزونه شم `helloworld` نام دارد، ممکن است تابعی به نام "
+"``init_helloworld(app[, extra_args])`` داشته باشید که افزونه را برای آن "
+"برنامه مقداردهی اولیه می کند. می تواند قبل یا بعد از کنترل کننده ها و غیره "
+"متصل شود."
 
 #: ../../extensiondev.rst:135
 msgid "classes:"
@@ -225,9 +223,9 @@ msgid ""
 "we will use the class-based approach because it will provide users with an "
 "object that handles opening and closing database connections."
 msgstr ""
-"اینکه چه چیزی استفاده شود بستگی به آنچه در ذهن دارید دارد. برای برنامه "
-"افزودنی SQLite3 ما از رویکرد مبتنی بر کلاس استفاده خواهیم کرد زیرا شیئی را "
-"در اختیار کاربران قرار می دهد که اتصالات پایگاه داده را باز و بسته می کند."
+"اینکه چه چیزی استفاده شود بستگی به آنچه در ذهن دارید دارد. برای افزونه "
+"SQLite3 ما از رویکرد مبتنی بر کلاس استفاده خواهیم کرد زیرا شیئی را در "
+"اختیار کاربران قرار می دهد که اتصالات پایگاه داده را باز و بسته می کند."
 
 #: ../../extensiondev.rst:144
 msgid ""
@@ -352,7 +350,7 @@ msgstr ""
 
 #: ../../extensiondev.rst:244
 msgid "Note on ``init_app``"
-msgstr ""
+msgstr "یادداشتی در مورد ``init_app``"
 
 #: ../../extensiondev.rst:246
 msgid ""
@@ -361,6 +359,10 @@ msgid ""
 "on the object when the application was passed to the constructor.  This "
 "tells the extension: I am not interested in using multiple applications."
 msgstr ""
+"همانطور که متوجه شدید، ``init_app`` ، ``app`` را به ``self`` اختصاص نمی "
+"دهد. این عمدی است! افزونه های فلاسک مبتنی بر کلاس فقط زمانی باید برنامه را "
+"روی شی ذخیره کنند که برنامه به سازنده ارسال شود. این به افزونه می گوید: من "
+"علاقه ای به استفاده از چندین برنامه کاربردی ندارم."
 
 #: ../../extensiondev.rst:252
 msgid ""
@@ -369,10 +371,13 @@ msgid ""
 "context local or change the API in a way that you can pass the application "
 "explicitly."
 msgstr ""
+"هنگامی که افزونه نیاز به یافتن برنامه فعلی دارد و مرجعی به آن ندارد، باید "
+"یا از متن محلی :data:`~flask.current_app` استفاده کند یا API را به گونه ای "
+"تغییر دهد که بتوانید برنامه را به صراحت منتقل کنید."
 
 #: ../../extensiondev.rst:259
 msgid "Using _app_ctx_stack"
-msgstr ""
+msgstr "استفاده از _app_ctx_stack"
 
 #: ../../extensiondev.rst:261
 msgid ""
@@ -383,10 +388,16 @@ msgid ""
 "this pattern, the *same* connection to the sqlite3 database is accessible "
 "to anything that needs it for the duration of the request."
 msgstr ""
+"در مثال بالا، قبل از هر درخواست، یک متغیر ``sqlite3_db`` به "
+"``_app_ctx_stack.top`` اختصاص داده می شود. در یک تابع view، این متغیر با "
+"استفاده از ویژگی ``connection`` در ``SQLite3`` قابل دسترسی است. در حین از "
+"بین رفتن یک درخواست، اتصال ``sqlite3_db`` بسته می شود. با استفاده از این "
+"الگو، اتصال *همان* به پایگاه داده sqlite3 برای هر چیزی که در طول مدت "
+"درخواست به آن نیاز دارد، قابل دسترسی است."
 
 #: ../../extensiondev.rst:270
 msgid "Learn from Others"
-msgstr ""
+msgstr "از دیگران یاد بگیرید"
 
 #: ../../extensiondev.rst:272
 msgid ""
@@ -400,6 +411,14 @@ msgid ""
 "having multiple developers working in isolation on pretty much the same "
 "problem."
 msgstr ""
+"این مستندات فقط حداقل ها را برای توسعه برنامه های افزودنی لمس می کند. اگر "
+"می‌خواهید بیشتر بیاموزید، ایده بسیار خوبی است که برنامه‌های افزودنی موجود در "
+"`PyPI`_ را بررسی کنید. اگر احساس می‌کنید گم شده‌اید، هنوز `mailinglist`_ و "
+"`Discord server`_ وجود دارد تا ایده‌هایی برای APIهای زیبا به دست آورید. به "
+"خصوص اگر کاری را که قبل از انجام هیچ کس انجام نداده اید انجام می دهید، ممکن "
+"است ایده بسیار خوبی باشد که اطلاعات بیشتری دریافت کنید. این نه تنها بازخورد "
+"مفیدی در مورد آنچه مردم ممکن است از یک افزونه بخواهند ایجاد می کند، بلکه از "
+"داشتن چندین توسعه دهنده به صورت مجزا روی تقریباً یک مشکل جلوگیری می کند."
 
 #: ../../extensiondev.rst:281
 msgid ""
@@ -407,16 +426,21 @@ msgid ""
 "list, and let other developers give you a helping hand with designing the "
 "API."
 msgstr ""
+"به یاد داشته باشید: طراحی API خوب سخت است، بنابراین پروژه خود را در لیست "
+"پستی معرفی کنید و اجازه دهید سایر توسعه دهندگان در طراحی API به شما کمک "
+"کنند."
 
 #: ../../extensiondev.rst:285
 msgid ""
 "The best Flask extensions are extensions that share common idioms for the "
 "API.  And this can only work if collaboration happens early."
 msgstr ""
+"بهترین افزونه های فلاسک، افزونه هایی هستند که اصطلاحات مشترکی برای API "
+"دارند. و این تنها در صورتی می تواند کارساز باشد که همکاری زودتر اتفاق بیفتد."
 
 #: ../../extensiondev.rst:289
 msgid "Approved Extensions"
-msgstr ""
+msgstr "افزونه های تایید شده"
 
 #: ../../extensiondev.rst:291
 msgid ""
@@ -426,6 +450,10 @@ msgid ""
 "extensions maintained and developed today, as they help the Flask ecosystem "
 "remain consistent and compatible."
 msgstr ""
+"فلاسک قبلاً مفهوم افزونه های تأیید شده را داشت. اینها با بررسی پشتیبانی و "
+"سازگاری همراه بودند. در حالی که حفظ این فهرست در طول زمان بسیار دشوار شد، "
+"دستورالعمل‌ها همچنان به همه برنامه‌های افزودنی که امروزه حفظ و توسعه می‌شوند "
+"مرتبط هستند، زیرا به اکوسیستم فلاسک کمک می‌کنند سازگار و سازگار باقی بماند."
 
 #: ../../extensiondev.rst:297
 msgid ""
@@ -435,22 +463,29 @@ msgid ""
 "PyPI, and any other services. If no maintainer is available, give access to "
 "the Pallets core team."
 msgstr ""
+"یک افزونه به نگهدارنده نیاز دارد. در صورتی که نویسنده افزونه بخواهد فراتر "
+"از پروژه حرکت کند، پروژه باید یک نگهدارنده جدید پیدا کند و دسترسی به مخزن، "
+"اسناد، PyPI و هر سرویس دیگری را منتقل کند. اگر هیچ نگهدارنده ای در دسترس "
+"نباشید، باید تیم اصلی Pallets دسترسی پیدا کند."
 
 #: ../../extensiondev.rst:302
 msgid ""
 "The naming scheme is *Flask-ExtensionName* or *ExtensionName-Flask*. It "
 "must provide exactly one package or module named ``flask_extension_name``."
 msgstr ""
+"طرح نامگذاری *Flask-نام‌افزونه* یا *نام‌افزونه-Flask* است. باید دقیقاً یک بسته "
+"یا ماژول به نام ``نام_افزونه_flask`` ارائه دهد."
 
 #: ../../extensiondev.rst:305
 msgid ""
 "The extension must be BSD or MIT licensed. It must be open source and "
 "publicly available."
 msgstr ""
+"افزونه باید دارای مجوز BSD یا MIT و همچنین منبع باز و در دسترس عموم باشد."
 
 #: ../../extensiondev.rst:307
 msgid "The extension's API must have the following characteristics:"
-msgstr ""
+msgstr "API افزونه باید دارای ویژگی های زیر باشد:"
 
 #: ../../extensiondev.rst:309
 msgid ""
@@ -458,18 +493,25 @@ msgid ""
 "Use ``current_app`` instead of ``self.app``, store configuration and state "
 "per application instance."
 msgstr ""
+"باید از چندین برنامه در حال اجرا در یک فرآیند پایتون پشتیبانی کند. به جای "
+"``self.app`` از ``current_app`` استفاده کنید، پیکربندی و وضعیت را در هر "
+"نمونه برنامه ذخیره کنید."
 
 #: ../../extensiondev.rst:312
 msgid ""
 "It must be possible to use the factory pattern for creating applications. "
 "Use the ``ext.init_app()`` pattern."
 msgstr ""
+"باید امکان استفاده از الگوی کارخانه برای ایجاد برنامه ها وجود داشته باشد. "
+"از الگوی ``ext.init_app()`` استفاده کنید."
 
 #: ../../extensiondev.rst:315
 msgid ""
 "From a clone of the repository, an extension with its dependencies must be "
 "installable with ``pip install -e .``."
 msgstr ""
+"از یک کلون مخزن، یک افزونه با وابستگی های آن باید با ``pip install -e .`` "
+"قابل نصب باشد."
 
 #: ../../extensiondev.rst:317
 msgid ""
@@ -478,6 +520,10 @@ msgid ""
 "in a ``requirements.txt`` file. The tests must be part of the sdist "
 "distribution."
 msgstr ""
+"باید یک مجموعه آزمایشی ارسال کنید که بتوان آن را با ``tox -e py`` یا "
+"``pytest`` فراخوانی کرد. اگر از ``tox`` استفاده نمی کنید، وابستگی های تست "
+"را در فایل ``requirements.txt`` مشخص کنید. آزمون ها نیز باید بخشی از توزیع "
+"sdist باشند."
 
 #: ../../extensiondev.rst:321
 msgid ""
@@ -485,6 +531,8 @@ msgid ""
 "Themes`_. A link to the documentation or project website must be in the "
 "PyPI metadata or the readme."
 msgstr ""
+"اسناد باید از موضوع ``flask`` از  `Official Pallets Themes`_ استفاده کنند. "
+"پیوند به اسناد یا وب سایت پروژه نیز باید در  PyPI یا فایل README باشد."
 
 #: ../../extensiondev.rst:324
 msgid ""
@@ -493,3 +541,7 @@ msgid ""
 "``python_requires=\">= 3.6\"`` in ``setup.py`` to indicate supported "
 "versions."
 msgstr ""
+"برای حداکثر سازگاری، افزونه باید از همان نسخه‌های پایتون پشتیبانی کند که "
+"فلاسک پشتیبانی می‌کند.از سال ۲۰۲۰، نسخه ۳.۶ و بالاتر پایتون توصیه می شود. از "
+"``python_requires=\">= 3.6\"`` در ``setup.py`` برای نشان دادن نسخه های "
+"پشتیبانی شده استفاده کنید."
