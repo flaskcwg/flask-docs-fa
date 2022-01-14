@@ -1,13 +1,11 @@
 @import url(https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css);
 
-body {
+* {
     direction: rtl;
     font-family: 'Vazir', sans-serif;
 
 }
 
-pre, .code-block-caption {
+pre, .closeable, .code-block-caption, .sig {
     direction: ltr;
-    font-family: 'Vazir', sans-serif;
-
 }
