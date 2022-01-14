@@ -237,7 +237,7 @@ $ git push origin your-branch-name
 - [ ] uwsgi
 - [ ] wsgi-standalone
 
-### docs/patterns/
+### docs/patterns/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 
 - [ ] appdispatch
 - [ ] appfactories
