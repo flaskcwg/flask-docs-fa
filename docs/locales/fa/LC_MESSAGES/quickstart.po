@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-02 18:39+0330\n"
+"POT-Creation-Date: 2022-01-16 15:03+0330\n"
 "PO-Revision-Date: 2022-01-02 17:58+0330\n"
 "Last-Translator: Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -101,23 +101,27 @@ msgstr ""
 "ترمینال خود بگویید که برنامه با صادر کردن متغیر محیطی ``FLASK_APP`` با آن"
 " کار کند:"
 
-#: ../../quickstart.rst:49 ../../quickstart.rst:162
+#: ../../quickstart.rst:49 ../../quickstart.rst:170
 msgid "Bash"
 msgstr "Bash"
 
-#: ../../quickstart.rst:57 ../../quickstart.rst:169
+#: ../../quickstart.rst:57 ../../quickstart.rst:177
+msgid "Fish"
+msgstr ""
+
+#: ../../quickstart.rst:65 ../../quickstart.rst:184
 msgid "CMD"
 msgstr "CMD"
 
-#: ../../quickstart.rst:65 ../../quickstart.rst:176
+#: ../../quickstart.rst:73 ../../quickstart.rst:191
 msgid "Powershell"
 msgstr "Powershell"
 
-#: ../../quickstart.rst:73
+#: ../../quickstart.rst:81
 msgid "Application Discovery Behavior"
 msgstr "رفتار کشف برنامه"
 
-#: ../../quickstart.rst:75
+#: ../../quickstart.rst:83
 msgid ""
 "As a shortcut, if the file is named ``app.py`` or ``wsgi.py``, you don't "
 "have to set the ``FLASK_APP`` environment variable. See :doc:`/cli` for "
@@ -127,7 +131,7 @@ msgstr ""
 "متغیر محیطی ``FLASK_APP`` را تنظیم کنید. برای جزئیات بیشتر به :doc:`/cli`"
 " مراجعه کنید."
 
-#: ../../quickstart.rst:79
+#: ../../quickstart.rst:87
 msgid ""
 "This launches a very simple builtin server, which is good enough for "
 "testing but probably not what you want to use in production. For "
@@ -138,13 +142,13 @@ msgstr ""
 "استفاده کنید. برای گزینه های استقرار به :doc:`deploying/index` مراجعه "
 "کنید."
 
-#: ../../quickstart.rst:83
+#: ../../quickstart.rst:91
 msgid ""
 "Now head over to http://127.0.0.1:5000/, and you should see your hello "
 "world greeting."
 msgstr "اکنون به http://127.0.0.1:5000/ بروید، و باید سلام جهان را ببینید."
 
-#: ../../quickstart.rst:86
+#: ../../quickstart.rst:94
 msgid ""
 "If another program is already using port 5000, you'll see ``OSError: "
 "[Errno 98]`` or ``OSError: [WinError 10013]`` when the server tries to "
@@ -155,11 +159,11 @@ msgstr ""
 "[Errno 98]`` را مشاهده خواهید کرد. برای نحوه رسیدگی به آن به :ref"
 ":`address-already-in-use` مراجعه کنید."
 
-#: ../../quickstart.rst:93
+#: ../../quickstart.rst:101
 msgid "Externally Visible Server"
 msgstr "سرور قابل مشاهده خارجی"
 
-#: ../../quickstart.rst:95
+#: ../../quickstart.rst:103
 msgid ""
 "If you run the server you will notice that the server is only accessible "
 "from your own computer, not from any other in the network.  This is the "
@@ -171,7 +175,7 @@ msgstr ""
 " در حالت اشکال‌زدایی، کاربر برنامه می‌تواند کد پایتون دلخواه را روی "
 "رایانه شما اجرا کند."
 
-#: ../../quickstart.rst:100
+#: ../../quickstart.rst:108
 msgid ""
 "If you have the debugger disabled or trust the users on your network, you"
 " can make the server publicly available simply by adding "
@@ -181,15 +185,15 @@ msgstr ""
 "توانید سرور را به سادگی با افزودن``--host=0.0.0.0`` به خط فرمان در دسترس "
 "عموم قرار دهید:"
 
-#: ../../quickstart.rst:106
+#: ../../quickstart.rst:114
 msgid "This tells your operating system to listen on all public IPs."
 msgstr "این به سیستم عامل شما می گوید که به تمام IP های عمومی گوش دهد."
 
-#: ../../quickstart.rst:110
+#: ../../quickstart.rst:118
 msgid "What to do if the Server does not Start"
 msgstr "اگر سرور راه اندازی نشد چه باید کرد"
 
-#: ../../quickstart.rst:112
+#: ../../quickstart.rst:120
 msgid ""
 "In case the :command:`python -m flask` fails or :command:`flask` does not"
 " exist, there are multiple reasons this might be the case. First of all "
@@ -199,11 +203,11 @@ msgstr ""
 "وجود نداشته باشد، دلایل متعددی ممکن است وجود داشته باشد. اول از همه باید "
 "به پیام خطا نگاه کنید."
 
-#: ../../quickstart.rst:117
+#: ../../quickstart.rst:125
 msgid "Old Version of Flask"
 msgstr "نسخه قدیمی فلاسک"
 
-#: ../../quickstart.rst:119
+#: ../../quickstart.rst:127
 msgid ""
 "Versions of Flask older than 0.11 used to have different ways to start "
 "the application.  In short, the :command:`flask` command did not exist, "
@@ -216,11 +220,11 @@ msgstr ""
 "حالت شما دو انتخاب داشتید: یا فلاسک را به نسخه های جدیدتر بروز کنید یا "
 ":doc:`/server` را بررسی میکردید تا روشی تناوبی برای اجرای سرور بیابید."
 
-#: ../../quickstart.rst:126
+#: ../../quickstart.rst:134
 msgid "Invalid Import Name"
 msgstr "وارد کردن اسم نامعتبر"
 
-#: ../../quickstart.rst:128
+#: ../../quickstart.rst:136
 msgid ""
 "The ``FLASK_APP`` environment variable is the name of the module to "
 "import at :command:`flask run`. In case that module is incorrectly named "
@@ -233,7 +237,7 @@ msgstr ""
 "کردن مواجه خواهید شد (یا اگر هنگام رفتن به برنامه، اشکال زدایی فعال "
 "باشد). به شما می گوید که چه چیزی را وارد کرده و چرا شکست خورده است."
 
-#: ../../quickstart.rst:133
+#: ../../quickstart.rst:141
 msgid ""
 "The most common reason is a typo or because you did not actually create "
 "an ``app`` object."
@@ -241,11 +245,11 @@ msgstr ""
 "رایج‌ترین دلیل اشتباه تایپی است یا اینکه شما واقعاً یک شی ``app`` ایجاد "
 "نکرده‌اید."
 
-#: ../../quickstart.rst:138
+#: ../../quickstart.rst:146
 msgid "Debug Mode"
 msgstr "حالت اشکال زدایی"
 
-#: ../../quickstart.rst:140
+#: ../../quickstart.rst:148
 msgid ""
 "The ``flask run`` command can do more than just start the development "
 "server. By enabling debug mode, the server will automatically reload if "
@@ -257,10 +261,10 @@ msgstr ""
 "راه‌اندازی میشود و در صورت بروز خطا در هنگام درخواست، یک دیباگر تعاملی را"
 " در مرورگر نشان می دهد."
 
-msgid "اشکال زدای تعاملی در عمل."
+msgid "The interactive debugger in action."
 msgstr ""
 
-#: ../../quickstart.rst:152
+#: ../../quickstart.rst:160
 msgid ""
 "The debugger allows executing arbitrary Python code from the browser. It "
 "is protected by a pin, but still represents a major security risk. Do not"
@@ -270,7 +274,7 @@ msgstr ""
 "پین محافظت می شود، اما همچنان یک خطر امنیتی بزرگ است. سرور توسعه یا "
 "دیباگر را در محیط تولید اجرا نکنید."
 
-#: ../../quickstart.rst:157
+#: ../../quickstart.rst:165
 msgid ""
 "To enable all development features, set the ``FLASK_ENV`` environment "
 "variable to ``development`` before calling ``flask run``."
@@ -278,11 +282,11 @@ msgstr ""
 "برای فعال سازی تمام قابلیت های توسعه، قبل از اجرای ``flask run`` ، متغیر "
 "محیطی ``FLASK_ENV`` را برابر ``development`` قرار دهید."
 
-#: ../../quickstart.rst:183
+#: ../../quickstart.rst:198
 msgid "See also:"
 msgstr "همچنین ببینید:"
 
-#: ../../quickstart.rst:185
+#: ../../quickstart.rst:200
 msgid ""
 ":doc:`/server` and :doc:`/cli` for information about running in "
 "development mode."
@@ -290,7 +294,7 @@ msgstr ""
 "برای اطلاعات درباره اجرا در حالت توسعه :doc:`/server` و :doc:`/cli` را "
 "ببینید."
 
-#: ../../quickstart.rst:187
+#: ../../quickstart.rst:202
 msgid ""
 ":doc:`/debugging` for information about using the built-in debugger and "
 "other debuggers."
@@ -298,7 +302,7 @@ msgstr ""
 "برای اطلاعات درباره دیباگر داخلی و سایر دیباگر ها :doc:`/debugging` "
 "ببینید."
 
-#: ../../quickstart.rst:189
+#: ../../quickstart.rst:204
 msgid ""
 ":doc:`/logging` and :doc:`/errorhandling` to log errors and display nice "
 "error pages."
@@ -306,12 +310,12 @@ msgstr ""
 ":doc:`/logging` و :doc:`/errorhandling` را برای لاگ های ارور و نمایش بهتر"
 " صفحات ارور ببینید."
 
-#: ../../quickstart.rst:194
+#: ../../quickstart.rst:209
 msgid "HTML Escaping"
 msgstr "فرار HTML (HTML Escaping)"
 
 # مقاوم:escape
-#: ../../quickstart.rst:196
+#: ../../quickstart.rst:211
 msgid ""
 "When returning HTML (the default response type in Flask), any user-"
 "provided values rendered in the output must be escaped to protect from "
@@ -323,7 +327,7 @@ msgstr ""
 "مقاوم باشند. قالب‌های HTML ارائه‌شده با Jinja، که بعداً معرفی شدند، این "
 "کار را به‌طور خودکار انجام می‌دهند."
 
-#: ../../quickstart.rst:201
+#: ../../quickstart.rst:216
 msgid ""
 ":func:`~markupsafe.escape`, shown here, can be used manually. It is "
 "omitted in most examples for brevity, but you should always be aware of "
@@ -334,7 +338,7 @@ msgstr ""
 "است، اما همیشه باید از نحوه استفاده از داده های نامعتبر آگاه باشید."
 
 # escape:فرار
-#: ../../quickstart.rst:213
+#: ../../quickstart.rst:228
 msgid ""
 "If a user managed to submit the name ``<script>alert(\"bad\")</script>``,"
 " escaping causes it to be rendered as text, rather than running the "
@@ -344,7 +348,7 @@ msgstr ""
 "باعث می شود که به جای اجرای اسکریپت در مرورگر کاربر، به صورت متن ارائه "
 "شود."
 
-#: ../../quickstart.rst:217
+#: ../../quickstart.rst:232
 msgid ""
 "``<name>`` in the route captures a value from the URL and passes it to "
 "the view function. These variable rules are explained below."
@@ -352,11 +356,11 @@ msgstr ""
 "``<name>`` در مسیر یک مقدار از URL گرفته و به تابع view ارسال می کند. این"
 " قوانین متغیر در زیر توضیح داده شده است."
 
-#: ../../quickstart.rst:222
+#: ../../quickstart.rst:237
 msgid "Routing"
 msgstr "مسیریابی"
 
-#: ../../quickstart.rst:224
+#: ../../quickstart.rst:239
 msgid ""
 "Modern web applications use meaningful URLs to help users. Users are more"
 " likely to like a page and come back if the page uses a meaningful URL "
@@ -367,7 +371,7 @@ msgstr ""
 " استفاده کند، کاربران می‌توانند URL را به خاطر بسپارند و مستقیماً از صفحه"
 " بازدید کنند."
 
-#: ../../quickstart.rst:228
+#: ../../quickstart.rst:243
 msgid ""
 "Use the :meth:`~flask.Flask.route` decorator to bind a function to a URL."
 " ::"
@@ -375,7 +379,7 @@ msgstr ""
 "از دکوراتور :meth:`~flask.Flask.route` برای اتصال یک تابع به URL استفاده "
 "کنید. ::"
 
-#: ../../quickstart.rst:238
+#: ../../quickstart.rst:253
 msgid ""
 "You can do more! You can make parts of the URL dynamic and attach "
 "multiple rules to a function."
@@ -383,11 +387,11 @@ msgstr ""
 "شما میتوانید کار های زیادی را انجام دهید! میتوانید بخشی از URL را پویا "
 "کنید و چند قانون به تابع اضافه کنید."
 
-#: ../../quickstart.rst:242
+#: ../../quickstart.rst:257
 msgid "Variable Rules"
 msgstr "قوانین متغیر"
 
-#: ../../quickstart.rst:244
+#: ../../quickstart.rst:259
 msgid ""
 "You can add variable sections to a URL by marking sections with "
 "``<variable_name>``. Your function then receives the ``<variable_name>`` "
@@ -400,59 +404,59 @@ msgstr ""
 "برای تعیین نوع آرگومان مانند ``<converter:variable_name>`` استفاده کنید. "
 "::"
 
-#: ../../quickstart.rst:266
+#: ../../quickstart.rst:281
 msgid "Converter types:"
 msgstr "انواع مبدل:"
 
-#: ../../quickstart.rst:269
+#: ../../quickstart.rst:284
 msgid "``string``"
 msgstr "``رشته``"
 
-#: ../../quickstart.rst:269
+#: ../../quickstart.rst:284
 msgid "(default) accepts any text without a slash"
 msgstr "به صورت پیشفرض هر متنی را بدون اسلش می پذیرد"
 
-#: ../../quickstart.rst:270
+#: ../../quickstart.rst:285
 msgid "``int``"
 msgstr "``عدد صحیح``"
 
-#: ../../quickstart.rst:270
+#: ../../quickstart.rst:285
 msgid "accepts positive integers"
 msgstr "اعداد صحیح مثبت را می پذیرد"
 
-#: ../../quickstart.rst:271
+#: ../../quickstart.rst:286
 msgid "``float``"
 msgstr "``عدد اعشاری``"
 
-#: ../../quickstart.rst:271
+#: ../../quickstart.rst:286
 msgid "accepts positive floating point values"
 msgstr "تمام اعداد اعشاری مثبت را می پذیرد"
 
-#: ../../quickstart.rst:272
+#: ../../quickstart.rst:287
 msgid "``path``"
 msgstr "``مسیر``"
 
-#: ../../quickstart.rst:272
+#: ../../quickstart.rst:287
 msgid "like ``string`` but also accepts slashes"
 msgstr "مانند ``رشته`` است ولی اسلش را هم می پذیرد"
 
-#: ../../quickstart.rst:273
+#: ../../quickstart.rst:288
 msgid "``uuid``"
 msgstr "``uuid``"
 
-#: ../../quickstart.rst:273
+#: ../../quickstart.rst:288
 msgid "accepts UUID strings"
 msgstr "رشته های UUID را می پذیرد"
 
-#: ../../quickstart.rst:278
+#: ../../quickstart.rst:293
 msgid "Unique URLs / Redirection Behavior"
 msgstr "URL های منحصر به فرد / رفتار تغییر مسیر"
 
-#: ../../quickstart.rst:280
+#: ../../quickstart.rst:295
 msgid "The following two rules differ in their use of a trailing slash. ::"
 msgstr "دو قانون زیر در استفاده از اسلش انتهایی متفاوت است. ::"
 
-#: ../../quickstart.rst:290
+#: ../../quickstart.rst:305
 msgid ""
 "The canonical URL for the ``projects`` endpoint has a trailing slash. "
 "It's similar to a folder in a file system. If you access the URL without "
@@ -464,7 +468,7 @@ msgstr ""
 "(``/projects``) به URL دسترسی داشته باشید، Flask شما را به URL متعارف با "
 "اسلش انتهایی (``/projects/``) هدایت می کند."
 
-#: ../../quickstart.rst:295
+#: ../../quickstart.rst:310
 msgid ""
 "The canonical URL for the ``about`` endpoint does not have a trailing "
 "slash. It's similar to the pathname of a file. Accessing the URL with a "
@@ -474,15 +478,15 @@ msgid ""
 msgstr ""
 "URL متعارف برای نقطه پایانی ``about`` دارای یک اسلش انتهایی نیست. این "
 "شبیه به نام مسیر یک فایل است. دسترسی به URL با اسلش انتهایی (``/about/``)"
-" باعث ایجاد خطای ۴۰۴ «یافت نشد» می شود. این کمک می کند تا URL ها برای "
-"این منابع منحصر به فرد باقی بمانند، که به موتورهای جستجو کمک می کند تا از"
-" نمایه سازی یک صفحه دو بار جلوگیری کنند."
+" باعث ایجاد خطای ۴۰۴ «یافت نشد» می شود. این کمک می کند تا URL ها برای این"
+" منابع منحصر به فرد باقی بمانند، که به موتورهای جستجو کمک می کند تا از "
+"نمایه سازی یک صفحه دو بار جلوگیری کنند."
 
-#: ../../quickstart.rst:305
+#: ../../quickstart.rst:320
 msgid "URL Building"
 msgstr "ساخت URL"
 
-#: ../../quickstart.rst:307
+#: ../../quickstart.rst:322
 msgid ""
 "To build a URL to a specific function, use the :func:`~flask.url_for` "
 "function. It accepts the name of the function as its first argument and "
@@ -495,7 +499,7 @@ msgstr ""
 "که هر کدام مربوط به بخش متغیری از قانون URL است را می پذیرد. قسمت های "
 "متغیر ناشناخته به عنوان پارامترهای پرس و جو به URL اضافه می شوند."
 
-#: ../../quickstart.rst:312
+#: ../../quickstart.rst:327
 msgid ""
 "Why would you want to build URLs using the URL reversing function "
 ":func:`~flask.url_for` instead of hard-coding them into your templates?"
@@ -503,11 +507,11 @@ msgstr ""
 "چرا می خواهید URL ها را با استفاده از تابع :func:`~flask.url_for` بسازید "
 "به جای آنکه کد ها را در قالب های خود بنویسید؟"
 
-#: ../../quickstart.rst:315
+#: ../../quickstart.rst:330
 msgid "Reversing is often more descriptive than hard-coding the URLs."
 msgstr "معکوس کردن اغلب توصیفی از کدگذاری سخت URL ها است."
 
-#: ../../quickstart.rst:316
+#: ../../quickstart.rst:331
 msgid ""
 "You can change your URLs in one go instead of needing to remember to "
 "manually change hard-coded URLs."
@@ -515,11 +519,11 @@ msgstr ""
 "می‌توانید به‌جای اینکه به یاد داشته باشید که URL‌های کدگذاری‌شده را "
 "به‌صورت دستی تغییر دهید، آدرس‌های اینترنتی خود را یکباره تغییر دهید."
 
-#: ../../quickstart.rst:318
+#: ../../quickstart.rst:333
 msgid "URL building handles escaping of special characters transparently."
 msgstr "ساختمان فرار URL از کاراکترهای خاص را به طور شفاف کنترل می کند."
 
-#: ../../quickstart.rst:319
+#: ../../quickstart.rst:334
 msgid ""
 "The generated paths are always absolute, avoiding unexpected behavior of "
 "relative paths in browsers."
@@ -527,7 +531,7 @@ msgstr ""
 "مسیرهای تولید شده همیشه مطلق هستند و از رفتار غیرمنتظره مسیرهای وابسته در"
 " مرورگرها جلوگیری می کنند."
 
-#: ../../quickstart.rst:321
+#: ../../quickstart.rst:336
 msgid ""
 "If your application is placed outside the URL root, for example, in "
 "``/myapplication`` instead of ``/``, :func:`~flask.url_for` properly "
@@ -537,7 +541,7 @@ msgstr ""
 "``/`` در ``/myapplication`` باشد، :func:`~flask.url_for` به درستی آن را "
 "برای شما مدیریت می کند."
 
-#: ../../quickstart.rst:325
+#: ../../quickstart.rst:340
 msgid ""
 "For example, here we use the :meth:`~flask.Flask.test_request_context` "
 "method to try out :func:`~flask.url_for`. "
@@ -551,11 +555,11 @@ msgstr ""
 "رفتار کند که انگار در حال رسیدگی به یک درخواست است حتی زمانی که ما از "
 "پوسته پایتون استفاده می کنیم. به :ref:`context-locals` مراجعه کنید."
 
-#: ../../quickstart.rst:361
+#: ../../quickstart.rst:376
 msgid "HTTP Methods"
 msgstr "متود های HTTP"
 
-#: ../../quickstart.rst:363
+#: ../../quickstart.rst:378
 msgid ""
 "Web applications use different HTTP methods when accessing URLs. You "
 "should familiarize yourself with the HTTP methods as you work with Flask."
@@ -569,7 +573,7 @@ msgstr ""
 " آرگومان``methods`` دکوراتور :meth:`~flask.Flask.route` برای مدیریت "
 "روش‌های مختلف HTTP استفاده کنید. ::"
 
-#: ../../quickstart.rst:378
+#: ../../quickstart.rst:393
 msgid ""
 "If ``GET`` is present, Flask automatically adds support for the ``HEAD`` "
 "method and handles ``HEAD`` requests according to the `HTTP RFC`_. "
@@ -579,11 +583,11 @@ msgstr ""
 " می‌کند و درخواست‌های «HEAD» را مطابق با `HTTP RFC`_ مدیریت می‌کند. به "
 "همین ترتیب، ``OPTIONS`` به طور خودکار برای شما پیاده سازی می شود."
 
-#: ../../quickstart.rst:385
+#: ../../quickstart.rst:400
 msgid "Static Files"
 msgstr "فایل های استاتیک"
 
-#: ../../quickstart.rst:387
+#: ../../quickstart.rst:402
 msgid ""
 "Dynamic web applications also need static files.  That's usually where "
 "the CSS and JavaScript files are coming from.  Ideally your web server is"
@@ -600,7 +604,7 @@ msgstr ""
 "``/static`` در برنامه در دسترس خواهد بود."
 
 # endpoint: نقطه پایانی
-#: ../../quickstart.rst:393
+#: ../../quickstart.rst:408
 msgid ""
 "To generate URLs for static files, use the special ``'static'`` endpoint "
 "name::"
@@ -608,15 +612,15 @@ msgstr ""
 "برای ایجاد URL برای فایل‌های استاتیک، از نام نقطه پایانی ویژه "
 "``'static'`` استفاده کنید::"
 
-#: ../../quickstart.rst:397
+#: ../../quickstart.rst:412
 msgid "The file has to be stored on the filesystem as :file:`static/style.css`."
 msgstr "فایل باید در سیستم فایل به صورت :file:`static/style.css` ذخیره شود."
 
-#: ../../quickstart.rst:400
+#: ../../quickstart.rst:415
 msgid "Rendering Templates"
 msgstr "الگوهای رندرینگ"
 
-#: ../../quickstart.rst:402
+#: ../../quickstart.rst:417
 msgid ""
 "Generating HTML from within Python is not fun, and actually pretty "
 "cumbersome because you have to do the HTML escaping on your own to keep "
@@ -630,7 +634,7 @@ msgstr ""
 "<https://palletsprojects.com/p/jinja/>`_ را به طور خودکار برای شما "
 "پیکربندی می کند."
 
-#: ../../quickstart.rst:407
+#: ../../quickstart.rst:422
 msgid ""
 "To render a template you can use the :func:`~flask.render_template` "
 "method.  All you have to do is provide the name of the template and the "
@@ -642,7 +646,7 @@ msgstr ""
 " می خواهید به عنوان آرگومان های کلمه کلیدی به موتور قالب منتقل کنید، "
 "ارائه دهید. در اینجا یک مثال ساده از نحوه ارائه یک الگو آورده شده است:"
 
-#: ../../quickstart.rst:419
+#: ../../quickstart.rst:434
 msgid ""
 "Flask will look for templates in the :file:`templates` folder.  So if "
 "your application is a module, this folder is next to that module, if it's"
@@ -654,15 +658,15 @@ msgstr ""
 "می‌شوند. البته میتوان آنها را تغییر داد ولی معمولا به خصوص در هنگام شروع "
 "مجبور نیستید که آنها را تغییر دهید:"
 
-#: ../../quickstart.rst:423
+#: ../../quickstart.rst:438
 msgid "**Case 1**: a module::"
 msgstr "**مورد ۱**: یک ماژول::"
 
-#: ../../quickstart.rst:429
+#: ../../quickstart.rst:444
 msgid "**Case 2**: a package::"
 msgstr "**مورد ۲**: یک ماژول::"
 
-#: ../../quickstart.rst:436
+#: ../../quickstart.rst:451
 msgid ""
 "For templates you can use the full power of Jinja2 templates.  Head over "
 "to the official `Jinja2 Template Documentation "
@@ -672,11 +676,11 @@ msgstr ""
 "اطلاعات بیشتر به `مستندات الگوی jinja2 "
 "<https://jinja.palletsprojects.com/templates/>`_ مراجعه کنید."
 
-#: ../../quickstart.rst:440
+#: ../../quickstart.rst:455
 msgid "Here is an example template:"
 msgstr "اینجا یک مثال برای قالب است:"
 
-#: ../../quickstart.rst:452
+#: ../../quickstart.rst:467
 msgid ""
 "Inside templates you also have access to the :data:`~flask.Flask.config`,"
 " :class:`~flask.request`, :class:`~flask.session` and :class:`~flask.g` "
@@ -688,7 +692,7 @@ msgstr ""
 "  و همچنین به توابع :func:`~flask.url_for`  و "
 ":func:`~flask.get_flashed_messages` دسترسی دارید."
 
-#: ../../quickstart.rst:456
+#: ../../quickstart.rst:471
 msgid ""
 "Templates are especially useful if inheritance is used.  If you want to "
 "know how that works, see :doc:`patterns/templateinheritance`. Basically "
@@ -701,7 +705,7 @@ msgstr ""
 " ناوبری و پاورقی) ممکن می‌سازد."
 
 # خنثی:escape
-#: ../../quickstart.rst:461
+#: ../../quickstart.rst:476
 msgid ""
 "Automatic escaping is enabled, so if ``name`` contains HTML it will be "
 "escaped automatically.  If you can trust a variable and you know that it "
@@ -717,7 +721,7 @@ msgstr ""
 "آن را به عنوان امن علامت‌گذاری کنید. یا با استفاده از فیلتر ``|safe`` در "
 "الگو اینکار را انجام دهید. برای نمونه های بیشتر به مستندات Jinja 2 بروید."
 
-#: ../../quickstart.rst:468
+#: ../../quickstart.rst:483
 msgid ""
 "Here is a basic introduction to how the :class:`~markupsafe.Markup` class"
 " works::"
@@ -726,7 +730,7 @@ msgstr ""
 " آورده شده است::"
 
 # فرارخودکار:autoescaping
-#: ../../quickstart.rst:480
+#: ../../quickstart.rst:495
 msgid ""
 "Autoescaping is no longer enabled for all templates.  The following "
 "extensions for templates trigger autoescaping: ``.html``, ``.htm``, "
@@ -737,7 +741,7 @@ msgstr ""
 "زیر انجام میشود: : ``.html``, ``.htm``, ``.xml``, ``.xhtml``. الگوهای "
 "بارگذاری شده از یک رشته، فرار خودکار را غیر فعال خواهد کرد."
 
-#: ../../quickstart.rst:485
+#: ../../quickstart.rst:500
 msgid ""
 "Unsure what that :class:`~flask.g` object is? It's something in which you"
 " can store information for your own needs. See the documentation for "
@@ -747,11 +751,11 @@ msgstr ""
 "توانید اطلاعات را برای نیازهای خود ذخیره کنید. برای اطلاعات بیشتر به "
 "مستندات :class:`flask.g` و :doc:`patterns/sqlite3` مراجعه کنید."
 
-#: ../../quickstart.rst:491
+#: ../../quickstart.rst:506
 msgid "Accessing Request Data"
 msgstr "دسترسی به داده های درخواستی"
 
-#: ../../quickstart.rst:493
+#: ../../quickstart.rst:508
 msgid ""
 "For web applications it's crucial to react to the data a client sends to "
 "the server.  In Flask this information is provided by the global "
@@ -765,15 +769,15 @@ msgstr ""
 "است تعجب کنید که چگونه آن شی می‌تواند سراسری باشد و چگونه فلاسک می‌تواند "
 "همچنان امن باشد. پاسخ متن محلی است:"
 
-#: ../../quickstart.rst:503
+#: ../../quickstart.rst:518
 msgid "Context Locals"
 msgstr "متن محلی"
 
-#: ../../quickstart.rst:505
+#: ../../quickstart.rst:520
 msgid "Insider Information"
 msgstr "اطلاعات داخلی"
 
-#: ../../quickstart.rst:507
+#: ../../quickstart.rst:522
 msgid ""
 "If you want to understand how that works and how you can implement tests "
 "with context locals, read this section, otherwise just skip it."
@@ -782,7 +786,7 @@ msgstr ""
 "با متن محلی پیاده‌سازی کنید، این بخش را بخوانید، در غیر این صورت فقط آن "
 "را نادیده بگیرید."
 
-#: ../../quickstart.rst:510
+#: ../../quickstart.rst:525
 msgid ""
 "Certain objects in Flask are global objects, but not of the usual kind. "
 "These objects are actually proxies to objects that are local to a "
@@ -793,7 +797,7 @@ msgstr ""
 "اشیاء پروکسی برای اشیایی هستند که محلی برای یک زمینه خاص هستند. اما درک "
 "آن بسیار آسان است."
 
-#: ../../quickstart.rst:514
+#: ../../quickstart.rst:529
 msgid ""
 "Imagine the context being the handling thread.  A request comes in and "
 "the web server decides to spawn a new thread (or something else, the "
@@ -812,7 +816,7 @@ msgstr ""
 "می کند. این کار را به روشی هوشمند انجام می دهد تا یک برنامه بتواند برنامه"
 " دیگری را بدون شکستن فراخوانی کند."
 
-#: ../../quickstart.rst:523
+#: ../../quickstart.rst:538
 msgid ""
 "So what does this mean to you?  Basically you can completely ignore that "
 "this is the case unless you are doing something like unit testing.  You "
@@ -833,7 +837,7 @@ msgstr ""
 "``with`` یک درخواست آزمایشی را متصل می کند تا بتوانید با آن تعامل داشته "
 "باشید. به عنوان مثال::"
 
-#: ../../quickstart.rst:540
+#: ../../quickstart.rst:555
 msgid ""
 "The other possibility is passing a whole WSGI environment to the "
 ":meth:`~flask.Flask.request_context` method::"
@@ -841,11 +845,11 @@ msgstr ""
 "امکان دیگر ارسال یک محیط WSGI کامل به متد "
 ":meth:`~flask.Flask.request_context` method::"
 
-#: ../../quickstart.rst:547
+#: ../../quickstart.rst:562
 msgid "The Request Object"
 msgstr "شی درخواست"
 
-#: ../../quickstart.rst:549
+#: ../../quickstart.rst:564
 msgid ""
 "The request object is documented in the API section and we will not cover"
 " it here in detail (see :class:`~flask.Request`). Here is a broad "
@@ -857,7 +861,7 @@ msgstr ""
 "از برخی از رایج ترین عملیات ارائه شده است. اول از همه، شما باید آن را از "
 "ماژول ``flask`` وارد کنید::"
 
-#: ../../quickstart.rst:556
+#: ../../quickstart.rst:571
 msgid ""
 "The current request method is available by using the "
 ":attr:`~flask.Request.method` attribute.  To access form data (data "
@@ -871,7 +875,7 @@ msgstr ""
 "استفاده کنید. در اینجا یک مثال کامل از دو ویژگی ذکر شده در بالا آورده شده"
 " است::"
 
-#: ../../quickstart.rst:575
+#: ../../quickstart.rst:590
 msgid ""
 "What happens if the key does not exist in the ``form`` attribute?  In "
 "that case a special :exc:`KeyError` is raised.  You can catch it like a "
@@ -885,7 +889,7 @@ msgstr ""
 "خطای درخواست بد HTTP 400 نشان داده می‌شود. بنابراین برای بسیاری از موقعیت"
 " ها، لازم نیست با آن مشکل کنار بیایید."
 
-#: ../../quickstart.rst:581
+#: ../../quickstart.rst:596
 msgid ""
 "To access parameters submitted in the URL (``?key=value``) you can use "
 "the :attr:`~flask.Request.args` attribute::"
@@ -893,7 +897,7 @@ msgstr ""
 "برای دسترسی به پارامترهای ارسال شده در URL (``?key=value``) می توانید از "
 "ویژگی :attr:`~flask.Request.args` استفاده کنید::"
 
-#: ../../quickstart.rst:586
+#: ../../quickstart.rst:601
 msgid ""
 "We recommend accessing URL parameters with `get` or by catching the "
 ":exc:`KeyError` because users might change the URL and presenting them a "
@@ -903,7 +907,7 @@ msgstr ""
 "پیدا کنید، زیرا کاربر ممکن است URL را تغییر دهند و در این صورت یک صفحه "
 "درخواست 400 بد برای آن‌ها ارائه می دهد که کاربر پسند نیست."
 
-#: ../../quickstart.rst:590
+#: ../../quickstart.rst:605
 msgid ""
 "For a full list of methods and attributes of the request object, head "
 "over to the :class:`~flask.Request` documentation."
@@ -911,11 +915,11 @@ msgstr ""
 "برای فهرست کاملی از متدها و ویژگی های شی درخواست، مستندات "
 ":class:`~flask.Request` را بررسی کنید."
 
-#: ../../quickstart.rst:595
+#: ../../quickstart.rst:610
 msgid "File Uploads"
 msgstr "آپلود فایل"
 
-#: ../../quickstart.rst:597
+#: ../../quickstart.rst:612
 msgid ""
 "You can handle uploaded files with Flask easily.  Just make sure not to "
 "forget to set the ``enctype=\"multipart/form-data\"`` attribute on your "
@@ -925,7 +929,7 @@ msgstr ""
 " کنید که ``enctype=\"multipart/form-data\"`` را در فرم HTML خودتان قرار "
 "دهید مرورگر شما بدون این فایلی را انتقال نخواهد داد."
 
-#: ../../quickstart.rst:601
+#: ../../quickstart.rst:616
 msgid ""
 "Uploaded files are stored in memory or at a temporary location on the "
 "filesystem.  You can access those files by looking at the "
@@ -943,7 +947,7 @@ msgstr ""
 " :meth:`~werkzeug.datastructures.FileStorage.save` همیشه مجاز می‌کند تا "
 "شما این فایل را در فایل سیستم ها ذخیره کنید::"
 
-#: ../../quickstart.rst:619
+#: ../../quickstart.rst:634
 msgid ""
 "If you want to know how the file was named on the client before it was "
 "uploaded to your application, you can access the "
@@ -963,15 +967,15 @@ msgstr ""
 ":func:`~werkzeug.utils.secure_filename` که Werkzeug برای شما ارائه می "
 "کند، ارسال کنید::"
 
-#: ../../quickstart.rst:637
+#: ../../quickstart.rst:652
 msgid "For some better examples, see :doc:`patterns/fileuploads`."
 msgstr "برای مثال های بهتر :doc:`patterns/fileuploads` را ببینید."
 
-#: ../../quickstart.rst:640
+#: ../../quickstart.rst:655
 msgid "Cookies"
 msgstr "کوکی ها(Cookies)"
 
-#: ../../quickstart.rst:642
+#: ../../quickstart.rst:657
 msgid ""
 "To access cookies you can use the :attr:`~flask.Request.cookies` "
 "attribute.  To set cookies you can use the "
@@ -990,15 +994,15 @@ msgstr ""
 " مستقیماً از کوکی‌ها استفاده نکنید، بلکه از :ref:`sessions` در Flask "
 "استفاده کنید که امنیت را در بالای کوکی‌ها برای شما اضافه می‌کند."
 
-#: ../../quickstart.rst:650
+#: ../../quickstart.rst:665
 msgid "Reading cookies::"
 msgstr "خواندن کوکی ها::"
 
-#: ../../quickstart.rst:660
+#: ../../quickstart.rst:675
 msgid "Storing cookies::"
 msgstr "ذخیره کوکی ها::"
 
-#: ../../quickstart.rst:670
+#: ../../quickstart.rst:685
 msgid ""
 "Note that cookies are set on response objects.  Since you normally just "
 "return strings from the view functions Flask will convert them into "
@@ -1011,7 +1015,7 @@ msgstr ""
 " این کار را انجام دهید، می توانید از تابع :meth:`~flask.make_response` "
 "استفاده کنید و سپس آن را تغییر دهید."
 
-#: ../../quickstart.rst:675
+#: ../../quickstart.rst:690
 msgid ""
 "Sometimes you might want to set a cookie at a point where the response "
 "object does not exist yet.  This is possible by utilizing the "
@@ -1021,15 +1025,15 @@ msgstr ""
 "هنوز وجود ندارد. این کار با استفاده از الگوی "
 ":doc:`patterns/deferredcallbacks`  امکان پذیر است."
 
-#: ../../quickstart.rst:679
+#: ../../quickstart.rst:694
 msgid "For this also see :ref:`about-responses`."
 msgstr "برای این نیز به :ref:`about-responses` مراجعه کنید."
 
-#: ../../quickstart.rst:682
+#: ../../quickstart.rst:697
 msgid "Redirects and Errors"
 msgstr "تغییر مسیرها و خطاها(Redirects and Errors)"
 
-#: ../../quickstart.rst:684
+#: ../../quickstart.rst:699
 msgid ""
 "To redirect a user to another endpoint, use the :func:`~flask.redirect` "
 "function; to abort a request early with an error code, use the "
@@ -1039,7 +1043,7 @@ msgstr ""
 ":func:`~flask.redirect` استفاده کنید. برای لغو زودهنگام درخواست با کد "
 "خطا، از تابع :func:`~flask.abort` استفاده کنید::"
 
-#: ../../quickstart.rst:699
+#: ../../quickstart.rst:714
 msgid ""
 "This is a rather pointless example because a user will be redirected from"
 " the index to a page they cannot access (401 means access denied) but it "
@@ -1049,7 +1053,7 @@ msgstr ""
 "می‌شود که نمی‌تواند به آن دسترسی داشته باشد (۴۰۱ به معنای دسترسی ممنوع "
 "است) اما نشان می‌دهد که چگونه کار می‌کند."
 
-#: ../../quickstart.rst:703
+#: ../../quickstart.rst:718
 msgid ""
 "By default a black and white error page is shown for each error code.  If"
 " you want to customize the error page, you can use the "
@@ -1059,7 +1063,7 @@ msgstr ""
 "اگر می‌خواهید صفحه خطا را سفارشی کنید، می‌توانید از دکوراتور "
 ":meth:`~flask.Flask.errorhandler` استفاده کنید::"
 
-#: ../../quickstart.rst:713
+#: ../../quickstart.rst:728
 msgid ""
 "Note the ``404`` after the :func:`~flask.render_template` call.  This "
 "tells Flask that the status code of that page should be 404 which means "
@@ -1070,15 +1074,15 @@ msgstr ""
 " طور پیش فرض «۲۰۰» در نظر گرفته شده است که به این معنی است: همه چیز خوب "
 "پیش رفت."
 
-#: ../../quickstart.rst:717
+#: ../../quickstart.rst:732
 msgid "See :doc:`errorhandling` for more details."
 msgstr "برای جزئیات بیشتر به :doc:`errorhandling` مراجعه کنید."
 
-#: ../../quickstart.rst:722
+#: ../../quickstart.rst:737
 msgid "About Responses"
 msgstr "درباره پاسخ ها"
 
-#: ../../quickstart.rst:724
+#: ../../quickstart.rst:739
 msgid ""
 "The return value from a view function is automatically converted into a "
 "response object for you. If the return value is a string it's converted "
@@ -1095,7 +1099,7 @@ msgstr ""
 "می شود. منطقی که فلاسک برای تبدیل مقادیر برگشتی به اشیاء پاسخ اعمال می "
 "کند به شرح زیر است:"
 
-#: ../../quickstart.rst:732
+#: ../../quickstart.rst:747
 msgid ""
 "If a response object of the correct type is returned it's directly "
 "returned from the view."
@@ -1103,17 +1107,17 @@ msgstr ""
 "اگر یک شی پاسخ از نوع صحیح برگردانده شود، مستقیماً از نمای بازگردانده می "
 "شود."
 
-#: ../../quickstart.rst:734
+#: ../../quickstart.rst:749
 msgid ""
 "If it's a string, a response object is created with that data and the "
 "default parameters."
 msgstr "اگر یک رشته باشد، یک شی پاسخ با آن داده و پارامترهای پیش فرض ایجاد می شود."
 
-#: ../../quickstart.rst:736
+#: ../../quickstart.rst:751
 msgid "If it's a dict, a response object is created using ``jsonify``."
 msgstr "اگر یک دستور باشد، یک شی پاسخ با استفاده از ``jsonify`` ایجاد می شود."
 
-#: ../../quickstart.rst:737
+#: ../../quickstart.rst:752
 msgid ""
 "If a tuple is returned the items in the tuple can provide extra "
 "information. Such tuples have to be in the form ``(response, status)``, "
@@ -1127,7 +1131,7 @@ msgstr ""
 "وضعیت را لغو می کند و ``headers`` می تواند فهرست یا فرهنگ لغت مقادیر "
 "اضافی سرصفحه باشد."
 
-#: ../../quickstart.rst:743
+#: ../../quickstart.rst:758
 msgid ""
 "If none of that works, Flask will assume the return value is a valid WSGI"
 " application and convert that into a response object."
@@ -1135,7 +1139,7 @@ msgstr ""
 "اگر هیچ کدام از این موارد کار نکرد، فلاسک مقدار بازگشتی را یک برنامه "
 "معتبر WSGI فرض می‌کند و آن را به یک شی پاسخ تبدیل می‌کند."
 
-#: ../../quickstart.rst:746
+#: ../../quickstart.rst:761
 msgid ""
 "If you want to get hold of the resulting response object inside the view "
 "you can use the :func:`~flask.make_response` function."
@@ -1143,11 +1147,11 @@ msgstr ""
 "اگر می خواهید شی پاسخ به دست آمده را در داخل view نگه دارید، می توانید از"
 " تابع :func:`~flask.make_response` استفاده کنید."
 
-#: ../../quickstart.rst:749
+#: ../../quickstart.rst:764
 msgid "Imagine you have a view like this::"
 msgstr "تصور کنید نماای مثل این دارید::"
 
-#: ../../quickstart.rst:757
+#: ../../quickstart.rst:772
 msgid ""
 "You just need to wrap the return expression with "
 ":func:`~flask.make_response` and get the response object to modify it, "
@@ -1156,11 +1160,11 @@ msgstr ""
 "شما فقط باید عبارت return را با :func:`~flask.make_response` بگزارید و شی"
 " پاسخ را دریافت کنید تا آن را تغییر دهید، سپس آن را برگردانید::"
 
-#: ../../quickstart.rst:771
+#: ../../quickstart.rst:786
 msgid "APIs with JSON"
 msgstr "ای پی آی با جیسان(APIs with JSON)"
 
-#: ../../quickstart.rst:773
+#: ../../quickstart.rst:788
 msgid ""
 "A common response format when writing an API is JSON. It's easy to get "
 "started writing such an API with Flask. If you return a ``dict`` from a "
@@ -1170,7 +1174,7 @@ msgstr ""
 "جیسان با فلاسک آسان است. اگر یک ``dict``  را از یک نمای برگردانید، به یک "
 "پاسخ JSON تبدیل می‌شود."
 
-#: ../../quickstart.rst:788
+#: ../../quickstart.rst:803
 msgid ""
 "Depending on your API design, you may want to create JSON responses for "
 "types other than ``dict``. In that case, use the "
@@ -1184,11 +1188,11 @@ msgstr ""
 "برنامه های افزودنی انجمن فلاسک که از برنامه های پیچیده تری پشتیبانی می "
 "کنند نگاه کنید."
 
-#: ../../quickstart.rst:807
+#: ../../quickstart.rst:822
 msgid "Sessions"
 msgstr "جلسات(Sessions)"
 
-#: ../../quickstart.rst:809
+#: ../../quickstart.rst:824
 msgid ""
 "In addition to the request object there is also a second object called "
 ":class:`~flask.session` which allows you to store information specific to"
@@ -1204,7 +1208,7 @@ msgstr ""
 "محتویات کوکی شما نگاه کند اما آن را تغییر ندهد، مگر اینکه کلید مخفی مورد "
 "استفاده برای امضا را بداند."
 
-#: ../../quickstart.rst:816
+#: ../../quickstart.rst:831
 msgid ""
 "In order to use sessions you have to set a secret key.  Here is how "
 "sessions work::"
@@ -1212,11 +1216,11 @@ msgstr ""
 "برای استفاده از جلسات باید یک کلید مخفی تنظیم کنید. نحوه کار جلسات به شرح"
 " زیر است:"
 
-#: ../../quickstart.rst:848
+#: ../../quickstart.rst:863
 msgid "How to generate good secret keys"
 msgstr "چگونه کلید مخفی خوبی بسازیم"
 
-#: ../../quickstart.rst:850
+#: ../../quickstart.rst:865
 msgid ""
 "A secret key should be as random as possible. Your operating system has "
 "ways to generate pretty random data based on a cryptographic random "
@@ -1228,7 +1232,7 @@ msgstr ""
 "دستور زیر برای ایجاد سریع مقدار برای :attr:`Flask.secret_key` (یا "
 ":data:`SECRET_KEY`)::"
 
-#: ../../quickstart.rst:858
+#: ../../quickstart.rst:873
 msgid ""
 "A note on cookie-based sessions: Flask will take the values you put into "
 "the session object and serialize them into a cookie.  If you are finding "
@@ -1244,7 +1248,7 @@ msgstr ""
 "پاسخ‌های صفحه خود در مقایسه با اندازه پشتیبانی شده توسط مرورگرهای وب "
 "بررسی کنید."
 
-#: ../../quickstart.rst:864
+#: ../../quickstart.rst:879
 msgid ""
 "Besides the default client-side based sessions, if you want to handle "
 "sessions on the server-side instead, there are several Flask extensions "
@@ -1254,11 +1258,11 @@ msgstr ""
 "سرور مدیریت کنید، چندین افزونه فلاسک وجود دارد که از این امر پشتیبانی "
 "می‌کنند."
 
-#: ../../quickstart.rst:869
+#: ../../quickstart.rst:884
 msgid "Message Flashing"
 msgstr "فلش کردن پیام(Message Flashing)"
 
-#: ../../quickstart.rst:871
+#: ../../quickstart.rst:886
 msgid ""
 "Good applications and user interfaces are all about feedback.  If the "
 "user does not get enough feedback they will probably end up hating the "
@@ -1275,7 +1279,7 @@ msgstr ""
 "بعدی (و فقط درخواست بعدی) را فراهم می کند. این معمولاً با یک الگوی طرح "
 "بندی ترکیب می شود تا پیام را آشکار کند."
 
-#: ../../quickstart.rst:879
+#: ../../quickstart.rst:894
 msgid ""
 "To flash a message use the :func:`~flask.flash` method, to get hold of "
 "the messages you can use :func:`~flask.get_flashed_messages` which is "
@@ -1287,11 +1291,11 @@ msgstr ""
 "کنید که در قالب ها نیز موجود است. برای مثال کامل به "
 ":doc:`patterns/flashing` مراجعه کنید."
 
-#: ../../quickstart.rst:885
+#: ../../quickstart.rst:900
 msgid "Logging"
 msgstr "لاگ کردن(Logging)"
 
-#: ../../quickstart.rst:889
+#: ../../quickstart.rst:904
 msgid ""
 "Sometimes you might be in a situation where you deal with data that "
 "should be correct, but actually is not.  For example you may have some "
@@ -1309,7 +1313,7 @@ msgstr ""
 "در آن موقعیت اشکالی ندارد، اما گاهی اوقات این کار انجام نمی‌شود و کد باید"
 " به کار خود ادامه دهد."
 
-#: ../../quickstart.rst:897
+#: ../../quickstart.rst:912
 msgid ""
 "You may still want to log that something fishy happened.  This is where "
 "loggers come in handy.  As of Flask 0.3 a logger is preconfigured for you"
@@ -1319,11 +1323,11 @@ msgstr ""
 "لاگرها به کار می آیند. از Flask 0.3 یک لاگر از قبل برای استفاده شما "
 "پیکربندی شده است."
 
-#: ../../quickstart.rst:901
+#: ../../quickstart.rst:916
 msgid "Here are some example log calls::"
 msgstr "در اینجا چند نمونه از لاگ ها آورده شده است:"
 
-#: ../../quickstart.rst:907
+#: ../../quickstart.rst:922
 msgid ""
 "The attached :attr:`~flask.Flask.logger` is a standard logging "
 ":class:`~logging.Logger`, so head over to the official :mod:`logging` "
@@ -1333,15 +1337,15 @@ msgstr ""
 ":class:`~logging.Logger` است، بنابراین برای اطلاعات بیشتر به اسناد رسمی "
 ":mod:`logging` بروید."
 
-#: ../../quickstart.rst:911
+#: ../../quickstart.rst:926
 msgid "See :doc:`errorhandling`."
 msgstr "به :doc:`errorhandling` مراجعه کنید."
 
-#: ../../quickstart.rst:915
+#: ../../quickstart.rst:930
 msgid "Hooking in WSGI Middleware"
 msgstr "قلاب کردن در WSGI Middleware"
 
-#: ../../quickstart.rst:917
+#: ../../quickstart.rst:932
 msgid ""
 "To add WSGI middleware to your Flask application, wrap the application's "
 "``wsgi_app`` attribute. For example, to apply Werkzeug's "
@@ -1353,7 +1357,7 @@ msgstr ""
 ":class:`~werkzeug.middleware.proxy_fix.ProxyFix` برای اجرای پشت Nginx کد "
 "زیر را ببنید:"
 
-#: ../../quickstart.rst:927
+#: ../../quickstart.rst:942
 msgid ""
 "Wrapping ``app.wsgi_app`` instead of ``app`` means that ``app`` still "
 "points at your Flask application, not at the middleware, so you can "
@@ -1363,11 +1367,11 @@ msgstr ""
 "همچنان به برنامه فلاسک شما اشاره می‌کند، نه به میان‌افزار، بنابراین "
 "می‌توانید مستقیماً به استفاده و پیکربندی ``app`` ادامه دهید."
 
-#: ../../quickstart.rst:932
+#: ../../quickstart.rst:947
 msgid "Using Flask Extensions"
 msgstr "استفاده از افزونه های فلاسک"
 
-#: ../../quickstart.rst:934
+#: ../../quickstart.rst:949
 msgid ""
 "Extensions are packages that help you accomplish common tasks. For "
 "example, Flask-SQLAlchemy provides SQLAlchemy support that makes it "
@@ -1377,16 +1381,19 @@ msgstr ""
 "برای مثال Flask-SQLAlchemy پشتیبانی از  SQLAlchemy راه تهیه میکند و کار "
 "با آن در فلاسک را آسانتر میسازد."
 
-#: ../../quickstart.rst:938
+#: ../../quickstart.rst:953
 msgid "For more on Flask extensions, see :doc:`extensions`."
 msgstr "برای افزونه های بیشتر فلاسک :doc:`extensions` را ببنید."
 
-#: ../../quickstart.rst:941
+#: ../../quickstart.rst:956
 msgid "Deploying to a Web Server"
 msgstr "استقرار کردن به یک وب سرور"
 
-#: ../../quickstart.rst:943
+#: ../../quickstart.rst:958
 msgid "Ready to deploy your new Flask app? See :doc:`deploying/index`."
 msgstr ""
 "آیا برای استقرار برنامه فلاسک جدیدتان آماده اید؟  :doc:`deploying/index` "
 "با ببنید."
+
+#~ msgid "اشکال زدای تعاملی در عمل."
+#~ msgstr ""

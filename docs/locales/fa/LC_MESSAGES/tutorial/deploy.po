@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-01-16 15:03+0330\n"
 "PO-Revision-Date: 2021-12-30 20:55+0330\n"
+"Last-Translator: Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
-"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
-"Language: fa\n"
-"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/deploy.rst:2
 msgid "Deploy to Production"
@@ -30,15 +29,15 @@ msgid ""
 "distribution file and install it, but won't go into specifics about what "
 "server or software to use. You can set up a new environment on your "
 "development computer to try out the instructions below, but probably "
-"shouldn't use it for hosting a real public application. See :doc:`/"
-"deploying/index` for a list of many different ways to host your "
+"shouldn't use it for hosting a real public application. See "
+":doc:`/deploying/index` for a list of many different ways to host your "
 "application."
 msgstr ""
 "این قسمت از آموزش فرض می کند که شما سروری دارید که می خواهید برنامه خود "
-"را در آن مستقر کنید. این یک نمای کلی از نحوه ایجاد فایل توزیع و نصب آن "
-"را ارائه می دهد، اما به جزئیات در مورد سرور یا نرم افزار مورد استفاده "
-"نمی پردازد. می‌توانید یک محیط جدید در رایانه توسعه‌دهنده خود راه‌اندازی "
-"کنید تا دستورالعمل‌های زیر را امتحان کنید، اما احتمالاً نباید از آن برای "
+"را در آن مستقر کنید. این یک نمای کلی از نحوه ایجاد فایل توزیع و نصب آن را"
+" ارائه می دهد، اما به جزئیات در مورد سرور یا نرم افزار مورد استفاده نمی "
+"پردازد. می‌توانید یک محیط جدید در رایانه توسعه‌دهنده خود راه‌اندازی کنید "
+"تا دستورالعمل‌های زیر را امتحان کنید، اما احتمالاً نباید از آن برای "
 "میزبانی یک برنامه عمومی واقعی استفاده کنید. برای فهرستی از روش‌های مختلف "
 "میزبانی برنامه، به :doc:`/deploying/index` مراجعه کنید."
 
@@ -54,8 +53,8 @@ msgid ""
 "is installed first:"
 msgstr ""
 "هنگامی که می خواهید برنامه خود را در جای دیگری مستقر کنید، یک فایل توزیع "
-"می سازید. استاندارد فعلی برای توزیع پایتون فرمت *wheel* با پسوند ``."
-"whl`` است. ابتدا مطمئن شوید که کتابخانه wheel نصب شده باشد:"
+"می سازید. استاندارد فعلی برای توزیع پایتون فرمت *wheel* با پسوند ``.whl``"
+" است. ابتدا مطمئن شوید که کتابخانه wheel نصب شده باشد:"
 
 #: ../../tutorial/deploy.rst:26
 msgid ""
@@ -68,13 +67,13 @@ msgstr ""
 
 #: ../../tutorial/deploy.rst:34
 msgid ""
-"You can find the file in ``dist/flaskr-1.0.0-py3-none-any.whl``. The "
-"file name is in the format of {project name}-{version}-{python tag} -"
-"{abi tag}-{platform tag}."
+"You can find the file in ``dist/flaskr-1.0.0-py3-none-any.whl``. The file"
+" name is in the format of {project name}-{version}-{python tag} -{abi "
+"tag}-{platform tag}."
 msgstr ""
 "می توانید فایل را در ``dist/flaskr-1.0.0-py3-none-any.whl`` پیدا کنید. "
-"نام فایل در قالب {project name}-{version}-{python tag} -{abi tag}-"
-"{platform tag} می باشد."
+"نام فایل در قالب {project name}-{version}-{python tag} -{abi "
+"tag}-{platform tag} می باشد."
 
 #: ../../tutorial/deploy.rst:38
 msgid ""
@@ -101,45 +100,48 @@ msgid "Bash"
 msgstr "بش(Bash)"
 
 #: ../../tutorial/deploy.rst:60
+msgid "Fish"
+msgstr ""
+
+#: ../../tutorial/deploy.rst:67
 msgid "CMD"
 msgstr "سی ام دی(CMD)"
 
-#: ../../tutorial/deploy.rst:67
+#: ../../tutorial/deploy.rst:74
 msgid "Powershell"
 msgstr "پاورشل(Powershell)"
 
-#: ../../tutorial/deploy.rst:74
+#: ../../tutorial/deploy.rst:81
 msgid ""
 "When Flask detects that it's installed (not in editable mode), it uses a "
-"different directory for the instance folder. You can find it at ``venv/"
-"var/flaskr-instance`` instead."
+"different directory for the instance folder. You can find it at "
+"``venv/var/flaskr-instance`` instead."
 msgstr ""
 "هنگامی که فلاسک تشخیص می دهد که نصب شده است (در حالت قابل ویرایش نیست)، "
-"از دایرکتوری دیگری برای پوشه نمونه استفاده می کند. در عوض می‌توانید آن را "
-"در ``venv/var/flaskr-instance``  پیدا کنید."
+"از دایرکتوری دیگری برای پوشه نمونه استفاده می کند. در عوض می‌توانید آن را"
+" در ``venv/var/flaskr-instance``  پیدا کنید."
 
-#: ../../tutorial/deploy.rst:80
+#: ../../tutorial/deploy.rst:87
 msgid "Configure the Secret Key"
 msgstr "پیکربندی کلید مخفی(Secret Key)"
 
-#: ../../tutorial/deploy.rst:82
+#: ../../tutorial/deploy.rst:89
 msgid ""
-"In the beginning of the tutorial that you gave a default value for :data:"
-"`SECRET_KEY`. This should be changed to some random bytes in production. "
-"Otherwise, attackers could use the public ``'dev'`` key to modify the "
-"session cookie, or anything else that uses the secret key."
+"In the beginning of the tutorial that you gave a default value for "
+":data:`SECRET_KEY`. This should be changed to some random bytes in "
+"production. Otherwise, attackers could use the public ``'dev'`` key to "
+"modify the session cookie, or anything else that uses the secret key."
 msgstr ""
 "در ابتدای آموزش که یک مقدار پیش فرض برای :data:`SECRET_KEY` دادید. این "
 "باید به چند بایت تصادفی در تولید تغییر کند. در غیر این صورت، مهاجمان "
 "می‌توانند از کلید عمومی  ``'dev'`` برای اصلاح کوکی جلسه یا هر چیز دیگری "
 "که از کلید مخفی استفاده می‌کند استفاده کنند."
 
-#: ../../tutorial/deploy.rst:87
+#: ../../tutorial/deploy.rst:94
 msgid "You can use the following command to output a random secret key:"
-msgstr ""
-"برای دریافت یک کلید مخفی تصادفی می توانید از دستور زیر استفاده کنید:"
+msgstr "برای دریافت یک کلید مخفی تصادفی می توانید از دستور زیر استفاده کنید:"
 
-#: ../../tutorial/deploy.rst:95
+#: ../../tutorial/deploy.rst:102
 msgid ""
 "Create the ``config.py`` file in the instance folder, which the factory "
 "will read from if it exists. Copy the generated value into it."
@@ -147,11 +149,11 @@ msgstr ""
 "فایل ``config.py`` را در پوشه نمونه ایجاد کنید که در صورت وجود، کارخانه "
 "از آن می خواند. مقدار تولید شده را در آن کپی کنید."
 
-#: ../../tutorial/deploy.rst:98
+#: ../../tutorial/deploy.rst:105
 msgid "``venv/var/flaskr-instance/config.py``"
 msgstr "``venv/var/flaskr-instance/config.py``"
 
-#: ../../tutorial/deploy.rst:103
+#: ../../tutorial/deploy.rst:110
 msgid ""
 "You can also set any other necessary configuration here, although "
 "``SECRET_KEY`` is the only one needed for Flaskr."
@@ -159,22 +161,22 @@ msgstr ""
 "همچنین می‌توانید هر پیکربندی ضروری دیگری را در اینجا تنظیم کنید، اگرچه "
 "``SECRET_KEY`` تنها مورد نیاز برای Flaskr است."
 
-#: ../../tutorial/deploy.rst:108
+#: ../../tutorial/deploy.rst:115
 msgid "Run with a Production Server"
 msgstr "اجرای یک سرور کار(Production)"
 
-#: ../../tutorial/deploy.rst:110
+#: ../../tutorial/deploy.rst:117
 msgid ""
 "When running publicly rather than in development, you should not use the "
 "built-in development server (``flask run``). The development server is "
 "provided by Werkzeug for convenience, but is not designed to be "
 "particularly efficient, stable, or secure."
 msgstr ""
-"هنگام اجرای عمومی به جای توسعه، نباید از سرور توسعه داخلی استفاده کنید "
-"( ``flask run`` ). سرور توسعه توسط Werkzeug برای راحتی ارائه شده است، "
-"اما به گونه ای طراحی نشده است که کارآمد، پایدار یا ایمن باشد."
+"هنگام اجرای عمومی به جای توسعه، نباید از سرور توسعه داخلی استفاده کنید ( "
+"``flask run`` ). سرور توسعه توسط Werkzeug برای راحتی ارائه شده است، اما "
+"به گونه ای طراحی نشده است که کارآمد، پایدار یا ایمن باشد."
 
-#: ../../tutorial/deploy.rst:115
+#: ../../tutorial/deploy.rst:122
 msgid ""
 "Instead, use a production WSGI server. For example, to use `Waitress`_, "
 "first install it in the virtual environment:"
@@ -182,7 +184,7 @@ msgstr ""
 "در عوض، از سرور WSGI تولیدی استفاده کنید. به عنوان مثال، برای استفاده از "
 "`Waitress`_, ، ابتدا آن را در محیط مجازی نصب کنید:"
 
-#: ../../tutorial/deploy.rst:122
+#: ../../tutorial/deploy.rst:129
 msgid ""
 "You need to tell Waitress about your application, but it doesn't use "
 "``FLASK_APP`` like ``flask run`` does. You need to tell it to import and "
@@ -192,7 +194,7 @@ msgstr ""
 "مانند ``flask run`` استفاده نمی کند. شما باید به آن بگویید وارد کند و از "
 "کارخانه برنامه استفاده کند تا یک شی برنامه را دریافت کند."
 
-#: ../../tutorial/deploy.rst:132
+#: ../../tutorial/deploy.rst:139
 msgid ""
 "See :doc:`/deploying/index` for a list of many different ways to host "
 "your application. Waitress is just an example, chosen for the tutorial "
@@ -204,6 +206,6 @@ msgstr ""
 "از ویندوز و لینوکس پشتیبانی می کند. سرورهای WSGI و گزینه های استقرار "
 "بیشتری وجود دارد که می توانید برای پروژه خود انتخاب کنید."
 
-#: ../../tutorial/deploy.rst:139
+#: ../../tutorial/deploy.rst:146
 msgid "Continue to :doc:`next`."
 msgstr "با :doc:`next` ادامه دهید."

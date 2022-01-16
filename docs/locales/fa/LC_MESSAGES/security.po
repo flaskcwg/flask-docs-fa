@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-01-16 15:03+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -269,43 +269,28 @@ msgstr ""
 msgid "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options"
 msgstr ""
 
-#: ../../security.rst:177
-msgid "X-XSS-Protection"
-msgstr ""
-
 #: ../../security.rst:179
-msgid ""
-"The browser will try to prevent reflected XSS attacks by not loading the "
-"page if the request contains something that looks like JavaScript and the"
-" response contains the same data. ::"
-msgstr ""
-
-#: ../../security.rst:185
-msgid "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection"
-msgstr ""
-
-#: ../../security.rst:191
 msgid "Set-Cookie options"
 msgstr ""
 
-#: ../../security.rst:193
+#: ../../security.rst:181
 msgid ""
 "These options can be added to a ``Set-Cookie`` header to improve their "
 "security. Flask has configuration options to set these on the session "
 "cookie. They can be set on other cookies too."
 msgstr ""
 
-#: ../../security.rst:197
+#: ../../security.rst:185
 msgid "``Secure`` limits cookies to HTTPS traffic only."
 msgstr ""
 
-#: ../../security.rst:198
+#: ../../security.rst:186
 msgid ""
 "``HttpOnly`` protects the contents of cookies from being read with "
 "JavaScript."
 msgstr ""
 
-#: ../../security.rst:200
+#: ../../security.rst:188
 msgid ""
 "``SameSite`` restricts how cookies are sent with requests from external "
 "sites. Can be set to ``'Lax'`` (recommended) or ``'Strict'``. ``Lax`` "
@@ -314,7 +299,7 @@ msgid ""
 "external requests, including following regular links."
 msgstr ""
 
-#: ../../security.rst:216
+#: ../../security.rst:204
 msgid ""
 "Specifying ``Expires`` or ``Max-Age`` options, will remove the cookie "
 "after the given time, or the current time plus the age, respectively. If "
@@ -322,7 +307,7 @@ msgid ""
 "closed. ::"
 msgstr ""
 
-#: ../../security.rst:223
+#: ../../security.rst:211
 msgid ""
 "For the session cookie, if :attr:`session.permanent "
 "<flask.session.permanent>` is set, then "
@@ -332,66 +317,66 @@ msgid ""
 "replay attacks, where intercepted cookies can be sent at a later time. ::"
 msgstr ""
 
-#: ../../security.rst:241
+#: ../../security.rst:229
 msgid ""
 "Use :class:`itsdangerous.TimedSerializer` to sign and validate other "
 "cookie values (or any values that need secure signatures)."
 msgstr ""
 
-#: ../../security.rst:244
+#: ../../security.rst:232
 msgid "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies"
 msgstr ""
 
-#: ../../security.rst:245
+#: ../../security.rst:233
 msgid "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie"
 msgstr ""
 
-#: ../../security.rst:251
+#: ../../security.rst:239
 msgid "HTTP Public Key Pinning (HPKP)"
 msgstr ""
 
-#: ../../security.rst:253
+#: ../../security.rst:241
 msgid ""
 "This tells the browser to authenticate with the server using only the "
 "specific certificate key to prevent MITM attacks."
 msgstr ""
 
-#: ../../security.rst:257
+#: ../../security.rst:245
 msgid ""
 "Be careful when enabling this, as it is very difficult to undo if you set"
 " up or upgrade your key incorrectly."
 msgstr ""
 
-#: ../../security.rst:260
+#: ../../security.rst:248
 msgid "https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning"
 msgstr ""
 
-#: ../../security.rst:264
+#: ../../security.rst:252
 msgid "Copy/Paste to Terminal"
 msgstr ""
 
-#: ../../security.rst:266
+#: ../../security.rst:254
 msgid ""
 "Hidden characters such as the backspace character (``\\b``, ``^H``) can "
 "cause text to render differently in HTML than how it is interpreted if "
 "`pasted into a terminal <https://security.stackexchange.com/q/39118>`__."
 msgstr ""
 
-#: ../../security.rst:270
+#: ../../security.rst:258
 msgid ""
 "For example, ``import y\\bose\\bm\\bi\\bt\\be\\b`` renders as ``import "
 "yosemite`` in HTML, but the backspaces are applied when pasted into a "
 "terminal, and it becomes ``import os``."
 msgstr ""
 
-#: ../../security.rst:274
+#: ../../security.rst:262
 msgid ""
 "If you expect users to copy and paste untrusted code from your site, such"
 " as from comments posted by users on a technical blog, consider applying "
 "extra filtering, such as replacing all ``\\b`` characters."
 msgstr ""
 
-#: ../../security.rst:282
+#: ../../security.rst:270
 msgid ""
 "Most modern terminals will warn about and remove hidden characters when "
 "pasting, so this isn't strictly necessary. It's also possible to craft "
@@ -399,3 +384,20 @@ msgid ""
 "Depending on your site's use case, it may be good to show a warning about"
 " copying code in general."
 msgstr ""
+
+#~ msgid "X-XSS-Protection"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The browser will try to prevent "
+#~ "reflected XSS attacks by not loading "
+#~ "the page if the request contains "
+#~ "something that looks like JavaScript and"
+#~ " the response contains the same data."
+#~ " ::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X"
+#~ "-XSS-Protection"
+#~ msgstr ""
