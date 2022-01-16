@@ -1,159 +1,193 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-16 15:03+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-01-16 21:33+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../patterns/packages.rst:2
 msgid "Large Applications as Packages"
-msgstr ""
+msgstr "برنامه های بزرگ به عنوان بسته"
 
 #: ../../patterns/packages.rst:4
 msgid "Imagine a simple flask application structure that looks like this::"
-msgstr ""
+msgstr "یک ساختار کاربردی فلاسک ساده را تصور کنید که شبیه به این است::"
 
 #: ../../patterns/packages.rst:16
 msgid ""
-"While this is fine for small applications, for larger applications it's a"
-" good idea to use a package instead of a module. The "
-":doc:`/tutorial/index` is structured to use the package pattern, see the "
-":gh:`example code <examples/tutorial>`."
+"While this is fine for small applications, for larger applications it's a good idea "
+"to use a package instead of a module. The :doc:`/tutorial/index` is structured to "
+"use the package pattern, see the :gh:`example code <examples/tutorial>`."
 msgstr ""
+"در حالی که این برای برنامه های کوچک خوب است، برای برنامه های بزرگتر ایده خوبی است "
+"که از یک بسته به جای ماژول استفاده کند. :doc:`/tutorial/index` برای استفاده از "
+"الگوی بسته، ساختار یافته است، به :gh:`نمونه کد <examples/tutorial>`. مراجعه کنید."
 
 #: ../../patterns/packages.rst:22
 msgid "Simple Packages"
-msgstr ""
+msgstr "بسته های ساده"
 
 #: ../../patterns/packages.rst:24
 msgid ""
-"To convert that into a larger one, just create a new folder "
-":file:`yourapplication` inside the existing one and move everything below"
-" it. Then rename :file:`yourapplication.py` to :file:`__init__.py`.  "
-"(Make sure to delete all ``.pyc`` files first, otherwise things would "
-"most likely break)"
+"To convert that into a larger one, just create a new folder :file:`yourapplication` "
+"inside the existing one and move everything below it. Then rename :file:"
+"`yourapplication.py` to :file:`__init__.py`.  (Make sure to delete all ``.pyc`` "
+"files first, otherwise things would most likely break)"
 msgstr ""
+"برای تبدیل آن به یک پوشه بزرگتر، کافیست یک پوشه جدید :file:`yourapplication` در "
+"داخل پوشه موجود ایجاد کنید و همه چیز را به زیر آن منتقل کنید. سپس نام :file:"
+"`yourapplication.py` را به :file:`__init__.py` تغییر دهید. (حتما ابتدا همه فایل‌های "
+"``.pyc`` را حذف کنید، در غیر این احتمال دارد، که همه چیز خراب شود.)"
 
 #: ../../patterns/packages.rst:29 ../../patterns/packages.rst:151
 msgid "You should then end up with something like that::"
-msgstr ""
+msgstr "پس از آن باید به چیزی شبیه به این برسید ::"
 
 #: ../../patterns/packages.rst:42
 msgid ""
-"But how do you run your application now?  The naive ``python "
-"yourapplication/__init__.py`` will not work.  Let's just say that Python "
-"does not want modules in packages to be the startup file.  But that is "
-"not a big problem, just add a new file called :file:`setup.py` next to "
-"the inner :file:`yourapplication` folder with the following contents::"
+"But how do you run your application now?  The naive ``python yourapplication/"
+"__init__.py`` will not work.  Let's just say that Python does not want modules in "
+"packages to be the startup file.  But that is not a big problem, just add a new "
+"file called :file:`setup.py` next to the inner :file:`yourapplication` folder with "
+"the following contents::"
 msgstr ""
+"اما اکنون چگونه اپلیکیشن خود را اجرا می کنید؟ ساده ``python yourapplication/"
+"__init__.py`` کار نخواهد کرد. بیایید بگوییم که پایتون نمی‌خواهد ماژول‌های موجود در "
+"بسته‌های راه‌اندازی باشند. اما این مشکل بزرگی نیست، فقط یک فایل جدید به نام :file:"
+"`setup.py` در کنار پوشه داخلی :file:`yourapplication` با محتویات زیر اضافه کنید::"
 
 #: ../../patterns/packages.rst:59
 msgid ""
-"In order to run the application you need to export an environment "
-"variable that tells Flask where to find the application instance:"
+"In order to run the application you need to export an environment variable that "
+"tells Flask where to find the application instance:"
 msgstr ""
+"برای اجرای برنامه باید یک متغیر محیطی صادر کنید که به فلاسک می‌گوید کجا نمونه برنامه "
+"را پیدا کند:"
 
 #: ../../patterns/packages.rst:64 ../../patterns/packages.rst:94
 msgid "Bash"
-msgstr ""
+msgstr "Bash"
 
 #: ../../patterns/packages.rst:70 ../../patterns/packages.rst:100
 msgid "Fish"
-msgstr ""
+msgstr "Fish"
 
 #: ../../patterns/packages.rst:76 ../../patterns/packages.rst:106
 msgid "CMD"
-msgstr ""
+msgstr "CMD"
 
 #: ../../patterns/packages.rst:82 ../../patterns/packages.rst:112
 msgid "Powershell"
-msgstr ""
+msgstr "Powershell"
 
 #: ../../patterns/packages.rst:88
 msgid ""
-"If you are outside of the project directory make sure to provide the "
-"exact path to your application directory. Similarly you can turn on the "
-"development features like this:"
+"If you are outside of the project directory make sure to provide the exact path to "
+"your application directory. Similarly you can turn on the development features like "
+"this:"
 msgstr ""
+"اگر خارج از دایرکتوری پروژه هستید، مطمئن شوید که مسیر دقیق دایرکتوری برنامه خود را "
+"ارائه کرده اید. به طور مشابه، می توانید ویژگی های توسعه را مانند این فعال کنید:"
 
 #: ../../patterns/packages.rst:118
 msgid ""
-"In order to install and run the application you need to issue the "
-"following commands::"
-msgstr ""
+"In order to install and run the application you need to issue the following "
+"commands::"
+msgstr "برای نصب و اجرای برنامه باید دستورات زیر را صادر کنید ::"
 
 #: ../../patterns/packages.rst:124
 msgid ""
-"What did we gain from this?  Now we can restructure the application a bit"
-" into multiple modules.  The only thing you have to remember is the "
-"following quick checklist:"
+"What did we gain from this?  Now we can restructure the application a bit into "
+"multiple modules.  The only thing you have to remember is the following quick "
+"checklist:"
 msgstr ""
+"ما از این چه چیزی به دست آوردیم؟ اکنون می توانیم برنامه را کمی به چندین ماژول تغییر "
+"ساختار دهیم. تنها چیزی که باید به خاطر بسپارید چک لیست سریع زیر است:"
 
 #: ../../patterns/packages.rst:128
 msgid ""
-"the `Flask` application object creation has to be in the "
-":file:`__init__.py` file.  That way each module can import it safely and "
-"the `__name__` variable will resolve to the correct package."
+"the `Flask` application object creation has to be in the :file:`__init__.py` file.  "
+"That way each module can import it safely and the `__name__` variable will resolve "
+"to the correct package."
 msgstr ""
+"ایجاد شی برنامه `Flask` باید در فایل :file:`__init__.py`  باشد. به این ترتیب هر "
+"ماژول می تواند آن را با خیال راحت وارد کند و متغیر `__name__` به بسته صحیح حل می "
+"شود."
 
 #: ../../patterns/packages.rst:131
 msgid ""
-"all the view functions (the ones with a :meth:`~flask.Flask.route` "
-"decorator on top) have to be imported in the :file:`__init__.py` file. "
-"Not the object itself, but the module it is in. Import the view module "
-"**after the application object is created**."
+"all the view functions (the ones with a :meth:`~flask.Flask.route` decorator on "
+"top) have to be imported in the :file:`__init__.py` file. Not the object itself, "
+"but the module it is in. Import the view module **after the application object is "
+"created**."
 msgstr ""
+"همه توابع نما(view) (آنهایی که دارای دکوراتور :meth:`~flask.Flask.route` در بالا "
+"هستند) باید در فایل :file:`__init__.py` وارد شوند. نه خود شی، بلکه ماژولی که در آن "
+"قرار دارد. ماژول نما را **بعد از ایجاد شی برنامه** وارد کنید."
 
 #: ../../patterns/packages.rst:136
 msgid "Here's an example :file:`__init__.py`::"
-msgstr ""
+msgstr "این یک مثال است :file:`__init__.py` ::"
 
 #: ../../patterns/packages.rst:143
 msgid "And this is what :file:`views.py` would look like::"
-msgstr ""
+msgstr "و این شبیه چیزی است که :file:`views.py` نوشته می‌شود::"
 
 #: ../../patterns/packages.rst:166
 msgid "Circular Imports"
-msgstr ""
+msgstr "واردات دایره ای"
 
 #: ../../patterns/packages.rst:168
 msgid ""
-"Every Python programmer hates them, and yet we just added some: circular "
-"imports (That's when two modules depend on each other.  In this case "
-":file:`views.py` depends on :file:`__init__.py`).  Be advised that this "
-"is a bad idea in general but here it is actually fine.  The reason for "
-"this is that we are not actually using the views in :file:`__init__.py` "
-"and just ensuring the module is imported and we are doing that at the "
-"bottom of the file."
+"Every Python programmer hates them, and yet we just added some: circular imports "
+"(That's when two modules depend on each other.  In this case :file:`views.py` "
+"depends on :file:`__init__.py`).  Be advised that this is a bad idea in general but "
+"here it is actually fine.  The reason for this is that we are not actually using "
+"the views in :file:`__init__.py` and just ensuring the module is imported and we "
+"are doing that at the bottom of the file."
 msgstr ""
+"همه برنامه نویسان پایتون از آنها متنفرند، و با این حال، ما فقط برخی از آنها را "
+"اضافه کردیم: واردات دایره ای (این زمانی است که دو ماژول به یکدیگر وابسته هستند. در "
+"این مورد :file:`views.py` به :file:`__init__.py` بستگی دارد). توجه داشته باشید که "
+"به طور کلی این ایده بدی است اما در اینجا واقعاً خوب است. دلیل این امر این است که ما "
+"در واقع از نماها در :file:`__init__.py` استفاده نمی کنیم و فقط از وارد شدن ماژول "
+"اطمینان می دهیم و این کار را در پایین فایل انجام می دهیم."
 
 #: ../../patterns/packages.rst:176
 msgid ""
-"There are still some problems with that approach but if you want to use "
-"decorators there is no way around that.  Check out the "
-":doc:`/becomingbig` section for some inspiration how to deal with that."
+"There are still some problems with that approach but if you want to use decorators "
+"there is no way around that.  Check out the :doc:`/becomingbig` section for some "
+"inspiration how to deal with that."
 msgstr ""
+"هنوز برخی از مشکلات با این رویکرد وجود دارد، اما اگر می خواهید از دکوراتورها "
+"استفاده کنید، راهی برای دور زدن آن وجود ندارد. بخش :doc:`/becomingbig` را برای "
+"الهام گرفتن از نحوه برخورد با آن بررسی کنید."
 
 #: ../../patterns/packages.rst:182
 msgid "Working with Blueprints"
-msgstr ""
+msgstr "کار با طرح ها (Blueprints)"
 
 #: ../../patterns/packages.rst:184
 msgid ""
-"If you have larger applications it's recommended to divide them into "
-"smaller groups where each group is implemented with the help of a "
-"blueprint.  For a gentle introduction into this topic refer to the "
-":doc:`/blueprints` chapter of the documentation."
+"If you have larger applications it's recommended to divide them into smaller groups "
+"where each group is implemented with the help of a blueprint.  For a gentle "
+"introduction into this topic refer to the :doc:`/blueprints` chapter of the "
+"documentation."
 msgstr ""
+"اگر برنامه‌های بزرگ‌تری دارید، توصیه می‌شود آنها را به گروه‌های کوچک‌تر تقسیم کنید، جایی "
+"که هر گروه با کمک یک طرح اولیه پیاده‌سازی می‌شود. برای معرفی ملایم این موضوع به فصل :"
+"doc:`/blueprints` از مستندات مراجعه کنید."

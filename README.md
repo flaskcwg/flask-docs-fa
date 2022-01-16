@@ -249,12 +249,12 @@ $ git push origin your-branch-name
 - [ ] favicon
 - [ ] fileuploads
 - [ ] flashing
-- [ ] index
+- [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 - [ ] jquery
 - [ ] lazyloading
 - [ ] methodoverrides
 - [ ] mongoengine
-- [ ] packages
+- [X] packages [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 - [ ] requestchecksum
 - [ ] singlepageapplications
 - [ ] sqlalchemy

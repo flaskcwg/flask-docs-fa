@@ -1,25 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Mohamad Balkhi <ahmdparsh129@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-01-16 20:46+0330\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../patterns/index.rst:2
 msgid "Patterns for Flask"
-msgstr ""
+msgstr "الگوهای فلاسک"
 
 #: ../../patterns/index.rst:4
 msgid ""
@@ -27,9 +29,14 @@ msgid ""
 "them in most web applications. For example, many applications use a "
 "relational database and user authentication. They will open a database "
 "connection at the beginning of the request and get the information for "
-"the logged in user. At the end of the request, the database connection is"
-" closed."
+"the logged in user. At the end of the request, the database connection "
+"is closed."
 msgstr ""
+"برخی از ویژگی ها و تعاملات به اندازه کافی مشترک هستند که آنها را در اکثر "
+"برنامه های کاربردی وب خواهید یافت. به عنوان مثال، بسیاری از برنامه ها از "
+"پایگاه داده رابطه ای و احراز هویت کاربر استفاده می کنند. آنها یک اتصال "
+"پایگاه داده را در ابتدای درخواست باز می کنند و اطلاعات کاربر وارد شده را "
+"دریافت می کنند. در پایان درخواست، اتصال پایگاه داده بسته می شود."
 
 #: ../../patterns/index.rst:11
 msgid ""
@@ -37,3 +44,6 @@ msgid ""
 "but Flask makes it easy to implement them. Some common patterns are "
 "collected in the following pages."
 msgstr ""
+"این نوع الگوها ممکن است کمی خارج از محدوده خود فلاسک باشند، اما فلاسک "
+"اجرای آنها را آسان می کند. برخی از الگوهای رایج در صفحات زیر جمع آوری "
+"شده است."
