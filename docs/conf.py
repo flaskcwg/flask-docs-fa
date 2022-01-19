@@ -41,8 +41,8 @@ html_context = {
     "project_links": [
         ProjectLink("حمایت مالی", "https://palletsprojects.com/donate"),
         ProjectLink("نسخه های منتشر شده در PyPi", "https://pypi.org/project/Flask/"),
-        ProjectLink("سورس کد", "https://github.com/pallets/flask/"),
-        ProjectLink("گزارش مشکلات", "https://github.com/pallets/flask/issues/"),
+        ProjectLink("سورس کد فلاسک", "https://github.com/pallets/flask/"),
+        ProjectLink("گزارش مشکل ترجمه", "https://github.com/pallets/flask/issues/"),
         ProjectLink("وب‌سایت", "https://palletsprojects.com/p/flask/"),
         ProjectLink("توییتر", "https://twitter.com/PalletsTeam"),
         ProjectLink("چت", "https://discord.gg/pallets"),
