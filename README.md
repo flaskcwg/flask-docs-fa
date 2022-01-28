@@ -21,7 +21,7 @@
 
 ```
 $ git clone https://github.com/{username}/flask-docs-fa
-$ cd flask-docs-mmdbalkhi
+$ cd flask-docs-fa
 $ git remote add upstream https://github.com/flaskcwg/flask-docs-fa
 ```
 
