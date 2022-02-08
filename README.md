@@ -14,8 +14,8 @@
 
 ### نصب
 
-- روی دکمه [Fork](https://github.com/flaskcwg/flask-docs-fa/fork) برای گرفتن یک انشعاب از این مخزن کلیک کنید
-- انشعاب مخزن را به صورت محلی شبیه سازی کنید [^1] (نام کاربری خود را با `{username}` جایگزین کنید):
+* روی دکمه [Fork](https://github.com/flaskcwg/flask-docs-fa/fork) برای گرفتن یک انشعاب از این مخزن کلیک کنید
+* انشعاب مخزن را به صورت محلی شبیه سازی کنید [^1] (نام کاربری خود را با `{username}` جایگزین کنید):
 
 </div>
 
@@ -27,7 +27,7 @@ $ git remote add upstream https://github.com/flaskcwg/flask-docs-fa
 
 <div dir="rtl">
 
-- یک محیط مجازی ایجاد کنید و ملزومات را نصب کنید
+* یک محیط مجازی ایجاد کنید و ملزومات را نصب کنید
 
 برای Linux/macOS:
 
@@ -67,7 +67,16 @@ $ pre-commit install
 
  لطفا قبل از شروع ترجمه یک [issue](https://git.io/JStRB) با نام ترجمه بخش درخواستی خودتان ایجاد کنید.
 
-- پس از آن که در issue درخواست ترجمه شما پذیرفته شد، یک شاخه جدید به صورت محلی ایجاد کنید (حتما نام شاخه را بروزرسانی کنید. , به عنوان مثال, translate-cli ):
+* پس از آن که در issue درخواست ترجمه شما پذیرفته شد، یک شاخه جدید به صورت محلی ایجاد کنید (حتما نام شاخه را بروزرسانی کنید. , به عنوان مثال, translate-cli ):
+
+#### ابزار های پیشنهادی ترجمه
+
+شما میتونید از ابزار های زیر برای ترجمه استفاده کنید:
+
+* مترجم گوگل: [Google Translate](https://translate.google.com/)
+* مترجم ترگمان: [Targoman](https://targoman.ir/)
+
+> __**نکته**__ لطفا در هنگام ارسال pr، ماشینی بودن یا نبودن ترجمه را ذکر کنید.
 
 </div>
 
@@ -78,7 +87,7 @@ $ git checkout -b your-branch-name upstream/main
 
 <div dir="rtl">
 
-- فایل های `.po` در دایرکتوری `docs/locales/fa/LC_MESSAGES` ترجمه کنید.
+* فایل های `.po` در دایرکتوری `docs/locales/fa/LC_MESSAGES` ترجمه کنید.
 
 > اگر از یک نرم افزار ترجمه استفاده میکنید نیازی نیست سینتکس نمونه های زیر را بررسی کنید.
 
@@ -113,15 +122,15 @@ msgstr ""
 لطفا مراقب باشید که نماد reST را نقض نکنید. [^6]
 اکثر [ادیتور های po](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html) میتوانند به شما کمک کنند.
 
-- فصل را به عنوان تمام شده علامت بزنید (چک باکس را با "x" پر کنید):
+* فصل را به عنوان تمام شده علامت بزنید (چک باکس را با "x" پر کنید):
 
 ```
 - [x] مثال @نام‌کاربری_شما نام شما
 ```
 
-- اگر اولین مترجم هستید، `FIRST AUTHOR <EMAIL@ADDRESS>` را در بالای فایل های `.po` با نام و ایمیل خود جایگزین کنید.
-- مقدار فیلد «Last-Translator» را در بالای فایل «.po» به‌روزرسانی کنید. (اگر از نرم افزاری مانند poedit استفاده میکنید به اینکار نیازی نیست)
-- تغییرات را کامیت کنید:
+* اگر اولین مترجم هستید، `FIRST AUTHOR <EMAIL@ADDRESS>` را در بالای فایل های `.po` با نام و ایمیل خود جایگزین کنید.
+* مقدار فیلد «Last-Translator» را در بالای فایل «.po» به‌روزرسانی کنید. (اگر از نرم افزاری مانند poedit استفاده میکنید به اینکار نیازی نیست)
+* تغییرات را کامیت کنید:
 
 </div>
 
@@ -132,7 +141,7 @@ $ git commit -m "Translate docs/example"
 
 <div dir="rtl">
 
-- اسناد [^7] را بسازید و تغییرات را بررسی [^8] کنید:
+* اسناد [^7] را بسازید و تغییرات را بررسی [^8] کنید:
 
 در Linux یا macOS:
 
@@ -158,7 +167,7 @@ $ make html
 
 `flask-docs-fa/docs/_build/html/index.html` را باز کنید تا اسناد را ببنید.
 
-- اگر همه چیز همانطور که انتظار می رود کار می کند، تغییرات را به GitHub پوش کنید:
+* اگر همه چیز همانطور که انتظار می رود کار می کند، تغییرات را به GitHub پوش کنید:
 
 </div>
 
@@ -168,9 +177,9 @@ $ git push origin your-branch-name
 
 <div dir="rtl">
 
-- صفحه اصلی مخزن انشعاب خود را باز کنید، اعلانی در مورد آن خواهید دید شعبه جدید برای ایجاد PR، روی دکمه «Compare & pull request» کلیک کنید.
-- سپس PR خود را به Isuse ای که برای ترجمه نوشته اید لینک کنید. برای راحتی میتوانید در PR #شماره_issue را بنویسید.
-- هماهنگ کننده ترجمه به زودی PR شما را بررسی خواهد کرد. متشکرم!
+* صفحه اصلی مخزن انشعاب خود را باز کنید، اعلانی در مورد آن خواهید دید شعبه جدید برای ایجاد PR، روی دکمه «Compare & pull request» کلیک کنید.
+* سپس PR خود را به Isuse ای که برای ترجمه نوشته اید لینک کنید. برای راحتی میتوانید در PR #شماره_issue را بنویسید.
+* هماهنگ کننده ترجمه به زودی PR شما را بررسی خواهد کرد. متشکرم!
 
 ## فهرست کارهای ترجمه
 
@@ -180,106 +189,106 @@ $ git push origin your-branch-name
 
 </div>
 
-- [X] flask-logo.png [@MDK1384](https://github.com/mdk1384) MDK
+* [X] flask-logo.png [@MDK1384](https://github.com/mdk1384) MDK
 
 ### docs/
 
-- [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] async-await
-- [ ] becomingbig
-- [ ] blueprints
-- [ ] changes
-- [ ] cli
-- [ ] config
-- [ ] contributing
-- [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] design
-- [ ] errorhandling
-- [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [x] extensions [@mdk1384](https://github.com/mdk1384) MDK
-- [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] htmlfaq
-- [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [X] logging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] reqcontext
-- [ ] security
-- [ ] server
-- [ ] shell
-- [ ] signals
-- [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-- [ ] testing
-- [ ] views
+* [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [ ] async-await
+* [ ] becomingbig
+* [ ] blueprints
+* [ ] changes
+* [ ] cli
+* [ ] config
+* [ ] contributing
+* [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [ ] design
+* [ ] errorhandling
+* [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [x] extensions [@mdk1384](https://github.com/mdk1384) MDK
+* [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [ ] htmlfaq
+* [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [X] logging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [ ] reqcontext
+* [ ] security
+* [ ] server
+* [ ] shell
+* [ ] signals
+* [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [ ] testing
+* [ ] views
 
 ### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
 
-- [x] blog
-- [x] database
-- [x] deploy
-- [x] factory
-- [x] index
-- [x] install
-- [x] layout
-- [x] next
-- [x] static
-- [x] templates
-- [X] tests
-- [x] views
+* [x] blog
+* [x] database
+* [x] deploy
+* [x] factory
+* [x] index
+* [x] install
+* [x] layout
+* [x] next
+* [x] static
+* [x] templates
+* [X] tests
+* [x] views
 
 ### docs/deploying/
 
-- [ ] asgi
-- [ ] cgi
-- [ ] fastcgi
-- [ ] index
-- [ ] mod_wsgi
-- [ ] uwsgi
-- [ ] wsgi-standalone
+* [ ] asgi
+* [ ] cgi
+* [ ] fastcgi
+* [ ] index
+* [ ] mod_wsgi
+* [ ] uwsgi
+* [ ] wsgi-standalone
 
 ### docs/patterns/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 
-- [ ] appdispatch
-- [ ] appfactories
-- [ ] caching
-- [ ] celery
-- [ ] deferredcallbacks
-- [ ] distribute
-- [ ] fabric
-- [ ] favicon
-- [ ] fileuploads
-- [ ] flashing
-- [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
-- [ ] jquery
-- [ ] lazyloading
-- [ ] methodoverrides
-- [ ] mongoengine
-- [X] packages [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
-- [ ] requestchecksum
-- [ ] singlepageapplications
-- [ ] sqlalchemy
-- [ ] sqlite3
-- [ ] streaming
-- [ ] subclassing
-- [ ] templateinheritance
-- [ ] urlprocessors
-- [ ] viewdecorators
-- [ ] wtforms
+* [ ] appdispatch
+* [ ] appfactories
+* [ ] caching
+* [ ] celery
+* [ ] deferredcallbacks
+* [ ] distribute
+* [ ] fabric
+* [ ] favicon
+* [ ] fileuploads
+* [ ] flashing
+* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
+* [ ] jquery
+* [ ] lazyloading
+* [ ] methodoverrides
+* [ ] mongoengine
+* [X] packages [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
+* [ ] requestchecksum
+* [ ] singlepageapplications
+* [ ] sqlalchemy
+* [ ] sqlite3
+* [ ] streaming
+* [ ] subclassing
+* [ ] templateinheritance
+* [ ] urlprocessors
+* [ ] viewdecorators
+* [ ] wtforms
 
 ## docs/api
 
-- [ ] L0~L1000
-- [ ] L1000~L1500
-- [ ] L1500~L2000
-- [ ] L2000~L2500
-- [ ] L2500~L3000
-- [ ] L3000~L3500
-- [ ] L3500~L4000
-- [ ] L4000~L4500
-- [ ] L4500~L5000
-- [ ] L5000~L5500
-- [ ] L5500~L6000
-- [ ] L6000~L6500
+* [ ] L0~L1000
+* [ ] L1000~L1500
+* [ ] L1500~L2000
+* [ ] L2000~L2500
+* [ ] L2500~L3000
+* [ ] L3000~L3500
+* [ ] L3500~L4000
+* [ ] L4000~L4500
+* [ ] L4500~L5000
+* [ ] L5000~L5500
+* [ ] L5500~L6000
+* [ ] L6000~L6500
 
 </div>
 
