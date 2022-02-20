@@ -3,7 +3,7 @@
 [![Tests](https://github.com/flaskcwg/flask-docs-fa/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/flaskcwg/flask-docs-fa/actions/workflows/tests.yaml)
 [![Documentation Status](https://readthedocs.org/projects/flask-fa/badge/?version=latest)](https://flask-fa.readthedocs.io)
 [![Discord Community](https://img.shields.io/discord/918444189400846336.svg?&logo=Discord&style=flat-square)](https://discord.gg/svFmgBXY9d)
-
+[![Translation progress](https://jalkhov.github.io/docspro/badge/fa_progress.svg)](https://github.com/Jalkhov/docspro)
 </div>
 
 <div dir="rtl">
