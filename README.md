@@ -249,7 +249,7 @@ $ git push origin your-branch-name
 ### docs/patterns/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
 
 * [ ] appdispatch
-* [ ] appfactories
+* [X] appfactories
 * [ ] caching
 * [ ] celery
 * [ ] deferredcallbacks
