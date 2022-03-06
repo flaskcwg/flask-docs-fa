@@ -1,11 +1,10 @@
 .. currentmodule:: flask
 
-Version 2.1.0
+Version 2.0.3
 -------------
 
-Unreleased
+Released 2022-02-14
 
--   Update Click dependency to >= 8.0.
 -   The test client's ``as_tuple`` parameter is deprecated and will be
     removed in Werkzeug 2.1. It is now also deprecated in Flask, to be
     removed in Flask 2.1, while remaining compatible with both in
