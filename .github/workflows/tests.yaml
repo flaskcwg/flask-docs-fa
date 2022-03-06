@@ -5,13 +5,17 @@ on:
       - main
       - '*.x'
     paths-ignore:
+      - 'docs/**'
       - '*.md'
+      - '*.rst'
   pull_request:
     branches:
       - main
       - '*.x'
     paths-ignore:
+      - 'docs/**'
       - '*.md'
+      - '*.rst'
 jobs:
   tests:
     name: ${{ matrix.name }}
@@ -45,4 +49,4 @@ jobs:
           pip install -U setuptools
           python -m pip install -U pip
       - run: pip install tox
-      - run: tox -e docs
+      - run: tox -e ${{ matrix.tox }}
