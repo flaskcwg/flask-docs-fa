@@ -3,23 +3,25 @@
 # This file is distributed under the same license as the Flask package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-03-08 20:14+0330\n"
+"Last-Translator:  Mohamad Balkhi  <ahmdparsh129@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../patterns/appdispatch.rst:2
 msgid "Application Dispatching"
-msgstr ""
+msgstr "توزیع برنامه"
 
 #: ../../patterns/appdispatch.rst:4
 msgid ""
@@ -30,6 +32,11 @@ msgid ""
 "you want.  The usefulness of this depends on how the applications work "
 "internally."
 msgstr ""
+"توزیع برنامه، فرآیند ترکیب چندین برنامه فلاسک در سطح WSGI است. شما می "
+"توانید نه تنها برنامه های فلاسک بلکه هر برنامه WSGI را ترکیب کنید. این "
+"به شما این امکان را می دهد که در صورت تمایل یک برنامه جنگو و یک فلاسک را "
+"در یک مترجم در کنار هم اجرا کنید. سودمندی این امر به نحوه عملکرد داخلی "
+"برنامه ها بستگی دارد."
 
 #: ../../patterns/appdispatch.rst:11
 msgid ""
@@ -38,37 +45,50 @@ msgid ""
 "isolated from each other. They run different configurations and are "
 "dispatched on the WSGI level."
 msgstr ""
+"تفاوت اساسی با :doc:`packages` این است که در این مورد شما برنامه های "
+"فلاسک یکسان یا متفاوتی را اجرا می کنید که کاملاً از یکدیگر جدا هستند. "
+"آنها پیکربندی های مختلفی را اجرا می کنند و در سطح WSGI توزیع می شوند."
 
 #: ../../patterns/appdispatch.rst:18
 msgid "Working with this Document"
-msgstr ""
+msgstr "کار با این مستند"
 
 #: ../../patterns/appdispatch.rst:20
 msgid ""
 "Each of the techniques and examples below results in an ``application`` "
-"object that can be run with any WSGI server. For production, see "
-":doc:`/deploying/index`. For development, Werkzeug provides a server "
-"through :func:`werkzeug.serving.run_simple`::"
+"object that can be run with any WSGI server. For production, see :doc:`/"
+"deploying/index`. For development, Werkzeug provides a server through :"
+"func:`werkzeug.serving.run_simple`::"
 msgstr ""
+"هر یک از تکنیک‌ها و مثال‌های زیر منجر به یک شی ``application`` می‌شود که "
+"می‌تواند با هر سرور WSGI اجرا شود. برای تولید، به :doc:`/deploying/index` "
+"مراجعه کنید. برای توسعه، Werkzeug یک سرور از طریق :func:`werkzeug."
+"serving.run_simple` ::"
 
 #: ../../patterns/appdispatch.rst:28
 msgid ""
 "Note that :func:`run_simple <werkzeug.serving.run_simple>` is not "
-"intended for use in production.  Use a production WSGI server. See "
-":doc:`/deploying/index`."
+"intended for use in production.  Use a production WSGI server. See :doc:"
+"`/deploying/index`."
 msgstr ""
+"توجه داشته باشید که :func:`run_simple <werkzeug.serving.run_simple>` "
+"برای استفاده در تولید در نظر گرفته نشده است. از سرور WSGI تولیدی استفاده "
+"کنید. به :doc:`/deploying/index` مراجعه کنید."
 
 #: ../../patterns/appdispatch.rst:31
 msgid ""
 "In order to use the interactive debugger, debugging must be enabled both "
 "on the application and the simple server. Here is the \"hello world\" "
-"example with debugging and :func:`run_simple "
-"<werkzeug.serving.run_simple>`::"
+"example with debugging and :func:`run_simple <werkzeug.serving."
+"run_simple>`::"
 msgstr ""
+"برای استفاده از دیباگر تعاملی، اشکال زدایی باید هم در برنامه و هم در "
+"سرور ساده فعال باشد. در اینجا مثال \"سلام جهان\" با اشکال زدایی و :func:"
+"`run_simple <werkzeug.serving.run_simple>` را ببینید::"
 
 #: ../../patterns/appdispatch.rst:51
 msgid "Combining Applications"
-msgstr ""
+msgstr "ترکیب برنامه ها"
 
 #: ../../patterns/appdispatch.rst:53
 msgid ""
@@ -79,16 +99,23 @@ msgid ""
 "are combined by the dispatcher middleware into a larger one that is "
 "dispatched based on prefix."
 msgstr ""
+"اگر برنامه‌های کاملاً مجزا دارید و می‌خواهید در یک فرآیند مفسر پایتون در "
+"کنار یکدیگر کار کنند، می‌توانید از مزیت :class:`werkzeug.wsgi."
+"DispatcherMiddleware` استفاده کنید. ایده در اینجا این است که هر برنامه "
+"فلاسک یک برنامه WSGI معتبر است و آنها توسط میان افزار توزیع کننده به یک "
+"برنامه بزرگتر که بر اساس پیشوند ارسال می شود ترکیب می شوند."
 
 #: ../../patterns/appdispatch.rst:60
 msgid ""
 "For example you could have your main application run on ``/`` and your "
 "backend interface on ``/backend``::"
 msgstr ""
+"به عنوان مثال، می‌توانید برنامه اصلی خود را روی ``/`` و رابط بک اند خود "
+"را در ``/backend`` اجرا کنید::"
 
 #: ../../patterns/appdispatch.rst:73
 msgid "Dispatch by Subdomain"
-msgstr ""
+msgstr "توزیع توسط زیر دامنه"
 
 #: ../../patterns/appdispatch.rst:75
 msgid ""
@@ -96,19 +123,30 @@ msgid ""
 "application with different configurations.  Assuming the application is "
 "created inside a function and you can call that function to instantiate "
 "it, that is really easy to implement.  In order to develop your "
-"application to support creating new instances in functions have a look at"
-" the :doc:`appfactories` pattern."
+"application to support creating new instances in functions have a look "
+"at the :doc:`appfactories` pattern."
 msgstr ""
+"گاهی اوقات ممکن است بخواهید از چندین نمونه از یک برنامه با پیکربندی های "
+"مختلف استفاده کنید. با فرض اینکه برنامه در داخل یک تابع ایجاد شده است و "
+"شما می توانید آن تابع را برای نمونه سازی فراخوانی کنید، پیاده سازی آن "
+"واقعا آسان است. به منظور توسعه برنامه خود برای پشتیبانی از ایجاد نمونه "
+"های جدید در توابع، به الگوی :doc:`appfactories` نگاهی بیندازید."
 
 #: ../../patterns/appdispatch.rst:82
 msgid ""
 "A very common example would be creating applications per subdomain.  For "
 "instance you configure your webserver to dispatch all requests for all "
-"subdomains to your application and you then use the subdomain information"
-" to create user-specific instances.  Once you have your server set up to "
-"listen on all subdomains you can use a very simple WSGI application to do"
-" the dynamic application creation."
+"subdomains to your application and you then use the subdomain "
+"information to create user-specific instances.  Once you have your "
+"server set up to listen on all subdomains you can use a very simple WSGI "
+"application to do the dynamic application creation."
 msgstr ""
+"یک مثال بسیار رایج ایجاد برنامه در هر زیر دامنه است. به عنوان مثال، شما "
+"وب سرور خود را به گونه ای پیکربندی می کنید که تمام درخواست ها برای همه "
+"زیر دامنه ها را به برنامه خود ارسال کند و سپس از اطلاعات زیر دامنه برای "
+"ایجاد نمونه های خاص کاربر استفاده می کنید. هنگامی که سرور خود را برای "
+"شنود همه زیر دامنه ها تنظیم کردید، می توانید از یک برنامه بسیار ساده "
+"WSGI برای ایجاد برنامه پویا استفاده کنید."
 
 #: ../../patterns/appdispatch.rst:89
 msgid ""
@@ -117,14 +155,18 @@ msgid ""
 "delegates it to your Flask application.  If that application does not "
 "exist yet, it is dynamically created and remembered::"
 msgstr ""
+"سطح عالی برای انتزاع در این رابطه لایه WSGI است. شما برنامه WSGI خود را "
+"می نویسید تا به درخواستی که می آید نگاه می کند و آن را به برنامه فلاسک "
+"شما واگذار می کند. اگر آن برنامه هنوز وجود نداشته باشد، به صورت پویا "
+"ایجاد شده و به خاطر سپرده می شود::"
 
 #: ../../patterns/appdispatch.rst:120
 msgid "This dispatcher can then be used like this::"
-msgstr ""
+msgstr "سپس می توان از این توزیع کننده به صورت زیر استفاده کرد::"
 
 #: ../../patterns/appdispatch.rst:142
 msgid "Dispatch by Path"
-msgstr ""
+msgstr "توزیع توسط مسیر"
 
 #: ../../patterns/appdispatch.rst:144
 msgid ""
@@ -132,6 +174,9 @@ msgid ""
 "the ``Host`` header to figure out the subdomain one simply looks at the "
 "request path up to the first slash::"
 msgstr ""
+"ارسال توسط یک مسیر در URL بسیار آشنا است. به جای نگاه کردن به هدر "
+"``Host`` برای کشف زیر دامنه، کافیست به مسیر درخواست تا اولین اسلش نگاه "
+"کنید::"
 
 #: ../../patterns/appdispatch.rst:176
 msgid ""
@@ -139,3 +184,5 @@ msgid ""
 "falls back to another application if the creator function returns "
 "``None``::"
 msgstr ""
+"تفاوت بزرگ بین این و ساب دامنه این است که اگر تابع سازنده ``None`` را "
+"برگرداند این یکی به برنامه دیگری برمی گردد::"

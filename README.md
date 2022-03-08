@@ -193,7 +193,7 @@ $ git push origin your-branch-name
 
 ### docs/
 
-* [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] async-await
 * [ ] becomingbig
 * [ ] blueprints
@@ -201,27 +201,27 @@ $ git push origin your-branch-name
 * [ ] cli
 * [ ] config
 * [ ] contributing
-* [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] design
 * [ ] errorhandling
-* [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [x] extensions [@mdk1384](https://github.com/mdk1384) MDK
-* [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] htmlfaq
-* [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-* [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-* [X] logging [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
-* [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
+* [x] installation [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
+* [X] logging [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
+* [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] reqcontext
 * [ ] security
 * [ ] server
 * [ ] shell
 * [ ] signals
-* [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+* [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] testing
 * [ ] views
 
-### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/) Mohamad Balkhi
+### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 
 * [x] blog
 * [x] database
@@ -246,9 +246,9 @@ $ git push origin your-branch-name
 * [ ] uwsgi
 * [ ] wsgi-standalone
 
-### docs/patterns/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
+### docs/patterns/ [@mmdbalkhi](https://github.com/mmdbalkhi/)  Komeil Parseh
 
-* [ ] appdispatch
+* [X] appdispatch [@mmdbalkhi](https://github.com/mmdbalkhi/)  Komeil Parseh)
 * [X] appfactories
 * [ ] caching
 * [ ] celery
@@ -258,12 +258,12 @@ $ git push origin your-branch-name
 * [ ] favicon
 * [ ] fileuploads
 * [ ] flashing
-* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
+* [X] index [@mmdbalkhi](https://github.com/mmdbalkhi/)  Komeil Parseh
 * [ ] jquery
 * [ ] lazyloading
 * [ ] methodoverrides
 * [ ] mongoengine
-* [X] packages [@mmdbalkhi](https://github.com/mmdbalkhi/)  Mohamad Balkhi
+* [X] packages [@mmdbalkhi](https://github.com/mmdbalkhi/)  Komeil Parseh
 * [ ] requestchecksum
 * [ ] singlepageapplications
 * [ ] sqlalchemy
