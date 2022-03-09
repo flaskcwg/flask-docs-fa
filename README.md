@@ -271,7 +271,7 @@ $ git push origin your-branch-name
 * [ ] streaming
 * [ ] subclassing
 * [ ] templateinheritance
-* [ ] urlprocessors
+* [ ] urlprocessors [@mmdbalkhi](https://github.com/mmdbalkhi/)  Komeil Parseh
 * [ ] viewdecorators
 * [ ] wtforms
 
