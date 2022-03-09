@@ -189,7 +189,7 @@ $ git push origin your-branch-name
 
 </div>
 
-* [X] flask-logo.png [@MDK1384](https://github.com/mdk1384) MDK
+* [X] flask-logo.png [@MDK84](https://github.com/mdk84) MDK
 
 ### docs/
 
@@ -205,7 +205,7 @@ $ git push origin your-branch-name
 * [ ] design
 * [ ] errorhandling
 * [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
-* [x] extensions [@mdk1384](https://github.com/mdk1384) MDK
+* [x] extensions [@mdk84](https://github.com/mdk84) MDK
 * [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] htmlfaq
 * [x] index [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
