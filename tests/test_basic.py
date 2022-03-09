@@ -1,6 +1,5 @@
 import gc
 import re
-import sys
 import time
 import uuid
 import warnings
@@ -1324,7 +1323,6 @@ def test_jsonify_mimetype(app, req_ctx):
     assert rv.mimetype == "application/vnd.api+json"
 
 
-@pytest.mark.skipif(sys.version_info < (3, 7), reason="requires Python >= 3.7")
 def test_json_dump_dataclass(app, req_ctx):
     from dataclasses import make_dataclass
 

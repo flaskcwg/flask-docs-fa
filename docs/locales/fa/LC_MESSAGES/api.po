@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-07 09:57+0330\n"
+"POT-Creation-Date: 2022-03-09 22:15+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -168,22 +168,21 @@ msgstr ""
 #: flask.cli.FlaskGroup flask.cli.FlaskGroup.main flask.cli.load_dotenv
 #: flask.cli.run_command flask.cli.shell_command flask.config.Config
 #: flask.config.Config.from_envvar flask.config.Config.from_file
-#: flask.config.Config.from_json flask.config.Config.from_mapping
-#: flask.config.Config.from_object flask.config.Config.from_pyfile
-#: flask.config.Config.get_namespace flask.ctx.AppContext
-#: flask.ctx.AppContext.pop flask.ctx.RequestContext
+#: flask.config.Config.from_mapping flask.config.Config.from_object
+#: flask.config.Config.from_pyfile flask.config.Config.get_namespace
+#: flask.ctx.AppContext flask.ctx.AppContext.pop flask.ctx.RequestContext
 #: flask.ctx.RequestContext.pop flask.ctx._AppCtxGlobals.get
 #: flask.ctx._AppCtxGlobals.pop flask.ctx._AppCtxGlobals.setdefault
 #: flask.ctx.after_this_request flask.ctx.copy_current_request_context
 #: flask.helpers.flash flask.helpers.get_flashed_messages
 #: flask.helpers.get_template_attribute flask.helpers.make_response
-#: flask.helpers.safe_join flask.helpers.send_file
-#: flask.helpers.send_from_directory flask.helpers.stream_with_context
-#: flask.helpers.url_for flask.json.JSONEncoder.default flask.json.dump
-#: flask.json.dumps flask.json.jsonify flask.json.load flask.json.loads
-#: flask.json.tag.JSONTag flask.json.tag.JSONTag.check
-#: flask.json.tag.JSONTag.tag flask.json.tag.JSONTag.to_json
-#: flask.json.tag.JSONTag.to_python flask.json.tag.TaggedJSONSerializer.dumps
+#: flask.helpers.send_file flask.helpers.send_from_directory
+#: flask.helpers.stream_with_context flask.helpers.url_for
+#: flask.json.JSONEncoder.default flask.json.dump flask.json.dumps
+#: flask.json.jsonify flask.json.load flask.json.loads flask.json.tag.JSONTag
+#: flask.json.tag.JSONTag.check flask.json.tag.JSONTag.tag
+#: flask.json.tag.JSONTag.to_json flask.json.tag.JSONTag.to_python
+#: flask.json.tag.TaggedJSONSerializer.dumps
 #: flask.json.tag.TaggedJSONSerializer.loads
 #: flask.json.tag.TaggedJSONSerializer.register
 #: flask.json.tag.TaggedJSONSerializer.tag
@@ -369,24 +368,23 @@ msgstr ""
 #: flask.blueprints.BlueprintSetupState.add_url_rule flask.cli.AppGroup
 #: flask.cli.run_command flask.cli.shell_command flask.config.Config
 #: flask.config.Config.from_envvar flask.config.Config.from_file
-#: flask.config.Config.from_json flask.config.Config.from_mapping
-#: flask.config.Config.from_object flask.config.Config.from_pyfile
-#: flask.config.Config.get_namespace flask.ctx.AppContext
-#: flask.ctx.AppContext.pop flask.ctx.AppContext.push flask.ctx.RequestContext
-#: flask.ctx.RequestContext.copy flask.ctx.RequestContext.match_request
-#: flask.ctx.RequestContext.pop flask.ctx.RequestContext.push
-#: flask.ctx._AppCtxGlobals.get flask.ctx._AppCtxGlobals.pop
-#: flask.ctx._AppCtxGlobals.setdefault flask.ctx.after_this_request
-#: flask.ctx.copy_current_request_context flask.ctx.has_app_context
-#: flask.ctx.has_request_context flask.helpers.flash
+#: flask.config.Config.from_mapping flask.config.Config.from_object
+#: flask.config.Config.from_pyfile flask.config.Config.get_namespace
+#: flask.ctx.AppContext flask.ctx.AppContext.pop flask.ctx.AppContext.push
+#: flask.ctx.RequestContext flask.ctx.RequestContext.copy
+#: flask.ctx.RequestContext.match_request flask.ctx.RequestContext.pop
+#: flask.ctx.RequestContext.push flask.ctx._AppCtxGlobals.get
+#: flask.ctx._AppCtxGlobals.pop flask.ctx._AppCtxGlobals.setdefault
+#: flask.ctx.after_this_request flask.ctx.copy_current_request_context
+#: flask.ctx.has_app_context flask.ctx.has_request_context flask.helpers.flash
 #: flask.helpers.get_flashed_messages flask.helpers.get_template_attribute
-#: flask.helpers.make_response flask.helpers.safe_join
-#: flask.helpers.send_from_directory flask.helpers.stream_with_context
-#: flask.helpers.url_for flask.json.JSONEncoder.default flask.json.dump
-#: flask.json.dumps flask.json.jsonify flask.json.load flask.json.loads
-#: flask.json.tag.JSONTag flask.json.tag.JSONTag.check
-#: flask.json.tag.JSONTag.tag flask.json.tag.JSONTag.to_json
-#: flask.json.tag.JSONTag.to_python flask.json.tag.TaggedJSONSerializer
+#: flask.helpers.make_response flask.helpers.send_from_directory
+#: flask.helpers.stream_with_context flask.helpers.url_for
+#: flask.json.JSONEncoder.default flask.json.dump flask.json.dumps
+#: flask.json.jsonify flask.json.load flask.json.loads flask.json.tag.JSONTag
+#: flask.json.tag.JSONTag.check flask.json.tag.JSONTag.tag
+#: flask.json.tag.JSONTag.to_json flask.json.tag.JSONTag.to_python
+#: flask.json.tag.TaggedJSONSerializer
 #: flask.json.tag.TaggedJSONSerializer.dumps
 #: flask.json.tag.TaggedJSONSerializer.loads
 #: flask.json.tag.TaggedJSONSerializer.register
@@ -1401,8 +1399,7 @@ msgstr ""
 
 #: ../../docstring flask.app.Flask.process_response flask.cli.load_dotenv
 #: flask.config.Config.from_envvar flask.config.Config.from_file
-#: flask.config.Config.from_json flask.config.Config.from_pyfile
-#: flask.helpers.safe_join flask.testing.FlaskCliRunner.invoke
+#: flask.config.Config.from_pyfile flask.testing.FlaskCliRunner.invoke
 #: markupsafe._speedups.escape of werkzeug.wrappers.request.Request.application
 #: werkzeug.wrappers.request.Request.from_values
 #: werkzeug.wrappers.response.Response.force_type
@@ -1786,9 +1783,9 @@ msgstr ""
 
 #: flask.scaffold.Scaffold.teardown_request:18 of
 msgid ""
-"Teardown functions must avoid raising exceptions, since they . If they "
-"execute code that might fail they will have to surround the execution of "
-"these code by try/except statements and log occurring errors."
+"Teardown functions must avoid raising exceptions. If they execute code "
+"that might fail they will have to surround the execution of that code "
+"with try/except statements and log any errors."
 msgstr ""
 
 #: flask.scaffold.Scaffold.teardown_request:23 of
@@ -4907,24 +4904,6 @@ msgstr ""
 msgid "``path`` replaces the ``filename`` parameter."
 msgstr ""
 
-#: flask.helpers.safe_join:1 of
-msgid ""
-"Safely join zero or more untrusted path components to a base directory to"
-" avoid escaping the base directory."
-msgstr ""
-
-#: flask.helpers.safe_join:4 of
-msgid "The trusted base directory."
-msgstr ""
-
-#: flask.helpers.safe_join:5 of
-msgid "The untrusted path components relative to the base directory."
-msgstr ""
-
-#: flask.helpers.safe_join:7 of
-msgid "A safe path, otherwise ``None``."
-msgstr ""
-
 #: ../../docstring markupsafe._speedups.escape:1 of
 msgid ""
 "Replace the characters ``&``, ``<``, ``>``, ``'``, and ``\"`` in the "
@@ -4990,7 +4969,7 @@ msgid ""
 "entities with the characters they represent."
 msgstr ""
 
-#: ../../api.rst:229
+#: ../../api.rst:227
 msgid "Message Flashing"
 msgstr ""
 
@@ -5069,38 +5048,38 @@ msgid ""
 " will be returned."
 msgstr ""
 
-#: ../../api.rst:237
+#: ../../api.rst:235
 msgid "JSON Support"
 msgstr ""
 
-#: ../../api.rst:241
+#: ../../api.rst:239
 msgid ""
 "Flask uses the built-in :mod:`json` module for handling JSON. It will use"
 " the current blueprint's or application's JSON encoder and decoder for "
 "easier customization. By default it handles some extra data types:"
 msgstr ""
 
-#: ../../api.rst:245 flask.json.JSONEncoder:4 of
+#: ../../api.rst:243 flask.json.JSONEncoder:4 of
 msgid ""
 ":class:`datetime.datetime` and :class:`datetime.date` are serialized to "
 ":rfc:`822` strings. This is the same as the HTTP date format."
 msgstr ""
 
-#: ../../api.rst:247 flask.json.JSONEncoder:7 of
+#: ../../api.rst:245 flask.json.JSONEncoder:7 of
 msgid ":class:`uuid.UUID` is serialized to a string."
 msgstr ""
 
-#: ../../api.rst:248 flask.json.JSONEncoder:8 of
+#: ../../api.rst:246 flask.json.JSONEncoder:8 of
 msgid ":class:`dataclasses.dataclass` is passed to :func:`dataclasses.asdict`."
 msgstr ""
 
-#: ../../api.rst:250 flask.json.JSONEncoder:10 of
+#: ../../api.rst:248 flask.json.JSONEncoder:10 of
 msgid ""
 ":class:`~markupsafe.Markup` (or any object with a ``__html__`` method) "
 "will call the ``__html__`` method to get a string."
 msgstr ""
 
-#: ../../api.rst:253
+#: ../../api.rst:251
 msgid ""
 "Jinja's ``|tojson`` filter is configured to use Flask's :func:`dumps` "
 "function. The filter marks the output with ``|safe`` automatically. Use "
@@ -5444,7 +5423,7 @@ msgid ""
 "be processed before ``dict``."
 msgstr ""
 
-#: ../../api.rst:284
+#: ../../api.rst:282
 msgid "Template Rendering"
 msgstr ""
 
@@ -5492,7 +5471,7 @@ msgstr ""
 msgid "the name of the variable of macro to access"
 msgstr ""
 
-#: ../../api.rst:295
+#: ../../api.rst:293
 msgid "Configuration"
 msgstr ""
 
@@ -5567,8 +5546,8 @@ msgstr ""
 msgid "set to ``True`` if you want silent failure for missing files."
 msgstr ""
 
-#: flask.config.Config.from_envvar:10 flask.config.Config.from_file:17
-#: flask.config.Config.from_json:7 flask.config.Config.from_pyfile:10 of
+#: flask.config.Config.from_envvar:10 flask.config.Config.from_file:20
+#: flask.config.Config.from_pyfile:10 of
 msgid "``True`` if the file was loaded successfully."
 msgstr ""
 
@@ -5579,38 +5558,20 @@ msgid ""
 " method."
 msgstr ""
 
-#: flask.config.Config.from_file:10 of
+#: flask.config.Config.from_file:13 of
 msgid ""
 "The path to the data file. This can be an absolute path or relative to "
 "the config root path."
 msgstr ""
 
-#: flask.config.Config.from_file:12 of
+#: flask.config.Config.from_file:15 of
 msgid ""
 "A callable that takes a file handle and returns a mapping of loaded data "
 "from the file."
 msgstr ""
 
-#: flask.config.Config.from_file:16 flask.config.Config.from_json:6 of
+#: flask.config.Config.from_file:19 of
 msgid "Ignore the file if it doesn't exist."
-msgstr ""
-
-#: flask.config.Config.from_json:1 of
-msgid ""
-"Update the values in the config from a JSON file. The loaded data is "
-"passed to the :meth:`from_mapping` method."
-msgstr ""
-
-#: flask.config.Config.from_json:4 of
-msgid ""
-"The path to the JSON file. This can be an absolute path or relative to "
-"the config root path."
-msgstr ""
-
-#: flask.config.Config.from_json:9 of
-msgid ""
-"Will be removed in Flask 2.1. Use :meth:`from_file` instead. This was "
-"removed early in 2.0.0, was added back in 2.0.1."
 msgstr ""
 
 #: flask.config.Config.from_mapping:1 of
@@ -5719,7 +5680,7 @@ msgid ""
 "include the namespace"
 msgstr ""
 
-#: ../../api.rst:302
+#: ../../api.rst:300
 msgid "Stream Helpers"
 msgstr ""
 
@@ -5740,7 +5701,7 @@ msgstr ""
 msgid "Alternatively it can also be used around a specific generator::"
 msgstr ""
 
-#: ../../api.rst:307
+#: ../../api.rst:305
 msgid "Useful Internals"
 msgstr ""
 
@@ -5821,7 +5782,7 @@ msgstr ""
 msgid "Binds the request context to the current context."
 msgstr ""
 
-#: ../../api.rst:314
+#: ../../api.rst:312
 msgid ""
 "The internal :class:`~werkzeug.local.LocalStack` that holds "
 ":class:`~flask.ctx.RequestContext` instances. Typically, the "
@@ -5829,59 +5790,59 @@ msgid ""
 " the stack. It may be useful to access the stack in extension code."
 msgstr ""
 
-#: ../../api.rst:320
+#: ../../api.rst:318
 msgid "The following attributes are always present on each layer of the stack:"
 msgstr ""
 
-#: ../../api.rst:324
+#: ../../api.rst:322
 msgid "`app`"
 msgstr ""
 
-#: ../../api.rst:324
+#: ../../api.rst:322
 msgid "the active Flask application."
 msgstr ""
 
-#: ../../api.rst:327
+#: ../../api.rst:325
 msgid "`url_adapter`"
 msgstr ""
 
-#: ../../api.rst:327
+#: ../../api.rst:325
 msgid "the URL adapter that was used to match the request."
 msgstr ""
 
-#: ../../api.rst:330
+#: ../../api.rst:328
 msgid "`request`"
 msgstr ""
 
-#: ../../api.rst:330
+#: ../../api.rst:328
 msgid "the current request object."
 msgstr ""
 
-#: ../../api.rst:333
+#: ../../api.rst:331
 msgid "`session`"
 msgstr ""
 
-#: ../../api.rst:333
+#: ../../api.rst:331
 msgid "the active session object."
 msgstr ""
 
-#: ../../api.rst:336
+#: ../../api.rst:334
 msgid "`g`"
 msgstr ""
 
-#: ../../api.rst:336
+#: ../../api.rst:334
 msgid "an object with all the attributes of the :data:`flask.g` object."
 msgstr ""
 
-#: ../../api.rst:339
+#: ../../api.rst:337
 msgid "`flashes`"
 msgstr ""
 
-#: ../../api.rst:339
+#: ../../api.rst:337
 msgid "an internal cache for the flashed messages."
 msgstr ""
 
-#: ../../api.rst:341 ../../api.rst:515
+#: ../../api.rst:339 ../../api.rst:513
 msgid "Example usage::"
 msgstr ""
 
@@ -5902,7 +5863,7 @@ msgstr ""
 msgid "Binds the app context to the current context."
 msgstr ""
 
-#: ../../api.rst:355
+#: ../../api.rst:353
 msgid ""
 "The internal :class:`~werkzeug.local.LocalStack` that holds "
 ":class:`~flask.ctx.AppContext` instances. Typically, the "
@@ -5962,40 +5923,40 @@ msgstr ""
 msgid "The prefix that should be used for all URLs defined on the blueprint."
 msgstr ""
 
-#: ../../api.rst:369
+#: ../../api.rst:367
 msgid "Signals"
 msgstr ""
 
-#: ../../api.rst:375
+#: ../../api.rst:373
 msgid ""
 "``True`` if the signaling system is available.  This is the case when "
 "`blinker`_ is installed."
 msgstr ""
 
-#: ../../api.rst:378
+#: ../../api.rst:376
 msgid "The following signals exist in Flask:"
 msgstr ""
 
-#: ../../api.rst:382
+#: ../../api.rst:380
 msgid ""
 "This signal is sent when a template was successfully rendered.  The "
 "signal is invoked with the instance of the template as `template` and the"
 " context as dictionary (named `context`)."
 msgstr ""
 
-#: ../../api.rst:386 ../../api.rst:403 ../../api.rst:420 ../../api.rst:433
-#: ../../api.rst:478 ../../api.rst:497 ../../api.rst:552
+#: ../../api.rst:384 ../../api.rst:401 ../../api.rst:418 ../../api.rst:431
+#: ../../api.rst:476 ../../api.rst:495 ../../api.rst:550
 msgid "Example subscriber::"
 msgstr ""
 
-#: ../../api.rst:399
+#: ../../api.rst:397
 msgid ""
 "This signal is sent before template rendering process. The signal is "
 "invoked with the instance of the template as `template` and the context "
 "as dictionary (named `context`)."
 msgstr ""
 
-#: ../../api.rst:415
+#: ../../api.rst:413
 msgid ""
 "This signal is sent when the request context is set up, before any "
 "request processing happens.  Because the request context is already "
@@ -6003,33 +5964,33 @@ msgid ""
 "proxies such as :class:`~flask.request`."
 msgstr ""
 
-#: ../../api.rst:430
+#: ../../api.rst:428
 msgid ""
 "This signal is sent right before the response is sent to the client. It "
 "is passed the response to be sent named `response`."
 msgstr ""
 
-#: ../../api.rst:444
+#: ../../api.rst:442
 msgid ""
 "This signal is sent when an unhandled exception happens during request "
 "processing, including when debugging. The exception is passed to the "
 "subscriber as ``exception``."
 msgstr ""
 
-#: ../../api.rst:448
+#: ../../api.rst:446
 msgid ""
 "This signal is not sent for :exc:`~werkzeug.exceptions.HTTPException`, or"
 " other exceptions that have error handlers registered, unless the "
 "exception was raised from an error handler."
 msgstr ""
 
-#: ../../api.rst:453
+#: ../../api.rst:451
 msgid ""
 "This example shows how to do some extra logging if a theoretical "
 "``SecurityException`` was raised:"
 msgstr ""
 
-#: ../../api.rst:473
+#: ../../api.rst:471
 msgid ""
 "This signal is sent when the request is tearing down.  This is always "
 "called, even if an exception is caused.  Currently functions listening to"
@@ -6037,14 +5998,14 @@ msgid ""
 "not something you can rely on."
 msgstr ""
 
-#: ../../api.rst:486
+#: ../../api.rst:484
 msgid ""
 "As of Flask 0.9, this will also be passed an `exc` keyword argument that "
 "has a reference to the exception that caused the teardown if there was "
 "one."
 msgstr ""
 
-#: ../../api.rst:492
+#: ../../api.rst:490
 msgid ""
 "This signal is sent when the app context is tearing down.  This is always"
 " called, even if an exception is caused.  Currently functions listening "
@@ -6052,13 +6013,13 @@ msgid ""
 "is not something you can rely on."
 msgstr ""
 
-#: ../../api.rst:505
+#: ../../api.rst:503
 msgid ""
 "This will also be passed an `exc` keyword argument that has a reference "
 "to the exception that caused the teardown if there was one."
 msgstr ""
 
-#: ../../api.rst:510
+#: ../../api.rst:508
 msgid ""
 "This signal is sent when an application context is pushed.  The sender is"
 " the application.  This is usually useful for unittests in order to "
@@ -6066,25 +6027,25 @@ msgid ""
 "resource early onto the `g` object."
 msgstr ""
 
-#: ../../api.rst:527
+#: ../../api.rst:525
 msgid "And in the testcode::"
 msgstr ""
 
-#: ../../api.rst:539
+#: ../../api.rst:537
 msgid ""
 "This signal is sent when an application context is popped.  The sender is"
 " the application.  This usually falls in line with the "
 ":data:`appcontext_tearing_down` signal."
 msgstr ""
 
-#: ../../api.rst:548
+#: ../../api.rst:546
 msgid ""
 "This signal is sent when the application is flashing a message.  The "
 "messages is sent as `message` keyword argument and the category as "
 "`category`."
 msgstr ""
 
-#: ../../api.rst:565
+#: ../../api.rst:563
 msgid ""
 "An alias for :class:`blinker.base.Namespace` if blinker is available, "
 "otherwise a dummy class that creates fake signals.  This class is "
@@ -6092,7 +6053,7 @@ msgid ""
 "system as Flask itself."
 msgstr ""
 
-#: ../../api.rst:572
+#: ../../api.rst:570
 msgid ""
 "Creates a new signal for this namespace if blinker is available, "
 "otherwise returns a fake signal that has a send method that will do "
@@ -6100,7 +6061,7 @@ msgid ""
 "operations, including connecting."
 msgstr ""
 
-#: ../../api.rst:582
+#: ../../api.rst:580
 msgid "Class-Based Views"
 msgstr ""
 
@@ -6179,29 +6140,29 @@ msgid ""
 " used to handle ``GET`` requests. ::"
 msgstr ""
 
-#: ../../api.rst:597
+#: ../../api.rst:595
 msgid "URL Route Registrations"
 msgstr ""
 
-#: ../../api.rst:599
+#: ../../api.rst:597
 msgid "Generally there are three ways to define rules for the routing system:"
 msgstr ""
 
-#: ../../api.rst:601
+#: ../../api.rst:599
 msgid "You can use the :meth:`flask.Flask.route` decorator."
 msgstr ""
 
-#: ../../api.rst:602
+#: ../../api.rst:600
 msgid "You can use the :meth:`flask.Flask.add_url_rule` function."
 msgstr ""
 
-#: ../../api.rst:603
+#: ../../api.rst:601
 msgid ""
 "You can directly access the underlying Werkzeug routing system which is "
 "exposed as :attr:`flask.Flask.url_map`."
 msgstr ""
 
-#: ../../api.rst:606
+#: ../../api.rst:604
 msgid ""
 "Variable parts in the route can be specified with angular brackets "
 "(``/user/<username>``).  By default a variable part in the URL accepts "
@@ -6209,110 +6170,110 @@ msgid ""
 " as well by using ``<converter:name>``."
 msgstr ""
 
-#: ../../api.rst:611
+#: ../../api.rst:609
 msgid "Variable parts are passed to the view function as keyword arguments."
 msgstr ""
 
-#: ../../api.rst:613
+#: ../../api.rst:611
 msgid "The following converters are available:"
 msgstr ""
 
-#: ../../api.rst:616
+#: ../../api.rst:614
 msgid "`string`"
 msgstr ""
 
-#: ../../api.rst:616
+#: ../../api.rst:614
 msgid "accepts any text without a slash (the default)"
 msgstr ""
 
-#: ../../api.rst:617
+#: ../../api.rst:615
 msgid "`int`"
 msgstr ""
 
-#: ../../api.rst:617
+#: ../../api.rst:615
 msgid "accepts integers"
 msgstr ""
 
-#: ../../api.rst:618
+#: ../../api.rst:616
 msgid "`float`"
 msgstr ""
 
-#: ../../api.rst:618
+#: ../../api.rst:616
 msgid "like `int` but for floating point values"
 msgstr ""
 
-#: ../../api.rst:619
+#: ../../api.rst:617
 msgid "`path`"
 msgstr ""
 
-#: ../../api.rst:619
+#: ../../api.rst:617
 msgid "like the default but also accepts slashes"
 msgstr ""
 
-#: ../../api.rst:620
+#: ../../api.rst:618
 msgid "`any`"
 msgstr ""
 
-#: ../../api.rst:620
+#: ../../api.rst:618
 msgid "matches one of the items provided"
 msgstr ""
 
-#: ../../api.rst:621
+#: ../../api.rst:619
 msgid "`uuid`"
 msgstr ""
 
-#: ../../api.rst:621
+#: ../../api.rst:619
 msgid "accepts UUID strings"
 msgstr ""
 
-#: ../../api.rst:624
+#: ../../api.rst:622
 msgid "Custom converters can be defined using :attr:`flask.Flask.url_map`."
 msgstr ""
 
-#: ../../api.rst:626
+#: ../../api.rst:624
 msgid "Here are some examples::"
 msgstr ""
 
-#: ../../api.rst:640
+#: ../../api.rst:638
 msgid ""
 "An important detail to keep in mind is how Flask deals with trailing "
 "slashes.  The idea is to keep each URL unique so the following rules "
 "apply:"
 msgstr ""
 
-#: ../../api.rst:644
+#: ../../api.rst:642
 msgid ""
 "If a rule ends with a slash and is requested without a slash by the user,"
 " the user is automatically redirected to the same page with a trailing "
 "slash attached."
 msgstr ""
 
-#: ../../api.rst:647
+#: ../../api.rst:645
 msgid ""
 "If a rule does not end with a trailing slash and the user requests the "
 "page with a trailing slash, a 404 not found is raised."
 msgstr ""
 
-#: ../../api.rst:650
+#: ../../api.rst:648
 msgid ""
 "This is consistent with how web servers deal with static files.  This "
 "also makes it possible to use relative link targets safely."
 msgstr ""
 
-#: ../../api.rst:653
+#: ../../api.rst:651
 msgid ""
 "You can also define multiple rules for the same function.  They have to "
 "be unique however.  Defaults can also be specified.  Here for example is "
 "a definition for a URL that accepts an optional page::"
 msgstr ""
 
-#: ../../api.rst:662
+#: ../../api.rst:660
 msgid ""
 "This specifies that ``/users/`` will be the URL for page one and "
 "``/users/page/N`` will be the URL for page ``N``."
 msgstr ""
 
-#: ../../api.rst:665
+#: ../../api.rst:663
 msgid ""
 "If a URL contains a default value, it will be redirected to its simpler "
 "form with a 301 redirect. In the above example, ``/users/page/1`` will be"
@@ -6321,7 +6282,7 @@ msgid ""
 "can't preserve form data. ::"
 msgstr ""
 
-#: ../../api.rst:676
+#: ../../api.rst:674
 msgid ""
 "Here are the parameters that :meth:`~flask.Flask.route` and "
 ":meth:`~flask.Flask.add_url_rule` accept.  The only difference is that "
@@ -6329,30 +6290,30 @@ msgid ""
 "instead of the `view_func` parameter."
 msgstr ""
 
-#: ../../api.rst:682
+#: ../../api.rst:680
 msgid "`rule`"
 msgstr ""
 
-#: ../../api.rst:682
+#: ../../api.rst:680
 msgid "the URL rule as string"
 msgstr ""
 
-#: ../../api.rst:683
+#: ../../api.rst:681
 msgid "`endpoint`"
 msgstr ""
 
-#: ../../api.rst:683
+#: ../../api.rst:681
 msgid ""
 "the endpoint for the registered URL rule.  Flask itself assumes that the "
 "name of the view function is the name of the endpoint if not explicitly "
 "stated."
 msgstr ""
 
-#: ../../api.rst:686
+#: ../../api.rst:684
 msgid "`view_func`"
 msgstr ""
 
-#: ../../api.rst:686
+#: ../../api.rst:684
 msgid ""
 "the function to call when serving a request to the provided endpoint.  If"
 " this is not provided one can specify the function later by storing it in"
@@ -6360,31 +6321,31 @@ msgid ""
 "key."
 msgstr ""
 
-#: ../../api.rst:691
+#: ../../api.rst:689
 msgid "`defaults`"
 msgstr ""
 
-#: ../../api.rst:691
+#: ../../api.rst:689
 msgid ""
 "A dictionary with defaults for this rule.  See the example above for how "
 "defaults work."
 msgstr ""
 
-#: ../../api.rst:693
+#: ../../api.rst:691
 msgid "`subdomain`"
 msgstr ""
 
-#: ../../api.rst:693
+#: ../../api.rst:691
 msgid ""
 "specifies the rule for the subdomain in case subdomain matching is in "
 "use.  If not specified the default subdomain is assumed."
 msgstr ""
 
-#: ../../api.rst:696
+#: ../../api.rst:694
 msgid "`**options`"
 msgstr ""
 
-#: ../../api.rst:696
+#: ../../api.rst:694
 msgid ""
 "the options to be forwarded to the underlying "
 ":class:`~werkzeug.routing.Rule` object.  A change to Werkzeug is handling"
@@ -6395,11 +6356,11 @@ msgid ""
 "have to be specified as keyword arguments."
 msgstr ""
 
-#: ../../api.rst:708
+#: ../../api.rst:706
 msgid "View Function Options"
 msgstr ""
 
-#: ../../api.rst:710
+#: ../../api.rst:708
 msgid ""
 "For internal usage the view functions can have some attributes attached "
 "to customize behavior the view function would normally not have control "
@@ -6408,7 +6369,7 @@ msgid ""
 "behavior:"
 msgstr ""
 
-#: ../../api.rst:715
+#: ../../api.rst:713
 msgid ""
 "`__name__`: The name of a function is by default used as endpoint.  If "
 "endpoint is provided explicitly this value is used.  Additionally this "
@@ -6416,7 +6377,7 @@ msgid ""
 "be customized from the function itself."
 msgstr ""
 
-#: ../../api.rst:720
+#: ../../api.rst:718
 msgid ""
 "`methods`: If methods are not provided when the URL rule is added, Flask "
 "will look on the view function object itself if a `methods` attribute "
@@ -6424,7 +6385,7 @@ msgid ""
 "there."
 msgstr ""
 
-#: ../../api.rst:725
+#: ../../api.rst:723
 msgid ""
 "`provide_automatic_options`: if this attribute is set Flask will either "
 "force enable or disable the automatic implementation of the HTTP "
@@ -6432,22 +6393,22 @@ msgid ""
 "that want to customize the ``OPTIONS`` response on a per-view basis."
 msgstr ""
 
-#: ../../api.rst:731
+#: ../../api.rst:729
 msgid ""
 "`required_methods`: if this attribute is set, Flask will always add these"
 " methods when registering a URL rule even if the methods were explicitly "
 "overridden in the ``route()`` call."
 msgstr ""
 
-#: ../../api.rst:735
+#: ../../api.rst:733
 msgid "Full example::"
 msgstr ""
 
-#: ../../api.rst:747
+#: ../../api.rst:745
 msgid "The `provide_automatic_options` functionality was added."
 msgstr ""
 
-#: ../../api.rst:751
+#: ../../api.rst:749
 msgid "Command Line Interface"
 msgstr ""
 
@@ -6653,7 +6614,7 @@ msgid ""
 "unless it's disabled."
 msgstr ""
 
-#: ../../api.rst:770
+#: ../../api.rst:768
 msgid ""
 "Marks a function so that an instance of :class:`ScriptInfo` is passed as "
 "first argument to the click callback."
@@ -6706,4 +6667,48 @@ msgstr ""
 #~ "testing, you can use the :ref"
 #~ ":`faking-resources` pattern to pre-"
 #~ "configure such resources."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Teardown functions must avoid raising "
+#~ "exceptions, since they . If they "
+#~ "execute code that might fail they "
+#~ "will have to surround the execution "
+#~ "of these code by try/except statements"
+#~ " and log occurring errors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Safely join zero or more untrusted "
+#~ "path components to a base directory "
+#~ "to avoid escaping the base directory."
+#~ msgstr ""
+
+#~ msgid "The trusted base directory."
+#~ msgstr ""
+
+#~ msgid "The untrusted path components relative to the base directory."
+#~ msgstr ""
+
+#~ msgid "A safe path, otherwise ``None``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Update the values in the config "
+#~ "from a JSON file. The loaded data"
+#~ " is passed to the :meth:`from_mapping` "
+#~ "method."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The path to the JSON file. This"
+#~ " can be an absolute path or "
+#~ "relative to the config root path."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Will be removed in Flask 2.1. Use"
+#~ " :meth:`from_file` instead. This was "
+#~ "removed early in 2.0.0, was added "
+#~ "back in 2.0.1."
 #~ msgstr ""

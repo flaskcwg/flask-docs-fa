@@ -65,6 +65,9 @@ msgstr ""
 "سایر پروژه ها شما میتوانید تصمیم بگیرید که از :doc:`/extensions` یا سایر "
 "کتابخانه ها اندک ساخته شده استفاده کنید."
 
+msgid "اسکرین شات صفحه ورود"
+msgstr ""
+
 #: ../../tutorial/index.rst:47
 msgid ""
 "Flask is flexible. It doesn't require you to use any particular project "

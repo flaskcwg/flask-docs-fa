@@ -16,7 +16,6 @@ from werkzeug.exceptions import BadRequest
 from werkzeug.exceptions import BadRequestKeyError
 from werkzeug.exceptions import HTTPException
 from werkzeug.exceptions import InternalServerError
-from werkzeug.local import ContextVar
 from werkzeug.routing import BuildError
 from werkzeug.routing import Map
 from werkzeug.routing import MapAdapter
@@ -51,6 +50,7 @@ from .scaffold import find_package
 from .scaffold import Scaffold
 from .scaffold import setupmethod
 from .sessions import SecureCookieSessionInterface
+from .sessions import SessionInterface
 from .signals import appcontext_tearing_down
 from .signals import got_request_exception
 from .signals import request_finished
@@ -379,7 +379,7 @@ class Flask(Scaffold):
     #: :class:`~flask.sessions.SecureCookieSessionInterface` is used here.
     #:
     #: .. versionadded:: 0.8
-    session_interface = SecureCookieSessionInterface()
+    session_interface: SessionInterface = SecureCookieSessionInterface()
 
     def __init__(
         self,
@@ -1620,13 +1620,6 @@ class Flask(Scaffold):
             raise RuntimeError(
                 "Install Flask with the 'async' extra in order to use async views."
             ) from None
-
-        # Check that Werkzeug isn't using its fallback ContextVar class.
-        if ContextVar.__module__ == "werkzeug.local":
-            raise RuntimeError(
-                "Async cannot be used with this combination of Python "
-                "and Greenlet versions."
-            )
 
         return asgiref_async_to_sync(func)
 

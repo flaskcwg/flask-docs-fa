@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-03-09 22:15+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -18,105 +18,224 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: ../../deploying/wsgi-standalone.rst:2
-msgid "Standalone WSGI Containers"
+msgid "Standalone WSGI Servers"
 msgstr ""
 
 #: ../../deploying/wsgi-standalone.rst:4
 msgid ""
-"There are popular servers written in Python that contain WSGI "
-"applications and serve HTTP.  These servers stand alone when they run; "
-"you can proxy to them from your web server.  Note the section on :ref"
-":`deploying-proxy-setups` if you run into issues."
+"Most WSGI servers also provide HTTP servers, so they can run a WSGI "
+"application and make it available externally."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:10
+#: ../../deploying/wsgi-standalone.rst:7
+msgid ""
+"It may still be a good idea to run the server behind a dedicated HTTP "
+"server such as Apache or Nginx. See :ref:`deploying-proxy-setups` if you "
+"run into issues with that."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:13
 msgid "Gunicorn"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:12
+#: ../../deploying/wsgi-standalone.rst:15
 msgid ""
-"`Gunicorn`_ 'Green Unicorn' is a WSGI HTTP Server for UNIX. It's a pre-"
-"fork worker model ported from Ruby's Unicorn project. It supports both "
-"`eventlet`_ and `greenlet`_. Running a Flask application on this server "
-"is quite simple::"
+"`Gunicorn`_ is a WSGI and HTTP server for UNIX. To run a Flask "
+"application, tell Gunicorn how to import your Flask app object."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:18
+#: ../../deploying/wsgi-standalone.rst:22
 msgid ""
-"`Gunicorn`_ provides many command-line options -- see ``gunicorn -h``. "
-"For example, to run a Flask application with 4 worker processes (``-w "
-"4``) binding to localhost port 4000 (``-b 127.0.0.1:4000``)::"
+"The ``-w 4`` option uses 4 workers to handle 4 requests at once. The ``-b"
+" 0.0.0.0:5000`` serves the application on all interfaces on port 5000."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:24
+#: ../../deploying/wsgi-standalone.rst:26
 msgid ""
-"The ``gunicorn`` command expects the names of your application module or "
-"package and the application instance within the module. If you use the "
-"application factory pattern, you can pass a call to that::"
+"Gunicorn provides many options for configuring the server, either through"
+" a configuration file or with command line options. Use ``gunicorn "
+"--help`` or see the docs for more information."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:35
-msgid "uWSGI"
-msgstr ""
-
-#: ../../deploying/wsgi-standalone.rst:37
+#: ../../deploying/wsgi-standalone.rst:30
 msgid ""
-"`uWSGI`_ is a fast application server written in C. It is very "
-"configurable which makes it more complicated to setup than gunicorn."
+"The command expects the name of your module or package to import and the "
+"application instance within the module. If you use the application "
+"factory pattern, you can pass a call to that."
 msgstr ""
 
 #: ../../deploying/wsgi-standalone.rst:40
-msgid "Running `uWSGI HTTP Router`_::"
+msgid "Async with Gevent or Eventlet"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:44
+#: ../../deploying/wsgi-standalone.rst:42
 msgid ""
-"For a more optimized setup, see :doc:`configuring uWSGI and NGINX "
-"<uwsgi>`."
+"The default sync worker is appropriate for many use cases. If you need "
+"asynchronous support, Gunicorn provides workers using either `gevent`_ or"
+" `eventlet`_. This is not the same as Python's ``async/await``, or the "
+"ASGI server spec."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:50
+#: ../../deploying/wsgi-standalone.rst:47
+msgid ""
+"When using either gevent or eventlet, greenlet>=1.0 is required, "
+"otherwise context locals such as ``request`` will not work as expected. "
+"When using PyPy, PyPy>=7.3.7 is required."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:51
+msgid "To use gevent:"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:57
+msgid "To use eventlet:"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:71
+msgid "uWSGI"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:73
+msgid ""
+"`uWSGI`_ is a fast application server written in C. It is very "
+"configurable, which makes it more complicated to setup than Gunicorn. It "
+"also provides many other utilities for writing robust web applications. "
+"To run a Flask application, tell Gunicorn how to import your Flask app "
+"object."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:83
+msgid ""
+"The ``-p 4`` option uses 4 workers to handle 4 requests at once. The "
+"``--http 0.0.0.0:5000`` serves the application on all interfaces on port "
+"5000."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:87
+msgid ""
+"uWSGI has optimized integration with Nginx and Apache instead of using a "
+"standard HTTP proxy. See :doc:`configuring uWSGI and Nginx <uwsgi>`."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:92
+msgid "Async with Gevent"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:94
+msgid ""
+"The default sync worker is appropriate for many use cases. If you need "
+"asynchronous support, uWSGI provides workers using `gevent`_. It also "
+"supports other async modes, see the docs for more information. This is "
+"not the same as Python's ``async/await``, or the ASGI server spec."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:99
+msgid ""
+"When using gevent, greenlet>=1.0 is required, otherwise context locals "
+"such as ``request`` will not work as expected. When using PyPy, "
+"PyPy>=7.3.7 is required."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:111
 msgid "Gevent"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:52
+#: ../../deploying/wsgi-standalone.rst:113
 msgid ""
-"`Gevent`_ is a coroutine-based Python networking library that uses "
-"`greenlet`_ to provide a high-level synchronous API on top of `libev`_ "
-"event loop::"
+"Prefer using `Gunicorn`_ with Gevent workers rather than using Gevent "
+"directly. Gunicorn provides a much more configurable and production-"
+"tested server. See the section on Gunicorn above."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:67
+#: ../../deploying/wsgi-standalone.rst:117
+msgid ""
+"`Gevent`_ allows writing asynchronous, coroutine-based code that looks "
+"like standard synchronous Python. It uses `greenlet`_ to enable task "
+"switching without writing ``async/await`` or using ``asyncio``."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:121
+#: ../../deploying/wsgi-standalone.rst:151
+msgid ""
+"It provides a WSGI server that can handle many connections at once "
+"instead of one per worker process."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:124
+msgid ""
+"`Eventlet`_, described below, is another library that does the same "
+"thing. Certain dependencies you have, or other consideration, may affect "
+"which of the two you choose to use"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:128
+msgid ""
+"To use gevent to serve your application, import its ``WSGIServer`` and "
+"use it to run your ``app``."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:141
+msgid "Eventlet"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:143
+msgid ""
+"Prefer using `Gunicorn`_ with Eventlet workers rather than using Eventlet"
+" directly. Gunicorn provides a much more configurable and production-"
+"tested server. See the section on Gunicorn above."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:147
+msgid ""
+"`Eventlet`_ allows writing asynchronous, coroutine-based code that looks "
+"like standard synchronous Python. It uses `greenlet`_ to enable task "
+"switching without writing ``async/await`` or using ``asyncio``."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:154
+msgid ""
+"`Gevent`_, described above, is another library that does the same thing. "
+"Certain dependencies you have, or other consideration, may affect which "
+"of the two you choose to use"
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:158
+msgid ""
+"To use eventlet to serve your application, import its ``wsgi.server`` and"
+" use it to run your ``app``."
+msgstr ""
+
+#: ../../deploying/wsgi-standalone.rst:171
 msgid "Twisted Web"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:69
+#: ../../deploying/wsgi-standalone.rst:173
 msgid ""
 "`Twisted Web`_ is the web server shipped with `Twisted`_, a mature, non-"
 "blocking event-driven networking library. Twisted Web comes with a "
 "standard WSGI container which can be controlled from the command line "
-"using the ``twistd`` utility::"
+"using the ``twistd`` utility:"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:76
+#: ../../deploying/wsgi-standalone.rst:182
 msgid ""
 "This example will run a Flask application called ``app`` from a module "
 "named ``myproject``."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:79
+#: ../../deploying/wsgi-standalone.rst:185
 msgid ""
 "Twisted Web supports many flags and options, and the ``twistd`` utility "
 "does as well; see ``twistd -h`` and ``twistd web -h`` for more "
 "information. For example, to run a Twisted Web server in the foreground, "
-"on port 8080, with an application from ``myproject``::"
+"on port 8080, with an application from ``myproject``:"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:92
+#: ../../deploying/wsgi-standalone.rst:201
 msgid "Proxy Setups"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:94
+#: ../../deploying/wsgi-standalone.rst:203
 msgid ""
 "If you deploy your application using one of these servers behind an HTTP "
 "proxy you will need to rewrite a few headers in order for the application"
@@ -127,32 +246,117 @@ msgid ""
 " WSGI middleware for specific setups."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:102
+#: ../../deploying/wsgi-standalone.rst:211
 msgid ""
 "Here's a simple nginx configuration which proxies to an application "
 "served on localhost at port 8000, setting appropriate headers:"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:126
+#: ../../deploying/wsgi-standalone.rst:235
 msgid ""
 "If your httpd is not providing these headers, the most common setup "
 "invokes the host being set from ``X-Forwarded-Host`` and the remote "
 "address from ``X-Forwarded-For``::"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:133
+#: ../../deploying/wsgi-standalone.rst:242
 msgid "Trusting Headers"
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:135
+#: ../../deploying/wsgi-standalone.rst:244
 msgid ""
 "Please keep in mind that it is a security issue to use such a middleware "
 "in a non-proxy setup because it will blindly trust the incoming headers "
 "which might be forged by malicious clients."
 msgstr ""
 
-#: ../../deploying/wsgi-standalone.rst:139
+#: ../../deploying/wsgi-standalone.rst:248
 msgid ""
 "If you want to rewrite the headers from another header, you might want to"
 " use a fixer like this::"
 msgstr ""
+
+#~ msgid "Standalone WSGI Containers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There are popular servers written in "
+#~ "Python that contain WSGI applications "
+#~ "and serve HTTP.  These servers stand "
+#~ "alone when they run; you can proxy"
+#~ " to them from your web server.  "
+#~ "Note the section on :ref:`deploying-"
+#~ "proxy-setups` if you run into issues."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gunicorn`_ 'Green Unicorn' is a WSGI"
+#~ " HTTP Server for UNIX. It's a "
+#~ "pre-fork worker model ported from "
+#~ "Ruby's Unicorn project. It supports both"
+#~ " `eventlet`_ and `greenlet`_. Running a "
+#~ "Flask application on this server is "
+#~ "quite simple::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gunicorn`_ provides many command-line "
+#~ "options -- see ``gunicorn -h``. For "
+#~ "example, to run a Flask application "
+#~ "with 4 worker processes (``-w 4``) "
+#~ "binding to localhost port 4000 (``-b "
+#~ "127.0.0.1:4000``)::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``gunicorn`` command expects the "
+#~ "names of your application module or "
+#~ "package and the application instance "
+#~ "within the module. If you use the"
+#~ " application factory pattern, you can "
+#~ "pass a call to that::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`uWSGI`_ is a fast application server"
+#~ " written in C. It is very "
+#~ "configurable which makes it more "
+#~ "complicated to setup than gunicorn."
+#~ msgstr ""
+
+#~ msgid "Running `uWSGI HTTP Router`_::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a more optimized setup, see "
+#~ ":doc:`configuring uWSGI and NGINX <uwsgi>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gevent`_ is a coroutine-based Python"
+#~ " networking library that uses `greenlet`_"
+#~ " to provide a high-level synchronous"
+#~ " API on top of `libev`_ event "
+#~ "loop::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Twisted Web`_ is the web server "
+#~ "shipped with `Twisted`_, a mature, "
+#~ "non-blocking event-driven networking "
+#~ "library. Twisted Web comes with a "
+#~ "standard WSGI container which can be "
+#~ "controlled from the command line using"
+#~ " the ``twistd`` utility::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Twisted Web supports many flags and "
+#~ "options, and the ``twistd`` utility does"
+#~ " as well; see ``twistd -h`` and "
+#~ "``twistd web -h`` for more information."
+#~ " For example, to run a Twisted "
+#~ "Web server in the foreground, on "
+#~ "port 8080, with an application from "
+#~ "``myproject``::"
+#~ msgstr ""
