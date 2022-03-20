@@ -1,8 +1,8 @@
-@import url(https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css);
+@import url(https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v32.1/Vazirmatn-font-face.css);
 
 * {
     direction: rtl;
-    font-family: 'Vazir', sans-serif;
+    font-family: 'Vazirmatn', sans-serif;
 
 }
 

@@ -178,7 +178,7 @@ def copy_current_request_context(f: t.Callable) -> t.Callable:
 
     def wrapper(*args, **kwargs):
         with reqctx:
-            return f(*args, **kwargs)
+            return reqctx.app.ensure_sync(f)(*args, **kwargs)
 
     return update_wrapper(wrapper, f)
 
@@ -267,7 +267,10 @@ class AppContext:
         return self
 
     def __exit__(
-        self, exc_type: type, exc_value: BaseException, tb: TracebackType
+        self,
+        exc_type: t.Optional[type],
+        exc_value: t.Optional[BaseException],
+        tb: t.Optional[TracebackType],
     ) -> None:
         self.pop(exc_value)
 
@@ -341,11 +344,29 @@ class RequestContext:
         self._after_request_functions: t.List[AfterRequestCallable] = []
 
     @property
-    def g(self) -> AppContext:
+    def g(self) -> _AppCtxGlobals:
+        import warnings
+
+        warnings.warn(
+            "Accessing 'g' on the request context is deprecated and"
+            " will be removed in Flask 2.2. Access `g` directly or from"
+            "the application context instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         return _app_ctx_stack.top.g
 
     @g.setter
-    def g(self, value: AppContext) -> None:
+    def g(self, value: _AppCtxGlobals) -> None:
+        import warnings
+
+        warnings.warn(
+            "Setting 'g' on the request context is deprecated and"
+            " will be removed in Flask 2.2. Set it on the application"
+            " context instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         _app_ctx_stack.top.g = value
 
     def copy(self) -> "RequestContext":
@@ -473,7 +494,10 @@ class RequestContext:
         return self
 
     def __exit__(
-        self, exc_type: type, exc_value: BaseException, tb: TracebackType
+        self,
+        exc_type: t.Optional[type],
+        exc_value: t.Optional[BaseException],
+        tb: t.Optional[TracebackType],
     ) -> None:
         # do not pop the request stack if we are in debug mode and an
         # exception happened.  This will allow the debugger to still

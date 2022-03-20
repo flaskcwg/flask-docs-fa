@@ -21,7 +21,6 @@ from .templating import _default_template_ctx_processor
 from .typing import AfterRequestCallable
 from .typing import AppOrBlueprintKey
 from .typing import BeforeRequestCallable
-from .typing import GenericException
 from .typing import TeardownCallable
 from .typing import TemplateContextProcessorCallable
 from .typing import URLDefaultCallable
@@ -145,10 +144,7 @@ class Scaffold:
         #: directly and its format may change at any time.
         self.error_handler_spec: t.Dict[
             AppOrBlueprintKey,
-            t.Dict[
-                t.Optional[int],
-                t.Dict[t.Type[Exception], "ErrorHandlerCallable[Exception]"],
-            ],
+            t.Dict[t.Optional[int], t.Dict[t.Type[Exception], "ErrorHandlerCallable"]],
         ] = defaultdict(lambda: defaultdict(dict))
 
         #: A data structure of functions to call at the beginning of
@@ -369,48 +365,53 @@ class Scaffold:
 
         return open(os.path.join(self.root_path, resource), mode)
 
-    def _method_route(self, method: str, rule: str, options: dict) -> t.Callable:
+    def _method_route(
+        self,
+        method: str,
+        rule: str,
+        options: dict,
+    ) -> t.Callable[[F], F]:
         if "methods" in options:
             raise TypeError("Use the 'route' decorator to use the 'methods' argument.")
 
         return self.route(rule, methods=[method], **options)
 
-    def get(self, rule: str, **options: t.Any) -> t.Callable:
+    def get(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
         """Shortcut for :meth:`route` with ``methods=["GET"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("GET", rule, options)
 
-    def post(self, rule: str, **options: t.Any) -> t.Callable:
+    def post(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
         """Shortcut for :meth:`route` with ``methods=["POST"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("POST", rule, options)
 
-    def put(self, rule: str, **options: t.Any) -> t.Callable:
+    def put(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
         """Shortcut for :meth:`route` with ``methods=["PUT"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("PUT", rule, options)
 
-    def delete(self, rule: str, **options: t.Any) -> t.Callable:
+    def delete(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
         """Shortcut for :meth:`route` with ``methods=["DELETE"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("DELETE", rule, options)
 
-    def patch(self, rule: str, **options: t.Any) -> t.Callable:
+    def patch(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
         """Shortcut for :meth:`route` with ``methods=["PATCH"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("PATCH", rule, options)
 
-    def route(self, rule: str, **options: t.Any) -> t.Callable:
+    def route(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
         """Decorate a view function to register it with the given URL
         rule and options. Calls :meth:`add_url_rule`, which has more
         details about the implementation.
@@ -434,7 +435,7 @@ class Scaffold:
             :class:`~werkzeug.routing.Rule` object.
         """
 
-        def decorator(f: t.Callable) -> t.Callable:
+        def decorator(f: F) -> F:
             endpoint = options.pop("endpoint", None)
             self.add_url_rule(rule, endpoint, f, **options)
             return f
@@ -589,10 +590,10 @@ class Scaffold:
         stack of active contexts.  This becomes relevant if you are using
         such constructs in tests.
 
-        Teardown functions must avoid raising exceptions, since they . If they
-        execute code that might fail they
-        will have to surround the execution of these code by try/except
-        statements and log occurring errors.
+        Teardown functions must avoid raising exceptions. If
+        they execute code that might fail they
+        will have to surround the execution of that code with try/except
+        statements and log any errors.
 
         When a teardown function was called because of an exception it will
         be passed an error object.
@@ -647,11 +648,8 @@ class Scaffold:
 
     @setupmethod
     def errorhandler(
-        self, code_or_exception: t.Union[t.Type[GenericException], int]
-    ) -> t.Callable[
-        ["ErrorHandlerCallable[GenericException]"],
-        "ErrorHandlerCallable[GenericException]",
-    ]:
+        self, code_or_exception: t.Union[t.Type[Exception], int]
+    ) -> t.Callable[["ErrorHandlerCallable"], "ErrorHandlerCallable"]:
         """Register a function to handle errors by code or exception class.
 
         A decorator that is used to register a function given an
@@ -681,9 +679,7 @@ class Scaffold:
                                   an arbitrary exception
         """
 
-        def decorator(
-            f: "ErrorHandlerCallable[GenericException]",
-        ) -> "ErrorHandlerCallable[GenericException]":
+        def decorator(f: "ErrorHandlerCallable") -> "ErrorHandlerCallable":
             self.register_error_handler(code_or_exception, f)
             return f
 
@@ -692,8 +688,8 @@ class Scaffold:
     @setupmethod
     def register_error_handler(
         self,
-        code_or_exception: t.Union[t.Type[GenericException], int],
-        f: "ErrorHandlerCallable[GenericException]",
+        code_or_exception: t.Union[t.Type[Exception], int],
+        f: "ErrorHandlerCallable",
     ) -> None:
         """Alternative error attach function to the :meth:`errorhandler`
         decorator that is more straightforward to use for non decorator
@@ -717,9 +713,7 @@ class Scaffold:
                 " instead."
             ) from None
 
-        self.error_handler_spec[None][code][exc_class] = t.cast(
-            "ErrorHandlerCallable[Exception]", f
-        )
+        self.error_handler_spec[None][code][exc_class] = f
 
     @staticmethod
     def _get_exc_class_and_code(
