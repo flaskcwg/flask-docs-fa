@@ -200,7 +200,7 @@ $ git push origin your-branch-name
 * [ ] changes
 * [ ] cli
 * [ ] config
-* [ ] contributing
+* [X] contributing [@mdk84](https://github.com/mdk84) MDK
 * [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] design
 * [ ] errorhandling
