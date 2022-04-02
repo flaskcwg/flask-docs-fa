@@ -1,11 +1,5 @@
 name: Test Docs
-on:
-  push:
-    paths:
-      - 'docs/**'
-  pull_request:
-    paths:
-      - 'docs/**'
+on: [push, pull_request]
 jobs:
   tests:
     name: ${{ matrix.name }}
