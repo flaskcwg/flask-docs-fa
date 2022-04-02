@@ -218,7 +218,7 @@ $ git push origin your-branch-name
 * [ ] shell
 * [ ] signals
 * [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
-* [X] testing [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
+* [ ] testing
 * [ ] views
 
 ### docs/tutorial/ [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
