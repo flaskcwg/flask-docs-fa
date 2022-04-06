@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: 2022-04-06 21:20+0430\n"
+"PO-Revision-Date: 2022-04-06 22:06+0430\n"
 "Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -88,10 +88,12 @@ msgid ""
 "But there is more you can do, and we will cover some better setups to "
 "deal with errors including custom exceptions and 3rd party tools."
 msgstr ""
+"ولی میتوانید کار های بیشتری انجام دهید. ما تنظیمات بهتری را برای مقابله "
+"با خطا ها از جمله استثنا های سفارشی و ابزار های شخص ثالث پوشش خواهیم داد."
 
 #: ../../errorhandling.rst:31
 msgid "Error Logging Tools"
-msgstr ""
+msgstr "ابزار های واقعه‌نگاری ارور ها"
 
 #: ../../errorhandling.rst:33
 msgid ""
@@ -106,22 +108,36 @@ msgid ""
 "debugging, and sends you mails based on new errors or frequency "
 "thresholds."
 msgstr ""
+"ارسال ایمیل های حاوی خطا، حتی اگر فقط برای ایمیل های مهم باشد، در صورتی "
+"که کاربران کافی به خطا برخورد کنند و فایل های گزارش نیز هرگز تا الان "
+"بررسی نشده باشند، میتواند طاقت‌فرسا شود. به همین دلیل است که توصیه میکنیم "
+"از `Sentry <https://sentry.io/>`_ برای مقابله با خطا های برنامه استفاده "
+"کنید. این به عنوان یک پروژه به صورت متن باز در `گیت‌هاب <https://github."
+"com/getsentry/sentry>`_ در دسترس است و همچنین میتوانید یک `نسخه برای "
+"میزبانی <https://sentry.io/signup/>`_ را به صورت رایگان امتحان کنید. "
+"Sentry خطا های تکراری را جمع آوری می‌کند، ردیابی پشته های کامل و متغیر "
+"های محلی را برای اشکال زدایی ضبط می‌کند و بر اساس خطا های جدید یا آستانه "
+"تکرار، ایمیل هایی را برای شما ارسال می‌کند."
 
 #: ../../errorhandling.rst:44
 msgid ""
 "To use Sentry you need to install the ``sentry-sdk`` client with extra "
 "``flask`` dependencies."
 msgstr ""
+"برای استفاده از Sentry باید کلاینت ``sentry-sdk`` را با وابستگی اضافی "
+"``flask`` نصب کنید."
 
 #: ../../errorhandling.rst:51
 msgid "And then add this to your Flask app:"
-msgstr ""
+msgstr "و سپس این را به برنامه فلاسک خود اضافه کنید:"
 
 #: ../../errorhandling.rst:60
 msgid ""
 "The ``YOUR_DSN_HERE`` value needs to be replaced with the DSN value you "
 "get from your Sentry installation."
 msgstr ""
+"``YOUR_DSN_HERE`` باید با مقدار DSN ای که از نصب Sentry دریافت می‌کنید، "
+"جایگزین شود."
 
 #: ../../errorhandling.rst:63
 msgid ""
@@ -129,10 +145,13 @@ msgid ""
 "automatically reported to Sentry and from there you can receive error "
 "notifications."
 msgstr ""
+"پس از نصب، خرابی هایی که منجر به خطای سرور داخلی می‌شوند به طور خودکار به "
+"Sentry گزارش داده می شوند و از آنجا میتوانید اعلان های خطا را دریافت "
+"کنید."
 
 #: ../../errorhandling.rst:67
 msgid "See also:"
-msgstr ""
+msgstr "همچنین ببینید:"
 
 #: ../../errorhandling.rst:69
 msgid ""
