@@ -1,9 +1,18 @@
 .. currentmodule:: flask
 
+Version 2.1.1
+-------------
+
+Released on 2022-03-30
+
+-   Set the minimum required version of importlib_metadata to 3.6.0,
+    which is required on Python < 3.10. :issue:`4502`
+
+
 Version 2.1.0
 -------------
 
-Unreleased
+Released 2022-03-28
 
 -   Drop support for Python 3.6. :pr:`4335`
 -   Update Click dependency to >= 8.0. :pr:`4008`
@@ -52,6 +61,13 @@ Unreleased
     :issue:`4095, 4295, 4297`
 -   Fix typing for ``__exit__`` methods for better compatibility with
     ``ExitStack``. :issue:`4474`
+-   From Werkzeug, for redirect responses the ``Location`` header URL
+    will remain relative, and exclude the scheme and domain, by default.
+    :pr:`4496`
+-   Add ``Config.from_prefixed_env()`` to load config values from
+    environment variables that start with ``FLASK_`` or another prefix.
+    This parses values as JSON by default, and allows setting keys in
+    nested dicts. :pr:`4479`
 
 
 Version 2.0.3
