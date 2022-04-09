@@ -60,6 +60,8 @@ $ git checkout -b {name} upstream/main
 
 #### نرم افزار های پیشنهادی برای ترجمه
 
+<div dir="rtl">
+
 * [POEdit](https://poedit.net/)
 پیشنهاد اصلی ما POEdit است و خیلی از مترجمان از آن استفاده میکنند!
 
@@ -69,6 +71,8 @@ $ git checkout -b {name} upstream/main
 مطمئنا نرم افزار های دیگری نیز برای ویرایش فایل های `po` وجود دارد. برخی از آن برنامه ها را میتوانید از [اینجا](https://alternativeto.net/software/better-po-editor/) بیابید
 
 > __**نکته:**__ استفاده از نرم افزار برای ترجمه الزامی نیست و میتوانید از یک ویرایشگر متن هم استفاده کنید
+
+</div>
 
 #### ابزار های پیشنهادی ترجمه
 
@@ -91,7 +95,7 @@ msgid "Welcome to Flask"
 msgstr "<اینجا را با ترجمه پر کنید.>"
 ```
 
-البته دقت کنید که بعضی از موارد نباید ترجمه شوند مثل ``` :doc:`installation` ``` و  در مثال زیر ``` :doc:`quickstart` ```:
+البته دقت کنید که بعضی از موارد نباید ترجمه شوند مثل ``` :doc:`installation` ``` و ``` :doc:`quickstart`  ``` در مثال زیر:
 
 ```po
 #: ../../index.rst:11
@@ -103,7 +107,9 @@ msgstr ""
 "اینجا را با ترجمه پر کنید. اینجا را با ترجمه پر کنید. :doc:`quickstart`."
 ```
 
-این راهنما شاید بتواند کمک کند: [راهنما](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html)
+این راهنما شاید بتواند کمک کند:
+
+* [راهنما](https://www.gnu.org/software/trans-coord/manual/web-trans/html_node/PO-Editors.html)
 
 #### اتمام ترجمه
 
@@ -111,11 +117,11 @@ msgstr ""
 * مقدار فیلد «Last-Translator» را در بالای فایل «.po» به‌روزرسانی کنید. (اگر از نرم افزاری مانند poedit استفاده میکنید به اینکار نیازی نیست)
 * اگر ترجمه بخشی را تمام کردید در فایل `README.md`، بخش را به عنوان تکمیل شده علامت بزنید به عنوان مثال:
 
-```
-- [x] example [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
+```markdown
+* [x] example [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 ```
 
-تغییرات را کامیت کنید:
+* تغییرات را کامیت کنید:
 
 ```
 $ git add docs/locales/fa/LC_MESSAGES/example.po README.md
@@ -134,7 +140,7 @@ $ make dirhtml
 $ python -m http.server --directory _build/dirhtml
 ```
 
-در ویندوز:
+- و در ویندوز:
 
 ```
 > cd docs
