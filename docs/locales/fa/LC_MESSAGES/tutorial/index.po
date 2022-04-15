@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-07 09:57+0330\n"
+"POT-Creation-Date: 2022-04-16 00:38+0430\n"
 "PO-Revision-Date: 2021-12-13 15:05+0330\n"
 "Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -38,8 +38,8 @@ msgstr ""
 "خود را ویرایش یا حذف کنند. شما قادر خواهید بود برنامه را بر روی رایانه "
 "های دیگر بسته بندی و نصب کنید."
 
-msgid "اسکرین شات صفحه اصلی"
-msgstr ""
+msgid "screenshot of index page"
+msgstr "اسکرین شات صفحه اصلی"
 
 #: ../../tutorial/index.rst:30
 msgid ""
@@ -65,8 +65,8 @@ msgstr ""
 "سایر پروژه ها شما میتوانید تصمیم بگیرید که از :doc:`/extensions` یا سایر "
 "کتابخانه ها اندک ساخته شده استفاده کنید."
 
-msgid "اسکرین شات صفحه ورود"
-msgstr ""
+msgid "screenshot of login page"
+msgstr "اسکرین شات صفحه ورود"
 
 #: ../../tutorial/index.rst:47
 msgid ""
@@ -86,8 +86,8 @@ msgstr ""
 "توان آن را گسترش داد. هنگامی که با فلاسک راحت تر شدید، می توانید از این "
 "ساختار خارج شوید و از انعطاف پذیری فلاسک نهایت استفاده را ببرید."
 
-msgid "اسکرین شات صفحه ویرایش"
-msgstr ""
+msgid "screenshot of edit page"
+msgstr "اسکرین شات صفحه ویرایش"
 
 #: ../../tutorial/index.rst:60
 msgid ""

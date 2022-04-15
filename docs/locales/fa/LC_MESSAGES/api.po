@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 22:15+0330\n"
+"POT-Creation-Date: 2022-04-16 00:38+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -134,9 +134,9 @@ msgstr ""
 #: flask.app.Flask.handle_user_exception flask.app.Flask.inject_url_defaults
 #: flask.app.Flask.log_exception flask.app.Flask.make_config
 #: flask.app.Flask.make_response flask.app.Flask.open_instance_resource
-#: flask.app.Flask.process_response flask.app.Flask.raise_routing_exception
-#: flask.app.Flask.register_blueprint flask.app.Flask.request_context
-#: flask.app.Flask.run flask.app.Flask.select_jinja_autoescape
+#: flask.app.Flask.process_response flask.app.Flask.register_blueprint
+#: flask.app.Flask.request_context flask.app.Flask.run
+#: flask.app.Flask.select_jinja_autoescape
 #: flask.app.Flask.shell_context_processor flask.app.Flask.should_ignore_error
 #: flask.app.Flask.teardown_appcontext flask.app.Flask.template_filter
 #: flask.app.Flask.template_global flask.app.Flask.template_test
@@ -169,8 +169,9 @@ msgstr ""
 #: flask.cli.run_command flask.cli.shell_command flask.config.Config
 #: flask.config.Config.from_envvar flask.config.Config.from_file
 #: flask.config.Config.from_mapping flask.config.Config.from_object
-#: flask.config.Config.from_pyfile flask.config.Config.get_namespace
-#: flask.ctx.AppContext flask.ctx.AppContext.pop flask.ctx.RequestContext
+#: flask.config.Config.from_prefixed_env flask.config.Config.from_pyfile
+#: flask.config.Config.get_namespace flask.ctx.AppContext
+#: flask.ctx.AppContext.pop flask.ctx.RequestContext
 #: flask.ctx.RequestContext.pop flask.ctx._AppCtxGlobals.get
 #: flask.ctx._AppCtxGlobals.pop flask.ctx._AppCtxGlobals.setdefault
 #: flask.ctx.after_this_request flask.ctx.copy_current_request_context
@@ -233,7 +234,6 @@ msgstr ""
 #: werkzeug.wrappers.response.Response.add_etag
 #: werkzeug.wrappers.response.Response.call_on_close
 #: werkzeug.wrappers.response.Response.force_type
-#: werkzeug.wrappers.response.Response.freeze
 #: werkzeug.wrappers.response.Response.from_app
 #: werkzeug.wrappers.response.Response.get_app_iter
 #: werkzeug.wrappers.response.Response.get_data
@@ -335,9 +335,8 @@ msgstr ""
 #: flask.app.Flask.make_default_options_response flask.app.Flask.make_response
 #: flask.app.Flask.make_shell_context flask.app.Flask.open_instance_resource
 #: flask.app.Flask.preprocess_request flask.app.Flask.process_response
-#: flask.app.Flask.raise_routing_exception flask.app.Flask.register_blueprint
-#: flask.app.Flask.request_context flask.app.Flask.run
-#: flask.app.Flask.select_jinja_autoescape
+#: flask.app.Flask.register_blueprint flask.app.Flask.request_context
+#: flask.app.Flask.run flask.app.Flask.select_jinja_autoescape
 #: flask.app.Flask.shell_context_processor flask.app.Flask.should_ignore_error
 #: flask.app.Flask.teardown_appcontext flask.app.Flask.template_filter
 #: flask.app.Flask.template_global flask.app.Flask.template_test
@@ -369,14 +368,15 @@ msgstr ""
 #: flask.cli.run_command flask.cli.shell_command flask.config.Config
 #: flask.config.Config.from_envvar flask.config.Config.from_file
 #: flask.config.Config.from_mapping flask.config.Config.from_object
-#: flask.config.Config.from_pyfile flask.config.Config.get_namespace
-#: flask.ctx.AppContext flask.ctx.AppContext.pop flask.ctx.AppContext.push
-#: flask.ctx.RequestContext flask.ctx.RequestContext.copy
-#: flask.ctx.RequestContext.match_request flask.ctx.RequestContext.pop
-#: flask.ctx.RequestContext.push flask.ctx._AppCtxGlobals.get
-#: flask.ctx._AppCtxGlobals.pop flask.ctx._AppCtxGlobals.setdefault
-#: flask.ctx.after_this_request flask.ctx.copy_current_request_context
-#: flask.ctx.has_app_context flask.ctx.has_request_context flask.helpers.flash
+#: flask.config.Config.from_prefixed_env flask.config.Config.from_pyfile
+#: flask.config.Config.get_namespace flask.ctx.AppContext
+#: flask.ctx.AppContext.pop flask.ctx.AppContext.push flask.ctx.RequestContext
+#: flask.ctx.RequestContext.copy flask.ctx.RequestContext.match_request
+#: flask.ctx.RequestContext.pop flask.ctx.RequestContext.push
+#: flask.ctx._AppCtxGlobals.get flask.ctx._AppCtxGlobals.pop
+#: flask.ctx._AppCtxGlobals.setdefault flask.ctx.after_this_request
+#: flask.ctx.copy_current_request_context flask.ctx.has_app_context
+#: flask.ctx.has_request_context flask.helpers.flash
 #: flask.helpers.get_flashed_messages flask.helpers.get_template_attribute
 #: flask.helpers.make_response flask.helpers.send_from_directory
 #: flask.helpers.stream_with_context flask.helpers.url_for
@@ -956,7 +956,7 @@ msgid ""
 "will be logged and otherwise ignored."
 msgstr ""
 
-#: flask.app.Flask.finalize_request flask.app.Flask.raise_routing_exception
+#: flask.app.Flask.finalize_request
 #: flask.app.Flask.try_trigger_before_first_request_functions of
 msgid "internal"
 msgstr ""
@@ -1424,14 +1424,6 @@ msgstr ""
 
 #: flask.scaffold.Scaffold.put:1 of
 msgid "Shortcut for :meth:`route` with ``methods=[\"PUT\"]``."
-msgstr ""
-
-#: flask.app.Flask.raise_routing_exception:1 of
-msgid ""
-"Exceptions that are recording during routing are reraised with this "
-"method.  During debug we are not reraising redirect requests for non "
-"``GET``, ``HEAD``, or ``OPTIONS`` requests and we're raising a different "
-"error instead to help debug situations."
 msgstr ""
 
 #: flask.app.Flask.register_blueprint:1 of
@@ -2820,30 +2812,28 @@ msgid "Parse :attr:`data` as JSON."
 msgstr ""
 
 #: of werkzeug.wrappers.request.Request.get_json:3
-#: werkzeug.wrappers.response.Response.get_json:3
 msgid ""
 "If the mimetype does not indicate JSON (:mimetype:`application/json`, see"
-" :attr:`is_json`), this returns ``None``."
+" :attr:`is_json`), or parsing fails, :meth:`on_json_loading_failed` is "
+"called and its return value is used as the return value. By default this "
+"raises a 400 Bad Request error."
 msgstr ""
 
-#: of werkzeug.wrappers.request.Request.get_json:7
-msgid ""
-"If parsing fails, :meth:`on_json_loading_failed` is called and its return"
-" value is used as the return value."
-msgstr ""
-
-#: of werkzeug.wrappers.request.Request.get_json:10
+#: of werkzeug.wrappers.request.Request.get_json:9
 #: werkzeug.wrappers.response.Response.get_json:9
 msgid "Ignore the mimetype and always try to parse JSON."
 msgstr ""
 
-#: of werkzeug.wrappers.request.Request.get_json:11
-#: werkzeug.wrappers.response.Response.get_json:10
-msgid "Silence parsing errors and return ``None`` instead."
+#: of werkzeug.wrappers.request.Request.get_json:10
+msgid "Silence mimetype and parsing errors, and return ``None`` instead."
 msgstr ""
 
-#: of werkzeug.wrappers.request.Request.get_json:13
+#: of werkzeug.wrappers.request.Request.get_json:12
 msgid "Store the parsed JSON to return for subsequent calls."
+msgstr ""
+
+#: flask.Request.json:9 of werkzeug.wrappers.request.Request.get_json:15
+msgid "Raise a 400 error if the content type is incorrect."
 msgstr ""
 
 #: ../../docstring flask.Request.headers:1 of
@@ -2937,6 +2927,12 @@ msgstr ""
 msgid "Calls :meth:`get_json` with default arguments."
 msgstr ""
 
+#: flask.Request.json:6 of
+msgid ""
+"If the request content type is not ``application/json``, this will raise "
+"a 400 Bad Request error."
+msgstr ""
+
 #: of werkzeug.wrappers.request.Request.make_form_data_parser:1
 msgid ""
 "Creates the form data parser. Instantiates the "
@@ -2973,11 +2969,20 @@ msgid ""
 msgstr ""
 
 #: flask.wrappers.Request.on_json_loading_failed:1 of
+msgid "Called if :meth:`get_json` fails and isn't silenced."
+msgstr ""
+
+#: flask.wrappers.Request.on_json_loading_failed:3 of
 msgid ""
-"Called if :meth:`get_json` parsing fails and isn't silenced. If this "
-"method returns a value, it is used as the return value for "
+"If this method returns a value, it is used as the return value for "
 ":meth:`get_json`. The default implementation raises "
 ":exc:`~werkzeug.exceptions.BadRequest`."
+msgstr ""
+
+#: flask.wrappers.Request.on_json_loading_failed:7 of
+msgid ""
+"If parsing failed, this is the exception. It will be ``None`` if the "
+"content type wasn't ``application/json``."
 msgstr ""
 
 #: ../../docstring flask.Request.origin:1 of
@@ -3496,12 +3501,16 @@ msgid "Generate an ``ETag`` header if one is not already set."
 msgstr ""
 
 #: of werkzeug.wrappers.response.Response.freeze:10
+msgid "Removed the ``no_etag`` parameter."
+msgstr ""
+
+#: of werkzeug.wrappers.response.Response.freeze:13
 msgid ""
 "An ``ETag`` header is added, the ``no_etag`` parameter is deprecated and "
 "will be removed in Werkzeug 2.1."
 msgstr ""
 
-#: of werkzeug.wrappers.response.Response.freeze:14
+#: of werkzeug.wrappers.response.Response.freeze:17
 msgid "The ``Content-Length`` header is set."
 msgstr ""
 
@@ -3574,8 +3583,18 @@ msgstr ""
 msgid "Parse :attr:`data` as JSON. Useful during testing."
 msgstr ""
 
+#: of werkzeug.wrappers.response.Response.get_json:3
+msgid ""
+"If the mimetype does not indicate JSON (:mimetype:`application/json`, see"
+" :attr:`is_json`), this returns ``None``."
+msgstr ""
+
 #: of werkzeug.wrappers.response.Response.get_json:7
 msgid "Unlike :meth:`Request.get_json`, the result is not cached."
+msgstr ""
+
+#: of werkzeug.wrappers.response.Response.get_json:10
+msgid "Silence parsing errors and return ``None`` instead."
 msgstr ""
 
 #: of werkzeug.wrappers.response.Response.get_wsgi_headers:1
@@ -4289,25 +4308,29 @@ msgid ""
 msgstr ""
 
 #: flask.testing.FlaskClient.open:15 of
+msgid "Removed the ``as_tuple`` parameter."
+msgstr ""
+
+#: flask.testing.FlaskClient.open:18 of
 msgid ""
 "``as_tuple`` is deprecated and will be removed in Werkzeug 2.1. Use "
 ":attr:`TestResponse.request` and ``request.environ`` instead."
 msgstr ""
 
-#: flask.testing.FlaskClient.open:20 of
+#: flask.testing.FlaskClient.open:23 of
 msgid ""
 "The request input stream is closed when calling ``response.close()``. "
 "Input streams for redirects are automatically closed."
 msgstr ""
 
-#: flask.testing.FlaskClient.open:25 of
+#: flask.testing.FlaskClient.open:28 of
 msgid ""
 "If a dict is provided as file in the dict for the ``data`` parameter the "
 "content type has to be called ``content_type`` instead of ``mimetype``. "
 "This change was made for consistency with :class:`werkzeug.FileWrapper`."
 msgstr ""
 
-#: flask.testing.FlaskClient.open:31 of
+#: flask.testing.FlaskClient.open:34 of
 msgid "Added the ``follow_redirects`` parameter."
 msgstr ""
 
@@ -5631,6 +5654,44 @@ msgstr ""
 msgid "an import name or object"
 msgstr ""
 
+#: flask.config.Config.from_prefixed_env:1 of
+msgid ""
+"Load any environment variables that start with ``FLASK_``, dropping the "
+"prefix from the env key for the config key. Values are passed through a "
+"loading function to attempt to convert them to more specific types than "
+"strings."
+msgstr ""
+
+#: flask.config.Config.from_prefixed_env:6 of
+msgid "Keys are loaded in :func:`sorted` order."
+msgstr ""
+
+#: flask.config.Config.from_prefixed_env:8 of
+msgid ""
+"The default loading function attempts to parse values as any valid JSON "
+"type, including dicts and lists."
+msgstr ""
+
+#: flask.config.Config.from_prefixed_env:11 of
+msgid ""
+"Specific items in nested dicts can be set by separating the keys with "
+"double underscores (``__``). If an intermediate key doesn't exist, it "
+"will be initialized to an empty dict."
+msgstr ""
+
+#: flask.config.Config.from_prefixed_env:15 of
+msgid ""
+"Load env vars that start with this prefix, separated with an underscore "
+"(``_``)."
+msgstr ""
+
+#: flask.config.Config.from_prefixed_env:17 of
+msgid ""
+"Pass each string value to this function and use the returned value as the"
+" config value. If any error is raised it is ignored and the value remains"
+" a string. The default is :func:`json.loads`."
+msgstr ""
+
 #: flask.config.Config.from_pyfile:1 of
 msgid ""
 "Updates the values in the config from a Python file.  This function "
@@ -6711,4 +6772,29 @@ msgstr ""
 #~ " :meth:`from_file` instead. This was "
 #~ "removed early in 2.0.0, was added "
 #~ "back in 2.0.1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Exceptions that are recording during "
+#~ "routing are reraised with this method."
+#~ "  During debug we are not reraising"
+#~ " redirect requests for non ``GET``, "
+#~ "``HEAD``, or ``OPTIONS`` requests and "
+#~ "we're raising a different error instead"
+#~ " to help debug situations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If parsing fails, :meth:`on_json_loading_failed` "
+#~ "is called and its return value is"
+#~ " used as the return value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Called if :meth:`get_json` parsing fails "
+#~ "and isn't silenced. If this method "
+#~ "returns a value, it is used as "
+#~ "the return value for :meth:`get_json`. "
+#~ "The default implementation raises "
+#~ ":exc:`~werkzeug.exceptions.BadRequest`."
 #~ msgstr ""
