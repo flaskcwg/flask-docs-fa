@@ -3,81 +3,100 @@
 # This file is distributed under the same license as the Flask package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-04-16 22:19+0430\n"
+"Last-Translator: MDK <dzhbanmhmdamyn@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../deploying/cgi.rst:2
 msgid "CGI"
-msgstr ""
+msgstr "CGI"
 
 #: ../../deploying/cgi.rst:4
 msgid ""
-"If all other deployment methods do not work, CGI will work for sure. CGI "
-"is supported by all major servers but usually has a sub-optimal "
-"performance."
+"If all other deployment methods do not work, CGI will work for sure. CGI is "
+"supported by all major servers but usually has a sub-optimal performance."
 msgstr ""
+"اگر روش های دیگر deploy کار نکردند، CGI با اطمینان کار خواهد کرد. CGI توسط "
+"تمام سرورهای اصلی پشتیبانی می شود اما معمولاً عملکرد زیر بهینه ای دارد."
 
 #: ../../deploying/cgi.rst:8
 msgid ""
 "This is also the way you can use a Flask application on Google's `App "
 "Engine`_, where execution happens in a CGI-like environment."
 msgstr ""
+"همچنین راهی است که شما می توانید یک برنامه فلاسک را در `App Engine`_ گوگل "
+"استفاده کنید، که در آن، اجرای برنامه در یک محیط شبیه CGI اتفاق می افتد."
 
 #: ../../deploying/cgi.rst:11
 msgid "Watch Out"
-msgstr ""
+msgstr "مراقب باشید"
 
 #: ../../deploying/cgi.rst:13
 msgid ""
-"Please make sure in advance that any ``app.run()`` calls you might have "
-"in your application file are inside an ``if __name__ == '__main__':`` "
-"block or moved to a separate file.  Just make sure it's not called "
-"because this will always start a local WSGI server which we do not want "
-"if we deploy that application to CGI / app engine."
+"Please make sure in advance that any ``app.run()`` calls you might have in "
+"your application file are inside an ``if __name__ == '__main__':`` block or "
+"moved to a separate file.  Just make sure it's not called because this will "
+"always start a local WSGI server which we do not want if we deploy that "
+"application to CGI / app engine."
 msgstr ""
+"لطفاً از قبل اطمینان حاصل کنید که تماس های ''app.run()' که ممکن است در پرونده "
+"درخواست خود داشته باشید در داخل یک ''if __name__ == '__main__':'' بلوک یا به "
+"یک فایل جداگانه منتقل شده باشند. فقط مطمئن شوید که آن را صدا نزنید،چون که این "
+"همیشه یک سرور WSGI محلی را شروع می کند که ما نمی خواهیم (اگر ما می خواهیم "
+"برنامه را به اپ انجین CGI / دیپلوی کنیم )."
 
 #: ../../deploying/cgi.rst:19
 msgid ""
-"With CGI, you will also have to make sure that your code does not contain"
-" any ``print`` statements, or that ``sys.stdout`` is overridden by "
-"something that doesn't write into the HTTP response."
+"With CGI, you will also have to make sure that your code does not contain any "
+"``print`` statements, or that ``sys.stdout`` is overridden by something that "
+"doesn't write into the HTTP response."
 msgstr ""
+"با CGI، شما همچنین باید مطمئن شوید که کد شما شامل هر گونه اظهارات ''print'' "
+"نباشد، یا 'sys.stdout'' توسط چیزی لغو می شود و پاسخ HTTP نمی نویسد."
 
 #: ../../deploying/cgi.rst:24
 msgid "Creating a `.cgi` file"
-msgstr ""
+msgstr "ایجاد یک فایل '.cgi'"
 
 #: ../../deploying/cgi.rst:26
 msgid ""
-"First you need to create the CGI application file.  Let's call it "
-":file:`yourapplication.cgi`::"
+"First you need to create the CGI application file.  Let's call it :file:"
+"`yourapplication.cgi`::"
 msgstr ""
+"ابتدا شما نیاز به ایجاد فایل برنامه CGI دارید. فایل cgi را اینگونه نام گذاری "
+"کنید :file:'yourapplication.cgi'::"
 
 #: ../../deploying/cgi.rst:36
 msgid "Server Setup"
-msgstr ""
+msgstr "راه اندازی سرور"
 
 #: ../../deploying/cgi.rst:38
 msgid ""
-"Usually there are two ways to configure the server.  Either just copy the"
-" ``.cgi`` into a :file:`cgi-bin` (and use `mod_rewrite` or something "
-"similar to rewrite the URL) or let the server point to the file directly."
+"Usually there are two ways to configure the server.  Either just copy the ``."
+"cgi`` into a :file:`cgi-bin` (and use `mod_rewrite` or something similar to "
+"rewrite the URL) or let the server point to the file directly."
 msgstr ""
+"معمولاً دو راه برای کانفیگ سرور وجود دارد. یا فقط ''.cgi''را داخل :file:'cgi-"
+"bin' (و از 'mod_rewrite' یا چیزی شبیه به بازنویسی URL استفاده کنید) کپی کنید "
+"و یا اجازه دهید سرور با فایل به طور مستقیم در ارتباط باشد."
 
 #: ../../deploying/cgi.rst:42
 msgid "In Apache for example you can put something like this into the config:"
 msgstr ""
+"در آپاچی به عنوان مثال شما می توانید چیزی شبیه به این را در پیکربندی قرار "
+"دهید:"
 
 #: ../../deploying/cgi.rst:48
 msgid ""
@@ -86,7 +105,11 @@ msgid ""
 "directory you want your app to be available, works too but the "
 "``ScriptAlias`` directive won't work in that case:"
 msgstr ""
+"در وب هاستینگ (webhosting) مشترک، به هر حال ممکن است شما دسترسی به پیکربندی "
+"آپاچی خود را نداشته باشید. در این حالت، فایلی که نامش ''.htaccess است و در "
+"دایرکتوری عمومی برنامه ای که دارید ذخیره شده است، بیش از حد کار می کند اما "
+"دستورالعمل ''ScriptAlias'' در آن مورد کار نخواهد کرد:"
 
 #: ../../deploying/cgi.rst:59
 msgid "For more information consult the documentation of your webserver."
-msgstr ""
+msgstr "برای کسب اطلاعات بیشتر با مستندات سرویس دهنده وب خود مشورت کنید."
