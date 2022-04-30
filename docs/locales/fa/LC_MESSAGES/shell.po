@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# Javad Pournosrat pournosrat.javad@gmail.com, 2022.
+# Javad Pournosrat <pournosrat.javad@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
