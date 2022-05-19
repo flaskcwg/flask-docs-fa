@@ -172,7 +172,6 @@ $ git push origin {name}
 
 * [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] async-await
-* [ ] becomingbig
 * [ ] blueprints
 * [ ] changes
 * [ ] cli
