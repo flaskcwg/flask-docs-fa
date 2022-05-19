@@ -305,9 +305,9 @@ def test_lazy_load_error(monkeypatch):
 
     lazy = DispatchingApp(bad_load, use_eager_loading=False)
 
-    with pytest.raises(BadExc):
-        # reduce flakiness by waiting for the internal loading lock
-        with lazy._lock:
+    # reduce flakiness by waiting for the internal loading lock
+    with lazy._lock:
+        with pytest.raises(BadExc):
             lazy._flush_bg_loading_exception()
 
 
@@ -553,7 +553,12 @@ def test_run_cert_path():
     with pytest.raises(click.BadParameter):
         run_command.make_context("run", ["--key", __file__])
 
+    # cert specified first
     ctx = run_command.make_context("run", ["--cert", __file__, "--key", __file__])
+    assert ctx.params["cert"] == (__file__, __file__)
+
+    # key specified first
+    ctx = run_command.make_context("run", ["--key", __file__, "--cert", __file__])
     assert ctx.params["cert"] == (__file__, __file__)
 
 

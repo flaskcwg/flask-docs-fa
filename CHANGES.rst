@@ -1,5 +1,16 @@
 .. currentmodule:: flask
 
+Version 2.1.2
+-------------
+
+Released 2022-04-28
+
+-   Fix type annotation for ``json.loads``, it accepts str or bytes.
+    :issue:`4519`
+-   The ``--cert`` and ``--key`` options on ``flask run`` can be given
+    in either order. :issue:`4459`
+
+
 Version 2.1.1
 -------------
 
