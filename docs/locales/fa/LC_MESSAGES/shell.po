@@ -1,150 +1,189 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Javad Pournosrat <pournosrat.javad@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-05-19 15:30+0430\n"
+"Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../shell.rst:2
 msgid "Working with the Shell"
-msgstr ""
+msgstr "کار کردن با پوسته(shell)"
 
 #: ../../shell.rst:6
 msgid ""
 "One of the reasons everybody loves Python is the interactive shell.  It "
-"basically allows you to execute Python commands in real time and "
-"immediately get results back.  Flask itself does not come with an "
-"interactive shell, because it does not require any specific setup "
-"upfront, just import your application and start playing around."
+"basically allows you to execute Python commands in real time and immediately get "
+"results back.  Flask itself does not come with an interactive shell, because it "
+"does not require any specific setup upfront, just import your application and "
+"start playing around."
 msgstr ""
+"یکی از دلایلی که همه پایتون را دوست دارند پوسته تعاملی است. اساساً به شما امکان "
+"می دهد دستورات پایتون را در آن واحد اجرا کنید و بلافاصله نتایج را دریافت کنید. "
+"فلاسک به خودی خود پوسته تعاملی ندارد، زیرا نیازی به تنظیمات خاصی ندارد، فقط "
+"برنامه خود را وارد کنید و شروع به بازی کنید."
 
 #: ../../shell.rst:12
 msgid ""
-"There are however some handy helpers to make playing around in the shell "
-"a more pleasant experience.  The main issue with interactive console "
-"sessions is that you're not triggering a request like a browser does "
-"which means that :data:`~flask.g`, :data:`~flask.request` and others are "
-"not available.  But the code you want to test might depend on them, so "
-"what can you do?"
+"There are however some handy helpers to make playing around in the shell a more "
+"pleasant experience.  The main issue with interactive console sessions is that "
+"you're not triggering a request like a browser does which means that :data:"
+"`~flask.g`, :data:`~flask.request` and others are not available.  But the code "
+"you want to test might depend on them, so what can you do?"
 msgstr ""
+"با این حال، کمک‌های مفیدی وجود دارند که کارکردن در پوسته را به تجربه‌ای دلپذیرتر "
+"تبدیل می‌کنند. مشکل اصلی جلسات کنسول تعاملی این است که مانند مرورگر درخواستی را "
+"راه‌اندازی نمی‌کنید، به این معنی که :data:`~flask.g`، :data:`~flask.request` و "
+"موارد دیگر در دسترس نیستند. اما کدی که می خواهید آزمایش کنید ممکن است به آنها "
+"بستگی داشته باشد، پس چه کاری می توانید انجام دهید؟"
 
 #: ../../shell.rst:19
 msgid ""
-"This is where some helper functions come in handy.  Keep in mind however "
-"that these functions are not only there for interactive shell usage, but "
-"also for unit testing and other situations that require a faked request "
-"context."
+"This is where some helper functions come in handy.  Keep in mind however that "
+"these functions are not only there for interactive shell usage, but also for "
+"unit testing and other situations that require a faked request context."
 msgstr ""
+"اینجاست که برخی از توابع کمکی به کار می آیند. با این حال به خاطر داشته باشید که "
+"این توابع نه تنها برای استفاده از پوسته تعاملی وجود دارند، بلکه برای آزمایش واحد "
+"و سایر موقعیت‌هایی که نیاز به یک زمینه درخواست جعلی دارند نیز وجود دارند."
 
 #: ../../shell.rst:24
 msgid "Generally it's recommended that you read :doc:`reqcontext` first."
-msgstr ""
+msgstr "به طور کلی توصیه می شود ابتدا :doc:`reqcontext` را بخوانید."
 
 #: ../../shell.rst:27
 msgid "Command Line Interface"
-msgstr ""
+msgstr "رابط خط فرمان"
 
 #: ../../shell.rst:29
 msgid ""
-"Starting with Flask 0.11 the recommended way to work with the shell is "
-"the ``flask shell`` command which does a lot of this automatically for "
-"you. For instance the shell is automatically initialized with a loaded "
-"application context."
+"Starting with Flask 0.11 the recommended way to work with the shell is the "
+"``flask shell`` command which does a lot of this automatically for you. For "
+"instance the shell is automatically initialized with a loaded application "
+"context."
 msgstr ""
+"با شروع با Flask 0.11، روش توصیه شده برای کار با پوسته دستور ``flask shell`` است "
+"که بسیاری از این کارها را به صورت خودکار برای شما انجام می دهد. به عنوان مثال، "
+"پوسته به طور خودکار با یک زمینه برنامه بارگذاری شده مقداردهی اولیه می شود."
 
 #: ../../shell.rst:34
 msgid "For more information see :doc:`/cli`."
-msgstr ""
+msgstr "برای اطلاعات بیشتر به :doc:`/cli` مراجعه کنید."
 
 #: ../../shell.rst:37
 msgid "Creating a Request Context"
-msgstr ""
+msgstr "ایجاد یک زمینه درخواست"
 
 #: ../../shell.rst:39
 msgid ""
-"The easiest way to create a proper request context from the shell is by "
-"using the :attr:`~flask.Flask.test_request_context` method which creates "
-"us a :class:`~flask.ctx.RequestContext`:"
+"The easiest way to create a proper request context from the shell is by using "
+"the :attr:`~flask.Flask.test_request_context` method which creates us a :class:"
+"`~flask.ctx.RequestContext`:"
 msgstr ""
+"ساده ترین راه برای ایجاد یک زمینه درخواست مناسب از پوسته، استفاده از متد :attr:"
+"`~flask.Flask.test_request_context` است که برای ما یک :class:`~flask.ctx."
+"RequestContext` ایجاد می کند:"
 
 #: ../../shell.rst:45
 msgid ""
-"Normally you would use the ``with`` statement to make this request object"
-" active, but in the shell it's easier to use the "
-":meth:`~flask.ctx.RequestContext.push` and "
-":meth:`~flask.ctx.RequestContext.pop` methods by hand:"
+"Normally you would use the ``with`` statement to make this request object "
+"active, but in the shell it's easier to use the :meth:`~flask.ctx.RequestContext."
+"push` and :meth:`~flask.ctx.RequestContext.pop` methods by hand:"
 msgstr ""
+"معمولاً از عبارت ``with`` برای فعال کردن این شی درخواست استفاده می‌کنید، اما در "
+"پوسته استفاده از :meth:`~flask.ctx.RequestContext.push` و  :meth:`~flask.ctx."
+"RequestContext.pop` آسان‌تر است. روش‌های به صورت دستی:"
 
 #: ../../shell.rst:52
 msgid ""
-"From that point onwards you can work with the request object until you "
-"call `pop`:"
+"From that point onwards you can work with the request object until you call "
+"`pop`:"
 msgstr ""
+"از آن جا به بعد می‌توانید با شی درخواست کار کنید تا زمانی که `pop` را فراخوانی "
+"کنید:"
 
 #: ../../shell.rst:58
 msgid "Firing Before/After Request"
-msgstr ""
+msgstr "شلیک قبل و بعد از درخواست"
 
 #: ../../shell.rst:60
 msgid ""
-"By just creating a request context, you still don't have run the code "
-"that is normally run before a request.  This might result in your "
-"database being unavailable if you are connecting to the database in a "
-"before-request callback or the current user not being stored on the "
-":data:`~flask.g` object etc."
+"By just creating a request context, you still don't have run the code that is "
+"normally run before a request.  This might result in your database being "
+"unavailable if you are connecting to the database in a before-request callback "
+"or the current user not being stored on the :data:`~flask.g` object etc."
 msgstr ""
+"فقط با ایجاد یک زمینه درخواست، هنوز کدی را که معمولاً قبل از درخواست اجرا می شود، "
+"اجرا نکرده اید. این کار ممکن است منجر به در دسترس نبودن پایگاه داده شما شود، اگر "
+"شما در حال اتصال به پایگاه داده در یک تماس قبل از درخواست هستید یا کاربر فعلی در "
+"شی :data:`~flask.g` و غیره ذخیره نمی شود."
 
 #: ../../shell.rst:66
 msgid ""
-"This however can easily be done yourself.  Just call "
-":meth:`~flask.Flask.preprocess_request`:"
+"This however can easily be done yourself.  Just call :meth:`~flask.Flask."
+"preprocess_request`:"
 msgstr ""
+"با این حال این کار را می توانید به راحتی خودتان انجام دهید. فقط کافی است از :"
+"meth:`~flask.Flask.preprocess_request` استفاده کنید:"
 
 #: ../../shell.rst:73
 msgid ""
-"Keep in mind that the :meth:`~flask.Flask.preprocess_request` function "
-"might return a response object, in that case just ignore it."
+"Keep in mind that the :meth:`~flask.Flask.preprocess_request` function might "
+"return a response object, in that case just ignore it."
 msgstr ""
+"به خاطر داشته باشید که تابع :meth:`~flask.Flask.preprocess_request` ممکن است یک "
+"شی پاسخ را برگرداند، در این صورت فقط آن را نادیده بگیرید."
 
 #: ../../shell.rst:76
 msgid ""
 "To shutdown a request, you need to trick a bit before the after request "
-"functions (triggered by :meth:`~flask.Flask.process_response`) operate on"
-" a response object:"
+"functions (triggered by :meth:`~flask.Flask.process_response`) operate on a "
+"response object:"
 msgstr ""
+"برای خاموش کردن یک درخواست، باید قبل از اینکه توابع پس از درخواست (که توسط :meth:"
+"`~flask.Flask.process_response` فعال می شوند) روی یک شی پاسخ، کمی فریب دهید:"
 
 #: ../../shell.rst:84
 msgid ""
 "The functions registered as :meth:`~flask.Flask.teardown_request` are "
-"automatically called when the context is popped.  So this is the perfect "
-"place to automatically tear down resources that were needed by the "
-"request context (such as database connections)."
+"automatically called when the context is popped.  So this is the perfect place "
+"to automatically tear down resources that were needed by the request context "
+"(such as database connections)."
 msgstr ""
+"توابع ثبت شده به عنوان :meth:`~flask.Flask.teardown_request` به طور خودکار "
+"هنگامی که متن ظاهر می شود فراخوانی می شود. بنابراین این مکان عالی برای از بین "
+"بردن خودکار منابعی است که در زمینه درخواست (مانند اتصالات پایگاه داده) مورد نیاز "
+"بودند."
 
 #: ../../shell.rst:91
 msgid "Further Improving the Shell Experience"
-msgstr ""
+msgstr "بهبود بیشتر تجربه کار با پوسته"
 
 #: ../../shell.rst:93
 msgid ""
-"If you like the idea of experimenting in a shell, create yourself a "
-"module with stuff you want to star import into your interactive session."
-"  There you could also define some more helper methods for common things "
-"such as initializing the database, dropping tables etc."
+"If you like the idea of experimenting in a shell, create yourself a module with "
+"stuff you want to star import into your interactive session.  There you could "
+"also define some more helper methods for common things such as initializing the "
+"database, dropping tables etc."
 msgstr ""
+"اگر ایده آزمایش کردن در یک پوسته را دوست دارید، برای خود یک ماژول با چیزهایی "
+"ایجاد کنید که می‌خواهید به جلسه تعاملی خود وارد کنید. در آنجا می‌توانید روش‌های "
+"کمکی بیشتری برای چیزهای رایج مانند تنظیم اولیه پایگاه داده، حذف جداول و غیره "
+"تعریف کنید."
 
 #: ../../shell.rst:98
 msgid "Just put them into a module (like `shelltools`) and import from there:"
 msgstr ""
+"فقط آنها را در یک ماژول (مانند 'shelltools') قرار دهید و از آنجا وارد کنید:"

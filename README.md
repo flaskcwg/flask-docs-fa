@@ -192,7 +192,7 @@ $ git push origin {name}
 * [ ] reqcontext
 * [ ] security
 * [ ] server
-* [ ] shell
+* [x] shell [@ja74d](https://github.com/ja74d) Javad Pournosrat
 * [ ] signals
 * [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh
 * [X] testing [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh
