@@ -54,11 +54,10 @@ msgstr ""
 "``site:stackoverflow.com flask {search term, exception message, etc.}``"
 
 #: ../../../CONTRIBUTING.rst:19
-#, fuzzy
 msgid ""
 "Ask on our `GitHub Discussions`_ for long term discussion or larger "
 "questions."
-msgstr "آدرس ایمیل flask@python.org برای بحث های طولانی مدت یا مشکل های بزرگ."
+msgstr "برای بحث طولانی مدت یا سؤالات بزرگتر را در `GitHub Discussions`_ از ما بپرسید"
 
 #: ../../../CONTRIBUTING.rst:27
 msgid "Reporting issues"

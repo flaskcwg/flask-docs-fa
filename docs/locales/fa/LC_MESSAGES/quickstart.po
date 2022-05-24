@@ -264,7 +264,7 @@ msgstr ""
 " در مرورگر نشان می دهد."
 
 msgid "The interactive debugger in action."
-msgstr ""
+msgstr "اشکال زدای تعاملی در عمل"
 
 #: ../../quickstart.rst:160
 msgid ""
