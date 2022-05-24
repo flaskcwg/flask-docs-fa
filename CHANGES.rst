@@ -1,5 +1,15 @@
 .. currentmodule:: flask
 
+Version 2.1.3
+-------------
+
+Unreleased
+
+-   Inline some optional imports that are only used for certain CLI
+    commands. :pr:`4606`
+-   Relax type annotation for ``after_request`` functions. :issue:`4600`
+
+
 Version 2.1.2
 -------------
 
