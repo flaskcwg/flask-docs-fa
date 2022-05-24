@@ -179,7 +179,7 @@ $ git push origin {name}
 * [X] contributing [@mdk84](https://github.com/mdk84) MDK
 * [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] design
-* [ ] errorhandling
+* [X] errorhandling [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [x] extensions [@mdk84](https://github.com/mdk84) MDK
 * [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
