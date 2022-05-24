@@ -3,9 +3,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - docs/**/**.po
   pull_request:
     branches:
       - main
+    paths:
+      - docs/**/**.po
 jobs:
   tests:
     name: ${{ matrix.name }}

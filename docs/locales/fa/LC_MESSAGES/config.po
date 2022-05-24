@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 15:03+0330\n"
+"POT-Creation-Date: 2022-04-16 00:38+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -109,19 +109,19 @@ msgid ""
 " :envvar:`FLASK_ENV`:"
 msgstr ""
 
-#: ../../config.rst:72 ../../config.rst:447 ../../config.rst:526
+#: ../../config.rst:72 ../../config.rst:447 ../../config.rst:529
 msgid "Bash"
 msgstr ""
 
-#: ../../config.rst:79 ../../config.rst:455 ../../config.rst:535
+#: ../../config.rst:79 ../../config.rst:455 ../../config.rst:538
 msgid "Fish"
 msgstr ""
 
-#: ../../config.rst:86 ../../config.rst:463 ../../config.rst:544
+#: ../../config.rst:86 ../../config.rst:463 ../../config.rst:547
 msgid "CMD"
 msgstr ""
 
-#: ../../config.rst:93 ../../config.rst:471 ../../config.rst:553
+#: ../../config.rst:93 ../../config.rst:471 ../../config.rst:556
 msgid "Powershell"
 msgstr ""
 
@@ -572,47 +572,67 @@ msgstr ""
 msgid ""
 "In addition to pointing to configuration files using environment "
 "variables, you may find it useful (or necessary) to control your "
-"configuration values directly from the environment."
+"configuration values directly from the environment. Flask can be "
+"instructed to load all environment variables starting with a specific "
+"prefix into the config using :meth:`~flask.Config.from_prefixed_env`."
 msgstr ""
 
-#: ../../config.rst:522
+#: ../../config.rst:524
 msgid "Environment variables can be set in the shell before starting the server:"
 msgstr ""
 
-#: ../../config.rst:562
+#: ../../config.rst:565
 msgid ""
-"While this approach is straightforward to use, it is important to "
-"remember that environment variables are strings -- they are not "
-"automatically deserialized into Python types."
+"The variables can then be loaded and accessed via the config with a key "
+"equal to the environment variable name without the prefix i.e."
 msgstr ""
 
-#: ../../config.rst:566
+#: ../../config.rst:573
 msgid ""
-"Here is an example of a configuration file that uses environment "
-"variables::"
+"The prefix is ``FLASK_`` by default. This is configurable via the "
+"``prefix`` argument of :meth:`~flask.Config.from_prefixed_env`."
 msgstr ""
 
-#: ../../config.rst:579
+#: ../../config.rst:576
 msgid ""
-"Notice that any value besides an empty string will be interpreted as a "
-"boolean ``True`` value in Python, which requires care if an environment "
-"explicitly sets values intended to be ``False``."
+"Values will be parsed to attempt to convert them to a more specific type "
+"than strings. By default :func:`json.loads` is used, so any valid JSON "
+"value is possible, including lists and dicts. This is configurable via "
+"the ``loads`` argument of :meth:`~flask.Config.from_prefixed_env`."
 msgstr ""
 
-#: ../../config.rst:583
+#: ../../config.rst:581
 msgid ""
-"Make sure to load the configuration very early on, so that extensions "
-"have the ability to access the configuration when starting up.  There are"
-" other methods on the config object as well to load from individual "
-"files.  For a complete reference, read the :class:`~flask.Config` class "
-"documentation."
+"When adding a boolean value with the default JSON parsing, only \"true\" "
+"and \"false\", lowercase, are valid values. Keep in mind that any non-"
+"empty string is considered ``True`` by Python."
 msgstr ""
 
-#: ../../config.rst:590
+#: ../../config.rst:585
+msgid ""
+"It is possible to set keys in nested dictionaries by separating the keys "
+"with double underscore (``__``). Any intermediate keys that don't exist "
+"on the parent dict will be initialized to an empty dict."
+msgstr ""
+
+#: ../../config.rst:597
+msgid ""
+"On Windows, environment variable keys are always uppercase, therefore the"
+" above example would end up as ``MYAPI__CREDENTIALS__USERNAME``."
+msgstr ""
+
+#: ../../config.rst:600
+msgid ""
+"For even more config loading features, including merging and case-"
+"insensitive Windows support, try a dedicated library such as Dynaconf_, "
+"which includes integration with Flask."
+msgstr ""
+
+#: ../../config.rst:608
 msgid "Configuration Best Practices"
 msgstr ""
 
-#: ../../config.rst:592
+#: ../../config.rst:610
 #, python-format
 msgid ""
 "The downside with the approach mentioned earlier is that it makes testing"
@@ -621,7 +641,7 @@ msgid ""
 " that experience:"
 msgstr ""
 
-#: ../../config.rst:597
+#: ../../config.rst:615
 msgid ""
 "Create your application in a function and register blueprints on it. That"
 " way you can create multiple instances of your application with different"
@@ -629,18 +649,24 @@ msgid ""
 "use this to pass in configuration as needed."
 msgstr ""
 
-#: ../../config.rst:602
+#: ../../config.rst:620
 msgid ""
 "Do not write code that needs the configuration at import time.  If you "
 "limit yourself to request-only accesses to the configuration you can "
 "reconfigure the object later on as needed."
 msgstr ""
 
-#: ../../config.rst:609
+#: ../../config.rst:624
+msgid ""
+"Make sure to load the configuration very early on, so that extensions can"
+" access the configuration when calling ``init_app``."
+msgstr ""
+
+#: ../../config.rst:631
 msgid "Development / Production"
 msgstr ""
 
-#: ../../config.rst:611
+#: ../../config.rst:633
 msgid ""
 "Most applications need more than one configuration.  There should be at "
 "least separate configurations for the production server and the one used "
@@ -650,7 +676,7 @@ msgid ""
 "mentioned in the example above::"
 msgstr ""
 
-#: ../../config.rst:622
+#: ../../config.rst:644
 msgid ""
 "Then you just have to add a separate :file:`config.py` file and export "
 "``YOURAPPLICATION_SETTINGS=/path/to/config.py`` and you are done.  "
@@ -658,7 +684,7 @@ msgid ""
 "imports or subclassing."
 msgstr ""
 
-#: ../../config.rst:627
+#: ../../config.rst:649
 msgid ""
 "What is very popular in the Django world is to make the import explicit "
 "in the config file by adding ``from yourapplication.default_settings "
@@ -668,19 +694,19 @@ msgid ""
 "and import different hard-coded files based on that."
 msgstr ""
 
-#: ../../config.rst:634
+#: ../../config.rst:656
 msgid ""
 "An interesting pattern is also to use classes and inheritance for "
 "configuration::"
 msgstr ""
 
-#: ../../config.rst:650
+#: ../../config.rst:672
 msgid ""
 "To enable such a config you just have to call into "
 ":meth:`~flask.Config.from_object`::"
 msgstr ""
 
-#: ../../config.rst:655
+#: ../../config.rst:677
 msgid ""
 "Note that :meth:`~flask.Config.from_object` does not instantiate the "
 "class object. If you need to instantiate the class, such as to access a "
@@ -688,26 +714,26 @@ msgid ""
 ":meth:`~flask.Config.from_object`::"
 msgstr ""
 
-#: ../../config.rst:667
+#: ../../config.rst:689
 msgid ""
 "Instantiating the configuration object allows you to use ``@property`` in"
 " your configuration classes::"
 msgstr ""
 
-#: ../../config.rst:690
+#: ../../config.rst:712
 msgid ""
 "There are many different ways and it's up to you how you want to manage "
 "your configuration files.  However here a list of good recommendations:"
 msgstr ""
 
-#: ../../config.rst:693
+#: ../../config.rst:715
 msgid ""
 "Keep a default configuration in version control.  Either populate the "
 "config with this default configuration or import it in your own "
 "configuration files before overriding values."
 msgstr ""
 
-#: ../../config.rst:696
+#: ../../config.rst:718
 msgid ""
 "Use an environment variable to switch between the configurations. This "
 "can be done from outside the Python interpreter and makes development and"
@@ -718,18 +744,18 @@ msgid ""
 "configuration for you."
 msgstr ""
 
-#: ../../config.rst:703
+#: ../../config.rst:725
 msgid ""
 "Use a tool like `fabric`_ in production to push code and configurations "
 "separately to the production server(s).  For some details about how to do"
 " that, head over to the :doc:`/patterns/fabric` pattern."
 msgstr ""
 
-#: ../../config.rst:714
+#: ../../config.rst:736
 msgid "Instance Folders"
 msgstr ""
 
-#: ../../config.rst:718
+#: ../../config.rst:740
 msgid ""
 "Flask 0.8 introduces instance folders.  Flask for a long time made it "
 "possible to refer to paths relative to the application's folder directly "
@@ -739,7 +765,7 @@ msgid ""
 "root path refers to the contents of the package."
 msgstr ""
 
-#: ../../config.rst:725
+#: ../../config.rst:747
 msgid ""
 "With Flask 0.8 a new attribute was introduced: "
 ":attr:`Flask.instance_path`.  It refers to a new concept called the "
@@ -748,7 +774,7 @@ msgid ""
 "drop things that either change at runtime or configuration files."
 msgstr ""
 
-#: ../../config.rst:731
+#: ../../config.rst:753
 msgid ""
 "You can either explicitly provide the path of the instance folder when "
 "creating the Flask application or you can let Flask autodetect the "
@@ -756,36 +782,36 @@ msgid ""
 "parameter::"
 msgstr ""
 
-#: ../../config.rst:738
+#: ../../config.rst:760
 msgid "Please keep in mind that this path *must* be absolute when provided."
 msgstr ""
 
-#: ../../config.rst:740
+#: ../../config.rst:762
 msgid ""
 "If the `instance_path` parameter is not provided the following default "
 "locations are used:"
 msgstr ""
 
-#: ../../config.rst:743
+#: ../../config.rst:765
 msgid "Uninstalled module::"
 msgstr ""
 
-#: ../../config.rst:748
+#: ../../config.rst:770
 msgid "Uninstalled package::"
 msgstr ""
 
-#: ../../config.rst:754
+#: ../../config.rst:776
 msgid "Installed module or package::"
 msgstr ""
 
-#: ../../config.rst:759
+#: ../../config.rst:781
 msgid ""
 "``$PREFIX`` is the prefix of your Python installation.  This can be "
 "``/usr`` or the path to your virtualenv.  You can print the value of "
 "``sys.prefix`` to see what the prefix is set to."
 msgstr ""
 
-#: ../../config.rst:763
+#: ../../config.rst:785
 msgid ""
 "Since the config object provided loading of configuration files from "
 "relative filenames we made it possible to change the loading via "
@@ -795,20 +821,63 @@ msgid ""
 "`instance_relative_config` switch to the application constructor::"
 msgstr ""
 
-#: ../../config.rst:772
+#: ../../config.rst:794
 msgid ""
 "Here is a full example of how to configure Flask to preload the config "
 "from a module and then override the config from a file in the instance "
 "folder if it exists::"
 msgstr ""
 
-#: ../../config.rst:780
+#: ../../config.rst:802
 msgid ""
 "The path to the instance folder can be found via the "
 ":attr:`Flask.instance_path`.  Flask also provides a shortcut to open a "
 "file from the instance folder with :meth:`Flask.open_instance_resource`."
 msgstr ""
 
-#: ../../config.rst:784
+#: ../../config.rst:806
 msgid "Example usage for both::"
 msgstr ""
+
+#~ msgid ""
+#~ "In addition to pointing to configuration"
+#~ " files using environment variables, you "
+#~ "may find it useful (or necessary) "
+#~ "to control your configuration values "
+#~ "directly from the environment."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "While this approach is straightforward "
+#~ "to use, it is important to "
+#~ "remember that environment variables are "
+#~ "strings -- they are not automatically"
+#~ " deserialized into Python types."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here is an example of a "
+#~ "configuration file that uses environment "
+#~ "variables::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice that any value besides an "
+#~ "empty string will be interpreted as "
+#~ "a boolean ``True`` value in Python, "
+#~ "which requires care if an environment"
+#~ " explicitly sets values intended to "
+#~ "be ``False``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Make sure to load the configuration "
+#~ "very early on, so that extensions "
+#~ "have the ability to access the "
+#~ "configuration when starting up.  There "
+#~ "are other methods on the config "
+#~ "object as well to load from "
+#~ "individual files.  For a complete "
+#~ "reference, read the :class:`~flask.Config` "
+#~ "class documentation."
+#~ msgstr ""

@@ -6,17 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-05-19 14:23+0430\n"
 "PO-Revision-Date: 2022-03-20 16:50+0330\n"
 "Last-Translator: MDK <dzhbanmhmdamyn@gmail.com>\n"
-"Language-Team: Persian <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
+"Language-Team: Persian <ahmdparsh129@gmail.com>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0.1\n"
 
 #: ../../../CONTRIBUTING.rst:2
 msgid "How to contribute to Flask"
@@ -32,97 +31,98 @@ msgstr "سوال های پشتیبانی"
 
 #: ../../../CONTRIBUTING.rst:10
 msgid ""
-"Please don't use the issue tracker for this. The issue tracker is a tool to "
-"address bugs and feature requests in Flask itself. Use one of the following "
-"resources for questions about using Flask or issues with your own code:"
+"Please don't use the issue tracker for this. The issue tracker is a tool "
+"to address bugs and feature requests in Flask itself. Use one of the "
+"following resources for questions about using Flask or issues with your "
+"own code:"
 msgstr ""
 "لطفا از ابزار ردیابی مشکل (issue tracker) برای این استفاده نکنید. ابرار "
-"ردیابی مشکل یک ابزار است که مکان باگ ها و درخواست قابلیت ها را در فلاسک نشان "
-"می دهد. از یکی از منابع آمده برای سوال های در مورد فلاسک یا مشکلات کد خود "
-"استفاده کنید:"
+"ردیابی مشکل یک ابزار است که مکان باگ ها و درخواست قابلیت ها را در فلاسک "
+"نشان می دهد. از یکی از منابع آمده برای سوال های در مورد فلاسک یا مشکلات "
+"کد خود استفاده کنید:"
 
 #: ../../../CONTRIBUTING.rst:15
-msgid ""
-"The ``#questions`` channel on our Discord chat: https://discord.gg/pallets"
+msgid "The ``#questions`` channel on our Discord chat: https://discord.gg/pallets"
 msgstr "کانال ``#questions`` در دیسکورد ما : https://discord.gg/pallets"
 
 #: ../../../CONTRIBUTING.rst:17
 msgid ""
-"The mailing list flask@python.org for long term discussion or larger issues."
-msgstr "آدرس ایمیل flask@python.org برای بحث های طولانی مدت یا مشکل های بزرگ."
-
-#: ../../../CONTRIBUTING.rst:19
-msgid ""
-"Ask on `Stack Overflow`_. Search with Google first using: ``site:"
-"stackoverflow.com flask {search term, exception message, etc.}``"
+"Ask on `Stack Overflow`_. Search with Google first using: "
+"``site:stackoverflow.com flask {search term, exception message, etc.}``"
 msgstr ""
 "در `Stack Overflow`_ سوال خود را بپرسید. در گوگل جستجو کنید:\n"
 "``site:stackoverflow.com flask {search term, exception message, etc.}``"
 
-#: ../../../CONTRIBUTING.rst:21
-msgid "Ask on our `GitHub Discussions`_."
-msgstr "در `GitHub Discussions`_ ما بپرسید."
+#: ../../../CONTRIBUTING.rst:19
+#, fuzzy
+msgid ""
+"Ask on our `GitHub Discussions`_ for long term discussion or larger "
+"questions."
+msgstr "آدرس ایمیل flask@python.org برای بحث های طولانی مدت یا مشکل های بزرگ."
 
-#: ../../../CONTRIBUTING.rst:28
+#: ../../../CONTRIBUTING.rst:27
 msgid "Reporting issues"
 msgstr "گزارش مشکلات"
 
-#: ../../../CONTRIBUTING.rst:30
+#: ../../../CONTRIBUTING.rst:29
 msgid "Include the following information in your post:"
 msgstr "موارد زیر را در پست خود جای دهید:"
 
-#: ../../../CONTRIBUTING.rst:32
+#: ../../../CONTRIBUTING.rst:31
 msgid "Describe what you expected to happen."
 msgstr "توضیح دهید چگونه این اتفاق برای شما افتاد."
 
-#: ../../../CONTRIBUTING.rst:33
+#: ../../../CONTRIBUTING.rst:32
 msgid ""
-"If possible, include a `minimal reproducible example`_ to help us identify "
-"the issue. This also helps check that the issue is not with your own code."
+"If possible, include a `minimal reproducible example`_ to help us "
+"identify the issue. This also helps check that the issue is not with your"
+" own code."
 msgstr ""
-"اگر ممکن است، یک `مثال مشابه قابل تکثیر`_ بنویسید تا به ما کمک کنید. مشکل "
-"خود را شناسایی کنید. شناسایی مشکل هم کمک می کند تا بررسی کنید که مشکل از سمت "
-"کد شما نیست."
+"اگر ممکن است، یک `مثال مشابه قابل تکثیر`_ بنویسید تا به ما کمک کنید. مشکل"
+" خود را شناسایی کنید. شناسایی مشکل هم کمک می کند تا بررسی کنید که مشکل از"
+" سمت کد شما نیست."
 
-#: ../../../CONTRIBUTING.rst:36
+#: ../../../CONTRIBUTING.rst:35
 msgid ""
-"Describe what actually happened. Include the full traceback if there was an "
-"exception."
+"Describe what actually happened. Include the full traceback if there was "
+"an exception."
 msgstr ""
-"توضیح دهید چگونه این اتفاق برای شما افتاد. جزئیات کامل را شرح دهید اگر با "
-"خطایی مواجه شدید."
+"توضیح دهید چگونه این اتفاق برای شما افتاد. جزئیات کامل را شرح دهید اگر با"
+" خطایی مواجه شدید."
 
-#: ../../../CONTRIBUTING.rst:38
+#: ../../../CONTRIBUTING.rst:37
 msgid ""
 "List your Python and Flask versions. If possible, check if this issue is "
-"already fixed in the latest releases or the latest code in the repository."
+"already fixed in the latest releases or the latest code in the "
+"repository."
 msgstr ""
-"نسخه های پایتون و فلاسک خود را بنویسید. اگر ممکن است، چک کنید که آیا مشکل در "
-"آخرین نسخه رسمی یا آخرین نسخه مخزن حل شده است یا خیر."
+"نسخه های پایتون و فلاسک خود را بنویسید. اگر ممکن است، چک کنید که آیا مشکل"
+" در آخرین نسخه رسمی یا آخرین نسخه مخزن حل شده است یا خیر."
 
-#: ../../../CONTRIBUTING.rst:46
+#: ../../../CONTRIBUTING.rst:45
 msgid "Submitting patches"
 msgstr "اعمال پچ (patch) ها"
 
-#: ../../../CONTRIBUTING.rst:48
+#: ../../../CONTRIBUTING.rst:47
 msgid ""
-"If there is not an open issue for what you want to submit, prefer opening "
-"one for discussion before working on a PR. You can work on any issue that "
-"doesn't have an open PR linked to it or a maintainer assigned to it. These "
-"show up in the sidebar. No need to ask if you can work on an issue that "
-"interests you."
+"If there is not an open issue for what you want to submit, prefer opening"
+" one for discussion before working on a PR. You can work on any issue "
+"that doesn't have an open PR linked to it or a maintainer assigned to it."
+" These show up in the sidebar. No need to ask if you can work on an issue"
+" that interests you."
 msgstr ""
-"اگر مشکلی برای آنچه می خواهید ارسال کنید وجود ندارد، یک مشکل جدید برای گفتگو "
-"قبل از کار بر روی پول ریکوئست (pull request) باز کنید. شما می توانید روی هر "
-"موضوعی کار کنید که یک پول ریکوئست باز مرتبط با آن یا یک مسئول اختصاص داده "
-"شده به آن ندارد. اینها در نوار کناری نشان داده می شوند. نیازی نیست بپرسید که "
-"آیا می توانید روی یک موضوع کار کنید که به آن علاقه مندید."
+"اگر مشکلی برای آنچه می خواهید ارسال کنید وجود ندارد، یک مشکل جدید برای "
+"گفتگو قبل از کار بر روی پول ریکوئست (pull request) باز کنید. شما می "
+"توانید روی هر موضوعی کار کنید که یک پول ریکوئست باز مرتبط با آن یا یک "
+"مسئول اختصاص داده شده به آن ندارد. اینها در نوار کناری نشان داده می شوند."
+" نیازی نیست بپرسید که آیا می توانید روی یک موضوع کار کنید که به آن علاقه "
+"مندید."
 
-#: ../../../CONTRIBUTING.rst:54
+#: ../../../CONTRIBUTING.rst:53
 msgid "Include the following in your patch:"
 msgstr "موارد زیر را در پچ خود وارد کنید:"
 
-#: ../../../CONTRIBUTING.rst:56
+#: ../../../CONTRIBUTING.rst:55
 msgid ""
 "Use `Black`_ to format your code. This and other tools will run "
 "automatically if you install `pre-commit`_ using the instructions below."
@@ -131,15 +131,15 @@ msgstr ""
 "ابزار ها می توانند به صورت خودکار اجرا شوند اگر شما `pre-commit`_ را نصب "
 "کنید."
 
-#: ../../../CONTRIBUTING.rst:59
+#: ../../../CONTRIBUTING.rst:58
 msgid ""
-"Include tests if your patch adds or changes code. Make sure the test fails "
-"without your patch."
+"Include tests if your patch adds or changes code. Make sure the test "
+"fails without your patch."
 msgstr ""
-"اگر پچ شما کدی را اضافه یا تغییر می دهد، کد را تست کنید. مطمئن شوید که تست "
-"بدون پچ شما با خطا مواجه می شود."
+"اگر پچ شما کدی را اضافه یا تغییر می دهد، کد را تست کنید. مطمئن شوید که "
+"تست بدون پچ شما با خطا مواجه می شود."
 
-#: ../../../CONTRIBUTING.rst:61
+#: ../../../CONTRIBUTING.rst:60
 msgid ""
 "Update any relevant docs pages and docstrings. Docs pages and docstrings "
 "should be wrapped at 72 characters."
@@ -147,174 +147,179 @@ msgstr ""
 "هر گونه متن یا داک استرینگ (docstring) مرتبط را بروزرسانی کنید. هر سطر "
 "مستندات و داک استرینگ ها باید در 72 کاراکتر خلاصه شود."
 
-#: ../../../CONTRIBUTING.rst:63
+#: ../../../CONTRIBUTING.rst:62
 msgid ""
-"Add an entry in ``CHANGES.rst``. Use the same style as other entries. Also "
-"include ``.. versionchanged::`` inline changelogs in relevant docstrings."
+"Add an entry in ``CHANGES.rst``. Use the same style as other entries. "
+"Also include ``.. versionchanged::`` inline changelogs in relevant "
+"docstrings."
 msgstr ""
-"یک ورودی در ``CHANGES.rst`` اضافه کنید. مانند دیگر ورودی ها از استایل مشابه "
-"استفاده کنید. همچنین ``.. versionchanged::`` در خط تغییرات داخل خطی مرتبط با "
-"داک استرینگ را اضافه کنید."
+"یک ورودی در ``CHANGES.rst`` اضافه کنید. مانند دیگر ورودی ها از استایل "
+"مشابه استفاده کنید. همچنین ``.. versionchanged::`` در خط تغییرات داخل خطی"
+" مرتبط با داک استرینگ را اضافه کنید."
 
-#: ../../../CONTRIBUTING.rst:72
+#: ../../../CONTRIBUTING.rst:71
 msgid "First time setup"
 msgstr "ستاپ برای اولین بار"
 
-#: ../../../CONTRIBUTING.rst:74
+#: ../../../CONTRIBUTING.rst:73
 msgid "Download and install the `latest version of git`_."
 msgstr "آخرین نسخه گیت را `دانلود کنید`_."
 
-#: ../../../CONTRIBUTING.rst:75
+#: ../../../CONTRIBUTING.rst:74
 msgid "Configure git with your `username`_ and `email`_."
 msgstr "گیت خود را با `username`_ و `email`_ خود تنظیم کنید."
 
-#: ../../../CONTRIBUTING.rst:82
+#: ../../../CONTRIBUTING.rst:81
 msgid "Make sure you have a `GitHub account`_."
 msgstr "مطمئن شوید که یک `GitHub account`_ دارید."
 
-#: ../../../CONTRIBUTING.rst:83
+#: ../../../CONTRIBUTING.rst:82
 msgid "Fork Flask to your GitHub account by clicking the `Fork`_ button."
 msgstr "فلاسک را با فشردن دکمه `Fork`_ به اکانت گیت هاب خود فورک کنید."
 
-#: ../../../CONTRIBUTING.rst:84
+#: ../../../CONTRIBUTING.rst:83
 msgid "`Clone`_ the main repository locally."
 msgstr "مخزن اصلی را به صورت محلی `Clone`_ کنید."
 
-#: ../../../CONTRIBUTING.rst:91
+#: ../../../CONTRIBUTING.rst:90
 msgid ""
-"Add your fork as a remote to push your work to. Replace ``{username}`` with "
-"your username. This names the remote \"fork\", the default Pallets remote is "
-"\"origin\"."
+"Add your fork as a remote to push your work to. Replace ``{username}`` "
+"with your username. This names the remote \"fork\", the default Pallets "
+"remote is \"origin\"."
 msgstr ""
-"فورک خود را به عنوان یک ریموت برای ارسال تغییرات کار خود اضافه کنید. به جای "
-"``{username}`` نام کاربری خود را جایگزین کنید. این ریموت \"fork\" شما را نام "
-"گذاری می کند, که ریموت پیش فرض پالت \"origin\" است."
+"فورک خود را به عنوان یک ریموت برای ارسال تغییرات کار خود اضافه کنید. به "
+"جای ``{username}`` نام کاربری خود را جایگزین کنید. این ریموت \"fork\" شما"
+" را نام گذاری می کند, که ریموت پیش فرض پالت \"origin\" است."
 
-#: ../../../CONTRIBUTING.rst:99
+#: ../../../CONTRIBUTING.rst:98
 msgid "Create a virtualenv."
 msgstr "یک virtualenv ایجاد کنید."
 
-#: ../../../CONTRIBUTING.rst:103
+#: ../../../CONTRIBUTING.rst:101
 msgid "Linux/macOS"
 msgstr "لینوکس / macOS"
 
-#: ../../../CONTRIBUTING.rst:110
+#: ../../../CONTRIBUTING.rst:108
 msgid "Windows"
 msgstr "ویندوز"
 
-#: ../../../CONTRIBUTING.rst:117
+#: ../../../CONTRIBUTING.rst:115
 msgid "Upgrade pip and setuptools."
 msgstr "ابزار های pip و setuptools را بروزرسانی کنید."
 
-#: ../../../CONTRIBUTING.rst:123
-msgid ""
-"Install the development dependencies, then install Flask in editable mode."
+#: ../../../CONTRIBUTING.rst:121
+msgid "Install the development dependencies, then install Flask in editable mode."
 msgstr ""
-"پیش نیاز های برنامه را نصب کنید، سپس فلاسک را در حالت قابل ویرایش نصب کنید."
+"پیش نیاز های برنامه را نصب کنید، سپس فلاسک را در حالت قابل ویرایش نصب "
+"کنید."
 
-#: ../../../CONTRIBUTING.rst:130
+#: ../../../CONTRIBUTING.rst:128
 msgid "Install the pre-commit hooks."
 msgstr "ابزار pre-commit را نصب کنید."
 
-#: ../../../CONTRIBUTING.rst:145
+#: ../../../CONTRIBUTING.rst:143
 msgid "Start coding"
 msgstr "شروع کد نویسی"
 
-#: ../../../CONTRIBUTING.rst:147
+#: ../../../CONTRIBUTING.rst:145
 msgid ""
-"Create a branch to identify the issue you would like to work on. If you're "
-"submitting a bug or documentation fix, branch off of the latest \".x\" "
-"branch."
+"Create a branch to identify the issue you would like to work on. If "
+"you're submitting a bug or documentation fix, branch off of the latest "
+"\".x\" branch."
 msgstr ""
-"شاخه ای برای شناسایی مشکلی که می خواهید روی آن کار کنید ایجاد کنید. اگر شما "
-"در حال ارائه رفع اشکال و یا رفع مشکلات اسناد هستید، شاخه کردن از آخرین شاخه "
-"\".x\" است."
+"شاخه ای برای شناسایی مشکلی که می خواهید روی آن کار کنید ایجاد کنید. اگر "
+"شما در حال ارائه رفع اشکال و یا رفع مشکلات اسناد هستید، شاخه کردن از "
+"آخرین شاخه \".x\" است."
 
-#: ../../../CONTRIBUTING.rst:156
+#: ../../../CONTRIBUTING.rst:154
 msgid ""
-"If you're submitting a feature addition or change, branch off of the \"main"
-"\" branch."
+"If you're submitting a feature addition or change, branch off of the "
+"\"main\" branch."
 msgstr ""
-"اگر شما در حال ارائه یک ویژگی و یا تغییر هستید، شاخه های دیگر از شاخه \"main"
-"\" منشا می گیرند."
+"اگر شما در حال ارائه یک ویژگی و یا تغییر هستید، شاخه های دیگر از شاخه "
+"\"main\" منشا می گیرند."
 
-#: ../../../CONTRIBUTING.rst:164
+#: ../../../CONTRIBUTING.rst:162
 msgid "Using your favorite editor, make your changes, `committing as you go`_."
 msgstr ""
-"با استفاده از ویرایشگر مورد علاقه خود، تغییرات خود را ایجاد کنید و `کامیت "
-"کنید`_."
+"با استفاده از ویرایشگر مورد علاقه خود، تغییرات خود را ایجاد کنید و `کامیت"
+" کنید`_."
+
+#: ../../../CONTRIBUTING.rst:164
+msgid ""
+"Include tests that cover any code changes you make. Make sure the test "
+"fails without your patch. Run the tests as described below."
+msgstr ""
+"شامل تست هایی که هر گونه تغییرات کد شما را پوشش می دهد. مطمئن شوید که تست"
+" بدون پچ شما شکست می خورد و اجرا نمی شود. تست ها را همان طور که در زیر "
+"شرح داده شده اجرا کنید."
 
 #: ../../../CONTRIBUTING.rst:166
 msgid ""
-"Include tests that cover any code changes you make. Make sure the test fails "
-"without your patch. Run the tests as described below."
-msgstr ""
-"شامل تست هایی که هر گونه تغییرات کد شما را پوشش می دهد. مطمئن شوید که تست "
-"بدون پچ شما شکست می خورد و اجرا نمی شود. تست ها را همان طور که در زیر شرح "
-"داده شده اجرا کنید."
-
-#: ../../../CONTRIBUTING.rst:168
-msgid ""
-"Push your commits to your fork on GitHub and `create a pull request`_. Link "
-"to the issue being addressed with ``fixes #123`` in the pull request."
+"Push your commits to your fork on GitHub and `create a pull request`_. "
+"Link to the issue being addressed with ``fixes #123`` in the pull "
+"request."
 msgstr ""
 "تغییرات خود را به fork خود در GitHub پوش کنید و `یک پول ریکوئست ایجاد "
 "کنید`_. در پول ریکوئست، مشکل را با ''fix #123'' لینک کنید."
 
-#: ../../../CONTRIBUTING.rst:181
+#: ../../../CONTRIBUTING.rst:179
 msgid "Running the tests"
 msgstr "اجرای تست ها"
 
-#: ../../../CONTRIBUTING.rst:183
+#: ../../../CONTRIBUTING.rst:181
 msgid "Run the basic test suite with pytest."
 msgstr "مجموعه تست های اولیه را با pytest اجرا کنید."
 
-#: ../../../CONTRIBUTING.rst:189
+#: ../../../CONTRIBUTING.rst:187
 msgid ""
 "This runs the tests for the current environment, which is usually "
-"sufficient. CI will run the full suite when you submit your pull request. "
-"You can run the full test suite with tox if you don't want to wait."
+"sufficient. CI will run the full suite when you submit your pull request."
+" You can run the full test suite with tox if you don't want to wait."
 msgstr ""
-"این کار تست ها را برای محیط فعلی اجرا می کند که معمولاً کافی است. CI مجموعه "
-"کامل را اجرا خواهد کرد زمانی که شما پول ریکوئست بزنید. شما می توانید مجموعه "
-"تست کامل با tox اجرا کنید اگر نمی خواهید که صبر کنید."
+"این کار تست ها را برای محیط فعلی اجرا می کند که معمولاً کافی است. CI "
+"مجموعه کامل را اجرا خواهد کرد زمانی که شما پول ریکوئست بزنید. شما می "
+"توانید مجموعه تست کامل با tox اجرا کنید اگر نمی خواهید که صبر کنید."
 
-#: ../../../CONTRIBUTING.rst:200
+#: ../../../CONTRIBUTING.rst:198
 msgid "Running test coverage"
 msgstr "اجرا کردن تست ها"
 
-#: ../../../CONTRIBUTING.rst:202
+#: ../../../CONTRIBUTING.rst:200
 msgid ""
 "Generating a report of lines that do not have test coverage can indicate "
-"where to start contributing. Run ``pytest`` using ``coverage`` and generate "
-"a report."
+"where to start contributing. Run ``pytest`` using ``coverage`` and "
+"generate a report."
 msgstr ""
-"تولید یک گزارش از خطوط که تست را پوشش نمی دهند می تواند نشان بدهد که از کجا "
-"باید برای مشارکت شروع کنید.'pytest'' را با استفاده از ''coverage'' اجرا کرده "
-"و یک گزارش تولید کنید."
+"تولید یک گزارش از خطوط که تست را پوشش نمی دهند می تواند نشان بدهد که از "
+"کجا باید برای مشارکت شروع کنید.'pytest'' را با استفاده از ''coverage'' "
+"اجرا کرده و یک گزارش تولید کنید."
 
-#: ../../../CONTRIBUTING.rst:212
+#: ../../../CONTRIBUTING.rst:210
 msgid "Open ``htmlcov/index.html`` in your browser to explore the report."
 msgstr "''htmlcov/index.html'' را در مرورگر خود باز کنید تا گزارش را ببینید."
 
-#: ../../../CONTRIBUTING.rst:214
+#: ../../../CONTRIBUTING.rst:212
 msgid "Read more about `coverage <https://coverage.readthedocs.io>`__."
 msgstr "اطلاعات بیشتر در مورد 'coverage <https://coverage.readthedocs.io>'__."
 
-#: ../../../CONTRIBUTING.rst:218
+#: ../../../CONTRIBUTING.rst:216
 msgid "Building the docs"
 msgstr "ساخت اسناد"
 
-#: ../../../CONTRIBUTING.rst:220
+#: ../../../CONTRIBUTING.rst:218
 msgid "Build the docs in the ``docs`` directory using Sphinx."
 msgstr "اسناد در دایرکتوری ''docs'' با استفاده از Sphinx بسازید."
 
-#: ../../../CONTRIBUTING.rst:227
+#: ../../../CONTRIBUTING.rst:225
 msgid "Open ``_build/html/index.html`` in your browser to view the docs."
 msgstr ""
-"''_build/html/index.html'' را در مرورگر خود باز کنید تا اسناد را مشاهده کنید."
+"''_build/html/index.html'' را در مرورگر خود باز کنید تا اسناد را مشاهده "
+"کنید."
 
-#: ../../../CONTRIBUTING.rst:229
+#: ../../../CONTRIBUTING.rst:227
 msgid "Read more about `Sphinx <https://www.sphinx-doc.org/en/stable/>`__."
-msgstr ""
-"اطلاعات بیشتر در مورد 'sphinx <https://www.sphinx-doc.org/en/stable/>'__."
+msgstr "اطلاعات بیشتر در مورد 'sphinx <https://www.sphinx-doc.org/en/stable/>'__."
+
+#~ msgid "Ask on our `GitHub Discussions`_."
+#~ msgstr "در `GitHub Discussions`_ ما بپرسید."

@@ -60,6 +60,8 @@ $ git checkout -b {name} upstream/main
 
 #### نرم افزار های پیشنهادی برای ترجمه
 
+<div dir="rtl">
+
 * [POEdit](https://poedit.net/)
 پیشنهاد اصلی ما POEdit است و خیلی از مترجمان از آن استفاده میکنند!
 
@@ -69,6 +71,8 @@ $ git checkout -b {name} upstream/main
 مطمئنا نرم افزار های دیگری نیز برای ویرایش فایل های `po` وجود دارد. برخی از آن برنامه ها را میتوانید از [اینجا](https://alternativeto.net/software/better-po-editor/) بیابید
 
 > __**نکته:**__ استفاده از نرم افزار برای ترجمه الزامی نیست و میتوانید از یک ویرایشگر متن هم استفاده کنید
+
+</div>
 
 #### ابزار های پیشنهادی ترجمه
 
@@ -168,7 +172,6 @@ $ git push origin {name}
 
 * [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] async-await
-* [ ] becomingbig
 * [ ] blueprints
 * [ ] changes
 * [ ] cli
@@ -188,7 +191,7 @@ $ git push origin {name}
 * [ ] reqcontext
 * [ ] security
 * [ ] server
-* [ ] shell
+* [x] shell [@ja74d](https://github.com/ja74d) Javad Pournosrat
 * [ ] signals
 * [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh
 * [X] testing [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh
