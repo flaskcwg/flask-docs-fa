@@ -3,7 +3,7 @@ name: Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 19 * * *" # Run at 3am UTF+8 every day
+    - cron: "0 30 4 */7 * *"  # Run at At 04:30 AM, every 7 days
 
 jobs:
   sync:
