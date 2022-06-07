@@ -3,7 +3,7 @@ name: Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" # Run every day at midnight (UTC)
+    - cron: "0 0 */7 * *"  # every week at midnight
 
 jobs:
   sync:
@@ -33,7 +33,7 @@ jobs:
             echo "we have conflict"
             git checkout --theirs .
             git add .
-            git commit --no-edit
+            git commit -m "Merge upstream changes into 'main' by GitHub Actions"
           fi
 
           git diff --name-only origin/main HEAD | grep -q -e '^docs/' # Check if docs changed
