@@ -3,38 +3,38 @@ name: Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 30 4 */7 * *"  # Run at At 04:30 AM, every 7 days
+    - cron: "0 0 * * *" # Run every day at midnight (UTC)
 
 jobs:
   sync:
-    name: Sync with upstream docs
+    name: Sync 🔄
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - uses: actions/setup-python@v3
         with:
-          python-version: 3.9
-      - name: config
+          python-version: "3.10"
+      - name: config git user info 🔑
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-      - name: Fetch upstream changes and Merge
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions[bot]"
+      - name: Fetch upstream changes and Merge 🔄
         id: fetch-changes
         run: |
           git remote add upstream https://github.com/pallets/flask.git
           git fetch upstream
           git merge upstream/2.1.x -m "Merge upstream changes into 'main' by GitHub Actions"
           git diff --name-only origin/main HEAD | grep -q -e '^docs/' # Check if docs changed
-      - name: install dependencies
+      - name: install dependencies 📦
         run: |
           pip install -r requirements/docs.txt
           pip install PyGithub
           pip install -e .
-      - name: Generate Translation
+      - name: Generate Translation Files 📚
         run: |
           cd docs
           make gettext
@@ -42,25 +42,12 @@ jobs:
           cd ..
           git add docs/
           git commit -m "Update po files by GitHub Actions"
-      - name: Push changes
+      - name: Push changes to GitHub 🚀
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create issue
-        shell: python
-        run: |
-          import subprocess, os
-          from datetime import datetime
-          from github import Github
-          current_date = datetime.today().strftime(' %Y-%m-%d')
-          g = Github(os.getenv('GITHUB_TOKEN'))
-          changed = subprocess.check_output("git diff --name-only HEAD~1 HEAD | grep -e '^docs/locales/'", shell=True, text=True)
-          body = "## Changed po files\n\n" + "\n".join(f"- [ ] {line}" for line in changed.splitlines() if line.strip())
-          repo = g.get_repo(os.getenv('REPO'))
-          label = repo.get_label('sync')
-          issue = repo.create_issue(title=os.getenv('ISSUE_TITLE') + current_date, body=body, labels=[label])
+      - name: Create issue on GitHub 📝
+        run: python .github/workflows/create_issue.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          ISSUE_TITLE: Sync translation for upstream updates
