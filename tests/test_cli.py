@@ -18,7 +18,6 @@ from flask import current_app
 from flask import Flask
 from flask.cli import AppGroup
 from flask.cli import DispatchingApp
-from flask.cli import dotenv
 from flask.cli import find_best_app
 from flask.cli import FlaskGroup
 from flask.cli import get_version
@@ -305,9 +304,9 @@ def test_lazy_load_error(monkeypatch):
 
     lazy = DispatchingApp(bad_load, use_eager_loading=False)
 
-    with pytest.raises(BadExc):
-        # reduce flakiness by waiting for the internal loading lock
-        with lazy._lock:
+    # reduce flakiness by waiting for the internal loading lock
+    with lazy._lock:
+        with pytest.raises(BadExc):
             lazy._flush_bg_loading_exception()
 
 
@@ -492,7 +491,18 @@ class TestRoutes:
         assert "No routes were registered." in result.output
 
 
-need_dotenv = pytest.mark.skipif(dotenv is None, reason="dotenv is not installed")
+def dotenv_not_available():
+    try:
+        import dotenv  # noqa: F401
+    except ImportError:
+        return True
+
+    return False
+
+
+need_dotenv = pytest.mark.skipif(
+    dotenv_not_available(), reason="dotenv is not installed"
+)
 
 
 @need_dotenv
@@ -530,7 +540,7 @@ def test_dotenv_path(monkeypatch):
 
 
 def test_dotenv_optional(monkeypatch):
-    monkeypatch.setattr("flask.cli.dotenv", None)
+    monkeypatch.setitem(sys.modules, "dotenv", None)
     monkeypatch.chdir(test_path)
     load_dotenv()
     assert "FOO" not in os.environ
@@ -553,7 +563,12 @@ def test_run_cert_path():
     with pytest.raises(click.BadParameter):
         run_command.make_context("run", ["--key", __file__])
 
+    # cert specified first
     ctx = run_command.make_context("run", ["--cert", __file__, "--key", __file__])
+    assert ctx.params["cert"] == (__file__, __file__)
+
+    # key specified first
+    ctx = run_command.make_context("run", ["--key", __file__, "--cert", __file__])
     assert ctx.params["cert"] == (__file__, __file__)
 
 
@@ -597,7 +612,8 @@ def test_run_cert_import(monkeypatch):
 
 
 def test_run_cert_no_ssl(monkeypatch):
-    monkeypatch.setattr("flask.cli.ssl", None)
+    monkeypatch.setitem(sys.modules, "ssl", None)
+
     with pytest.raises(click.BadParameter):
         run_command.make_context("run", ["--cert", "not_here"])
 

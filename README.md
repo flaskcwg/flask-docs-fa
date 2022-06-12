@@ -172,7 +172,6 @@ $ git push origin {name}
 
 * [x] advanced_foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] async-await
-* [ ] becomingbig
 * [ ] blueprints
 * [ ] changes
 * [ ] cli
@@ -180,7 +179,7 @@ $ git push origin {name}
 * [X] contributing [@mdk84](https://github.com/mdk84) MDK
 * [X] debugging [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] design
-* [ ] errorhandling
+* [X] errorhandling [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [X] extensiondev [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [x] extensions [@mdk84](https://github.com/mdk84) MDK
 * [x] foreword [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
@@ -192,7 +191,7 @@ $ git push origin {name}
 * [ ] reqcontext
 * [ ] security
 * [ ] server
-* [ ] shell
+* [x] shell [@ja74d](https://github.com/ja74d) Javad Pournosrat
 * [ ] signals
 * [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh
 * [X] testing [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: 2021-12-30 19:57+0330\n"
+"POT-Creation-Date: 2022-05-24 12:15+0000\n"
+"PO-Revision-Date: 2022-05-24 17:34+0430\n"
+"Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
-"Last-Translator:  Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
-"X-Generator: Poedit 3.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Generated-By: Babel 2.10.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../tutorial/install.rst:2
 msgid "Make the Project Installable"
@@ -122,21 +122,22 @@ msgstr ""
 
 #: ../../tutorial/install.rst:70
 msgid ""
-"See the `official packaging guide`_ for another explanation of the files "
-"and options used."
+"See the official `Packaging tutorial <packaging tutorial_>`_ and `detailed "
+"guide <packaging guide_>`_ for more explanation of the files and options "
+"used."
 msgstr ""
-"برای توضیح دیگری درباره فایل‌ها و گزینه‌های استفاده شده، به `official "
-"packaging guide`_  مراجعه کنید."
+"برای توضیح بیشتر درباره فایل‌ها و گزینه‌های استفاده شده، به `راهنمای تفضیلی "
+"<packaging guide_>`_ و `آموزش ساخت پکیج <packaging tutorial_>`_ مراجعه کنید."
 
-#: ../../tutorial/install.rst:77
+#: ../../tutorial/install.rst:79
 msgid "Install the Project"
 msgstr "نصب پروژه"
 
-#: ../../tutorial/install.rst:79
+#: ../../tutorial/install.rst:81
 msgid "Use ``pip`` to install your project in the virtual environment."
 msgstr "برای نصب پروژه خود در محیط مجازی از ``pip`` استفاده کنید."
 
-#: ../../tutorial/install.rst:85
+#: ../../tutorial/install.rst:87
 msgid ""
 "This tells pip to find ``setup.py`` in the current directory and install it "
 "in *editable* or *development* mode. Editable mode means that as you make "
@@ -148,11 +149,11 @@ msgstr ""
 "ایجاد تغییرات در کد محلی خود، تنها در صورتی نیاز به نصب مجدد دارید که "
 "متادیتای پروژه، مانند وابستگی های آن را تغییر دهید."
 
-#: ../../tutorial/install.rst:90
+#: ../../tutorial/install.rst:92
 msgid "You can observe that the project is now installed with ``pip list``."
 msgstr "می توانید مشاهده کنید که پروژه اکنون با  ``pip list`` نصب شده است."
 
-#: ../../tutorial/install.rst:109
+#: ../../tutorial/install.rst:111
 msgid ""
 "Nothing changes from how you've been running your project so far. "
 "``FLASK_APP`` is still set to ``flaskr`` and ``flask run`` still runs the "
@@ -164,6 +165,6 @@ msgstr ""
 "می‌کند، اما می‌توانید آن را از هرجایی فراخوانی کنید، نه فقط از دایرکتوری "
 "``flask-tutorial`` ."
 
-#: ../../tutorial/install.rst:114
+#: ../../tutorial/install.rst:116
 msgid "Continue to :doc:`tests`."
 msgstr "با :doc:`tests` ادامه دهید."

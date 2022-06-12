@@ -1,0 +1,35 @@
+# Configuration for probot-auto-merge - https://github.com/bobvanderlinden/probot-auto-merge
+
+updateBranch: true
+deleteBranchAfterMerge: true
+
+requiredBaseBranches: ["main"]
+requiredTitleRegex: "Translate: .*"
+
+minApprovals:
+  COLLABORATOR: 0
+
+maxRequestedChanges:
+  NONE: 0
+
+blockingLabels:
+  - dont-merge
+  - invalid
+
+blockingBodyRegex: '(^|\\s)do-not-merge($|\\s)'
+requiredBodyRegex: '(^|\\s)ok-to-merge($|\\s)'
+
+# Will merge whenever the above conditions are met, but also
+# the owner has approved or merge label was added.
+rules:
+  - minApprovals:
+      # we dont know meaning of OWNER and MEMBER so use member for now
+      MEMBER: 1
+      COLLABORATOR: 2
+  - requiredLabels:
+      - "translate: approved"
+  - requiredReviewers:
+      - mmdbalkhi
+
+mergeCommitMessage: "{title} (#{number})"
+mergeMethod: squash

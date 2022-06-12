@@ -1,5 +1,6 @@
 import importlib.util
 import os
+import pathlib
 import pkgutil
 import sys
 import typing as t
@@ -12,23 +13,16 @@ from jinja2 import FileSystemLoader
 from werkzeug.exceptions import default_exceptions
 from werkzeug.exceptions import HTTPException
 
+from . import typing as ft
 from .cli import AppGroup
 from .globals import current_app
 from .helpers import get_root_path
 from .helpers import locked_cached_property
 from .helpers import send_from_directory
 from .templating import _default_template_ctx_processor
-from .typing import AfterRequestCallable
-from .typing import AppOrBlueprintKey
-from .typing import BeforeRequestCallable
-from .typing import TeardownCallable
-from .typing import TemplateContextProcessorCallable
-from .typing import URLDefaultCallable
-from .typing import URLValuePreprocessorCallable
 
 if t.TYPE_CHECKING:
     from .wrappers import Response
-    from .typing import ErrorHandlerCallable
 
 # a singleton sentinel value for parameter defaults
 _sentinel = object()
@@ -130,7 +124,7 @@ class Scaffold:
         self.view_functions: t.Dict[str, t.Callable] = {}
 
         #: A data structure of registered error handlers, in the format
-        #: ``{scope: {code: {class: handler}}}```. The ``scope`` key is
+        #: ``{scope: {code: {class: handler}}}``. The ``scope`` key is
         #: the name of a blueprint the handlers are active for, or
         #: ``None`` for all requests. The ``code`` key is the HTTP
         #: status code for ``HTTPException``, or ``None`` for
@@ -143,8 +137,8 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.error_handler_spec: t.Dict[
-            AppOrBlueprintKey,
-            t.Dict[t.Optional[int], t.Dict[t.Type[Exception], "ErrorHandlerCallable"]],
+            ft.AppOrBlueprintKey,
+            t.Dict[t.Optional[int], t.Dict[t.Type[Exception], ft.ErrorHandlerCallable]],
         ] = defaultdict(lambda: defaultdict(dict))
 
         #: A data structure of functions to call at the beginning of
@@ -158,7 +152,7 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.before_request_funcs: t.Dict[
-            AppOrBlueprintKey, t.List[BeforeRequestCallable]
+            ft.AppOrBlueprintKey, t.List[ft.BeforeRequestCallable]
         ] = defaultdict(list)
 
         #: A data structure of functions to call at the end of each
@@ -172,7 +166,7 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.after_request_funcs: t.Dict[
-            AppOrBlueprintKey, t.List[AfterRequestCallable]
+            ft.AppOrBlueprintKey, t.List[ft.AfterRequestCallable]
         ] = defaultdict(list)
 
         #: A data structure of functions to call at the end of each
@@ -187,7 +181,7 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.teardown_request_funcs: t.Dict[
-            AppOrBlueprintKey, t.List[TeardownCallable]
+            ft.AppOrBlueprintKey, t.List[ft.TeardownCallable]
         ] = defaultdict(list)
 
         #: A data structure of functions to call to pass extra context
@@ -202,7 +196,7 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.template_context_processors: t.Dict[
-            AppOrBlueprintKey, t.List[TemplateContextProcessorCallable]
+            ft.AppOrBlueprintKey, t.List[ft.TemplateContextProcessorCallable]
         ] = defaultdict(list, {None: [_default_template_ctx_processor]})
 
         #: A data structure of functions to call to modify the keyword
@@ -217,8 +211,8 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.url_value_preprocessors: t.Dict[
-            AppOrBlueprintKey,
-            t.List[URLValuePreprocessorCallable],
+            ft.AppOrBlueprintKey,
+            t.List[ft.URLValuePreprocessorCallable],
         ] = defaultdict(list)
 
         #: A data structure of functions to call to modify the keyword
@@ -233,7 +227,7 @@ class Scaffold:
         #: This data structure is internal. It should not be modified
         #: directly and its format may change at any time.
         self.url_default_functions: t.Dict[
-            AppOrBlueprintKey, t.List[URLDefaultCallable]
+            ft.AppOrBlueprintKey, t.List[ft.URLDefaultCallable]
         ] = defaultdict(list)
 
     def __repr__(self) -> str:
@@ -370,48 +364,60 @@ class Scaffold:
         method: str,
         rule: str,
         options: dict,
-    ) -> t.Callable[[F], F]:
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         if "methods" in options:
             raise TypeError("Use the 'route' decorator to use the 'methods' argument.")
 
         return self.route(rule, methods=[method], **options)
 
-    def get(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
+    def get(
+        self, rule: str, **options: t.Any
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         """Shortcut for :meth:`route` with ``methods=["GET"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("GET", rule, options)
 
-    def post(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
+    def post(
+        self, rule: str, **options: t.Any
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         """Shortcut for :meth:`route` with ``methods=["POST"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("POST", rule, options)
 
-    def put(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
+    def put(
+        self, rule: str, **options: t.Any
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         """Shortcut for :meth:`route` with ``methods=["PUT"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("PUT", rule, options)
 
-    def delete(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
+    def delete(
+        self, rule: str, **options: t.Any
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         """Shortcut for :meth:`route` with ``methods=["DELETE"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("DELETE", rule, options)
 
-    def patch(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
+    def patch(
+        self, rule: str, **options: t.Any
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         """Shortcut for :meth:`route` with ``methods=["PATCH"]``.
 
         .. versionadded:: 2.0
         """
         return self._method_route("PATCH", rule, options)
 
-    def route(self, rule: str, **options: t.Any) -> t.Callable[[F], F]:
+    def route(
+        self, rule: str, **options: t.Any
+    ) -> t.Callable[[ft.RouteDecorator], ft.RouteDecorator]:
         """Decorate a view function to register it with the given URL
         rule and options. Calls :meth:`add_url_rule`, which has more
         details about the implementation.
@@ -435,7 +441,7 @@ class Scaffold:
             :class:`~werkzeug.routing.Rule` object.
         """
 
-        def decorator(f: F) -> F:
+        def decorator(f: ft.RouteDecorator) -> ft.RouteDecorator:
             endpoint = options.pop("endpoint", None)
             self.add_url_rule(rule, endpoint, f, **options)
             return f
@@ -447,7 +453,7 @@ class Scaffold:
         self,
         rule: str,
         endpoint: t.Optional[str] = None,
-        view_func: t.Optional[t.Callable] = None,
+        view_func: t.Optional[ft.ViewCallable] = None,
         provide_automatic_options: t.Optional[bool] = None,
         **options: t.Any,
     ) -> None:
@@ -534,7 +540,7 @@ class Scaffold:
         return decorator
 
     @setupmethod
-    def before_request(self, f: BeforeRequestCallable) -> BeforeRequestCallable:
+    def before_request(self, f: ft.BeforeRequestCallable) -> ft.BeforeRequestCallable:
         """Register a function to run before each request.
 
         For example, this can be used to open a database connection, or
@@ -556,7 +562,7 @@ class Scaffold:
         return f
 
     @setupmethod
-    def after_request(self, f: AfterRequestCallable) -> AfterRequestCallable:
+    def after_request(self, f: ft.AfterRequestCallable) -> ft.AfterRequestCallable:
         """Register a function to run after each request to this object.
 
         The function is called with the response object, and must return
@@ -572,7 +578,7 @@ class Scaffold:
         return f
 
     @setupmethod
-    def teardown_request(self, f: TeardownCallable) -> TeardownCallable:
+    def teardown_request(self, f: ft.TeardownCallable) -> ft.TeardownCallable:
         """Register a function to be run at the end of each request,
         regardless of whether there was an exception or not.  These functions
         are executed when the request context is popped, even if not an
@@ -612,16 +618,16 @@ class Scaffold:
 
     @setupmethod
     def context_processor(
-        self, f: TemplateContextProcessorCallable
-    ) -> TemplateContextProcessorCallable:
+        self, f: ft.TemplateContextProcessorCallable
+    ) -> ft.TemplateContextProcessorCallable:
         """Registers a template context processor function."""
         self.template_context_processors[None].append(f)
         return f
 
     @setupmethod
     def url_value_preprocessor(
-        self, f: URLValuePreprocessorCallable
-    ) -> URLValuePreprocessorCallable:
+        self, f: ft.URLValuePreprocessorCallable
+    ) -> ft.URLValuePreprocessorCallable:
         """Register a URL value preprocessor function for all view
         functions in the application. These functions will be called before the
         :meth:`before_request` functions.
@@ -638,7 +644,7 @@ class Scaffold:
         return f
 
     @setupmethod
-    def url_defaults(self, f: URLDefaultCallable) -> URLDefaultCallable:
+    def url_defaults(self, f: ft.URLDefaultCallable) -> ft.URLDefaultCallable:
         """Callback function for URL defaults for all view functions of the
         application.  It's called with the endpoint and values and should
         update the values passed in place.
@@ -649,7 +655,7 @@ class Scaffold:
     @setupmethod
     def errorhandler(
         self, code_or_exception: t.Union[t.Type[Exception], int]
-    ) -> t.Callable[["ErrorHandlerCallable"], "ErrorHandlerCallable"]:
+    ) -> t.Callable[[ft.ErrorHandlerDecorator], ft.ErrorHandlerDecorator]:
         """Register a function to handle errors by code or exception class.
 
         A decorator that is used to register a function given an
@@ -679,7 +685,7 @@ class Scaffold:
                                   an arbitrary exception
         """
 
-        def decorator(f: "ErrorHandlerCallable") -> "ErrorHandlerCallable":
+        def decorator(f: ft.ErrorHandlerDecorator) -> ft.ErrorHandlerDecorator:
             self.register_error_handler(code_or_exception, f)
             return f
 
@@ -689,7 +695,7 @@ class Scaffold:
     def register_error_handler(
         self,
         code_or_exception: t.Union[t.Type[Exception], int],
-        f: "ErrorHandlerCallable",
+        f: ft.ErrorHandlerCallable,
     ) -> None:
         """Alternative error attach function to the :meth:`errorhandler`
         decorator that is more straightforward to use for non decorator
@@ -775,30 +781,55 @@ def _matching_loader_thinks_module_is_package(loader, mod_name):
     )
 
 
-def _find_package_path(root_mod_name):
-    """Find the path that contains the package or module."""
+def _path_is_relative_to(path: pathlib.PurePath, base: str) -> bool:
+    # Path.is_relative_to doesn't exist until Python 3.9
     try:
-        spec = importlib.util.find_spec(root_mod_name)
+        path.relative_to(base)
+        return True
+    except ValueError:
+        return False
 
-        if spec is None:
+
+def _find_package_path(import_name):
+    """Find the path that contains the package or module."""
+    root_mod_name, _, _ = import_name.partition(".")
+
+    try:
+        root_spec = importlib.util.find_spec(root_mod_name)
+
+        if root_spec is None:
             raise ValueError("not found")
     # ImportError: the machinery told us it does not exist
     # ValueError:
     #    - the module name was invalid
     #    - the module name is __main__
-    #    - *we* raised `ValueError` due to `spec` being `None`
+    #    - *we* raised `ValueError` due to `root_spec` being `None`
     except (ImportError, ValueError):
         pass  # handled below
     else:
         # namespace package
-        if spec.origin in {"namespace", None}:
-            return os.path.dirname(next(iter(spec.submodule_search_locations)))
+        if root_spec.origin in {"namespace", None}:
+            package_spec = importlib.util.find_spec(import_name)
+            if package_spec is not None and package_spec.submodule_search_locations:
+                # Pick the path in the namespace that contains the submodule.
+                package_path = pathlib.Path(
+                    os.path.commonpath(package_spec.submodule_search_locations)
+                )
+                search_locations = (
+                    location
+                    for location in root_spec.submodule_search_locations
+                    if _path_is_relative_to(package_path, location)
+                )
+            else:
+                # Pick the first path.
+                search_locations = iter(root_spec.submodule_search_locations)
+            return os.path.dirname(next(search_locations))
         # a package (with __init__.py)
-        elif spec.submodule_search_locations:
-            return os.path.dirname(os.path.dirname(spec.origin))
+        elif root_spec.submodule_search_locations:
+            return os.path.dirname(os.path.dirname(root_spec.origin))
         # just a normal module
         else:
-            return os.path.dirname(spec.origin)
+            return os.path.dirname(root_spec.origin)
 
     # we were unable to find the `package_path` using PEP 451 loaders
     loader = pkgutil.get_loader(root_mod_name)
@@ -840,12 +871,11 @@ def find_package(import_name: str):
     for import. If the package is not installed, it's assumed that the
     package was imported from the current working directory.
     """
-    root_mod_name, _, _ = import_name.partition(".")
-    package_path = _find_package_path(root_mod_name)
+    package_path = _find_package_path(import_name)
     py_prefix = os.path.abspath(sys.prefix)
 
     # installed to the system
-    if package_path.startswith(py_prefix):
+    if _path_is_relative_to(pathlib.PurePath(package_path), py_prefix):
         return py_prefix, package_path
 
     site_parent, site_folder = os.path.split(package_path)

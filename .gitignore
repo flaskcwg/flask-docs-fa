@@ -11,7 +11,6 @@ dist/
 build/
 *.egg
 *.egg-info/
-_mailinglist
 .tox/
 .cache/
 .pytest_cache/
@@ -27,3 +26,6 @@ htmlcov/
 
 # Translation
 *.mo
+
+# potodo
+.potodo

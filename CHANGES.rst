@@ -1,5 +1,28 @@
 .. currentmodule:: flask
 
+Version 2.1.3
+-------------
+
+Unreleased
+
+-   Inline some optional imports that are only used for certain CLI
+    commands. :pr:`4606`
+-   Relax type annotation for ``after_request`` functions. :issue:`4600`
+-   ``instance_path`` for namespace packages uses the path closest to
+    the imported submodule. :issue:`4600`
+
+
+Version 2.1.2
+-------------
+
+Released 2022-04-28
+
+-   Fix type annotation for ``json.loads``, it accepts str or bytes.
+    :issue:`4519`
+-   The ``--cert`` and ``--key`` options on ``flask run`` can be given
+    in either order. :issue:`4459`
+
+
 Version 2.1.1
 -------------
 
