@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -18,65 +18,186 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: ../../deploying/index.rst:2
-msgid "Deployment Options"
+msgid "Deploying to Production"
 msgstr ""
 
 #: ../../deploying/index.rst:4
 msgid ""
-"While lightweight and easy to use, **Flask's built-in server is not "
-"suitable for production** as it doesn't scale well.  Some of the options "
-"available for properly running Flask in production are documented here."
+"After developing your application, you'll want to make it available "
+"publicly to other users. When you're developing locally, you're probably "
+"using the built-in development server, debugger, and reloader. These "
+"should not be used in production. Instead, you should use a dedicated "
+"WSGI server or hosting platform, some of which will be described here."
 msgstr ""
 
-#: ../../deploying/index.rst:8
+#: ../../deploying/index.rst:10
 msgid ""
-"If you want to deploy your Flask application to a WSGI server not listed "
-"here, look up the server documentation about how to use a WSGI app with "
-"it.  Just remember that your :class:`Flask` application object is the "
-"actual WSGI application."
-msgstr ""
-
-#: ../../deploying/index.rst:15
-msgid "Hosted options"
-msgstr ""
-
-#: ../../deploying/index.rst:17
-msgid ""
-"`Deploying Flask on Heroku <https://devcenter.heroku.com/articles"
-"/getting-started-with-python>`_"
+"\"Production\" means \"not development\", which applies whether you're "
+"serving your application publicly to millions of users or privately / "
+"locally to a single user. **Do not use the development server when "
+"deploying to production. It is intended for use only during local "
+"development. It is not designed to be particularly secure, stable, or "
+"efficient.**"
 msgstr ""
 
 #: ../../deploying/index.rst:18
-msgid ""
-"`Deploying Flask on Google App Engine "
-"<https://cloud.google.com/appengine/docs/standard/python3/runtime>`_"
-msgstr ""
-
-#: ../../deploying/index.rst:19
-msgid ""
-"`Deploying Flask on Google Cloud Run "
-"<https://cloud.google.com/run/docs/quickstarts/build-and-deploy/python>`_"
+msgid "Self-Hosted Options"
 msgstr ""
 
 #: ../../deploying/index.rst:20
 msgid ""
-"`Deploying Flask on AWS Elastic Beanstalk "
+"Flask is a WSGI *application*. A WSGI *server* is used to run the "
+"application, converting incoming HTTP requests to the standard WSGI "
+"environ, and converting outgoing WSGI responses to HTTP responses."
+msgstr ""
+
+#: ../../deploying/index.rst:24
+msgid ""
+"The primary goal of these docs is to familiarize you with the concepts "
+"involved in running a WSGI application using a production WSGI server and"
+" HTTP server. There are many WSGI servers and HTTP servers, with many "
+"configuration possibilities. The pages below discuss the most common "
+"servers, and show the basics of running each one. The next section "
+"discusses platforms that can manage this for you."
+msgstr ""
+
+#: ../../deploying/index.rst:42
+msgid ""
+"WSGI servers have HTTP servers built-in. However, a dedicated HTTP server"
+" may be safer, more efficient, or more capable. Putting an HTTP server in"
+" front of the WSGI server is called a \"reverse proxy.\""
+msgstr ""
+
+#: ../../deploying/index.rst:53
+msgid ""
+"This list is not exhaustive, and you should evaluate these and other "
+"servers based on your application's needs. Different servers will have "
+"different capabilities, configuration, and support."
+msgstr ""
+
+#: ../../deploying/index.rst:59
+msgid "Hosting Platforms"
+msgstr ""
+
+#: ../../deploying/index.rst:61
+msgid ""
+"There are many services available for hosting web applications without "
+"needing to maintain your own server, networking, domain, etc. Some "
+"services may have a free tier up to a certain time or bandwidth. Many of "
+"these services use one of the WSGI servers described above, or a similar "
+"interface. The links below are for some of the most common platforms, "
+"which have instructions for Flask, WSGI, or Python."
+msgstr ""
+
+#: ../../deploying/index.rst:68
+msgid "`PythonAnywhere <https://help.pythonanywhere.com/pages/Flask/>`_"
+msgstr ""
+
+#: ../../deploying/index.rst:69
+msgid ""
+"`Heroku <https://devcenter.heroku.com/articles/getting-started-with-"
+"python>`_"
+msgstr ""
+
+#: ../../deploying/index.rst:70
+msgid ""
+"`Google App Engine "
+"<https://cloud.google.com/appengine/docs/standard/python3/building-app>`_"
+msgstr ""
+
+#: ../../deploying/index.rst:71
+msgid ""
+"`Google Cloud Run <https://cloud.google.com/run/docs/quickstarts/build-"
+"and-deploy/deploy-python-service>`_"
+msgstr ""
+
+#: ../../deploying/index.rst:72
+msgid ""
+"`AWS Elastic Beanstalk "
 "<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-"
 "python-flask.html>`_"
 msgstr ""
 
-#: ../../deploying/index.rst:21
+#: ../../deploying/index.rst:73
 msgid ""
-"`Deploying on Azure (IIS) <https://docs.microsoft.com/en-us/azure/app-"
-"service/containers/how-to-configure-python>`_"
+"`Microsoft Azure <https://docs.microsoft.com/en-us/azure/app-service"
+"/quickstart-python>`_"
 msgstr ""
 
-#: ../../deploying/index.rst:22
+#: ../../deploying/index.rst:75
 msgid ""
-"`Deploying on PythonAnywhere "
-"<https://help.pythonanywhere.com/pages/Flask/>`_"
+"This list is not exhaustive, and you should evaluate these and other "
+"services based on your application's needs. Different services will have "
+"different capabilities, configuration, pricing, and support."
 msgstr ""
 
-#: ../../deploying/index.rst:25
-msgid "Self-hosted options"
+#: ../../deploying/index.rst:79
+msgid ""
+"You'll probably need to :doc:`proxy_fix` when using most hosting "
+"platforms."
 msgstr ""
+
+#~ msgid "Deployment Options"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "While lightweight and easy to use, "
+#~ "**Flask's built-in server is not "
+#~ "suitable for production** as it doesn't"
+#~ " scale well.  Some of the options "
+#~ "available for properly running Flask in"
+#~ " production are documented here."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you want to deploy your Flask"
+#~ " application to a WSGI server not "
+#~ "listed here, look up the server "
+#~ "documentation about how to use a "
+#~ "WSGI app with it.  Just remember "
+#~ "that your :class:`Flask` application object"
+#~ " is the actual WSGI application."
+#~ msgstr ""
+
+#~ msgid "Hosted options"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Deploying Flask on Heroku "
+#~ "<https://devcenter.heroku.com/articles/getting-started-"
+#~ "with-python>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Deploying Flask on Google App Engine"
+#~ " "
+#~ "<https://cloud.google.com/appengine/docs/standard/python3/runtime>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Deploying Flask on Google Cloud Run "
+#~ "<https://cloud.google.com/run/docs/quickstarts/build-and-"
+#~ "deploy/python>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Deploying Flask on AWS Elastic "
+#~ "Beanstalk "
+#~ "<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-"
+#~ "deploy-python-flask.html>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Deploying on Azure (IIS) "
+#~ "<https://docs.microsoft.com/en-us/azure/app-"
+#~ "service/containers/how-to-configure-python>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Deploying on PythonAnywhere "
+#~ "<https://help.pythonanywhere.com/pages/Flask/>`_"
+#~ msgstr ""
+
+#~ msgid "Self-hosted options"
+#~ msgstr ""
+

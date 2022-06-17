@@ -129,4 +129,3 @@ msgstr ""
 
 #~ msgid "This is all that is necessary to properly integrate Celery with Flask::"
 #~ msgstr ""
-

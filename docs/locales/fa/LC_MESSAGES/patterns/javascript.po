@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010 Pallets
+# This file is distributed under the same license as the Flask package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flask 2.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../patterns/javascript.rst:2
+msgid "JavaScript, ``fetch``, and JSON"
+msgstr ""
+
+#: ../../patterns/javascript.rst:4
+msgid ""
+"You may want to make your HTML page dynamic, by changing data without "
+"reloading the entire page. Instead of submitting an HTML ``<form>`` and "
+"performing a redirect to re-render the template, you can add "
+"`JavaScript`_ that calls |fetch|_ and replaces content on the page."
+msgstr ""
+
+#: ../../patterns/javascript.rst:9
+msgid ""
+"|fetch|_ is the modern, built-in JavaScript solution to making requests "
+"from a page. You may have heard of other \"AJAX\" methods and libraries, "
+"such as |XHR|_ or `jQuery`_. These are no longer needed in modern "
+"browsers, although you may choose to use them or another library "
+"depending on your application's requirements. These docs will only focus "
+"on built-in JavaScript features."
+msgstr ""
+
+#: ../../patterns/javascript.rst:25
+msgid "Rendering Templates"
+msgstr ""
+
+#: ../../patterns/javascript.rst:27
+msgid ""
+"It is important to understand the difference between templates and "
+"JavaScript. Templates are rendered on the server, before the response is "
+"sent to the user's browser. JavaScript runs in the user's browser, after "
+"the template is rendered and sent. Therefore, it is impossible to use "
+"JavaScript to affect how the Jinja template is rendered, but is is "
+"possible to render data into the JavaScript that will run."
+msgstr ""
+
+#: ../../patterns/javascript.rst:34
+msgid ""
+"To provide data to JavaScript when rendering the template, use the :func"
+":`~jinja-filters.tojson` filter in a ``<script>`` block. This will "
+"convert the data to a valid JavaScript object, and ensure that any unsafe"
+" HTML characters are rendered safely. If you do not use the ``tojson`` "
+"filter, you will get a ``SyntaxError`` in the browser console."
+msgstr ""
+
+#: ../../patterns/javascript.rst:53
+msgid ""
+"A less common pattern is to add the data to a ``data-`` attribute on an "
+"HTML tag. In this case, you must use single quotes around the value, not "
+"double quotes, otherwise you will produce invalid or unsafe HTML."
+msgstr ""
+
+#: ../../patterns/javascript.rst:63
+msgid "Generating URLs"
+msgstr ""
+
+#: ../../patterns/javascript.rst:65
+msgid ""
+"The other way to get data from the server to JavaScript is to make a "
+"request for it. First, you need to know the URL to request."
+msgstr ""
+
+#: ../../patterns/javascript.rst:68
+msgid ""
+"The simplest way to generate URLs is to continue to use "
+":func:`~flask.url_for` when rendering the template. For example:"
+msgstr ""
+
+#: ../../patterns/javascript.rst:76
+msgid ""
+"However, you might need to generate a URL based on information you only "
+"know in JavaScript. As discussed above, JavaScript runs in the user's "
+"browser, not as part of the template rendering, so you can't use "
+"``url_for`` at that point."
+msgstr ""
+
+#: ../../patterns/javascript.rst:81
+msgid ""
+"In this case, you need to know the \"root URL\" under which your "
+"application is served. In simple setups, this is ``/``, but it might also"
+" be something else, like ``https://example.com/myapp/``."
+msgstr ""
+
+#: ../../patterns/javascript.rst:85
+msgid ""
+"A simple way to tell your JavaScript code about this root is to set it as"
+" a global variable when rendering the template. Then you can use it when "
+"generating URLs from JavaScript."
+msgstr ""
+
+#: ../../patterns/javascript.rst:98
+msgid "Making a Request with ``fetch``"
+msgstr ""
+
+#: ../../patterns/javascript.rst:100
+msgid ""
+"|fetch|_ takes two arguments, a URL and an object with other options, and"
+" returns a |Promise|_. We won't cover all the available options, and will"
+" only use ``then()`` on the promise, not other callbacks or ``await`` "
+"syntax. Read the linked MDN docs for more information about those "
+"features."
+msgstr ""
+
+#: ../../patterns/javascript.rst:106
+msgid ""
+"By default, the GET method is used. If the response contains JSON, it can"
+" be used with a ``then()`` callback chain."
+msgstr ""
+
+#: ../../patterns/javascript.rst:118
+msgid ""
+"To send data, use a data method such as POST, and pass the ``body`` "
+"option. The most common types for data are form data or JSON data."
+msgstr ""
+
+#: ../../patterns/javascript.rst:121
+msgid ""
+"To send form data, pass a populated |FormData|_ object. This uses the "
+"same format as an HTML form, and would be accessed with ``request.form`` "
+"in a Flask view."
+msgstr ""
+
+#: ../../patterns/javascript.rst:135
+msgid ""
+"In general, prefer sending request data as form data, as would be used "
+"when submitting an HTML form. JSON can represent more complex data, but "
+"unless you need that it's better to stick with the simpler format. When "
+"sending JSON data, the ``Content-Type: application/json`` header must be "
+"sent as well, otherwise Flask will return a 400 error."
+msgstr ""
+
+#: ../../patterns/javascript.rst:160
+msgid "Following Redirects"
+msgstr ""
+
+#: ../../patterns/javascript.rst:162
+msgid ""
+"A response might be a redirect, for example if you logged in with "
+"JavaScript instead of a traditional HTML form, and your view returned a "
+"redirect instead of JSON. JavaScript requests do follow redirects, but "
+"they don't change the page. If you want to make the page change you can "
+"inspect the response and apply the redirect manually."
+msgstr ""
+
+#: ../../patterns/javascript.rst:182
+msgid "Replacing Content"
+msgstr ""
+
+#: ../../patterns/javascript.rst:184
+msgid ""
+"A response might be new HTML, either a new section of the page to add or "
+"replace, or an entirely new page. In general, if you're returning the "
+"entire page, it would be better to handle that with a redirect as shown "
+"in the previous section. The following example shows how to a ``<div>`` "
+"with the HTML returned by a request."
+msgstr ""
+
+#: ../../patterns/javascript.rst:205
+msgid "Return JSON from Views"
+msgstr ""
+
+#: ../../patterns/javascript.rst:207
+msgid ""
+"To return a JSON object from your API view, you can directly return a "
+"dict from the view. It will be serialized to JSON automatically."
+msgstr ""
+
+#: ../../patterns/javascript.rst:221
+msgid ""
+"If you want to return another JSON type, use the "
+":func:`~flask.json.jsonify` function, which creates a response object "
+"with the given data serialized to JSON."
+msgstr ""
+
+#: ../../patterns/javascript.rst:234
+msgid ""
+"It is usually not a good idea to return file data in a JSON response. "
+"JSON cannot represent binary data directly, so it must be base64 encoded,"
+" which can be slow, takes more bandwidth to send, and is not as easy to "
+"cache. Instead, serve files using one view, and generate a URL to the "
+"desired file to include in the JSON. Then the client can make a separate "
+"request to get the linked resource after getting the JSON."
+msgstr ""
+
+#: ../../patterns/javascript.rst:243
+msgid "Receiving JSON in Views"
+msgstr ""
+
+#: ../../patterns/javascript.rst:245
+msgid ""
+"Use the :attr:`~flask.Request.json` property of the "
+":data:`~flask.request` object to decode the request's body as JSON. If "
+"the body is not valid JSON, or the ``Content-Type`` header is not set to "
+"``application/json``, a 400 Bad Request error will be raised."
+msgstr ""
+
