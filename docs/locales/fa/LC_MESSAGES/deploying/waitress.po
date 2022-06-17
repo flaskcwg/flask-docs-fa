@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010 Pallets
+# This file is distributed under the same license as the Flask package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flask 2.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../deploying/waitress.rst:2
+msgid "Waitress"
+msgstr ""
+
+#: ../../deploying/waitress.rst:4
+msgid "`Waitress`_ is a pure Python WSGI server."
+msgstr ""
+
+#: ../../deploying/waitress.rst:6
+msgid "It is easy to configure."
+msgstr ""
+
+#: ../../deploying/waitress.rst:7
+msgid "It supports Windows directly."
+msgstr ""
+
+#: ../../deploying/waitress.rst:8
+msgid ""
+"It is easy to install as it does not require additional dependencies or "
+"compilation."
+msgstr ""
+
+#: ../../deploying/waitress.rst:10
+msgid ""
+"It does not support streaming requests, full request data is always "
+"buffered."
+msgstr ""
+
+#: ../../deploying/waitress.rst:12
+msgid "It uses a single process with multiple thread workers."
+msgstr ""
+
+#: ../../deploying/waitress.rst:14
+msgid ""
+"This page outlines the basics of running Waitress. Be sure to read its "
+"documentation and ``waitress-serve --help`` to understand what features "
+"are available."
+msgstr ""
+
+#: ../../deploying/waitress.rst:22
+msgid "Installing"
+msgstr ""
+
+#: ../../deploying/waitress.rst:24
+msgid "Create a virtualenv, install your application, then install ``waitress``."
+msgstr ""
+
+#: ../../deploying/waitress.rst:37
+msgid "Running"
+msgstr ""
+
+#: ../../deploying/waitress.rst:39
+msgid ""
+"The only required argument to ``waitress-serve`` tells it how to load "
+"your Flask application. The syntax is ``{module}:{app}``. ``module`` is "
+"the dotted import name to the module with your application. ``app`` is "
+"the variable with the application. If you're using the app factory "
+"pattern, use ``--call {module}:{factory}`` instead."
+msgstr ""
+
+#: ../../deploying/waitress.rst:55
+msgid "The ``--host`` option binds the server to local ``127.0.0.1`` only."
+msgstr ""
+
+#: ../../deploying/waitress.rst:57
+msgid ""
+"Logs for each request aren't shown, only errors are shown. Logging can be"
+" configured through the Python interface instead of the command line."
+msgstr ""
+
+#: ../../deploying/waitress.rst:62
+msgid "Binding Externally"
+msgstr ""
+
+#: ../../deploying/waitress.rst:64
+msgid ""
+"Waitress should not be run as root because it would cause your "
+"application code to run as root, which is not secure. However, this means"
+" it will not be possible to bind to port 80 or 443. Instead, a reverse "
+"proxy such as :doc:`nginx` or :doc:`apache-httpd` should be used in front"
+" of Waitress."
+msgstr ""
+
+#: ../../deploying/waitress.rst:70
+msgid ""
+"You can bind to all external IPs on a non-privileged port by not "
+"specifying the ``--host`` option. Don't do this when using a revers proxy"
+" setup, otherwise it will be possible to bypass the proxy."
+msgstr ""
+
+#: ../../deploying/waitress.rst:74
+msgid ""
+"``0.0.0.0`` is not a valid address to navigate to, you'd use a specific "
+"IP address in your browser."
+msgstr ""

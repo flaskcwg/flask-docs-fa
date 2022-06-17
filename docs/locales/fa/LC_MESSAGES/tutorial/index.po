@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 00:38+0430\n"
+"POT-Creation-Date: 2022-06-07 17:01+0430\n"
 "PO-Revision-Date: 2021-12-13 15:05+0330\n"
 "Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -38,9 +38,6 @@ msgstr ""
 "خود را ویرایش یا حذف کنند. شما قادر خواهید بود برنامه را بر روی رایانه "
 "های دیگر بسته بندی و نصب کنید."
 
-msgid "screenshot of index page"
-msgstr "اسکرین شات صفحه اصلی"
-
 #: ../../tutorial/index.rst:30
 msgid ""
 "It's assumed that you're already familiar with Python. The `official "
@@ -65,9 +62,6 @@ msgstr ""
 "سایر پروژه ها شما میتوانید تصمیم بگیرید که از :doc:`/extensions` یا سایر "
 "کتابخانه ها اندک ساخته شده استفاده کنید."
 
-msgid "screenshot of login page"
-msgstr "اسکرین شات صفحه ورود"
-
 #: ../../tutorial/index.rst:47
 msgid ""
 "Flask is flexible. It doesn't require you to use any particular project "
@@ -86,9 +80,6 @@ msgstr ""
 "توان آن را گسترش داد. هنگامی که با فلاسک راحت تر شدید، می توانید از این "
 "ساختار خارج شوید و از انعطاف پذیری فلاسک نهایت استفاده را ببرید."
 
-msgid "screenshot of edit page"
-msgstr "اسکرین شات صفحه ویرایش"
-
 #: ../../tutorial/index.rst:60
 msgid ""
 ":gh:`The tutorial project is available as an example in the Flask "
@@ -102,3 +93,12 @@ msgstr ""
 #: ../../tutorial/index.rst:64
 msgid "Continue to :doc:`layout`."
 msgstr "با :doc:`layout` ادامه دهید."
+
+#~ msgid "screenshot of index page"
+#~ msgstr "اسکرین شات صفحه اصلی"
+
+#~ msgid "screenshot of login page"
+#~ msgstr "اسکرین شات صفحه ورود"
+
+#~ msgid "screenshot of edit page"
+#~ msgstr "اسکرین شات صفحه ویرایش"

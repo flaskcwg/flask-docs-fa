@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010 Pallets
+# This file is distributed under the same license as the Flask package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flask 2.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../deploying/nginx.rst:2
+msgid "nginx"
+msgstr ""
+
+#: ../../deploying/nginx.rst:4
+msgid ""
+"`nginx`_ is a fast, production level HTTP server. When serving your "
+"application with one of the WSGI servers listed in :doc:`index`, it is "
+"often good or necessary to put a dedicated HTTP server in front of it. "
+"This \"reverse proxy\" can handle incoming requests, TLS, and other "
+"security and performance concerns better than the WSGI server."
+msgstr ""
+
+#: ../../deploying/nginx.rst:10
+msgid ""
+"Nginx can be installed using your system package manager, or a pre-built "
+"executable for Windows. Installing and running Nginx itself is outside "
+"the scope of this doc. This page outlines the basics of configuring Nginx"
+" to proxy your application. Be sure to read its documentation to "
+"understand what features are available."
+msgstr ""
+
+#: ../../deploying/nginx.rst:20
+msgid "Domain Name"
+msgstr ""
+
+#: ../../deploying/nginx.rst:22
+msgid ""
+"Acquiring and configuring a domain name is outside the scope of this doc."
+" In general, you will buy a domain name from a registrar, pay for server "
+"space with a hosting provider, and then point your registrar at the "
+"hosting provider's name servers."
+msgstr ""
+
+#: ../../deploying/nginx.rst:27
+msgid ""
+"To simulate this, you can also edit your ``hosts`` file, located at "
+"``/etc/hosts`` on Linux. Add a line that associates a name with the local"
+" IP."
+msgstr ""
+
+#: ../../deploying/nginx.rst:31
+msgid ""
+"Modern Linux systems may be configured to treat any domain name that ends"
+" with ``.localhost`` like this without adding it to the ``hosts`` file."
+msgstr ""
+
+#: ../../deploying/nginx.rst:35
+msgid "``/etc/hosts``"
+msgstr ""
+
+#: ../../deploying/nginx.rst:42
+msgid "Configuration"
+msgstr ""
+
+#: ../../deploying/nginx.rst:44
+msgid ""
+"The nginx configuration is located at ``/etc/nginx/nginx.conf`` on Linux."
+" It may be different depending on your operating system. Check the docs "
+"and look for ``nginx.conf``."
+msgstr ""
+
+#: ../../deploying/nginx.rst:48
+msgid ""
+"Remove or comment out any existing ``server`` section. Add a ``server`` "
+"section and use the ``proxy_pass`` directive to point to the address the "
+"WSGI server is listening on. We'll assume the WSGI server is listening "
+"locally at ``http://127.0.0.1:8000``."
+msgstr ""
+
+#: ../../deploying/nginx.rst:53
+msgid "``/etc/nginx.conf``"
+msgstr ""
+
+#: ../../deploying/nginx.rst:69
+msgid "Then :doc:`proxy_fix` so that your application uses these headers."
+msgstr ""

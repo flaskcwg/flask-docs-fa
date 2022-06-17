@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010 Pallets
+# This file is distributed under the same license as the Flask package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flask 2.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../deploying/gunicorn.rst:2
+msgid "Gunicorn"
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:4
+msgid ""
+"`Gunicorn`_ is a pure Python WSGI server with simple configuration and "
+"multiple worker implementations for performance tuning."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:7
+msgid "It tends to integrate easily with hosting platforms."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:8
+msgid "It does not support Windows (but does run on WSL)."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:9
+msgid ""
+"It is easy to install as it does not require additional dependencies or "
+"compilation."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:11
+msgid "It has built-in async worker support using gevent or eventlet."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:13
+msgid ""
+"This page outlines the basics of running Gunicorn. Be sure to read its "
+"`documentation`_ and use ``gunicorn --help`` to understand what features "
+"are available."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:22
+msgid "Installing"
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:24
+msgid ""
+"Gunicorn is easy to install, as it does not require external dependencies"
+" or compilation. It runs on Windows only under WSL."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:27
+msgid "Create a virtualenv, install your application, then install ``gunicorn``."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:40
+msgid "Running"
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:42
+msgid ""
+"The only required argument to Gunicorn tells it how to load your Flask "
+"application. The syntax is ``{module_import}:{app_variable}``. "
+"``module_import`` is the dotted import name to the module with your "
+"application. ``app_variable`` is the variable with the application. It "
+"can also be a function call (with any arguments) if you're using the app "
+"factory pattern."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:65
+msgid ""
+"The ``-w`` option specifies the number of processes to run; a starting "
+"value could be ``CPU * 2``. The default is only 1 worker, which is "
+"probably not what you want for the default worker type."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:69
+msgid ""
+"Logs for each request aren't shown by default, only worker info and "
+"errors are shown. To show access logs on stdout, use the ``--access-"
+"logfile=-`` option."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:75
+msgid "Binding Externally"
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:77
+msgid ""
+"Gunicorn should not be run as root because it would cause your "
+"application code to run as root, which is not secure. However, this means"
+" it will not be possible to bind to port 80 or 443. Instead, a reverse "
+"proxy such as :doc:`nginx` or :doc:`apache-httpd` should be used in front"
+" of Gunicorn."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:83
+msgid ""
+"You can bind to all external IPs on a non-privileged port using the ``-b "
+"0.0.0.0`` option. Don't do this when using a reverse proxy setup, "
+"otherwise it will be possible to bypass the proxy."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:92
+msgid ""
+"``0.0.0.0`` is not a valid address to navigate to, you'd use a specific "
+"IP address in your browser."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:97
+msgid "Async with gevent or eventlet"
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:99
+msgid ""
+"The default sync worker is appropriate for many use cases. If you need "
+"asynchronous support, Gunicorn provides workers using either `gevent`_ or"
+" `eventlet`_. This is not the same as Python's ``async/await``, or the "
+"ASGI server spec. You must actually use gevent/eventlet in your own code "
+"to see any benefit to using the workers."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:105
+msgid ""
+"When using either gevent or eventlet, greenlet>=1.0 is required, "
+"otherwise context locals such as ``request`` will not work as expected. "
+"When using PyPy, PyPy>=7.3.7 is required."
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:109
+msgid "To use gevent:"
+msgstr ""
+
+#: ../../deploying/gunicorn.rst:119
+msgid "To use eventlet:"
+msgstr ""

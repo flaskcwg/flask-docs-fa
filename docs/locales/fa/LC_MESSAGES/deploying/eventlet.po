@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010 Pallets
+# This file is distributed under the same license as the Flask package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flask 2.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../deploying/eventlet.rst:2
+msgid "eventlet"
+msgstr ""
+
+#: ../../deploying/eventlet.rst:4
+msgid ""
+"Prefer using :doc:`gunicorn` with eventlet workers rather than using "
+"`eventlet`_ directly. Gunicorn provides a much more configurable and "
+"production-tested server."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:8
+msgid ""
+"`eventlet`_ allows writing asynchronous, coroutine-based code that looks "
+"like standard synchronous Python. It uses `greenlet`_ to enable task "
+"switching without writing ``async/await`` or using ``asyncio``."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:12
+msgid ""
+":doc:`gevent` is another library that does the same thing. Certain "
+"dependencies you have, or other considerations, may affect which of the "
+"two you choose to use."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:16
+msgid ""
+"eventlet provides a WSGI server that can handle many connections at once "
+"instead of one per worker process. You must actually use eventlet in your"
+" own code to see any benefit to using the server."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:25
+msgid "Installing"
+msgstr ""
+
+#: ../../deploying/eventlet.rst:27
+msgid ""
+"When using eventlet, greenlet>=1.0 is required, otherwise context locals "
+"such as ``request`` will not work as expected. When using PyPy, "
+"PyPy>=7.3.7 is required."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:31
+msgid "Create a virtualenv, install your application, then install ``eventlet``."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:44
+msgid "Running"
+msgstr ""
+
+#: ../../deploying/eventlet.rst:46
+msgid ""
+"To use eventlet to serve your application, write a script that imports "
+"its ``wsgi.server``, as well as your app or app factory."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:49
+msgid "``wsgi.py``"
+msgstr ""
+
+#: ../../deploying/eventlet.rst:66
+msgid "Binding Externally"
+msgstr ""
+
+#: ../../deploying/eventlet.rst:68
+msgid ""
+"eventlet should not be run as root because it would cause your "
+"application code to run as root, which is not secure. However, this means"
+" it will not be possible to bind to port 80 or 443. Instead, a reverse "
+"proxy such as :doc:`nginx` or :doc:`apache-httpd` should be used in front"
+" of eventlet."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:74
+msgid ""
+"You can bind to all external IPs on a non-privileged port by using "
+"``0.0.0.0`` in the server arguments shown in the previous section. Don't "
+"do this when using a reverse proxy setup, otherwise it will be possible "
+"to bypass the proxy."
+msgstr ""
+
+#: ../../deploying/eventlet.rst:79
+msgid ""
+"``0.0.0.0`` is not a valid address to navigate to, you'd use a specific "
+"IP address in your browser."
+msgstr ""
