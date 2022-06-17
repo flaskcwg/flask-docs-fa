@@ -202,4 +202,3 @@ msgstr ""
 #~ "This works as the adapter creates "
 #~ "an event loop that runs continually."
 #~ msgstr ""
-

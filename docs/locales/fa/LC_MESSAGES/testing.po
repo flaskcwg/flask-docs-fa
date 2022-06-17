@@ -160,7 +160,6 @@ msgstr ""
 "استفاده کنید."
 
 #: ../../testing.rst:111
-#, fuzzy
 msgid ""
 "Pass a dict ``query_string={\"key\": \"value\", ...}`` to set arguments "
 "in the query string (after the ``?`` in the URL). Pass a dict "
@@ -372,4 +371,3 @@ msgstr ""
 
 #~ msgid "Pass a dict to ``headers={}`` to set request headers."
 #~ msgstr "برای تنظیم هدر های درخواست یک دیکشنری به ``headers={}`` ارسال کنید."
-
