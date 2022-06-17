@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010 Pallets
+# This file is distributed under the same license as the Flask package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flask 2.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../deploying/apache-httpd.rst:2
+msgid "Apache httpd"
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:4
+msgid ""
+"`Apache httpd`_ is a fast, production level HTTP server. When serving "
+"your application with one of the WSGI servers listed in :doc:`index`, it "
+"is often good or necessary to put a dedicated HTTP server in front of it."
+" This \"reverse proxy\" can handle incoming requests, TLS, and other "
+"security and performance concerns better than the WSGI server."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:10
+msgid ""
+"httpd can be installed using your system package manager, or a pre-built "
+"executable for Windows. Installing and running httpd itself is outside "
+"the scope of this doc. This page outlines the basics of configuring httpd"
+" to proxy your application. Be sure to read its documentation to "
+"understand what features are available."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:20
+msgid "Domain Name"
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:22
+msgid ""
+"Acquiring and configuring a domain name is outside the scope of this doc."
+" In general, you will buy a domain name from a registrar, pay for server "
+"space with a hosting provider, and then point your registrar at the "
+"hosting provider's name servers."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:27
+msgid ""
+"To simulate this, you can also edit your ``hosts`` file, located at "
+"``/etc/hosts`` on Linux. Add a line that associates a name with the local"
+" IP."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:31
+msgid ""
+"Modern Linux systems may be configured to treat any domain name that ends"
+" with ``.localhost`` like this without adding it to the ``hosts`` file."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:35
+msgid "``/etc/hosts``"
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:42
+msgid "Configuration"
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:44
+msgid ""
+"The httpd configuration is located at ``/etc/httpd/conf/httpd.conf`` on "
+"Linux. It may be different depending on your operating system. Check the "
+"docs and look for ``httpd.conf``."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:48
+msgid ""
+"Remove or comment out any existing ``DocumentRoot`` directive. Add the "
+"config lines below. We'll assume the WSGI server is listening locally at "
+"``http://127.0.0.1:8000``."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:52
+msgid "``/etc/httpd/conf/httpd.conf``"
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:61
+msgid ""
+"The ``LoadModule`` lines might already exist. If so, make sure they are "
+"uncommented instead of adding them manually."
+msgstr ""
+
+#: ../../deploying/apache-httpd.rst:64
+msgid ""
+"Then :doc:`proxy_fix` so that your application uses the ``X-Forwarded`` "
+"headers. ``X-Forwarded-For`` and ``X-Forwarded-Host`` are automatically "
+"set by ``ProxyPass``."
+msgstr ""
+
