@@ -212,4 +212,3 @@ msgid ""
 "the body is not valid JSON, or the ``Content-Type`` header is not set to "
 "``application/json``, a 400 Bad Request error will be raised."
 msgstr ""
-

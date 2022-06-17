@@ -94,4 +94,3 @@ msgstr ""
 #: ../../deploying/nginx.rst:69
 msgid "Then :doc:`proxy_fix` so that your application uses these headers."
 msgstr ""
-
