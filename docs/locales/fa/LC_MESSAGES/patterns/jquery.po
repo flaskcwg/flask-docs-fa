@@ -218,4 +218,3 @@ msgstr ""
 #~ " as well as the same thing "
 #~ "using ``XMLHttpRequest`` and ``fetch``."
 #~ msgstr ""
-

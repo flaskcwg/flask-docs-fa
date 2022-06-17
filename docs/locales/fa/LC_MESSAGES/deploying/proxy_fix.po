@@ -58,4 +58,3 @@ msgid ""
 "the correct number of proxies that set each header. It can be a security "
 "issue if you get this configuration wrong."
 msgstr ""
-

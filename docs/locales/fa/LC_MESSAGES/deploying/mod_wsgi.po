@@ -380,4 +380,3 @@ msgstr ""
 #~ "virtual environment.  Keep in mind that"
 #~ " the path has to be absolute."
 #~ msgstr ""
-
