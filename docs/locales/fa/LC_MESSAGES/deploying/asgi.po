@@ -1,37 +1,46 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# MDK <dzhbanmhmdamyn@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-08 08:56+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-04-06 23:38+0430\n"
+"Last-Translator: MDK <dzhbanmhmdamyn@gmail.com>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../deploying/asgi.rst:4
 msgid "ASGI"
-msgstr ""
+msgstr "ASGI"
 
 #: ../../deploying/asgi.rst:6
 msgid ""
-"If you'd like to use an ASGI server you will need to utilise WSGI to ASGI"
-" middleware. The asgiref `WsgiToAsgi <https://github.com/django/asgiref"
-"#wsgi-to-asgi-adapter>`_ adapter is recommended as it integrates with the"
-" event loop used for Flask's :ref:`async_await` support. You can use the "
-"adapter by wrapping the Flask app,"
+"If you'd like to use an ASGI server you will need to utilise WSGI to "
+"ASGI middleware. The asgiref `WsgiToAsgi <https://github.com/django/"
+"asgiref#wsgi-to-asgi-adapter>`_ adapter is recommended as it integrates "
+"with the event loop used for Flask's :ref:`async_await` support. You can "
+"use the adapter by wrapping the Flask app,"
 msgstr ""
+"اگر می خواهید از یک سرور ASGI استفاده کنید، باید از میان افزار WSGI به "
+"ASGI استفاده کنید. آداپتور `asgiref Wsgi به Asgi <https://github.com/"
+"django/asgiref#wsgi-to-asgi-adapter>`_ توصیه می شود زیرا با حلقه رویداد "
+"مورد استفاده برای پشتیبانی :ref:`async_await` فلاسک پشتیبانی می شود. می "
+"توانید با بسته بندی برنامه فلاسک از آداپتور استفاده کنید,"
 
 #: ../../deploying/asgi.rst:24
 msgid ""
 "and then serving the ``asgi_app`` with the ASGI server, e.g. using "
 "`Hypercorn <https://gitlab.com/pgjones/hypercorn>`_,"
 msgstr ""
+"و سپس ``asgi_app`` را با سرور ASGI استفاده کنید، به عنوان مثال با "
+به عنوان مثال میتوانید از `Hypercorn <https://gitlab.com/pgjones/hypercorn>`_ نیز استفاده کنید,
