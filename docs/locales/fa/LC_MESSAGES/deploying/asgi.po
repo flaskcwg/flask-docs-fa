@@ -43,4 +43,4 @@ msgid ""
 "`Hypercorn <https://gitlab.com/pgjones/hypercorn>`_,"
 msgstr ""
 "و سپس ``asgi_app`` را با سرور ASGI استفاده کنید، به عنوان مثال با "
-"استفاده از 'Hypercorn <https://gitlab.com/pgjones/hypercorn>'_,"
+به عنوان مثال میتوانید از `Hypercorn <https://gitlab.com/pgjones/hypercorn>`_ نیز استفاده کنید,
