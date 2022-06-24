@@ -214,9 +214,7 @@ $ git push origin {name}
 
 ### docs/deploying/
 
-* [ ] asgi
-* [ ] cgi
-* [ ] fastcgi
+* [x] asgi [@mdk84](https://github.com/mdk84) MDK
 * [ ] index
 * [ ] mod_wsgi
 * [ ] uwsgi
