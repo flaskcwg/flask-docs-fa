@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 15:03+0330\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: 2022-02-15 18:07+0330\n"
-"Last-Translator:  Komeil Parseh  <ahmdparsh129@gmail.com>\n"
-"Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
+"Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0.1\n"
 
 #: ../../patterns/appfactories.rst:2
 msgid "Application Factories"
@@ -25,16 +24,18 @@ msgstr "کارخانه برنامه ها"
 
 #: ../../patterns/appfactories.rst:4
 msgid ""
-"If you are already using packages and blueprints for your application (:doc:`/"
-"blueprints`) there are a couple of really nice ways to further improve the "
-"experience.  A common pattern is creating the application object when the blueprint "
-"is imported.  But if you move the creation of this object into a function, you can "
-"then create multiple instances of this app later."
+"If you are already using packages and blueprints for your application "
+"(:doc:`/blueprints`) there are a couple of really nice ways to further "
+"improve the experience.  A common pattern is creating the application "
+"object when the blueprint is imported.  But if you move the creation of "
+"this object into a function, you can then create multiple instances of "
+"this app later."
 msgstr ""
-"اگر از قبل از بسته‌ها و طرح‌های اولیه برای برنامه خود استفاده می‌کنید ( :doc:`/"
-"blueprints` ) چند راه واقعاً خوب برای بهبود بیشتر تجربه وجود دارد. یک الگو زمانی "
-"برنامه ایجاد شی است که طرح اولیه وارد می شود. اما اگر ایجاد این شی را به یک تابع "
-"منتقل کنید، بعداً می توانید چندین نمونه از این برنامه را ایجاد کنید."
+"اگر از قبل از بسته‌ها و طرح‌های اولیه برای برنامه خود استفاده می‌کنید ( "
+":doc:`/blueprints` ) چند راه واقعاً خوب برای بهبود بیشتر تجربه وجود دارد."
+" یک الگو زمانی برنامه ایجاد شی است که طرح اولیه وارد می شود. اما اگر "
+"ایجاد این شی را به یک تابع منتقل کنید، بعداً می توانید چندین نمونه از این"
+" برنامه را ایجاد کنید."
 
 #: ../../patterns/appfactories.rst:10
 msgid "So why would you want to do this?"
@@ -42,23 +43,24 @@ msgstr "پس چرا می خواهید این کار را انجام دهید؟"
 
 #: ../../patterns/appfactories.rst:12
 msgid ""
-"Testing.  You can have instances of the application with different settings to test "
-"every case."
+"Testing.  You can have instances of the application with different "
+"settings to test every case."
 msgstr ""
-"آزمایش کردن. می توانید نمونه هایی از برنامه را با تنظیمات مختلف برای آزمایش هر مورد "
-"داشته باشید."
+"آزمایش کردن. می توانید نمونه هایی از برنامه را با تنظیمات مختلف برای "
+"آزمایش هر مورد داشته باشید."
 
 #: ../../patterns/appfactories.rst:14
 msgid ""
-"Multiple instances.  Imagine you want to run different versions of the same "
-"application.  Of course you could have multiple instances with different configs set "
-"up in your webserver, but if you use factories, you can have multiple instances of "
-"the same application running in the same application process which can be handy."
+"Multiple instances.  Imagine you want to run different versions of the "
+"same application.  Of course you could have multiple instances with "
+"different configs set up in your webserver, but if you use factories, you"
+" can have multiple instances of the same application running in the same "
+"application process which can be handy."
 msgstr ""
-"نمونه های متعدد. تصور کنید می خواهید نسخه های مختلف یک برنامه را اجرا کنید. البته، "
-"می‌توانید چندین نمونه با پیکربندی‌های مختلف در وب سرور خود تنظیم کنید، اما اگر از "
-"کارخانه‌ها استفاده می‌کنید، می‌توانید چندین نمونه از یک برنامه را در یک فرآیند برنامه "
-"اجرا کنید که می‌تواند مفید باشد."
+"نمونه های متعدد. تصور کنید می خواهید نسخه های مختلف یک برنامه را اجرا "
+"کنید. البته، می‌توانید چندین نمونه با پیکربندی‌های مختلف در وب سرور خود "
+"تنظیم کنید، اما اگر از کارخانه‌ها استفاده می‌کنید، می‌توانید چندین نمونه "
+"از یک برنامه را در یک فرآیند برنامه اجرا کنید که می‌تواند مفید باشد."
 
 #: ../../patterns/appfactories.rst:20
 msgid "So how would you then actually implement that?"
@@ -74,13 +76,15 @@ msgstr "ایده، راه‌اندازی برنامه در یک تابع است.
 
 #: ../../patterns/appfactories.rst:41
 msgid ""
-"The downside is that you cannot use the application object in the blueprints at "
-"import time.  You can however use it from within a request.  How do you get access to "
-"the application with the config?  Use :data:`~flask.current_app`::"
+"The downside is that you cannot use the application object in the "
+"blueprints at import time.  You can however use it from within a request."
+"  How do you get access to the application with the config?  Use "
+":data:`~flask.current_app`::"
 msgstr ""
-"نکته منفی این است که نمی توانید در زمان وارد کردن از شی برنامه از طرح های اولیه "
-"استفاده کنید. با این حال می توانید از درون یک درخواست از آن استفاده کنید. چگونه با "
-"کانفیگ به برنامه دسترسی پیدا می کنید؟ استفاده از :data:`~flask.current_app` ::"
+"نکته منفی این است که نمی توانید در زمان وارد کردن از شی برنامه از طرح های"
+" اولیه استفاده کنید. با این حال می توانید از درون یک درخواست از آن "
+"استفاده کنید. چگونه با کانفیگ به برنامه دسترسی پیدا می کنید؟ استفاده از "
+":data:`~flask.current_app` ::"
 
 #: ../../patterns/appfactories.rst:53
 msgid "Here we look up the name of a template in the config."
@@ -92,19 +96,21 @@ msgstr "کارخانه ها و افزونه ها"
 
 #: ../../patterns/appfactories.rst:58
 msgid ""
-"It's preferable to create your extensions and app factories so that the extension "
-"object does not initially get bound to the application."
+"It's preferable to create your extensions and app factories so that the "
+"extension object does not initially get bound to the application."
 msgstr ""
-"ترجیحاً افزونه ها و کارخانه‌های برنامه خود را ایجاد کنید تا شیء افزونه در ابتدا به "
-"برنامه متصل نشود."
+"ترجیحاً افزونه ها و کارخانه‌های برنامه خود را ایجاد کنید تا شیء افزونه در"
+" ابتدا به برنامه متصل نشود."
 
 #: ../../patterns/appfactories.rst:61
 msgid ""
-"Using `Flask-SQLAlchemy <https://flask-sqlalchemy.palletsprojects.com/>`_, as an "
-"example, you should not do something along those lines::"
+"Using `Flask-SQLAlchemy <https://flask-"
+"sqlalchemy.palletsprojects.com/>`_, as an example, you should not do "
+"something along those lines::"
 msgstr ""
-"به عنوان مثال با استفاده از <https://flask-sqlalchemy.palletsprojects.com/>`_ ، شما "
-"نباید کاری را در این خط انجام دهید::"
+"به عنوان مثال با استفاده از <https://flask-"
+"sqlalchemy.palletsprojects.com/>`_ ، شما نباید کاری را در این خط انجام "
+"دهید::"
 
 #: ../../patterns/appfactories.rst:70
 msgid "But, rather, in model.py (or equivalent)::"
@@ -116,13 +122,15 @@ msgstr "و در application.py (یا معادل آن) اینکار را انجا
 
 #: ../../patterns/appfactories.rst:83
 msgid ""
-"Using this design pattern, no application-specific state is stored on the extension "
-"object, so one extension object can be used for multiple apps. For more information "
-"about the design of extensions refer to :doc:`/extensiondev`."
+"Using this design pattern, no application-specific state is stored on the"
+" extension object, so one extension object can be used for multiple apps."
+" For more information about the design of extensions refer to "
+":doc:`/extensiondev`."
 msgstr ""
-"با استفاده از این الگوی طراحی، هیچ حالت خاص برنامه در شیء افزونه ذخیره نمی شود، "
-"بنابراین یک شیء افزونه را می توان برای چندین برنامه استفاده کرد. برای اطلاعات بیشتر "
-"در مورد طراحی افزونه ها به :doc:`/extensiondev` مراجعه کنید."
+"با استفاده از این الگوی طراحی، هیچ حالت خاص برنامه در شیء افزونه ذخیره "
+"نمی شود، بنابراین یک شیء افزونه را می توان برای چندین برنامه استفاده کرد."
+" برای اطلاعات بیشتر در مورد طراحی افزونه ها به :doc:`/extensiondev` "
+"مراجعه کنید."
 
 #: ../../patterns/appfactories.rst:88
 msgid "Using Applications"
@@ -130,71 +138,77 @@ msgstr "با استفاده از برنامه های کاربردی"
 
 #: ../../patterns/appfactories.rst:90
 msgid "To run such an application, you can use the :command:`flask` command:"
-msgstr "برای اجرای چنین برنامه ای می توانید از دستور :command:`flask` استفاده کنید:"
-
-#: ../../patterns/appfactories.rst:94 ../../patterns/appfactories.rst:127
-msgid "Bash"
-msgstr "Bash"
-
-#: ../../patterns/appfactories.rst:101 ../../patterns/appfactories.rst:134
-msgid "Fish"
-msgstr "Fish"
-
-#: ../../patterns/appfactories.rst:108 ../../patterns/appfactories.rst:141
-msgid "CMD"
-msgstr "CMD"
-
-#: ../../patterns/appfactories.rst:115 ../../patterns/appfactories.rst:148
-msgid "Powershell"
-msgstr "Powershell"
-
-#: ../../patterns/appfactories.rst:122
-msgid ""
-"Flask will automatically detect the factory (``create_app`` or ``make_app``) in "
-"``myapp``. You can also pass arguments to the factory like this:"
 msgstr ""
-"فلاسک به طور خودکار کارخانه (``create_app`` یا ``make_app``) را در ``myapp`` شناسایی "
-"می کند. همچنین می توانید آرگومان هایی را به این صورت به کارخانه ارسال کنید:"
+"برای اجرای چنین برنامه ای می توانید از دستور :command:`flask` استفاده "
+"کنید:"
 
-#: ../../patterns/appfactories.rst:155
+#: ../../patterns/appfactories.rst:96
+#, fuzzy
 msgid ""
-"Then the ``create_app`` factory in ``myapp`` is called with the string ``'dev'`` as "
-"the argument. See :doc:`/cli` for more detail."
+"Flask will automatically detect the factory if it is named ``create_app``"
+" or ``make_app`` in ``hello``. You can also pass arguments to the factory"
+" like this:"
 msgstr ""
-"سپس کارخانه ``create_app`` در ``myapp`` با رشته ``'dev'`` به عنوان آرگومان فراخوانی "
-"می شود. برای جزئیات بیشتر به :doc:`/cli` مراجعه کنید."
+"فلاسک به طور خودکار کارخانه (``create_app`` یا ``make_app``) را در "
+"``myapp`` شناسایی می کند. همچنین می توانید آرگومان هایی را به این صورت به"
+" کارخانه ارسال کنید:"
 
-#: ../../patterns/appfactories.rst:159
+#: ../../patterns/appfactories.rst:104
+#, fuzzy
+msgid ""
+"Then the ``create_app`` factory in ``myapp`` is called with the keyword "
+"argument ``local_auth=True``. See :doc:`/cli` for more detail."
+msgstr ""
+"سپس کارخانه ``create_app`` در ``myapp`` با رشته ``'dev'`` به عنوان "
+"آرگومان فراخوانی می شود. برای جزئیات بیشتر به :doc:`/cli` مراجعه کنید."
+
+#: ../../patterns/appfactories.rst:108
 msgid "Factory Improvements"
 msgstr "بهبود کارخانه"
 
-#: ../../patterns/appfactories.rst:161
+#: ../../patterns/appfactories.rst:110
 msgid ""
-"The factory function above is not very clever, but you can improve it. The following "
-"changes are straightforward to implement:"
+"The factory function above is not very clever, but you can improve it. "
+"The following changes are straightforward to implement:"
 msgstr ""
-"عملکرد کارخانه بالا خیلی هوشمندانه نیست، اما می توانید آن را بهبود ببخشید. تغییرات "
-"زیر برای پیاده سازی سراست‌تر است:"
+"عملکرد کارخانه بالا خیلی هوشمندانه نیست، اما می توانید آن را بهبود "
+"ببخشید. تغییرات زیر برای پیاده سازی سراست‌تر است:"
 
-#: ../../patterns/appfactories.rst:164
+#: ../../patterns/appfactories.rst:113
 msgid ""
-"Make it possible to pass in configuration values for unit tests so that you don't "
-"have to create config files on the filesystem."
+"Make it possible to pass in configuration values for unit tests so that "
+"you don't have to create config files on the filesystem."
 msgstr ""
-"امکان رد کردن مقادیر پیکربندی برای تست های واحد را فراهم کنید تا مجبور نباشید فایل "
-"های پیکربندی را در سیستم فایل ایجاد کنید."
+"امکان رد کردن مقادیر پیکربندی برای تست های واحد را فراهم کنید تا مجبور "
+"نباشید فایل های پیکربندی را در سیستم فایل ایجاد کنید."
 
-#: ../../patterns/appfactories.rst:166
+#: ../../patterns/appfactories.rst:115
 msgid ""
-"Call a function from a blueprint when the application is setting up so that you have "
-"a place to modify attributes of the application (like hooking in before/after request "
-"handlers etc.)"
+"Call a function from a blueprint when the application is setting up so "
+"that you have a place to modify attributes of the application (like "
+"hooking in before/after request handlers etc.)"
 msgstr ""
-"هنگامی که برنامه در حال راه اندازی است، یک تابع را از یک طرح فراخوانی کنید تا جایی "
-"برای تغییر ویژگی های برنامه (مانند قلاب کردن کنترل کننده های درخواست قبل/بعد و غیره) "
-"داشته باشید."
+"هنگامی که برنامه در حال راه اندازی است، یک تابع را از یک طرح فراخوانی "
+"کنید تا جایی برای تغییر ویژگی های برنامه (مانند قلاب کردن کنترل کننده های"
+" درخواست قبل/بعد و غیره) داشته باشید."
 
-#: ../../patterns/appfactories.rst:169
-msgid "Add in WSGI middlewares when the application is being created if necessary."
+#: ../../patterns/appfactories.rst:118
+msgid ""
+"Add in WSGI middlewares when the application is being created if "
+"necessary."
 msgstr ""
-"در صورت لزوم، زمانی که برنامه در حال ایجاد است، میان افزارهای WSGI را اضافه کنید."
+"در صورت لزوم، زمانی که برنامه در حال ایجاد است، میان افزارهای WSGI را "
+"اضافه کنید."
+
+#~ msgid "Bash"
+#~ msgstr "Bash"
+
+#~ msgid "Fish"
+#~ msgstr "Fish"
+
+#~ msgid "CMD"
+#~ msgstr "CMD"
+
+#~ msgid "Powershell"
+#~ msgstr "Powershell"
+

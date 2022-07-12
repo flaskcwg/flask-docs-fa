@@ -310,6 +310,24 @@ def test_lazy_load_error(monkeypatch):
             lazy._flush_bg_loading_exception()
 
 
+def test_app_cli_has_app_context(app, runner):
+    def _param_cb(ctx, param, value):
+        # current_app should be available in parameter callbacks
+        return bool(current_app)
+
+    @app.cli.command()
+    @click.argument("value", callback=_param_cb)
+    def check(value):
+        app = click.get_current_context().obj.load_app()
+        # the loaded app should be the same as current_app
+        same_app = current_app._get_current_object() is app
+        return same_app, value
+
+    cli = FlaskGroup(create_app=lambda: app)
+    result = runner.invoke(cli, ["check", "x"], standalone_mode=False)
+    assert result.return_value == (True, True)
+
+
 def test_with_appcontext(runner):
     @click.command()
     @with_appcontext
@@ -323,12 +341,12 @@ def test_with_appcontext(runner):
     assert result.output == "testapp\n"
 
 
-def test_appgroup(runner):
+def test_appgroup_app_context(runner):
     @click.group(cls=AppGroup)
     def cli():
         pass
 
-    @cli.command(with_appcontext=True)
+    @cli.command()
     def test():
         click.echo(current_app.name)
 
@@ -336,7 +354,7 @@ def test_appgroup(runner):
     def subgroup():
         pass
 
-    @subgroup.command(with_appcontext=True)
+    @subgroup.command()
     def test2():
         click.echo(current_app.name)
 
@@ -351,7 +369,7 @@ def test_appgroup(runner):
     assert result.output == "testappgroup\n"
 
 
-def test_flaskgroup(runner):
+def test_flaskgroup_app_context(runner):
     def create_app():
         return Flask("flaskgroup")
 
@@ -386,6 +404,19 @@ def test_flaskgroup_debug(runner, set_debug_flag):
     result = runner.invoke(cli, ["test"])
     assert result.exit_code == 0
     assert result.output == f"{not set_debug_flag}\n"
+
+
+def test_flaskgroup_nested(app, runner):
+    cli = click.Group("cli")
+    flask_group = FlaskGroup(name="flask", create_app=lambda: app)
+    cli.add_command(flask_group)
+
+    @flask_group.command()
+    def show():
+        click.echo(current_app.name)
+
+    result = runner.invoke(cli, ["flask", "show"])
+    assert result.output == "flask_test\n"
 
 
 def test_no_command_echo_loading_error():

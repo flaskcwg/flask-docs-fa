@@ -39,50 +39,20 @@ Save it as :file:`hello.py` or something similar. Make sure to not call
 your application :file:`flask.py` because this would conflict with Flask
 itself.
 
-To run the application, use the :command:`flask` command or
-:command:`python -m flask`. Before you can do that you need
-to tell your terminal the application to work with by exporting the
-``FLASK_APP`` environment variable:
+To run the application, use the ``flask`` command or
+``python -m flask``. You need to tell the Flask where your application
+is with the ``-app`` option.
 
-.. tabs::
+.. code-block:: text
 
-   .. group-tab:: Bash
-
-      .. code-block:: text
-
-         $ export FLASK_APP=hello
-         $ flask run
-          * Running on http://127.0.0.1:5000/
-
-   .. group-tab:: Fish
-
-      .. code-block:: text
-
-         $ set -x FLASK_APP hello
-         $ flask run
-          * Running on http://127.0.0.1:5000/
-
-   .. group-tab:: CMD
-
-      .. code-block:: text
-
-         > set FLASK_APP=hello
-         > flask run
-          * Running on http://127.0.0.1:5000/
-
-   .. group-tab:: Powershell
-
-      .. code-block:: text
-
-         > $env:FLASK_APP = "hello"
-         > flask run
-          * Running on http://127.0.0.1:5000/
+    $ flask --app hello run
+     * Serving Flask app 'hello' (lazy loading)
+     * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
 
 .. admonition:: Application Discovery Behavior
 
     As a shortcut, if the file is named ``app.py`` or ``wsgi.py``, you
-    don't have to set the ``FLASK_APP`` environment variable. See
-    :doc:`/cli` for more details.
+    don't have to use ``--app``. See :doc:`/cli` for more details.
 
 This launches a very simple builtin server, which is good enough for
 testing but probably not what you want to use in production. For
@@ -114,34 +84,6 @@ handle that.
    This tells your operating system to listen on all public IPs.
 
 
-What to do if the Server does not Start
----------------------------------------
-
-In case the :command:`python -m flask` fails or :command:`flask`
-does not exist, there are multiple reasons this might be the case.
-First of all you need to look at the error message.
-
-Old Version of Flask
-````````````````````
-
-Versions of Flask older than 0.11 used to have different ways to start the
-application.  In short, the :command:`flask` command did not exist, and
-neither did :command:`python -m flask`.  In that case you have two options:
-either upgrade to newer Flask versions or have a look at :doc:`/server`
-to see the alternative method for running a server.
-
-Invalid Import Name
-```````````````````
-
-The ``FLASK_APP`` environment variable is the name of the module to import at
-:command:`flask run`. In case that module is incorrectly named you will get an
-import error upon start (or if debug is enabled when you navigate to the
-application). It will tell you what it tried to import and why it failed.
-
-The most common reason is a typo or because you did not actually create an
-``app`` object.
-
-
 Debug Mode
 ----------
 
@@ -162,38 +104,19 @@ error occurs during a request.
     security risk. Do not run the development server or debugger in a
     production environment.
 
-To enable all development features, set the ``FLASK_ENV`` environment
-variable to ``development`` before calling ``flask run``.
+To enable all development features, set the ``--env`` option to
+``development``.
 
-.. tabs::
+.. code-block:: text
 
-   .. group-tab:: Bash
-
-      .. code-block:: text
-
-         $ export FLASK_ENV=development
-         $ flask run
-
-   .. group-tab:: Fish
-
-      .. code-block:: text
-
-         $ set -x FLASK_ENV development
-         $ flask run
-
-   .. group-tab:: CMD
-
-      .. code-block:: text
-
-         > set FLASK_ENV=development
-         > flask run
-
-   .. group-tab:: Powershell
-
-      .. code-block:: text
-
-         > $env:FLASK_ENV = "development"
-         > flask run
+    $ flask --app hello --env development run
+     * Serving Flask app 'hello' (lazy loading)
+     * Environment: development
+     * Debug mode: on
+     * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+     * Restarting with stat
+     * Debugger is active!
+     * Debugger PIN: nnn-nnn-nnn
 
 See also:
 
@@ -758,22 +681,25 @@ The return value from a view function is automatically converted into
 a response object for you. If the return value is a string it's
 converted into a response object with the string as response body, a
 ``200 OK`` status code and a :mimetype:`text/html` mimetype. If the
-return value is a dict, :func:`jsonify` is called to produce a response.
-The logic that Flask applies to converting return values into response
-objects is as follows:
+return value is a dict or list, :func:`jsonify` is called to produce a
+response. The logic that Flask applies to converting return values into
+response objects is as follows:
 
 1.  If a response object of the correct type is returned it's directly
     returned from the view.
 2.  If it's a string, a response object is created with that data and
     the default parameters.
-3.  If it's a dict, a response object is created using ``jsonify``.
-4.  If a tuple is returned the items in the tuple can provide extra
+3.  If it's an iterator or generator returning strings or bytes, it is
+    treated as a streaming response.
+4.  If it's a dict or list, a response object is created using
+    :func:`~flask.json.jsonify`.
+5.  If a tuple is returned the items in the tuple can provide extra
     information. Such tuples have to be in the form
     ``(response, status)``, ``(response, headers)``, or
     ``(response, status, headers)``. The ``status`` value will override
     the status code and ``headers`` can be a list or dictionary of
     additional header values.
-5.  If none of that works, Flask will assume the return value is a
+6.  If none of that works, Flask will assume the return value is a
     valid WSGI application and convert that into a response object.
 
 If you want to get hold of the resulting response object inside the view
@@ -804,8 +730,8 @@ APIs with JSON
 ``````````````
 
 A common response format when writing an API is JSON. It's easy to get
-started writing such an API with Flask. If you return a ``dict`` from a
-view, it will be converted to a JSON response.
+started writing such an API with Flask. If you return a ``dict`` or
+``list`` from a view, it will be converted to a JSON response.
 
 .. code-block:: python
 
@@ -818,20 +744,20 @@ view, it will be converted to a JSON response.
             "image": url_for("user_image", filename=user.image),
         }
 
-Depending on your API design, you may want to create JSON responses for
-types other than ``dict``. In that case, use the
-:func:`~flask.json.jsonify` function, which will serialize any supported
-JSON data type. Or look into Flask community extensions that support
-more complex applications.
-
-.. code-block:: python
-
-    from flask import jsonify
-
     @app.route("/users")
     def users_api():
         users = get_all_users()
-        return jsonify([user.to_json() for user in users])
+        return [user.to_json() for user in users]
+
+This is a shortcut to passing the data to the
+:func:`~flask.json.jsonify` function, which will serialize any supported
+JSON data type. That means that all the data in the dict or list must be
+JSON serializable.
+
+For complex types such as database models, you'll want to use a
+serialization library to convert the data to valid JSON types first.
+There are many serialization libraries and Flask API extensions
+maintained by the community that support more complex applications.
 
 
 .. _sessions:

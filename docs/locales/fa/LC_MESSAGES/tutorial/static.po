@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-07 17:01+0430\n"
+"POT-Creation-Date: 2022-06-20 15:30+0430\n"
 "PO-Revision-Date: 2021-12-16 18:00+0330\n"
 "Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -84,6 +84,9 @@ msgstr ""
 "به http://127.0.0.1:5000/auth/login بروید و صفحه باید مانند تصویر زیر "
 "باشد."
 
+msgid "اسکرین شات صفحه ورود"
+msgstr ""
+
 #: ../../tutorial/static.rst:66
 msgid ""
 "You can read more about CSS from `Mozilla's documentation <CSS_>`_. If "
@@ -100,3 +103,4 @@ msgstr "با :doc:`blog` ادامه دهید."
 
 #~ msgid "screenshot of login page"
 #~ msgstr "اسکرین شات صفحه ورود"
+

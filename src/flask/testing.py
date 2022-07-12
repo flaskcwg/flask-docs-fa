@@ -1,5 +1,6 @@
 import typing as t
 from contextlib import contextmanager
+from contextlib import ExitStack
 from copy import copy
 from types import TracebackType
 
@@ -10,11 +11,11 @@ from werkzeug.urls import url_parse
 from werkzeug.wrappers import Request as BaseRequest
 
 from .cli import ScriptInfo
-from .globals import _request_ctx_stack
+from .globals import _cv_request
 from .json import dumps as json_dumps
 from .sessions import SessionMixin
 
-if t.TYPE_CHECKING:
+if t.TYPE_CHECKING:  # pragma: no cover
     from werkzeug.test import TestResponse
 
     from .app import Flask
@@ -93,11 +94,10 @@ class EnvironBuilder(werkzeug.test.EnvironBuilder):
 
 
 class FlaskClient(Client):
-    """Works like a regular Werkzeug test client but has some knowledge about
-    how Flask works to defer the cleanup of the request context stack to the
-    end of a ``with`` body when used in a ``with`` statement.  For general
-    information about how to use this class refer to
-    :class:`werkzeug.test.Client`.
+    """Works like a regular Werkzeug test client but has knowledge about
+    Flask's contexts to defer the cleanup of the request context until
+    the end of a ``with`` block. For general information about how to
+    use this class refer to :class:`werkzeug.test.Client`.
 
     .. versionchanged:: 0.12
        `app.test_client()` includes preset default environment, which can be
@@ -108,10 +108,12 @@ class FlaskClient(Client):
     """
 
     application: "Flask"
-    preserve_context = False
 
     def __init__(self, *args: t.Any, **kwargs: t.Any) -> None:
         super().__init__(*args, **kwargs)
+        self.preserve_context = False
+        self._new_contexts: t.List[t.ContextManager[t.Any]] = []
+        self._context_stack = ExitStack()
         self.environ_base = {
             "REMOTE_ADDR": "127.0.0.1",
             "HTTP_USER_AGENT": f"werkzeug/{werkzeug.__version__}",
@@ -144,7 +146,7 @@ class FlaskClient(Client):
         app = self.application
         environ_overrides = kwargs.setdefault("environ_overrides", {})
         self.cookie_jar.inject_wsgi(environ_overrides)
-        outer_reqctx = _request_ctx_stack.top
+        outer_reqctx = _cv_request.get(None)
         with app.test_request_context(*args, **kwargs) as c:
             session_interface = app.session_interface
             sess = session_interface.open_session(app, c.request)
@@ -160,11 +162,11 @@ class FlaskClient(Client):
             # behavior.  It's important to not use the push and pop
             # methods of the actual request context object since that would
             # mean that cleanup handlers are called
-            _request_ctx_stack.push(outer_reqctx)
+            token = _cv_request.set(outer_reqctx)  # type: ignore[arg-type]
             try:
                 yield sess
             finally:
-                _request_ctx_stack.pop()
+                _cv_request.reset(token)
 
             resp = app.response_class()
             if not session_interface.is_null_session(sess):
@@ -173,11 +175,12 @@ class FlaskClient(Client):
             self.cookie_jar.extract_wsgi(c.request.environ, headers)
 
     def _copy_environ(self, other):
-        return {
-            **self.environ_base,
-            **other,
-            "flask._preserve_context": self.preserve_context,
-        }
+        out = {**self.environ_base, **other}
+
+        if self.preserve_context:
+            out["werkzeug.debug.preserve_context"] = self._new_contexts.append
+
+        return out
 
     def _request_from_builder_args(self, args, kwargs):
         kwargs["environ_base"] = self._copy_environ(kwargs.get("environ_base", {}))
@@ -214,11 +217,23 @@ class FlaskClient(Client):
             # request is None
             request = self._request_from_builder_args(args, kwargs)
 
-        return super().open(
+        # Pop any previously preserved contexts. This prevents contexts
+        # from being preserved across redirects or multiple requests
+        # within a single block.
+        self._context_stack.close()
+
+        response = super().open(
             request,
             buffered=buffered,
             follow_redirects=follow_redirects,
         )
+
+        # Re-push contexts that were preserved during the request.
+        while self._new_contexts:
+            cm = self._new_contexts.pop()
+            self._context_stack.enter_context(cm)
+
+        return response
 
     def __enter__(self) -> "FlaskClient":
         if self.preserve_context:
@@ -233,18 +248,7 @@ class FlaskClient(Client):
         tb: t.Optional[TracebackType],
     ) -> None:
         self.preserve_context = False
-
-        # Normally the request context is preserved until the next
-        # request in the same thread comes. When the client exits we
-        # want to clean up earlier. Pop request contexts until the stack
-        # is empty or a non-preserved one is found.
-        while True:
-            top = _request_ctx_stack.top
-
-            if top is not None and top.preserved:
-                top.pop()
-            else:
-                break
+        self._context_stack.close()
 
 
 class FlaskCliRunner(CliRunner):

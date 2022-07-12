@@ -3,6 +3,7 @@ import typing as t
 import warnings
 from collections.abc import MutableMapping
 from datetime import datetime
+from datetime import timezone
 
 from itsdangerous import BadSignature
 from itsdangerous import URLSafeTimedSerializer
@@ -11,7 +12,7 @@ from werkzeug.datastructures import CallbackDict
 from .helpers import is_ip
 from .json.tag import TaggedJSONSerializer
 
-if t.TYPE_CHECKING:
+if t.TYPE_CHECKING:  # pragma: no cover
     import typing_extensions as te
     from .app import Flask
     from .wrappers import Request, Response
@@ -277,7 +278,7 @@ class SessionInterface:
         lifetime configured on the application.
         """
         if session.permanent:
-            return datetime.utcnow() + app.permanent_session_lifetime
+            return datetime.now(timezone.utc) + app.permanent_session_lifetime
         return None
 
     def should_set_cookie(self, app: "Flask", session: SessionMixin) -> bool:

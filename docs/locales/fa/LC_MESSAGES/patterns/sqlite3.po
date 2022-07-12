@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -43,17 +43,10 @@ msgid ""
 msgstr ""
 
 #: ../../patterns/sqlite3.rst:33
-msgid ""
-"Note: if you use Flask 0.9 or older you need to use "
-"``flask._app_ctx_stack.top`` instead of ``g`` as the :data:`flask.g` "
-"object was bound to the request and not application context."
-msgstr ""
-
-#: ../../patterns/sqlite3.rst:37
 msgid "Example::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:47
+#: ../../patterns/sqlite3.rst:43
 msgid ""
 "Please keep in mind that the teardown request and appcontext functions "
 "are always executed, even if a before-request handler failed or was never"
@@ -61,11 +54,11 @@ msgid ""
 "is there before we close it."
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:53
+#: ../../patterns/sqlite3.rst:49
 msgid "Connect on Demand"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:55
+#: ../../patterns/sqlite3.rst:51
 msgid ""
 "The upside of this approach (connecting on first use) is that this will "
 "only open the connection if truly necessary.  If you want to use this "
@@ -73,11 +66,11 @@ msgid ""
 "opening the application context by hand::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:65
+#: ../../patterns/sqlite3.rst:61
 msgid "Easy Querying"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:67
+#: ../../patterns/sqlite3.rst:63
 msgid ""
 "Now in each request handling function you can access `get_db()` to get "
 "the current open database connection.  To simplify working with SQLite, a"
@@ -87,14 +80,14 @@ msgid ""
 "``get_db`` function we created above::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:80
+#: ../../patterns/sqlite3.rst:76
 msgid ""
 "This will make the sqlite3 module return dicts for this database "
 "connection, which are much nicer to deal with. Even more simply, we could"
 " place this in ``get_db`` instead::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:84
+#: ../../patterns/sqlite3.rst:80
 msgid ""
 "This would use Row objects rather than dicts to return the results of "
 "queries. These are ``namedtuple`` s, so we can access them either by "
@@ -103,28 +96,28 @@ msgid ""
 "``MiddleInitial``::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:100
+#: ../../patterns/sqlite3.rst:96
 msgid ""
 "Additionally, it is a good idea to provide a query function that combines"
 " getting the cursor, executing and fetching the results::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:109
+#: ../../patterns/sqlite3.rst:105
 msgid ""
 "This handy little function, in combination with a row factory, makes "
 "working with the database much more pleasant than it is by just using the"
 " raw cursor and connection objects."
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:113
+#: ../../patterns/sqlite3.rst:109
 msgid "Here is how you can use it::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:118
+#: ../../patterns/sqlite3.rst:114
 msgid "Or if you just want a single result::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:127
+#: ../../patterns/sqlite3.rst:123
 msgid ""
 "To pass variable parts to the SQL statement, use a question mark in the "
 "statement and pass in the arguments as a list.  Never directly add them "
@@ -133,11 +126,11 @@ msgid ""
 "<https://en.wikipedia.org/wiki/SQL_injection>`_."
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:134
+#: ../../patterns/sqlite3.rst:130
 msgid "Initial Schemas"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:136
+#: ../../patterns/sqlite3.rst:132
 msgid ""
 "Relational databases need schemas, so applications often ship a "
 "`schema.sql` file that creates the database.  It's a good idea to provide"
@@ -145,6 +138,16 @@ msgid ""
 "function can do that for you::"
 msgstr ""
 
-#: ../../patterns/sqlite3.rst:148
+#: ../../patterns/sqlite3.rst:144
 msgid "You can then create such a database from the Python shell:"
 msgstr ""
+
+#~ msgid ""
+#~ "Note: if you use Flask 0.9 or "
+#~ "older you need to use "
+#~ "``flask._app_ctx_stack.top`` instead of ``g`` "
+#~ "as the :data:`flask.g` object was bound"
+#~ " to the request and not application"
+#~ " context."
+#~ msgstr ""
+

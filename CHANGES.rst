@@ -1,5 +1,83 @@
 .. currentmodule:: flask
 
+Version 2.2.0
+-------------
+
+Unreleased
+
+-   Remove previously deprecated code. :pr:`4337`
+
+    -   Old names for some ``send_file`` parameters have been removed.
+        ``download_name`` replaces ``attachment_filename``, ``max_age``
+        replaces ``cache_timeout``, and ``etag`` replaces ``add_etags``.
+        Additionally, ``path`` replaces ``filename`` in
+        ``send_from_directory``.
+    -   The ``RequestContext.g`` property returning ``AppContext.g`` is
+        removed.
+
+-   The app and request contexts are managed using Python context vars
+    directly rather than Werkzeug's ``LocalStack``. This should result
+    in better performance and memory use. :pr:`4682`
+
+    -   Extension maintainers, be aware that ``_app_ctx_stack.top``
+        and ``_request_ctx_stack.top`` are deprecated. Store data on
+        ``g`` instead using a unique prefix, like
+        ``g._extension_name_attr``.
+
+-   Add new customization points to the ``Flask`` app object for many
+    previously global behaviors.
+
+    -   ``flask.url_for`` will call ``app.url_for``. :issue:`4568`
+    -   ``flask.abort`` will call ``app.aborter``.
+        ``Flask.aborter_class`` and ``Flask.make_aborter`` can be used
+        to customize this aborter. :issue:`4567`
+    -   ``flask.redirect`` will call ``app.redirect``. :issue:`4569`
+
+-   Refactor ``register_error_handler`` to consolidate error checking.
+    Rewrite some error messages to be more consistent. :issue:`4559`
+-   Use Blueprint decorators and functions intended for setup after
+    registering the blueprint will show a warning. In the next version,
+    this will become an error just like the application setup methods.
+    :issue:`4571`
+-   ``before_first_request`` is deprecated. Run setup code when creating
+    the application instead. :issue:`4605`
+-   Added the ``View.init_every_request`` class attribute. If a view
+    subclass sets this to ``False``, the view will not create a new
+    instance on every request. :issue:`2520`.
+-   A ``flask.cli.FlaskGroup`` Click group can be nested as a
+    sub-command in a custom CLI. :issue:`3263`
+-   Add ``--app``, ``--env``, and ``--debug`` options to the ``flask``
+    CLI, instead of requiring that they are set through environment
+    variables. :issue:`2836`
+-   Add ``--env-file`` option to the ``flask`` CLI. This allows
+    specifying a dotenv file to load in addition to ``.env`` and
+    ``.flaskenv``. :issue:`3108`
+-   It is no longer required to decorate custom CLI commands on
+    ``app.cli`` or ``blueprint.cli`` with ``@with_appcontext``, an app
+    context will already be active at that point. :issue:`2410`
+-   ``SessionInterface.get_expiration_time`` uses a timezone-aware
+    value. :pr:`4645`
+-   View functions can return generators directly instead of wrapping
+    them in a ``Response``. :pr:`4629`
+-   Add ``stream_template`` and ``stream_template_string`` functions to
+    render a template as a stream of pieces. :pr:`4629`
+-   A new implementation of context preservation during debugging and
+    testing. :pr:`4666`
+
+    -   ``request``, ``g``, and other context-locals point to the
+        correct data when running code in the interactive debugger
+        console. :issue:`2836`
+    -   Teardown functions are always run at the end of the request,
+        even if the context is preserved. They are also run after the
+        preserved context is popped.
+    -   ``stream_with_context`` preserves context separately from a
+        ``with client`` block. It will be cleaned up when
+        ``response.get_data()`` or ``response.close()`` is called.
+
+-   Allow returning a list from a view function, to convert it to a
+    JSON response like a dict is. :issue:`4672`
+
+
 Version 2.1.3
 -------------
 
@@ -158,7 +236,7 @@ Released 2021-05-21
     the endpoint name. :issue:`4041`
 -   Combine URL prefixes when nesting blueprints that were created with
     a ``url_prefix`` value. :issue:`4037`
--   Roll back a change to the order that URL matching was done. The
+-   Revert a change to the order that URL matching was done. The
     URL is again matched after the session is loaded, so the session is
     available in custom URL converters. :issue:`4053`
 -   Re-add deprecated ``Config.from_json``, which was accidentally
@@ -836,7 +914,7 @@ Released 2013-06-13, codename Limoncello
 -   Set the content-length header for x-sendfile.
 -   ``tojson`` filter now does not escape script blocks in HTML5
     parsers.
--   ``tojson`` used in templates is now safe by default due. This was
+-   ``tojson`` used in templates is now safe by default. This was
     allowed due to the different escaping behavior.
 -   Flask will now raise an error if you attempt to register a new
     function on an already used endpoint.
@@ -1010,8 +1088,7 @@ Released 2011-09-29, codename Rakija
     earlier feedback when users forget to import view code ahead of
     time.
 -   Added the ability to register callbacks that are only triggered once
-    at the beginning of the first request.
-    (:meth:`Flask.before_first_request`)
+    at the beginning of the first request. (``before_first_request``)
 -   Malformed JSON data will now trigger a bad request HTTP exception
     instead of a value error which usually would result in a 500
     internal server error if not handled. This is a backwards

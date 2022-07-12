@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: 2021-12-14 15:15+0330\n"
+"Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
+"Language: per\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Last-Translator:  Komeil Parseh  <ahmdparsh129@gmail.com>\n"
-"Language: per\n"
-"X-Generator: Poedit 3.0\n"
 
 #: ../../tutorial/database.rst:4
 msgid "Define and Access the Database"
@@ -61,14 +61,14 @@ msgstr "اتصال به دیتابیس"
 
 #: ../../tutorial/database.rst:27
 msgid ""
-"The first thing to do when working with a SQLite database (and most "
-"other Python database libraries) is to create a connection to it. Any "
-"queries and operations are performed using the connection, which is "
-"closed after the work is finished."
+"The first thing to do when working with a SQLite database (and most other"
+" Python database libraries) is to create a connection to it. Any queries "
+"and operations are performed using the connection, which is closed after "
+"the work is finished."
 msgstr ""
-"اولین چیز این است که کجا با دیتا بیس SQLite (و سایر کتابخانه های دیتا "
-"بیس پایتون) یک اتصال بسازید؛ اکثر کوئری ها و عملیات ها در پلتفرم با "
-"استفاده از اتصال انجام میشوند و پس از اتمام کار بسته میشوند."
+"اولین چیز این است که کجا با دیتا بیس SQLite (و سایر کتابخانه های دیتا بیس"
+" پایتون) یک اتصال بسازید؛ اکثر کوئری ها و عملیات ها در پلتفرم با استفاده "
+"از اتصال انجام میشوند و پس از اتمام کار بسته میشوند."
 
 #: ../../tutorial/database.rst:32
 msgid ""
@@ -79,24 +79,24 @@ msgstr ""
 "در برنامه های وب، این اتصال معمولا به درخواست مرتبط است. این اتصال در "
 "زمان رسیدگی به درخواست ایجاد میشود و قبل از ارسال پاسخ، بسته می شود."
 
-#: ../../tutorial/database.rst:36 ../../tutorial/database.rst:120
-#: ../../tutorial/database.rst:157
+#: ../../tutorial/database.rst:36 ../../tutorial/database.rst:119
+#: ../../tutorial/database.rst:155
 msgid "``flaskr/db.py``"
 msgstr "``flaskr/db.py``"
 
-#: ../../tutorial/database.rst:63
+#: ../../tutorial/database.rst:62
 msgid ""
-":data:`g` is a special object that is unique for each request. It is "
-"used to store data that might be accessed by multiple functions during "
-"the request. The connection is stored and reused instead of creating a "
-"new connection if ``get_db`` is called a second time in the same request."
+":data:`g` is a special object that is unique for each request. It is used"
+" to store data that might be accessed by multiple functions during the "
+"request. The connection is stored and reused instead of creating a new "
+"connection if ``get_db`` is called a second time in the same request."
 msgstr ""
 ":data:`g` یک شی خاص است که برای هر درخواست، منحصر بفرد است. برای ذخیره "
 "داده هایی استفاده میشود که ممکن است توسط چندین تابع در طول درخواست قابل "
 "دسترسی باشد. اگر ``get_db`` برای بار دوم در آن درخواست، فراخوانی شود، به "
 "جای ایجاد یک اتصال جدید، اتصال ذخیره و دوباره استفاده می شود."
 
-#: ../../tutorial/database.rst:69
+#: ../../tutorial/database.rst:68
 msgid ""
 ":data:`current_app` is another special object that points to the Flask "
 "application handling the request. Since you used an application factory, "
@@ -105,13 +105,12 @@ msgid ""
 "handling a request, so :data:`current_app` can be used."
 msgstr ""
 ":data:`current_app` یک شی خاص دیگر است که به برنامه فلاسک اشاره میکند تا "
-"درخواست را مدیریت کند. از آنجایی که شما از کارخانه برنامه کاربردی "
-"استفاده می‌کنید، هنگام نوشتن بقیه کد، شما هیچ شی دیگری برای برنامه "
-"نمیسازید. ``get_db`` زمانی فراخوانده می شود که برنامه ایجاد شود . در حال "
-"رسیدگی به درخواست باشد، بنابراین میتوان از :data:`current_app` استفاده "
-"کرد."
+"درخواست را مدیریت کند. از آنجایی که شما از کارخانه برنامه کاربردی استفاده"
+" می‌کنید، هنگام نوشتن بقیه کد، شما هیچ شی دیگری برای برنامه نمیسازید. "
+"``get_db`` زمانی فراخوانده می شود که برنامه ایجاد شود . در حال رسیدگی به "
+"درخواست باشد، بنابراین میتوان از :data:`current_app` استفاده کرد."
 
-#: ../../tutorial/database.rst:75
+#: ../../tutorial/database.rst:74
 msgid ""
 ":func:`sqlite3.connect` establishes a connection to the file pointed at "
 "by the ``DATABASE`` configuration key. This file doesn't have to exist "
@@ -122,67 +121,67 @@ msgstr ""
 "داشته باشد و تا زمانی که دیتابیس را بعدا مقداردهی نکنید، وجود نخواهد "
 "داشت."
 
-#: ../../tutorial/database.rst:79
+#: ../../tutorial/database.rst:78
 msgid ""
-":class:`sqlite3.Row` tells the connection to return rows that behave "
-"like dicts. This allows accessing the columns by name."
+":class:`sqlite3.Row` tells the connection to return rows that behave like"
+" dicts. This allows accessing the columns by name."
 msgstr ""
-":class:`sqlite3.Row` به اتصال می گوید که ردیف هایی را که مانند دیکشنری "
-"ها رفتار می کنند، برگرداند. این اجازه می دهد تا به ستون ها با نام دسترسی "
+":class:`sqlite3.Row` به اتصال می گوید که ردیف هایی را که مانند دیکشنری ها"
+" رفتار می کنند، برگرداند. این اجازه می دهد تا به ستون ها با نام دسترسی "
 "داشته باشید."
 
-#: ../../tutorial/database.rst:82
+#: ../../tutorial/database.rst:81
 msgid ""
 "``close_db`` checks if a connection was created by checking if ``g.db`` "
 "was set. If the connection exists, it is closed. Further down you will "
 "tell your application about the ``close_db`` function in the application "
 "factory so that it is called after each request."
 msgstr ""
-"``close_db`` با بررسی اینکه `g.db`` تنظیم شده است، بررسی می‌کند که آیا یک "
-"اتصال ایجاد شده است. اگر اتصال وجود داشته باشد، بسته است. در ادامه به "
-"برنامه خود در مورد عملکرد ``close_db`` در کارخانه برنامه خواهید گفت تا "
-"پس از هر درخواست فراخوانی شود."
+"``close_db`` با بررسی اینکه `g.db`` تنظیم شده است، بررسی می‌کند که آیا یک"
+" اتصال ایجاد شده است. اگر اتصال وجود داشته باشد، بسته است. در ادامه به "
+"برنامه خود در مورد عملکرد ``close_db`` در کارخانه برنامه خواهید گفت تا پس"
+" از هر درخواست فراخوانی شود."
 
-#: ../../tutorial/database.rst:89
+#: ../../tutorial/database.rst:88
 msgid "Create the Tables"
 msgstr "ساخته جدول ها"
 
-#: ../../tutorial/database.rst:91
+#: ../../tutorial/database.rst:90
 msgid ""
 "In SQLite, data is stored in *tables* and *columns*. These need to be "
 "created before you can store and retrieve data. Flaskr will store users "
 "in the ``user`` table, and posts in the ``post`` table. Create a file "
 "with the SQL commands needed to create empty tables:"
 msgstr ""
-"در SQLite، داده ها در *tables* و *columns* انبار میشوند. آنها نیاز "
-"دارند، قبل از انبار شدن و پس گرفتن داده ها، ساخته شوند. Flaskr میخواهد "
-"کاربران را در جدول ``user`` و پست ها را در جدول ``post`` انبار کند. یک "
-"فایل با دستور های SQL نیاز است تا جدول خالی ساخته شود. آن را بسازید:"
+"در SQLite، داده ها در *tables* و *columns* انبار میشوند. آنها نیاز دارند،"
+" قبل از انبار شدن و پس گرفتن داده ها، ساخته شوند. Flaskr میخواهد کاربران "
+"را در جدول ``user`` و پست ها را در جدول ``post`` انبار کند. یک فایل با "
+"دستور های SQL نیاز است تا جدول خالی ساخته شود. آن را بسازید:"
 
-#: ../../tutorial/database.rst:96
+#: ../../tutorial/database.rst:95
 msgid "``flaskr/schema.sql``"
 msgstr "``flaskr/schema.sql``"
 
-#: ../../tutorial/database.rst:117
+#: ../../tutorial/database.rst:116
 msgid ""
-"Add the Python functions that will run these SQL commands to the ``db."
-"py`` file:"
+"Add the Python functions that will run these SQL commands to the "
+"``db.py`` file:"
 msgstr "و توابع پایتون دستورات SQL را در فایل ``db.py`` اجرا خواهند کرد:"
 
-#: ../../tutorial/database.rst:137
+#: ../../tutorial/database.rst:135
 msgid ""
 ":meth:`open_resource() <Flask.open_resource>` opens a file relative to "
 "the ``flaskr`` package, which is useful since you won't necessarily know "
 "where that location is when deploying the application later. ``get_db`` "
-"returns a database connection, which is used to execute the commands "
-"read from the file."
+"returns a database connection, which is used to execute the commands read"
+" from the file."
 msgstr ""
 ":meth:`open_resource() <Flask.open_resource>` فایلی را نسبت به بسته "
-"``flaskr`` باز می کند، که مفید است زیرا در زمان استقرار برنامه لزوماً نمی "
-"دانید آن مکان کجاست. ``get_db`` یک اتصال پایگاه داده را برمی گرداند که "
+"``flaskr`` باز می کند، که مفید است زیرا در زمان استقرار برنامه لزوماً نمی"
+" دانید آن مکان کجاست. ``get_db`` یک اتصال پایگاه داده را برمی گرداند که "
 "برای اجرای دستورات خوانده شده از فایل استفاده می شود."
 
-#: ../../tutorial/database.rst:143
+#: ../../tutorial/database.rst:141
 msgid ""
 ":func:`click.command` defines a command line command called ``init-db`` "
 "that calls the ``init_db`` function and shows a success message to the "
@@ -190,14 +189,14 @@ msgid ""
 msgstr ""
 ":func:`click.command` یک خط فرمان به نام ``init-db`` را تعریف می کند که "
 "تابع ``init_db`` را فراخوانی می کند و پیام موفقیت آمیز را به کاربر نشان "
-"می دهد. برای کسب اطلاعات بیشتر در مورد نوشتن دستورات می توانید :doc:`/"
-"cli` را بخوانید."
+"می دهد. برای کسب اطلاعات بیشتر در مورد نوشتن دستورات می توانید "
+":doc:`/cli` را بخوانید."
 
-#: ../../tutorial/database.rst:149
+#: ../../tutorial/database.rst:147
 msgid "Register with the Application"
 msgstr "ثبت نام با برنامه"
 
-#: ../../tutorial/database.rst:151
+#: ../../tutorial/database.rst:149
 msgid ""
 "The ``close_db`` and ``init_db_command`` functions need to be registered "
 "with the application instance; otherwise, they won't be used by the "
@@ -205,22 +204,21 @@ msgid ""
 "instance isn't available when writing the functions. Instead, write a "
 "function that takes an application and does the registration."
 msgstr ""
-"توابع ``close_db`` و ``indit_db_command‍‍`` باید در نمونه برنامه ثبت شوند. "
-"در غیر این صورت، آنها توسط برنامه استفاده نخواهند شد. با این حال، از "
-"آنجایی که شما از یک تابع کارخانه استفاده می کنید، این نمونه هنگام نوشتن "
-"توابع در دسترس نیست. در عوض، تابعی بنویسید که یک برنامه کاربردی را می "
-"گیرد و ثبت را انجام می دهد."
+"توابع ``close_db`` و ``indit_db_command‍‍`` باید در نمونه برنامه ثبت "
+"شوند. در غیر این صورت، آنها توسط برنامه استفاده نخواهند شد. با این حال، "
+"از آنجایی که شما از یک تابع کارخانه استفاده می کنید، این نمونه هنگام "
+"نوشتن توابع در دسترس نیست. در عوض، تابعی بنویسید که یک برنامه کاربردی را "
+"می گیرد و ثبت را انجام می دهد."
 
-#: ../../tutorial/database.rst:164
+#: ../../tutorial/database.rst:162
 msgid ""
-":meth:`app.teardown_appcontext() <Flask.teardown_appcontext>` tells "
-"Flask to call that function when cleaning up after returning the "
-"response."
+":meth:`app.teardown_appcontext() <Flask.teardown_appcontext>` tells Flask"
+" to call that function when cleaning up after returning the response."
 msgstr ""
-":meth:`app.teardown_appcontext() <Flask.teardown_appcontext>` به فلاسک "
-"می گوید که هنگام پاکسازی پس از بازگرداندن پاسخ، آن تابع را فراخوانی کند."
+":meth:`app.teardown_appcontext() <Flask.teardown_appcontext>` به فلاسک می"
+" گوید که هنگام پاکسازی پس از بازگرداندن پاسخ، آن تابع را فراخوانی کند."
 
-#: ../../tutorial/database.rst:168
+#: ../../tutorial/database.rst:166
 msgid ""
 ":meth:`app.cli.add_command() <click.Group.add_command>` adds a new "
 "command that can be called with the ``flask`` command."
@@ -228,23 +226,23 @@ msgstr ""
 ":meth:`app.cli.add_command() <click.Group.add_command>` یک دستور جدید "
 "اضافه می کند که می تواند با دستور ``flask`` فراخوانی شود."
 
-#: ../../tutorial/database.rst:171
+#: ../../tutorial/database.rst:169
 msgid ""
-"Import and call this function from the factory. Place the new code at "
-"the end of the factory function before returning the app."
+"Import and call this function from the factory. Place the new code at the"
+" end of the factory function before returning the app."
 msgstr ""
 "این تابع را از کارخانه وارد کرده و فراخوانی کنید. قبل از بازگرداندن "
 "برنامه، کد جدید را در انتهای عملکرد کارخانه قرار دهید."
 
-#: ../../tutorial/database.rst:174
+#: ../../tutorial/database.rst:172
 msgid "``flaskr/__init__.py``"
 msgstr "``flaskr/__init__.py``"
 
-#: ../../tutorial/database.rst:188
+#: ../../tutorial/database.rst:186
 msgid "Initialize the Database File"
 msgstr "راه اندازی فایل پایگاه داده"
 
-#: ../../tutorial/database.rst:190
+#: ../../tutorial/database.rst:188
 msgid ""
 "Now that ``init-db`` has been registered with the app, it can be called "
 "using the ``flask`` command, similar to the ``run`` command from the "
@@ -253,32 +251,32 @@ msgstr ""
 "اکنون که ``init-db`` در برنامه ثبت شده است، می توان با استفاده از دستور "
 "``flask``، مشابه دستور ``run`` از صفحه قبل، آن را فراخوانی کرد."
 
-#: ../../tutorial/database.rst:196
+#: ../../tutorial/database.rst:194
+#, fuzzy
 msgid ""
-"If you're still running the server from the previous page, you can "
-"either stop the server, or run this command in a new terminal. If you "
-"use a new terminal, remember to change to your project directory and "
-"activate the env as described in :doc:`/installation`. You'll also need "
-"to set ``FLASK_APP`` and ``FLASK_ENV`` as shown on the previous page."
+"If you're still running the server from the previous page, you can either"
+" stop the server, or run this command in a new terminal. If you use a new"
+" terminal, remember to change to your project directory and activate the "
+"env as described in :doc:`/installation`."
 msgstr ""
 "اگر هنوز سرور صفحه قبلی را اجرا می کنید، می توانید سرور را متوقف کنید یا "
 "این دستور را در یک ترمینال جدید اجرا کنید. اگر از ترمینال جدیدی استفاده "
-"می کنید، به یاد داشته باشید که به دایرکتوری پروژه خود تغییر دهید و env "
-"را همانطور که در :doc:`/installation` توضیح داده شده فعال کنید. همچنین "
-"باید ``FLASK_APP`` و ``FLASK_ENV`` را همانطور که در صفحه قبل نشان داده "
-"شده است تنظیم کنید."
+"می کنید، به یاد داشته باشید که به دایرکتوری پروژه خود تغییر دهید و env را"
+" همانطور که در :doc:`/installation` توضیح داده شده فعال کنید. همچنین باید"
+" ``FLASK_APP`` و ``FLASK_ENV`` را همانطور که در صفحه قبل نشان داده شده "
+"است تنظیم کنید."
 
-#: ../../tutorial/database.rst:203
+#: ../../tutorial/database.rst:199
 msgid "Run the ``init-db`` command:"
 msgstr "دستور ``init-db`` را اجرا کنید:"
 
-#: ../../tutorial/database.rst:210
+#: ../../tutorial/database.rst:206
 msgid ""
 "There will now be a ``flaskr.sqlite`` file in the ``instance`` folder in "
 "your project."
-msgstr ""
-"اکنون فایل ``flaskr.sqlite`` در پوشه ``instance`` در پروژه خواهد بود."
+msgstr "اکنون فایل ``flaskr.sqlite`` در پوشه ``instance`` در پروژه خواهد بود."
 
-#: ../../tutorial/database.rst:213
+#: ../../tutorial/database.rst:209
 msgid "Continue to :doc:`views`."
 msgstr "با :doc:`views` ادامه دهید."
+

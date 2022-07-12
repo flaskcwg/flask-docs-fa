@@ -37,12 +37,14 @@ context, which also pushes an :doc:`app context </appcontext>`. When the
 request ends it pops the request context then the application context.
 
 The context is unique to each thread (or other worker type).
-:data:`request` cannot be passed to another thread, the other thread
-will have a different context stack and will not know about the request
-the parent thread was pointing to.
+:data:`request` cannot be passed to another thread, the other thread has
+a different context space and will not know about the request the parent
+thread was pointing to.
 
-Context locals are implemented in Werkzeug. See :doc:`werkzeug:local`
-for more information on how this works internally.
+Context locals are implemented using Python's :mod:`contextvars` and
+Werkzeug's :class:`~werkzeug.local.LocalProxy`. Python manages the
+lifetime of context vars automatically, and local proxy wraps that
+low-level interface to make the data easier to work with.
 
 
 Manually Push a Context
@@ -87,10 +89,9 @@ How the Context Works
 
 The :meth:`Flask.wsgi_app` method is called to handle each request. It
 manages the contexts during the request. Internally, the request and
-application contexts work as stacks, :data:`_request_ctx_stack` and
-:data:`_app_ctx_stack`. When contexts are pushed onto the stack, the
+application contexts work like stacks. When contexts are pushed, the
 proxies that depend on them are available and point at information from
-the top context on the stack.
+the top item.
 
 When the request starts, a :class:`~ctx.RequestContext` is created and
 pushed, which creates and pushes an :class:`~ctx.AppContext` first if
@@ -99,10 +100,10 @@ these contexts are pushed, the :data:`current_app`, :data:`g`,
 :data:`request`, and :data:`session` proxies are available to the
 original thread handling the request.
 
-Because the contexts are stacks, other contexts may be pushed to change
-the proxies during a request. While this is not a common pattern, it
-can be used in advanced applications to, for example, do internal
-redirects or chain different applications together.
+Other contexts may be pushed to change the proxies during a request.
+While this is not a common pattern, it can be used in advanced
+applications to, for example, do internal redirects or chain different
+applications together.
 
 After the request is dispatched and a response is generated and sent,
 the request context is popped, which then pops the application context.
@@ -217,25 +218,6 @@ sent:
 
 #.  :data:`request_tearing_down` is sent after the
     :meth:`~Flask.teardown_request` functions are called.
-
-
-Context Preservation on Error
------------------------------
-
-At the end of a request, the request context is popped and all data
-associated with it is destroyed. If an error occurs during development,
-it is useful to delay destroying the data for debugging purposes.
-
-When the development server is running in development mode (the
-``FLASK_ENV`` environment variable is set to ``'development'``), the
-error and data will be preserved and shown in the interactive debugger.
-
-This behavior can be controlled with the
-:data:`PRESERVE_CONTEXT_ON_EXCEPTION` config. As described above, it
-defaults to ``True`` in the development environment.
-
-Do not enable :data:`PRESERVE_CONTEXT_ON_EXCEPTION` in production, as it
-will cause your application to leak memory on exceptions.
 
 
 .. _notes-on-proxies:

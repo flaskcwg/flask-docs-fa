@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 15:03+0330\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -46,28 +46,34 @@ msgstr ""
 #: ../../server.rst:21
 msgid ""
 "The ``flask run`` command line script is the recommended way to run the "
-"development server. It requires setting the ``FLASK_APP`` environment "
-"variable to point to your application, and ``FLASK_ENV=development`` to "
-"fully enable development mode."
+"development server. Use the ``--app`` option to point to your "
+"application, and the ``--env development`` option to fully enable "
+"development mode."
 msgstr ""
 
-#: ../../server.rst:28
+#: ../../server.rst:30
+msgid ""
+"These options (and any others) can also be set using environment "
+"variables."
+msgstr ""
+
+#: ../../server.rst:35
 msgid "Bash"
 msgstr ""
 
-#: ../../server.rst:36
+#: ../../server.rst:43
 msgid "Fish"
 msgstr ""
 
-#: ../../server.rst:44
+#: ../../server.rst:51
 msgid "CMD"
 msgstr ""
 
-#: ../../server.rst:52
+#: ../../server.rst:59
 msgid "Powershell"
 msgstr ""
 
-#: ../../server.rst:60
+#: ../../server.rst:67
 msgid ""
 "This enables the development environment, including the interactive "
 "debugger and reloader, and then starts the server on "
@@ -76,72 +82,72 @@ msgid ""
 " using the CLI."
 msgstr ""
 
-#: ../../server.rst:68
+#: ../../server.rst:75
 msgid ""
-"Prior to Flask 1.0 the ``FLASK_ENV`` environment variable was not "
-"supported and you needed to enable debug mode by exporting "
-"``FLASK_DEBUG=1``. This can still be used to control debug mode, but you "
-"should prefer setting the development environment as shown above."
+"Debug mode can be controlled separately from the development environment "
+"with the ``--debug/--no-debug`` option or the ``FLASK_DEBUG`` environment"
+" variable. This is how older versions of Flask worked. You should prefer "
+"setting the development environment as shown above."
 msgstr ""
 
-#: ../../server.rst:78
+#: ../../server.rst:85
 msgid "Address already in use"
 msgstr ""
 
-#: ../../server.rst:80
+#: ../../server.rst:87
 msgid ""
 "If another program is already using port 5000, you'll see an ``OSError`` "
 "when the server tries to start. It may have one of the following "
 "messages:"
 msgstr ""
 
-#: ../../server.rst:84
+#: ../../server.rst:91
 msgid "``OSError: [Errno 98] Address already in use``"
 msgstr ""
 
-#: ../../server.rst:85
+#: ../../server.rst:92
 msgid ""
 "``OSError: [WinError 10013] An attempt was made to access a socket in a "
 "way forbidden by its access permissions``"
 msgstr ""
 
-#: ../../server.rst:88
+#: ../../server.rst:95
 msgid ""
 "Either identify and stop the other program, or use ``flask run --port "
 "5001`` to pick a different port."
 msgstr ""
 
-#: ../../server.rst:91
+#: ../../server.rst:98
 msgid ""
 "You can use ``netstat`` or ``lsof`` to identify what process id is using "
 "a port, then use other operating system tools stop that process. The "
 "following example shows that process id 6847 is using port 5000."
 msgstr ""
 
-#: ../../server.rst:97
+#: ../../server.rst:104
 msgid "``netstat`` (Linux)"
 msgstr ""
 
-#: ../../server.rst:104
+#: ../../server.rst:111
 msgid "``lsof`` (macOS / Linux)"
 msgstr ""
 
-#: ../../server.rst:111
+#: ../../server.rst:118
 msgid "``netstat`` (Windows)"
 msgstr ""
 
-#: ../../server.rst:118
+#: ../../server.rst:125
 msgid ""
 "macOS Monterey and later automatically starts a service that uses port "
 "5000. To disable the service, go to System Preferences, Sharing, and "
 "disable \"AirPlay Receiver\"."
 msgstr ""
 
-#: ../../server.rst:124
+#: ../../server.rst:131
 msgid "Lazy or Eager Loading"
 msgstr ""
 
-#: ../../server.rst:126
+#: ../../server.rst:133
 msgid ""
 "When using the ``flask run`` command with the reloader, the server will "
 "continue to run even if you introduce syntax errors or other "
@@ -150,7 +156,7 @@ msgid ""
 " feature is called \"lazy loading\"."
 msgstr ""
 
-#: ../../server.rst:132
+#: ../../server.rst:139
 msgid ""
 "If a syntax error is already present when calling ``flask run``, it will "
 "fail immediately and show the traceback rather than waiting until the "
@@ -158,18 +164,18 @@ msgid ""
 "while still allowing the server to handle errors on reload."
 msgstr ""
 
-#: ../../server.rst:137
+#: ../../server.rst:144
 msgid ""
 "To override this behavior and always fail immediately, even on reload, "
 "pass the ``--eager-loading`` option. To always keep the server running, "
 "even on the initial call, pass ``--lazy-loading``."
 msgstr ""
 
-#: ../../server.rst:143
+#: ../../server.rst:150
 msgid "In Code"
 msgstr ""
 
-#: ../../server.rst:145
+#: ../../server.rst:152
 msgid ""
 "As an alternative to the ``flask run`` command, the development server "
 "can also be started from Python with the :meth:`Flask.run` method. This "
@@ -178,14 +184,14 @@ msgid ""
 " there are errors when reloading."
 msgstr ""
 
-#: ../../server.rst:151
+#: ../../server.rst:158
 msgid ""
 "``debug=True`` can be passed to enable the debugger and reloader, but the"
 " ``FLASK_ENV=development`` environment variable is still required to "
 "fully enable development mode."
 msgstr ""
 
-#: ../../server.rst:155
+#: ../../server.rst:162
 msgid ""
 "Place the call in a main block, otherwise it will interfere when trying "
 "to import and run the application with a production server later."
@@ -213,3 +219,25 @@ msgstr ""
 #~ "to System Preferences, Sharing, and "
 #~ "disable \"AirPlay Receiver\"."
 #~ msgstr ""
+
+#~ msgid ""
+#~ "The ``flask run`` command line script"
+#~ " is the recommended way to run "
+#~ "the development server. It requires "
+#~ "setting the ``FLASK_APP`` environment variable"
+#~ " to point to your application, and"
+#~ " ``FLASK_ENV=development`` to fully enable "
+#~ "development mode."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Prior to Flask 1.0 the ``FLASK_ENV`` "
+#~ "environment variable was not supported "
+#~ "and you needed to enable debug "
+#~ "mode by exporting ``FLASK_DEBUG=1``. This "
+#~ "can still be used to control debug"
+#~ " mode, but you should prefer setting"
+#~ " the development environment as shown "
+#~ "above."
+#~ msgstr ""
+

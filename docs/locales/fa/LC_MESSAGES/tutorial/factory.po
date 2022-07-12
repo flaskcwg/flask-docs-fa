@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 15:03+0330\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: 2021-12-13 16:08+0330\n"
 "Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -223,27 +223,11 @@ msgstr ""
 "راه‌اندازی می‌کند. می‌توانید آن را در حال اجرا رها کنید و فقط با دنبال "
 "کردن آموزش، صفحه مرورگر را دوباره بارگذاری کنید."
 
-#: ../../tutorial/factory.rst:140
-msgid "Bash"
-msgstr "Bash"
-
-#: ../../tutorial/factory.rst:148
-msgid "Fish"
-msgstr "Fish"
-
-#: ../../tutorial/factory.rst:156
-msgid "CMD"
-msgstr "CMD"
-
-#: ../../tutorial/factory.rst:164
-msgid "Powershell"
-msgstr "Powershell"
-
-#: ../../tutorial/factory.rst:172
+#: ../../tutorial/factory.rst:142
 msgid "You'll see output similar to this:"
 msgstr "خروجی مشابه این را خواهید دید:"
 
-#: ../../tutorial/factory.rst:184
+#: ../../tutorial/factory.rst:154
 msgid ""
 "Visit http://127.0.0.1:5000/hello in a browser and you should see the "
 "\"Hello, World!\" message. Congratulations, you're now running your Flask"
@@ -253,7 +237,7 @@ msgstr ""
 "\"Hello, World!\" را ببنید. تبریک! شما الان برنامه فلاسکتان را اجرا "
 "میکنید!"
 
-#: ../../tutorial/factory.rst:188
+#: ../../tutorial/factory.rst:158
 msgid ""
 "If another program is already using port 5000, you'll see ``OSError: "
 "[Errno 98]`` or ``OSError: [WinError 10013]`` when the server tries to "
@@ -264,6 +248,19 @@ msgstr ""
 "[Errno 98]`` را مشاهده خواهید کرد. برای نحوه رسیدگی به آن به :ref"
 ":`address-already-in-use` مراجعه کنید."
 
-#: ../../tutorial/factory.rst:193
+#: ../../tutorial/factory.rst:163
 msgid "Continue to :doc:`database`."
 msgstr "با :doc:`database` ادامه دهید."
+
+#~ msgid "Bash"
+#~ msgstr "Bash"
+
+#~ msgid "Fish"
+#~ msgstr "Fish"
+
+#~ msgid "CMD"
+#~ msgstr "CMD"
+
+#~ msgid "Powershell"
+#~ msgstr "Powershell"
+

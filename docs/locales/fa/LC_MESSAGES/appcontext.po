@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 08:56+0330\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
@@ -177,28 +177,31 @@ msgid ""
 msgstr ""
 
 #: ../../appcontext.rst:141
-msgid ""
-"If you're writing an extension, :data:`g` should be reserved for user "
-"code. You may store internal data on the context itself, but be sure to "
-"use a sufficiently unique name. The current context is accessed with "
-":data:`_app_ctx_stack.top <_app_ctx_stack>`. For more information see "
-":doc:`/extensiondev`."
-msgstr ""
-
-#: ../../appcontext.rst:149
 msgid "Events and Signals"
 msgstr ""
 
-#: ../../appcontext.rst:151
+#: ../../appcontext.rst:143
 msgid ""
 "The application will call functions registered with "
 ":meth:`~Flask.teardown_appcontext` when the application context is "
 "popped."
 msgstr ""
 
-#: ../../appcontext.rst:155
+#: ../../appcontext.rst:147
 msgid ""
 "If :data:`~signals.signals_available` is true, the following signals are "
 "sent: :data:`appcontext_pushed`, :data:`appcontext_tearing_down`, and "
 ":data:`appcontext_popped`."
 msgstr ""
+
+#~ msgid ""
+#~ "If you're writing an extension, "
+#~ ":data:`g` should be reserved for user"
+#~ " code. You may store internal data"
+#~ " on the context itself, but be "
+#~ "sure to use a sufficiently unique "
+#~ "name. The current context is accessed"
+#~ " with :data:`_app_ctx_stack.top <_app_ctx_stack>`. "
+#~ "For more information see :doc:`/extensiondev`."
+#~ msgstr ""
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-07 17:01+0430\n"
+"POT-Creation-Date: 2022-06-20 15:30+0430\n"
 "PO-Revision-Date: 2022-04-16 00:40+0430\n"
 "Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -21,6 +21,9 @@ msgstr ""
 #: ../../index.rst:4
 msgid "Welcome to Flask"
 msgstr "به فلاسک خوش آمدید"
+
+msgid "فلاسک: توسعه وب، یکبار برای همیشه"
+msgstr ""
 
 #: ../../index.rst:11
 msgid ""
@@ -92,3 +95,4 @@ msgstr "یادداشت های طراحی، اطلاعات حقوقی و تغیی
 
 #~ msgid "Flask: web development, one drop at a time"
 #~ msgstr "فلاسک: توسعه وب، یکبار برای همیشه"
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-19 14:23+0430\n"
+"POT-Creation-Date: 2022-07-12 17:06+0430\n"
 "PO-Revision-Date: 2022-02-15 18:22+0330\n"
 "Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -56,7 +56,7 @@ msgstr ""
 ":file:`__init__.py` تغییر دهید. (حتما ابتدا همه فایل‌های ``.pyc`` را حذف "
 "کنید، در غیر این احتمال دارد، که همه چیز خراب شود.)"
 
-#: ../../patterns/packages.rst:29 ../../patterns/packages.rst:151
+#: ../../patterns/packages.rst:29 ../../patterns/packages.rst:98
 msgid "You should then end up with something like that::"
 msgstr "پس از آن باید به چیزی شبیه به این برسید ::"
 
@@ -75,46 +75,24 @@ msgstr ""
 ":file:`yourapplication` با محتویات زیر اضافه کنید::"
 
 #: ../../patterns/packages.rst:59
+msgid "Install your application so it is importable:"
+msgstr ""
+
+#: ../../patterns/packages.rst:65
+#, fuzzy
 msgid ""
-"In order to run the application you need to export an environment "
-"variable that tells Flask where to find the application instance:"
+"To use the ``flask`` command and run your application you need to set the"
+" ``--app`` option that tells Flask where to find the application "
+"instance:"
 msgstr ""
 "برای اجرای برنامه باید یک متغیر محیطی صادر کنید که به فلاسک می‌گوید کجا "
 "نمونه برنامه را پیدا کند:"
 
-#: ../../patterns/packages.rst:64 ../../patterns/packages.rst:94
-msgid "Bash"
-msgstr "Bash"
-
-#: ../../patterns/packages.rst:70 ../../patterns/packages.rst:100
-msgid "Fish"
-msgstr "Fish"
-
-#: ../../patterns/packages.rst:76 ../../patterns/packages.rst:106
-msgid "CMD"
-msgstr "CMD"
-
-#: ../../patterns/packages.rst:82 ../../patterns/packages.rst:112
-msgid "Powershell"
-msgstr "Powershell"
-
-#: ../../patterns/packages.rst:88
-msgid ""
-"If you are outside of the project directory make sure to provide the "
-"exact path to your application directory. Similarly you can turn on the "
-"development features like this:"
+#: ../../patterns/packages.rst:69
+msgid "$ flask --app yourapplication run"
 msgstr ""
-"اگر خارج از دایرکتوری پروژه هستید، مطمئن شوید که مسیر دقیق دایرکتوری "
-"برنامه خود را ارائه کرده اید. به طور مشابه، می توانید ویژگی های توسعه را "
-"مانند این فعال کنید:"
 
-#: ../../patterns/packages.rst:118
-msgid ""
-"In order to install and run the application you need to issue the "
-"following commands::"
-msgstr "برای نصب و اجرای برنامه باید دستورات زیر را صادر کنید ::"
-
-#: ../../patterns/packages.rst:124
+#: ../../patterns/packages.rst:71
 msgid ""
 "What did we gain from this?  Now we can restructure the application a bit"
 " into multiple modules.  The only thing you have to remember is the "
@@ -124,7 +102,7 @@ msgstr ""
 "ماژول تغییر ساختار دهیم. تنها چیزی که باید به خاطر بسپارید چک لیست سریع "
 "زیر است:"
 
-#: ../../patterns/packages.rst:128
+#: ../../patterns/packages.rst:75
 msgid ""
 "the `Flask` application object creation has to be in the "
 ":file:`__init__.py` file.  That way each module can import it safely and "
@@ -134,7 +112,7 @@ msgstr ""
 "ترتیب هر ماژول می تواند آن را با خیال راحت وارد کند و متغیر `__name__` به"
 " بسته صحیح حل می شود."
 
-#: ../../patterns/packages.rst:131
+#: ../../patterns/packages.rst:78
 msgid ""
 "all the view functions (the ones with a :meth:`~flask.Flask.route` "
 "decorator on top) have to be imported in the :file:`__init__.py` file. "
@@ -146,19 +124,19 @@ msgstr ""
 "بلکه ماژولی که در آن قرار دارد. ماژول نما را **بعد از ایجاد شی برنامه** "
 "وارد کنید."
 
-#: ../../patterns/packages.rst:136
+#: ../../patterns/packages.rst:83
 msgid "Here's an example :file:`__init__.py`::"
 msgstr "این یک مثال است :file:`__init__.py` ::"
 
-#: ../../patterns/packages.rst:143
+#: ../../patterns/packages.rst:90
 msgid "And this is what :file:`views.py` would look like::"
 msgstr "و این شبیه چیزی است که :file:`views.py` نوشته می‌شود::"
 
-#: ../../patterns/packages.rst:166
+#: ../../patterns/packages.rst:113
 msgid "Circular Imports"
 msgstr "واردات دایره ای"
 
-#: ../../patterns/packages.rst:168
+#: ../../patterns/packages.rst:115
 msgid ""
 "Every Python programmer hates them, and yet we just added some: circular "
 "imports (That's when two modules depend on each other.  In this case "
@@ -176,11 +154,11 @@ msgstr ""
 ":file:`__init__.py` استفاده نمی کنیم و فقط از وارد شدن ماژول اطمینان می "
 "دهیم و این کار را در پایین فایل انجام می دهیم."
 
-#: ../../patterns/packages.rst:178
+#: ../../patterns/packages.rst:125
 msgid "Working with Blueprints"
 msgstr "کار با طرح ها (Blueprints)"
 
-#: ../../patterns/packages.rst:180
+#: ../../patterns/packages.rst:127
 msgid ""
 "If you have larger applications it's recommended to divide them into "
 "smaller groups where each group is implemented with the help of a "
@@ -205,3 +183,35 @@ msgstr ""
 #~ " دور زدن آن وجود ندارد. بخش "
 #~ ":doc:`/becomingbig` را برای الهام گرفتن "
 #~ "از نحوه برخورد با آن بررسی کنید."
+
+#~ msgid "Bash"
+#~ msgstr "Bash"
+
+#~ msgid "Fish"
+#~ msgstr "Fish"
+
+#~ msgid "CMD"
+#~ msgstr "CMD"
+
+#~ msgid "Powershell"
+#~ msgstr "Powershell"
+
+#~ msgid ""
+#~ "If you are outside of the project"
+#~ " directory make sure to provide the"
+#~ " exact path to your application "
+#~ "directory. Similarly you can turn on "
+#~ "the development features like this:"
+#~ msgstr ""
+#~ "اگر خارج از دایرکتوری پروژه هستید، "
+#~ "مطمئن شوید که مسیر دقیق دایرکتوری "
+#~ "برنامه خود را ارائه کرده اید. به"
+#~ " طور مشابه، می توانید ویژگی های "
+#~ "توسعه را مانند این فعال کنید:"
+
+#~ msgid ""
+#~ "In order to install and run the"
+#~ " application you need to issue the"
+#~ " following commands::"
+#~ msgstr "برای نصب و اجرای برنامه باید دستورات زیر را صادر کنید ::"
+

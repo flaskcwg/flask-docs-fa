@@ -32,7 +32,7 @@ jobs:
       - name: install dependencies 📦
         run: |
           pip install -r requirements/docs.txt
-          pip install PyGithub
+          pip install -U PyGithub potodo
           pip install -e .
       - name: Generate Translation Files 📚
         run: |
