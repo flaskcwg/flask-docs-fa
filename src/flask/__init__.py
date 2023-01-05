@@ -42,7 +42,7 @@ from .templating import render_template_string as render_template_string
 from .templating import stream_template as stream_template
 from .templating import stream_template_string as stream_template_string
 
-__version__ = "2.2.3.dev"
+__version__ = "2.3.0.dev"
 
 
 def __getattr__(name):
@@ -69,4 +69,3 @@ def __getattr__(name):
         return __request_ctx_stack
 
     raise AttributeError(name)
-

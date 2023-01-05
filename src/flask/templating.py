@@ -142,19 +142,9 @@ def render_template(
         a list is given, the first name to exist will be rendered.
     :param context: The variables to make available in the template.
     """
-    ctx = _app_ctx_stack.top
-
-    if ctx is None:
-        raise RuntimeError(
-            "This function can only be used when an application context is active."
-        )
-
-    ctx.app.update_template_context(context)
-    return _render(
-        ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-        context,
-        ctx.app,
-    )
+    app = current_app._get_current_object()  # type: ignore[attr-defined]
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+    return _render(app, template, context)
 
 
 def render_template_string(source: str, **context: t.Any) -> str:
@@ -164,12 +154,59 @@ def render_template_string(source: str, **context: t.Any) -> str:
     :param source: The source code of the template to render.
     :param context: The variables to make available in the template.
     """
-    ctx = _app_ctx_stack.top
+    app = current_app._get_current_object()  # type: ignore[attr-defined]
+    template = app.jinja_env.from_string(source)
+    return _render(app, template, context)
 
-    if ctx is None:
-        raise RuntimeError(
-            "This function can only be used when an application context is active."
-        )
 
-    ctx.app.update_template_context(context)
-    return _render(ctx.app.jinja_env.from_string(source), context, ctx.app)
+def _stream(
+    app: "Flask", template: Template, context: t.Dict[str, t.Any]
+) -> t.Iterator[str]:
+    app.update_template_context(context)
+    before_render_template.send(app, template=template, context=context)
+
+    def generate() -> t.Iterator[str]:
+        yield from template.generate(context)
+        template_rendered.send(app, template=template, context=context)
+
+    rv = generate()
+
+    # If a request context is active, keep it while generating.
+    if request:
+        rv = stream_with_context(rv)
+
+    return rv
+
+
+def stream_template(
+    template_name_or_list: t.Union[str, Template, t.List[t.Union[str, Template]]],
+    **context: t.Any
+) -> t.Iterator[str]:
+    """Render a template by name with the given context as a stream.
+    This returns an iterator of strings, which can be used as a
+    streaming response from a view.
+
+    :param template_name_or_list: The name of the template to render. If
+        a list is given, the first name to exist will be rendered.
+    :param context: The variables to make available in the template.
+
+    .. versionadded:: 2.2
+    """
+    app = current_app._get_current_object()  # type: ignore[attr-defined]
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+    return _stream(app, template, context)
+
+
+def stream_template_string(source: str, **context: t.Any) -> t.Iterator[str]:
+    """Render a template from the given source string with the given
+    context as a stream. This returns an iterator of strings, which can
+    be used as a streaming response from a view.
+
+    :param source: The source code of the template to render.
+    :param context: The variables to make available in the template.
+
+    .. versionadded:: 2.2
+    """
+    app = current_app._get_current_object()  # type: ignore[attr-defined]
+    template = app.jinja_env.from_string(source)
+    return _stream(app, template, context)

@@ -1,3 +1,11 @@
+Version 2.3.0
+-------------
+
+Unreleased
+
+-   Ensure subdomains are applied with nested blueprints. :issue:`4834`
+
+
 Version 2.2.3
 -------------
 

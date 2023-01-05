@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-05 18:50+0330\n"
+"POT-Creation-Date: 2023-01-05 19:48+0330\n"
 "PO-Revision-Date: 2022-05-24 17:22+0430\n"
 "Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
@@ -268,20 +268,11 @@ msgid ""
 ":meth:`~flask.Flask.teardown_request`."
 msgstr ""
 
-#: ../../extensiondev.rst:190
-msgid ""
-"An older technique for storing context data was to store it on "
-"``_app_ctx_stack.top`` or ``_request_ctx_stack.top``. However, this just "
-"moves the same namespace collision problem elsewhere (although less "
-"likely) and modifies objects that are very internal to Flask's "
-"operations. Prefer storing data under a unique name in ``g``."
-msgstr ""
-
-#: ../../extensiondev.rst:198
+#: ../../extensiondev.rst:192
 msgid "Views and Models"
 msgstr ""
 
-#: ../../extensiondev.rst:200
+#: ../../extensiondev.rst:194
 msgid ""
 "Your extension views might want to interact with specific models in your "
 "database, or some other extension or data connected to your application. "
@@ -290,7 +281,7 @@ msgid ""
 "read posts."
 msgstr ""
 
-#: ../../extensiondev.rst:206
+#: ../../extensiondev.rst:200
 msgid ""
 "The ``Post`` model needs to subclass the Flask-SQLAlchemy ``db.Model`` "
 "object, but that's only available once you've created an instance of that"
@@ -298,14 +289,14 @@ msgid ""
 " view code, defined before the model exists, access the model?"
 msgstr ""
 
-#: ../../extensiondev.rst:211
+#: ../../extensiondev.rst:205
 msgid ""
 "One method could be to use :doc:`views`. During ``__init__``, create the "
 "model, then create the views by passing the model to the view class's "
 ":meth:`~views.View.as_view` method."
 msgstr ""
 
-#: ../../extensiondev.rst:241
+#: ../../extensiondev.rst:235
 msgid ""
 "Another technique could be to use an attribute on the extension, such as "
 "``self.post_model`` from above. Add the extension to ``app.extensions`` "
@@ -313,7 +304,7 @@ msgid ""
 "``current_app.extensions[\"simple_blog\"].post_model`` from views."
 msgstr ""
 
-#: ../../extensiondev.rst:246
+#: ../../extensiondev.rst:240
 msgid ""
 "You may also want to provide base classes so that users can provide their"
 " own ``Post`` model that conforms to the API your extension expects. So "
@@ -321,7 +312,7 @@ msgid ""
 "``blog.post_model``."
 msgstr ""
 
-#: ../../extensiondev.rst:251
+#: ../../extensiondev.rst:245
 msgid ""
 "As you can see, this can get a bit complex. Unfortunately, there's no "
 "perfect solution here, only different strategies and tradeoffs depending "
@@ -331,11 +322,11 @@ msgid ""
 "`GitHub Discussions`_."
 msgstr ""
 
-#: ../../extensiondev.rst:260
+#: ../../extensiondev.rst:254
 msgid "Recommended Extension Guidelines"
 msgstr ""
 
-#: ../../extensiondev.rst:262
+#: ../../extensiondev.rst:256
 msgid ""
 "Flask previously had the concept of \"approved extensions\", where the "
 "Flask maintainers evaluated the quality, support, and compatibility of "
@@ -345,7 +336,7 @@ msgid ""
 "ecosystem remain consistent and compatible."
 msgstr ""
 
-#: ../../extensiondev.rst:269
+#: ../../extensiondev.rst:263
 msgid ""
 "An extension requires a maintainer. In the event an extension author "
 "would like to move beyond the project, the project should find a new "
@@ -354,7 +345,7 @@ msgid ""
 "for community maintenance with oversight from the Pallets maintainers."
 msgstr ""
 
-#: ../../extensiondev.rst:275
+#: ../../extensiondev.rst:269
 msgid ""
 "The naming scheme is *Flask-ExtensionName* or *ExtensionName-Flask*. It "
 "must provide exactly one package or module named "
@@ -363,7 +354,7 @@ msgstr ""
 "طرح نامگذاری *Flask-نام‌افزونه* یا *نام‌افزونه-Flask* است. باید دقیقاً یک"
 " بسته یا ماژول به نام ``نام_افزونه_flask`` ارائه دهد."
 
-#: ../../extensiondev.rst:278
+#: ../../extensiondev.rst:272
 #, fuzzy
 msgid ""
 "The extension must use an open source license. The Python web ecosystem "
@@ -371,11 +362,11 @@ msgid ""
 "available."
 msgstr "افزونه باید دارای مجوز BSD یا MIT و همچنین منبع باز و در دسترس عموم باشد."
 
-#: ../../extensiondev.rst:281
+#: ../../extensiondev.rst:275
 msgid "The extension's API must have the following characteristics:"
 msgstr "API افزونه باید دارای ویژگی های زیر باشد:"
 
-#: ../../extensiondev.rst:283
+#: ../../extensiondev.rst:277
 msgid ""
 "It must support multiple applications running in the same Python process."
 " Use ``current_app`` instead of ``self.app``, store configuration and "
@@ -385,7 +376,7 @@ msgstr ""
 " ``self.app`` از ``current_app`` استفاده کنید، پیکربندی و وضعیت را در هر "
 "نمونه برنامه ذخیره کنید."
 
-#: ../../extensiondev.rst:286
+#: ../../extensiondev.rst:280
 msgid ""
 "It must be possible to use the factory pattern for creating applications."
 " Use the ``ext.init_app()`` pattern."
@@ -393,7 +384,7 @@ msgstr ""
 "باید امکان استفاده از الگوی کارخانه برای ایجاد برنامه ها وجود داشته باشد."
 " از الگوی ``ext.init_app()`` استفاده کنید."
 
-#: ../../extensiondev.rst:289
+#: ../../extensiondev.rst:283
 #, fuzzy
 msgid ""
 "From a clone of the repository, an extension with its dependencies must "
@@ -402,7 +393,7 @@ msgstr ""
 "از یک کلون مخزن، یک افزونه با وابستگی های آن باید با ``pip install -e .``"
 " قابل نصب باشد."
 
-#: ../../extensiondev.rst:291
+#: ../../extensiondev.rst:285
 msgid ""
 "It must ship tests that can be invoked with a common tool like ``tox -e "
 "py``, ``nox -s test`` or ``pytest``. If not using ``tox``, the test "
@@ -410,21 +401,21 @@ msgid ""
 "be part of the sdist distribution."
 msgstr ""
 
-#: ../../extensiondev.rst:295
+#: ../../extensiondev.rst:289
 msgid ""
 "A link to the documentation or project website must be in the PyPI "
 "metadata or the readme. The documentation should use the Flask theme from"
 " the `Official Pallets Themes`_."
 msgstr ""
 
-#: ../../extensiondev.rst:298
+#: ../../extensiondev.rst:292
 msgid ""
 "The extension's dependencies should not use upper bounds or assume any "
 "particular version scheme, but should use lower bounds to indicate "
 "minimum compatibility support. For example, ``sqlalchemy>=1.4``."
 msgstr ""
 
-#: ../../extensiondev.rst:302
+#: ../../extensiondev.rst:296
 msgid ""
 "Indicate the versions of Python supported using "
 "``python_requires=\">=version\"``. Flask itself supports Python >=3.7 as "
@@ -1103,5 +1094,17 @@ msgstr ""
 #~ "or would not be used in the "
 #~ "CLI outside a reqeust, use "
 #~ ":meth:`~flask.Flask.teardown_request`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An older technique for storing context"
+#~ " data was to store it on "
+#~ "``_app_ctx_stack.top`` or ``_request_ctx_stack.top``. "
+#~ "However, this just moves the same "
+#~ "namespace collision problem elsewhere "
+#~ "(although less likely) and modifies "
+#~ "objects that are very internal to "
+#~ "Flask's operations. Prefer storing data "
+#~ "under a unique name in ``g``."
 #~ msgstr ""
 
