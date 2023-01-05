@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 17:06+0430\n"
+"POT-Creation-Date: 2023-01-05 18:50+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../server.rst:4
 msgid "Development Server"
@@ -24,8 +24,8 @@ msgstr ""
 #: ../../server.rst:6
 msgid ""
 "Flask provides a ``run`` command to run the application with a "
-"development server. In development mode, this server provides an "
-"interactive debugger and will reload when code is changed."
+"development server. In debug mode, this server provides an interactive "
+"debugger and will reload when code is changed."
 msgstr ""
 
 #: ../../server.rst:12
@@ -45,118 +45,85 @@ msgstr ""
 
 #: ../../server.rst:21
 msgid ""
-"The ``flask run`` command line script is the recommended way to run the "
+"The ``flask run`` CLI command is the recommended way to run the "
 "development server. Use the ``--app`` option to point to your "
-"application, and the ``--env development`` option to fully enable "
-"development mode."
+"application, and the ``--debug`` option to enable debug mode."
 msgstr ""
 
-#: ../../server.rst:30
+#: ../../server.rst:29
 msgid ""
-"These options (and any others) can also be set using environment "
-"variables."
+"This enables debug mode, including the interactive debugger and reloader,"
+" and then starts the server on http://localhost:5000/. Use ``flask run "
+"--help`` to see the available options, and :doc:`/cli` for detailed "
+"instructions about configuring and using the CLI."
 msgstr ""
 
-#: ../../server.rst:35
-msgid "Bash"
-msgstr ""
-
-#: ../../server.rst:43
-msgid "Fish"
-msgstr ""
-
-#: ../../server.rst:51
-msgid "CMD"
-msgstr ""
-
-#: ../../server.rst:59
-msgid "Powershell"
-msgstr ""
-
-#: ../../server.rst:67
-msgid ""
-"This enables the development environment, including the interactive "
-"debugger and reloader, and then starts the server on "
-"http://localhost:5000/. Use ``flask run --help`` to see the available "
-"options, and  :doc:`/cli` for detailed instructions about configuring and"
-" using the CLI."
-msgstr ""
-
-#: ../../server.rst:75
-msgid ""
-"Debug mode can be controlled separately from the development environment "
-"with the ``--debug/--no-debug`` option or the ``FLASK_DEBUG`` environment"
-" variable. This is how older versions of Flask worked. You should prefer "
-"setting the development environment as shown above."
-msgstr ""
-
-#: ../../server.rst:85
+#: ../../server.rst:38
 msgid "Address already in use"
 msgstr ""
 
-#: ../../server.rst:87
+#: ../../server.rst:40
 msgid ""
 "If another program is already using port 5000, you'll see an ``OSError`` "
 "when the server tries to start. It may have one of the following "
 "messages:"
 msgstr ""
 
-#: ../../server.rst:91
+#: ../../server.rst:44
 msgid "``OSError: [Errno 98] Address already in use``"
 msgstr ""
 
-#: ../../server.rst:92
+#: ../../server.rst:45
 msgid ""
 "``OSError: [WinError 10013] An attempt was made to access a socket in a "
 "way forbidden by its access permissions``"
 msgstr ""
 
-#: ../../server.rst:95
+#: ../../server.rst:48
 msgid ""
 "Either identify and stop the other program, or use ``flask run --port "
 "5001`` to pick a different port."
 msgstr ""
 
-#: ../../server.rst:98
+#: ../../server.rst:51
 msgid ""
 "You can use ``netstat`` or ``lsof`` to identify what process id is using "
 "a port, then use other operating system tools stop that process. The "
 "following example shows that process id 6847 is using port 5000."
 msgstr ""
 
-#: ../../server.rst:104
+#: ../../server.rst:57
 msgid "``netstat`` (Linux)"
 msgstr ""
 
-#: ../../server.rst:111
+#: ../../server.rst:64
 msgid "``lsof`` (macOS / Linux)"
 msgstr ""
 
-#: ../../server.rst:118
+#: ../../server.rst:71
 msgid "``netstat`` (Windows)"
 msgstr ""
 
-#: ../../server.rst:125
+#: ../../server.rst:78
 msgid ""
 "macOS Monterey and later automatically starts a service that uses port "
 "5000. To disable the service, go to System Preferences, Sharing, and "
 "disable \"AirPlay Receiver\"."
 msgstr ""
 
-#: ../../server.rst:131
-msgid "Lazy or Eager Loading"
+#: ../../server.rst:84
+msgid "Deferred Errors on Reload"
 msgstr ""
 
-#: ../../server.rst:133
+#: ../../server.rst:86
 msgid ""
 "When using the ``flask run`` command with the reloader, the server will "
 "continue to run even if you introduce syntax errors or other "
 "initialization errors into the code. Accessing the site will show the "
-"interactive debugger for the error, rather than crashing the server. This"
-" feature is called \"lazy loading\"."
+"interactive debugger for the error, rather than crashing the server."
 msgstr ""
 
-#: ../../server.rst:139
+#: ../../server.rst:91
 msgid ""
 "If a syntax error is already present when calling ``flask run``, it will "
 "fail immediately and show the traceback rather than waiting until the "
@@ -164,34 +131,20 @@ msgid ""
 "while still allowing the server to handle errors on reload."
 msgstr ""
 
-#: ../../server.rst:144
-msgid ""
-"To override this behavior and always fail immediately, even on reload, "
-"pass the ``--eager-loading`` option. To always keep the server running, "
-"even on the initial call, pass ``--lazy-loading``."
-msgstr ""
-
-#: ../../server.rst:150
+#: ../../server.rst:98
 msgid "In Code"
 msgstr ""
 
-#: ../../server.rst:152
+#: ../../server.rst:100
 msgid ""
-"As an alternative to the ``flask run`` command, the development server "
-"can also be started from Python with the :meth:`Flask.run` method. This "
-"method takes arguments similar to the CLI options to control the server. "
-"The main difference from the CLI command is that the server will crash if"
-" there are errors when reloading."
+"The development server can also be started from Python with the "
+":meth:`Flask.run` method. This method takes arguments similar to the CLI "
+"options to control the server. The main difference from the CLI command "
+"is that the server will crash if there are errors when reloading. "
+"``debug=True`` can be passed to enable debug mode."
 msgstr ""
 
-#: ../../server.rst:158
-msgid ""
-"``debug=True`` can be passed to enable the debugger and reloader, but the"
-" ``FLASK_ENV=development`` environment variable is still required to "
-"fully enable development mode."
-msgstr ""
-
-#: ../../server.rst:162
+#: ../../server.rst:105
 msgid ""
 "Place the call in a main block, otherwise it will interfere when trying "
 "to import and run the application with a production server later."
@@ -239,5 +192,105 @@ msgstr ""
 #~ " mode, but you should prefer setting"
 #~ " the development environment as shown "
 #~ "above."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Flask provides a ``run`` command to "
+#~ "run the application with a development"
+#~ " server. In development mode, this "
+#~ "server provides an interactive debugger "
+#~ "and will reload when code is "
+#~ "changed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``flask run`` command line script"
+#~ " is the recommended way to run "
+#~ "the development server. Use the "
+#~ "``--app`` option to point to your "
+#~ "application, and the ``--env development`` "
+#~ "option to fully enable development mode."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "These options (and any others) can "
+#~ "also be set using environment variables."
+#~ msgstr ""
+
+#~ msgid "Bash"
+#~ msgstr ""
+
+#~ msgid "Fish"
+#~ msgstr ""
+
+#~ msgid "CMD"
+#~ msgstr ""
+
+#~ msgid "Powershell"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This enables the development environment, "
+#~ "including the interactive debugger and "
+#~ "reloader, and then starts the server "
+#~ "on http://localhost:5000/. Use ``flask run "
+#~ "--help`` to see the available options,"
+#~ " and  :doc:`/cli` for detailed instructions"
+#~ " about configuring and using the CLI."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Debug mode can be controlled separately"
+#~ " from the development environment with "
+#~ "the ``--debug/--no-debug`` option or the"
+#~ " ``FLASK_DEBUG`` environment variable. This "
+#~ "is how older versions of Flask "
+#~ "worked. You should prefer setting the"
+#~ " development environment as shown above."
+#~ msgstr ""
+
+#~ msgid "Lazy or Eager Loading"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When using the ``flask run`` command "
+#~ "with the reloader, the server will "
+#~ "continue to run even if you "
+#~ "introduce syntax errors or other "
+#~ "initialization errors into the code. "
+#~ "Accessing the site will show the "
+#~ "interactive debugger for the error, "
+#~ "rather than crashing the server. This"
+#~ " feature is called \"lazy loading\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To override this behavior and always "
+#~ "fail immediately, even on reload, pass"
+#~ " the ``--eager-loading`` option. To "
+#~ "always keep the server running, even "
+#~ "on the initial call, pass ``--lazy-"
+#~ "loading``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As an alternative to the ``flask "
+#~ "run`` command, the development server "
+#~ "can also be started from Python "
+#~ "with the :meth:`Flask.run` method. This "
+#~ "method takes arguments similar to the"
+#~ " CLI options to control the server."
+#~ " The main difference from the CLI "
+#~ "command is that the server will "
+#~ "crash if there are errors when "
+#~ "reloading."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``debug=True`` can be passed to enable"
+#~ " the debugger and reloader, but the"
+#~ " ``FLASK_ENV=development`` environment variable "
+#~ "is still required to fully enable "
+#~ "development mode."
 #~ msgstr ""
 

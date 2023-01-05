@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-19 14:23+0430\n"
+"POT-Creation-Date: 2023-01-05 18:50+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../design.rst:2
 msgid "Design Decisions in Flask"
@@ -187,10 +187,34 @@ msgid ""
 msgstr ""
 
 #: ../../design.rst:134
-msgid "Micro with Dependencies"
+msgid "What does \"micro\" mean?"
 msgstr ""
 
 #: ../../design.rst:136
+msgid ""
+"“Micro” does not mean that your whole web application has to fit into a "
+"single Python file (although it certainly can), nor does it mean that "
+"Flask is lacking in functionality. The \"micro\" in microframework means "
+"Flask aims to keep the core simple but extensible. Flask won't make many "
+"decisions for you, such as what database to use. Those decisions that it "
+"does make, such as what templating engine to use, are easy to change.  "
+"Everything else is up to you, so that Flask can be everything you need "
+"and nothing you don't."
+msgstr ""
+
+#: ../../design.rst:144
+msgid ""
+"By default, Flask does not include a database abstraction layer, form "
+"validation or anything else where different libraries already exist that "
+"can handle that. Instead, Flask supports extensions to add such "
+"functionality to your application as if it was implemented in Flask "
+"itself. Numerous extensions provide database integration, form "
+"validation, upload handling, various open authentication technologies, "
+"and more. Flask may be \"micro\", but it's ready for production use on a "
+"variety of needs."
+msgstr ""
+
+#: ../../design.rst:152
 msgid ""
 "Why does Flask call itself a microframework and yet it depends on two "
 "libraries (namely Werkzeug and Jinja2).  Why shouldn't it?  If we look "
@@ -206,7 +230,7 @@ msgid ""
 " advantage."
 msgstr ""
 
-#: ../../design.rst:149
+#: ../../design.rst:165
 msgid ""
 "Flask is a framework that takes advantage of the work already done by "
 "Werkzeug to properly interface WSGI (which can be a complex task at "
@@ -216,11 +240,11 @@ msgid ""
 "others."
 msgstr ""
 
-#: ../../design.rst:157
+#: ../../design.rst:173
 msgid "Thread Locals"
 msgstr ""
 
-#: ../../design.rst:159
+#: ../../design.rst:175
 msgid ""
 "Flask uses thread local objects (context local objects in fact, they "
 "support greenlet contexts as well) for request, session and an extra "
@@ -228,7 +252,7 @@ msgid ""
 "and isn't that a bad idea?"
 msgstr ""
 
-#: ../../design.rst:164
+#: ../../design.rst:180
 msgid ""
 "Yes it is usually not such a bright idea to use thread locals.  They "
 "cause troubles for servers that are not based on the concept of threads "
@@ -237,11 +261,11 @@ msgid ""
 " to make it quick and easy to write a traditional web application."
 msgstr ""
 
-#: ../../design.rst:172
+#: ../../design.rst:188
 msgid "Async/await and ASGI support"
 msgstr ""
 
-#: ../../design.rst:174
+#: ../../design.rst:190
 msgid ""
 "Flask supports ``async`` coroutines for view functions by executing the "
 "coroutine on a separate thread instead of using an event loop on the main"
@@ -252,7 +276,7 @@ msgid ""
 "of the threads."
 msgstr ""
 
-#: ../../design.rst:182
+#: ../../design.rst:198
 msgid ""
 "Due to how tied to WSGI Flask's code is, it's not clear if it's possible "
 "to make the ``Flask`` class support ASGI and WSGI at the same time. Work "
@@ -260,15 +284,15 @@ msgid ""
 "eventually enable support in Flask as well."
 msgstr ""
 
-#: ../../design.rst:187
+#: ../../design.rst:203
 msgid "See :doc:`/async-await` for more discussion."
 msgstr ""
 
-#: ../../design.rst:191
+#: ../../design.rst:207
 msgid "What Flask is, What Flask is Not"
 msgstr ""
 
-#: ../../design.rst:193
+#: ../../design.rst:209
 msgid ""
 "Flask will never have a database layer.  It will not have a form library "
 "or anything else in that direction.  Flask itself just bridges to "
@@ -277,7 +301,7 @@ msgid ""
 "as logging. Everything else is up for extensions."
 msgstr ""
 
-#: ../../design.rst:199
+#: ../../design.rst:215
 msgid ""
 "Why is this the case?  Because people have different preferences and "
 "requirements and Flask could not meet those if it would force any of this"
@@ -285,7 +309,18 @@ msgid ""
 "engine in some sort.  However not every application needs a SQL database."
 msgstr ""
 
-#: ../../design.rst:204
+#: ../../design.rst:220
+msgid ""
+"As your codebase grows, you are free to make the design decisions "
+"appropriate for your project.  Flask will continue to provide a very "
+"simple glue layer to the best that Python has to offer.  You can "
+"implement advanced patterns in SQLAlchemy or another database tool, "
+"introduce non-relational data persistence as appropriate, and take "
+"advantage of framework-agnostic tools built for WSGI, the Python web "
+"interface."
+msgstr ""
+
+#: ../../design.rst:227
 msgid ""
 "The idea of Flask is to build a good foundation for all applications. "
 "Everything else is up to you or extensions."
@@ -297,3 +332,7 @@ msgstr ""
 #~ "inspiration for larger applications based "
 #~ "on Flask."
 #~ msgstr ""
+
+#~ msgid "Micro with Dependencies"
+#~ msgstr ""
+

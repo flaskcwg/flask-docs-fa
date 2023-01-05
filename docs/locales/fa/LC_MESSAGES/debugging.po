@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 17:06+0430\n"
+"POT-Creation-Date: 2023-01-05 18:50+0330\n"
 "PO-Revision-Date: 2022-01-04 17:43+0330\n"
 "Last-Translator: Komeil Parseh  <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../debugging.rst:2
 msgid "Debugging Application Errors"
@@ -88,31 +88,23 @@ msgstr ""
 "دیباگر را در محیط تولید اجرا نکنید."
 
 #: ../../debugging.rst:42
+msgid ""
+"The debugger is enabled by default when the development server is run in "
+"debug mode."
+msgstr ""
+
+#: ../../debugging.rst:48
+msgid ""
+"When running from Python code, passing ``debug=True`` enables debug mode,"
+" which is mostly equivalent."
+msgstr ""
+
+#: ../../debugging.rst:55
 #, fuzzy
 msgid ""
-"To enable the debugger, run the development server with the environment "
-"set to ``development``. This puts Flask in debug mode, which changes how "
-"it handles some errors, and enables the debugger and reloader."
-msgstr ""
-"برای فعال کردن دیباگر، سرور توسعه را با متغیر محیطی ``FLASK_ENV``  که روی"
-" ``development`` تنظیم شده است اجرا کنید. این فلاسک را در حالت اشکال "
-"زدایی قرار می دهد، که نحوه رسیدگی به برخی از خطاها را تغییر می دهد و "
-"اشکال زدا و بارگذاری مجدد را فعال می کند."
-
-#: ../../debugging.rst:50
-msgid ""
-"``FLASK_ENV`` can also be set as an environment variable. When running "
-"from Python code, passing ``debug=True`` enables debug mode, which is "
-"mostly equivalent. Debug mode can be controlled separately from the "
-"environment with the ``--debug/--no-debug`` option or the ``FLASK_DEBUG``"
-" environment variable."
-msgstr ""
-
-#: ../../debugging.rst:60
-msgid ""
 ":doc:`/server` and :doc:`/cli` have more information about running the "
-"debugger, debug mode, and development mode. More information about the "
-"debugger can be found in the `Werkzeug documentation "
+"debugger and debug mode. More information about the debugger can be found"
+" in the `Werkzeug documentation "
 "<https://werkzeug.palletsprojects.com/debug/>`__."
 msgstr ""
 ":doc:`/server` و :doc:`/cli` اطلاعات بیشتری در مورد اجرای دیباگر، حالت "
@@ -120,11 +112,11 @@ msgstr ""
 "می‌توانید در «مستندات `مستندات Werkzeug "
 "<https://werkzeug.palletsprojects.com/debug/>`__ بیابید."
 
-#: ../../debugging.rst:67
+#: ../../debugging.rst:61
 msgid "External Debuggers"
 msgstr "اشکال زدای خارجی"
 
-#: ../../debugging.rst:69
+#: ../../debugging.rst:63
 msgid ""
 "External debuggers, such as those provided by IDEs, can offer a more "
 "powerful debugging experience than the built-in debugger. They can also "
@@ -138,7 +130,7 @@ msgstr ""
 "صورت عدم بروز خطا استفاده کرد. برخی از آنها حتی یک حالت راه دور دارند تا "
 "بتوانید کدهای در حال اجرا روی دستگاه دیگری را اشکال زدایی کنید."
 
-#: ../../debugging.rst:75
+#: ../../debugging.rst:69
 msgid ""
 "When using an external debugger, the app should still be in debug mode, "
 "but it can be useful to disable the built-in debugger and reloader, which"
@@ -148,11 +140,11 @@ msgstr ""
 "اشکال‌زدایی باشد، اما غیرفعال کردن اشکال‌زدای داخلی و بارگذاری مجدد، که "
 "می‌تواند تداخل ایجاد کند، می‌تواند مفید باشد."
 
-#: ../../debugging.rst:83
+#: ../../debugging.rst:77
 msgid "When running from Python:"
 msgstr "هنگام اجرا از پایتون:"
 
-#: ../../debugging.rst:89
+#: ../../debugging.rst:83
 msgid ""
 "Disabling these isn't required, an external debugger will continue to "
 "work with the following caveats. If the built-in debugger is not "
@@ -198,4 +190,32 @@ msgstr ""
 
 #~ msgid "When running from the command line:"
 #~ msgstr "هنگام اجرا از خط فرمان:"
+
+#~ msgid ""
+#~ "To enable the debugger, run the "
+#~ "development server with the environment "
+#~ "set to ``development``. This puts Flask"
+#~ " in debug mode, which changes how "
+#~ "it handles some errors, and enables "
+#~ "the debugger and reloader."
+#~ msgstr ""
+#~ "برای فعال کردن دیباگر، سرور توسعه "
+#~ "را با متغیر محیطی ``FLASK_ENV``  که "
+#~ "روی ``development`` تنظیم شده است اجرا"
+#~ " کنید. این فلاسک را در حالت "
+#~ "اشکال زدایی قرار می دهد، که نحوه"
+#~ " رسیدگی به برخی از خطاها را "
+#~ "تغییر می دهد و اشکال زدا و "
+#~ "بارگذاری مجدد را فعال می کند."
+
+#~ msgid ""
+#~ "``FLASK_ENV`` can also be set as "
+#~ "an environment variable. When running "
+#~ "from Python code, passing ``debug=True`` "
+#~ "enables debug mode, which is mostly "
+#~ "equivalent. Debug mode can be controlled"
+#~ " separately from the environment with "
+#~ "the ``--debug/--no-debug`` option or the"
+#~ " ``FLASK_DEBUG`` environment variable."
+#~ msgstr ""
 

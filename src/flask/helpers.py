@@ -29,22 +29,41 @@ def get_env() -> str:
     """Get the environment the app is running in, indicated by the
     :envvar:`FLASK_ENV` environment variable. The default is
     ``'production'``.
+
+    .. deprecated:: 2.2
+        Will be removed in Flask 2.3.
     """
+    import warnings
+
+    warnings.warn(
+        "'FLASK_ENV' and 'get_env' are deprecated and will be removed"
+        " in Flask 2.3. Use 'FLASK_DEBUG' instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     return os.environ.get("FLASK_ENV") or "production"
 
 
 def get_debug_flag() -> bool:
-    """Get whether debug mode should be enabled for the app, indicated
-    by the :envvar:`FLASK_DEBUG` environment variable. The default is
-    ``True`` if :func:`.get_env` returns ``'development'``, or ``False``
-    otherwise.
+    """Get whether debug mode should be enabled for the app, indicated by the
+    :envvar:`FLASK_DEBUG` environment variable. The default is ``False``.
     """
     val = os.environ.get("FLASK_DEBUG")
 
     if not val:
-        return get_env() == "development"
+        env = os.environ.get("FLASK_ENV")
 
-    return val.lower() not in ("0", "false", "no")
+        if env is not None:
+            print(
+                "'FLASK_ENV' is deprecated and will not be used in"
+                " Flask 2.3. Use 'FLASK_DEBUG' instead.",
+                file=sys.stderr,
+            )
+            return env == "development"
+
+        return False
+
+    return val.lower() not in {"0", "false", "no"}
 
 
 def get_load_dotenv(default: bool = True) -> bool:
@@ -130,7 +149,7 @@ def stream_with_context(
                 yield from gen
             finally:
                 if hasattr(gen, "close"):
-                    gen.close()  # type: ignore
+                    gen.close()
 
     # The trick is to start the generator.  Then the code execution runs until
     # the first dummy None is yielded at which point the context was already
@@ -268,7 +287,7 @@ def redirect(
     return _wz_redirect(location, code=code, Response=Response)
 
 
-def abort(  # type: ignore[misc]
+def abort(
     code: t.Union[int, "BaseResponse"], *args: t.Any, **kwargs: t.Any
 ) -> "te.NoReturn":
     """Raise an :exc:`~werkzeug.exceptions.HTTPException` for the given
@@ -395,7 +414,7 @@ def _prepare_send_file_kwargs(**kwargs: t.Any) -> t.Dict[str, t.Any]:
 
     kwargs.update(
         environ=request.environ,
-        use_x_sendfile=current_app.use_x_sendfile,
+        use_x_sendfile=current_app.config["USE_X_SENDFILE"],
         response_class=current_app.response_class,
         _root_path=current_app.root_path,  # type: ignore
     )
@@ -598,7 +617,7 @@ def get_root_path(import_name: str) -> str:
         return os.getcwd()
 
     if hasattr(loader, "get_filename"):
-        filepath = loader.get_filename(import_name)  # type: ignore
+        filepath = loader.get_filename(import_name)
     else:
         # Fall back to imports.
         __import__(import_name)

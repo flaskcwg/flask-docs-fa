@@ -213,7 +213,7 @@ def has_request_context() -> bool:
 
     .. versionadded:: 0.7
     """
-    return _cv_app.get(None) is not None
+    return _cv_request.get(None) is not None
 
 
 def has_app_context() -> bool:
@@ -223,7 +223,7 @@ def has_app_context() -> bool:
 
     .. versionadded:: 0.9
     """
-    return _cv_request.get(None) is not None
+    return _cv_app.get(None) is not None
 
 
 class AppContext:
@@ -307,6 +307,7 @@ class RequestContext:
         self.app = app
         if request is None:
             request = app.request_class(environ)
+            request.json_module = app.json
         self.request: Request = request
         self.url_adapter = None
         try:

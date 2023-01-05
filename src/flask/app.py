@@ -1,5 +1,6 @@
 import functools
 import inspect
+import json
 import logging
 import os
 import sys
@@ -31,7 +32,6 @@ from werkzeug.utils import redirect as _wz_redirect
 from werkzeug.wrappers import Response as BaseResponse
 
 from . import cli
-from . import json
 from . import typing as ft
 from .config import Config
 from .config import ConfigAttribute
@@ -46,11 +46,11 @@ from .globals import request_ctx
 from .globals import session
 from .helpers import _split_blueprint_path
 from .helpers import get_debug_flag
-from .helpers import get_env
 from .helpers import get_flashed_messages
 from .helpers import get_load_dotenv
 from .helpers import locked_cached_property
-from .json import jsonify
+from .json.provider import DefaultJSONProvider
+from .json.provider import JSONProvider
 from .logging import create_logger
 from .scaffold import _endpoint_from_view_func
 from .scaffold import _sentinel
@@ -100,7 +100,7 @@ else:
         return inspect.iscoroutinefunction(func)
 
 
-def _make_timedelta(value: t.Optional[timedelta]) -> t.Optional[timedelta]:
+def _make_timedelta(value: t.Union[timedelta, int, None]) -> t.Optional[timedelta]:
     if value is None or isinstance(value, timedelta):
         return value
 
@@ -274,11 +274,35 @@ class Flask(Scaffold):
     #: :data:`SECRET_KEY` configuration key. Defaults to ``None``.
     secret_key = ConfigAttribute("SECRET_KEY")
 
-    #: The secure cookie uses this for the name of the session cookie.
-    #:
-    #: This attribute can also be configured from the config with the
-    #: ``SESSION_COOKIE_NAME`` configuration key.  Defaults to ``'session'``
-    session_cookie_name = ConfigAttribute("SESSION_COOKIE_NAME")
+    @property
+    def session_cookie_name(self) -> str:
+        """The name of the cookie set by the session interface.
+
+        .. deprecated:: 2.2
+            Will be removed in Flask 2.3. Use ``app.config["SESSION_COOKIE_NAME"]``
+            instead.
+        """
+        import warnings
+
+        warnings.warn(
+            "'session_cookie_name' is deprecated and will be removed in Flask 2.3. Use"
+            " 'SESSION_COOKIE_NAME' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.config["SESSION_COOKIE_NAME"]
+
+    @session_cookie_name.setter
+    def session_cookie_name(self, value: str) -> None:
+        import warnings
+
+        warnings.warn(
+            "'session_cookie_name' is deprecated and will be removed in Flask 2.3. Use"
+            " 'SESSION_COOKIE_NAME' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self.config["SESSION_COOKIE_NAME"] = value
 
     #: A :class:`~datetime.timedelta` which is used to set the expiration
     #: date of a permanent session.  The default is 31 days which makes a
@@ -291,39 +315,163 @@ class Flask(Scaffold):
         "PERMANENT_SESSION_LIFETIME", get_converter=_make_timedelta
     )
 
-    #: A :class:`~datetime.timedelta` or number of seconds which is used
-    #: as the default ``max_age`` for :func:`send_file`. The default is
-    #: ``None``, which tells the browser to use conditional requests
-    #: instead of a timed cache.
-    #:
-    #: Configured with the :data:`SEND_FILE_MAX_AGE_DEFAULT`
-    #: configuration key.
-    #:
-    #: .. versionchanged:: 2.0
-    #:     Defaults to ``None`` instead of 12 hours.
-    send_file_max_age_default = ConfigAttribute(
-        "SEND_FILE_MAX_AGE_DEFAULT", get_converter=_make_timedelta
-    )
+    @property
+    def send_file_max_age_default(self) -> t.Optional[timedelta]:
+        """The default value for ``max_age`` for :func:`~flask.send_file`. The default
+        is ``None``, which tells the browser to use conditional requests instead of a
+        timed cache.
 
-    #: Enable this if you want to use the X-Sendfile feature.  Keep in
-    #: mind that the server has to support this.  This only affects files
-    #: sent with the :func:`send_file` method.
-    #:
-    #: .. versionadded:: 0.2
-    #:
-    #: This attribute can also be configured from the config with the
-    #: ``USE_X_SENDFILE`` configuration key.  Defaults to ``False``.
-    use_x_sendfile = ConfigAttribute("USE_X_SENDFILE")
+        .. deprecated:: 2.2
+            Will be removed in Flask 2.3. Use
+            ``app.config["SEND_FILE_MAX_AGE_DEFAULT"]`` instead.
 
-    #: The JSON encoder class to use.  Defaults to :class:`~flask.json.JSONEncoder`.
-    #:
-    #: .. versionadded:: 0.10
-    json_encoder = json.JSONEncoder
+        .. versionchanged:: 2.0
+            Defaults to ``None`` instead of 12 hours.
+        """
+        import warnings
 
-    #: The JSON decoder class to use.  Defaults to :class:`~flask.json.JSONDecoder`.
-    #:
-    #: .. versionadded:: 0.10
-    json_decoder = json.JSONDecoder
+        warnings.warn(
+            "'send_file_max_age_default' is deprecated and will be removed in Flask"
+            " 2.3. Use 'SEND_FILE_MAX_AGE_DEFAULT' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return _make_timedelta(self.config["SEND_FILE_MAX_AGE_DEFAULT"])
+
+    @send_file_max_age_default.setter
+    def send_file_max_age_default(self, value: t.Union[int, timedelta, None]) -> None:
+        import warnings
+
+        warnings.warn(
+            "'send_file_max_age_default' is deprecated and will be removed in Flask"
+            " 2.3. Use 'SEND_FILE_MAX_AGE_DEFAULT' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self.config["SEND_FILE_MAX_AGE_DEFAULT"] = _make_timedelta(value)
+
+    @property
+    def use_x_sendfile(self) -> bool:
+        """Enable this to use the ``X-Sendfile`` feature, assuming the server supports
+        it, from :func:`~flask.send_file`.
+
+        .. deprecated:: 2.2
+            Will be removed in Flask 2.3. Use ``app.config["USE_X_SENDFILE"]`` instead.
+        """
+        import warnings
+
+        warnings.warn(
+            "'use_x_sendfile' is deprecated and will be removed in Flask 2.3. Use"
+            " 'USE_X_SENDFILE' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.config["USE_X_SENDFILE"]
+
+    @use_x_sendfile.setter
+    def use_x_sendfile(self, value: bool) -> None:
+        import warnings
+
+        warnings.warn(
+            "'use_x_sendfile' is deprecated and will be removed in Flask 2.3. Use"
+            " 'USE_X_SENDFILE' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self.config["USE_X_SENDFILE"] = value
+
+    _json_encoder: t.Union[t.Type[json.JSONEncoder], None] = None
+    _json_decoder: t.Union[t.Type[json.JSONDecoder], None] = None
+
+    @property  # type: ignore[override]
+    def json_encoder(self) -> t.Type[json.JSONEncoder]:
+        """The JSON encoder class to use. Defaults to
+        :class:`~flask.json.JSONEncoder`.
+
+        .. deprecated:: 2.2
+             Will be removed in Flask 2.3. Customize
+             :attr:`json_provider_class` instead.
+
+        .. versionadded:: 0.10
+        """
+        import warnings
+
+        warnings.warn(
+            "'app.json_encoder' is deprecated and will be removed in Flask 2.3."
+            " Customize 'app.json_provider_class' or 'app.json' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+
+        if self._json_encoder is None:
+            from . import json
+
+            return json.JSONEncoder
+
+        return self._json_encoder
+
+    @json_encoder.setter
+    def json_encoder(self, value: t.Type[json.JSONEncoder]) -> None:
+        import warnings
+
+        warnings.warn(
+            "'app.json_encoder' is deprecated and will be removed in Flask 2.3."
+            " Customize 'app.json_provider_class' or 'app.json' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self._json_encoder = value
+
+    @property  # type: ignore[override]
+    def json_decoder(self) -> t.Type[json.JSONDecoder]:
+        """The JSON decoder class to use. Defaults to
+        :class:`~flask.json.JSONDecoder`.
+
+        .. deprecated:: 2.2
+             Will be removed in Flask 2.3. Customize
+             :attr:`json_provider_class` instead.
+
+        .. versionadded:: 0.10
+        """
+        import warnings
+
+        warnings.warn(
+            "'app.json_decoder' is deprecated and will be removed in Flask 2.3."
+            " Customize 'app.json_provider_class' or 'app.json' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+
+        if self._json_decoder is None:
+            from . import json
+
+            return json.JSONDecoder
+
+        return self._json_decoder
+
+    @json_decoder.setter
+    def json_decoder(self, value: t.Type[json.JSONDecoder]) -> None:
+        import warnings
+
+        warnings.warn(
+            "'app.json_decoder' is deprecated and will be removed in Flask 2.3."
+            " Customize 'app.json_provider_class' or 'app.json' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self._json_decoder = value
+
+    json_provider_class: t.Type[JSONProvider] = DefaultJSONProvider
+    """A subclass of :class:`~flask.json.provider.JSONProvider`. An
+    instance is created and assigned to :attr:`app.json` when creating
+    the app.
+
+    The default, :class:`~flask.json.provider.DefaultJSONProvider`, uses
+    Python's built-in :mod:`json` library. A different provider can use
+    a different JSON library.
+
+    .. versionadded:: 2.2
+    """
 
     #: Options that are passed to the Jinja environment in
     #: :meth:`create_jinja_environment`. Changing these options after
@@ -361,10 +509,10 @@ class Flask(Scaffold):
             "TRAP_HTTP_EXCEPTIONS": False,
             "EXPLAIN_TEMPLATE_LOADING": False,
             "PREFERRED_URL_SCHEME": "http",
-            "JSON_AS_ASCII": True,
-            "JSON_SORT_KEYS": True,
-            "JSONIFY_PRETTYPRINT_REGULAR": False,
-            "JSONIFY_MIMETYPE": "application/json",
+            "JSON_AS_ASCII": None,
+            "JSON_SORT_KEYS": None,
+            "JSONIFY_PRETTYPRINT_REGULAR": None,
+            "JSONIFY_MIMETYPE": None,
             "TEMPLATES_AUTO_RELOAD": None,
             "MAX_COOKIE_SIZE": 4093,
         }
@@ -410,7 +558,7 @@ class Flask(Scaffold):
         static_host: t.Optional[str] = None,
         host_matching: bool = False,
         subdomain_matching: bool = False,
-        template_folder: t.Optional[str] = "templates",
+        template_folder: t.Optional[t.Union[str, os.PathLike]] = "templates",
         instance_path: t.Optional[str] = None,
         instance_relative_config: bool = False,
         root_path: t.Optional[str] = None,
@@ -448,6 +596,22 @@ class Flask(Scaffold):
         #: .. versionadded:: 2.2
         #:     Moved from ``flask.abort``, which calls this object.
         self.aborter = self.make_aborter()
+
+        self.json: JSONProvider = self.json_provider_class(self)
+        """Provides access to JSON methods. Functions in ``flask.json``
+        will call methods on this provider when the application context
+        is active. Used for handling JSON requests and responses.
+
+        An instance of :attr:`json_provider_class`. Can be customized by
+        changing that attribute on a subclass, or by assigning to this
+        attribute afterwards.
+
+        The default, :class:`~flask.json.provider.DefaultJSONProvider`,
+        uses Python's built-in :mod:`json` library. A different provider
+        can use a different JSON library.
+
+        .. versionadded:: 2.2
+        """
 
         #: A list of functions that are called by
         #: :meth:`handle_url_build_error` when :meth:`.url_for` raises a
@@ -587,8 +751,18 @@ class Flask(Scaffold):
         """Returns the value of the ``PROPAGATE_EXCEPTIONS`` configuration
         value in case it's set, otherwise a sensible default is returned.
 
+        .. deprecated:: 2.2
+            Will be removed in Flask 2.3.
+
         .. versionadded:: 0.7
         """
+        import warnings
+
+        warnings.warn(
+            "'propagate_exceptions' is deprecated and will be removed in Flask 2.3.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         rv = self.config["PROPAGATE_EXCEPTIONS"]
         if rv is not None:
             return rv
@@ -653,7 +827,7 @@ class Flask(Scaffold):
         if instance_relative:
             root_path = self.instance_path
         defaults = dict(self.default_config)
-        defaults["ENV"] = get_env()
+        defaults["ENV"] = os.environ.get("FLASK_ENV") or "production"
         defaults["DEBUG"] = get_debug_flag()
         return self.config_class(root_path, defaults)
 
@@ -697,20 +871,37 @@ class Flask(Scaffold):
     @property
     def templates_auto_reload(self) -> bool:
         """Reload templates when they are changed. Used by
-        :meth:`create_jinja_environment`.
+        :meth:`create_jinja_environment`. It is enabled by default in debug mode.
 
-        This attribute can be configured with :data:`TEMPLATES_AUTO_RELOAD`. If
-        not set, it will be enabled in debug mode.
+        .. deprecated:: 2.2
+            Will be removed in Flask 2.3. Use ``app.config["TEMPLATES_AUTO_RELOAD"]``
+            instead.
 
         .. versionadded:: 1.0
             This property was added but the underlying config and behavior
             already existed.
         """
+        import warnings
+
+        warnings.warn(
+            "'templates_auto_reload' is deprecated and will be removed in Flask 2.3."
+            " Use 'TEMPLATES_AUTO_RELOAD' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         rv = self.config["TEMPLATES_AUTO_RELOAD"]
         return rv if rv is not None else self.debug
 
     @templates_auto_reload.setter
     def templates_auto_reload(self, value: bool) -> None:
+        import warnings
+
+        warnings.warn(
+            "'templates_auto_reload' is deprecated and will be removed in Flask 2.3."
+            " Use 'TEMPLATES_AUTO_RELOAD' in 'app.config' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         self.config["TEMPLATES_AUTO_RELOAD"] = value
 
     def create_jinja_environment(self) -> Environment:
@@ -731,7 +922,12 @@ class Flask(Scaffold):
             options["autoescape"] = self.select_jinja_autoescape
 
         if "auto_reload" not in options:
-            options["auto_reload"] = self.templates_auto_reload
+            auto_reload = self.config["TEMPLATES_AUTO_RELOAD"]
+
+            if auto_reload is None:
+                auto_reload = self.debug
+
+            options["auto_reload"] = auto_reload
 
         rv = self.jinja_environment(self, **options)
         rv.globals.update(
@@ -745,7 +941,7 @@ class Flask(Scaffold):
             session=session,
             g=g,
         )
-        rv.policies["json.dumps_function"] = json.dumps
+        rv.policies["json.dumps_function"] = self.json.dumps
         return rv
 
     def create_global_jinja_loader(self) -> DispatchingJinjaLoader:
@@ -765,11 +961,14 @@ class Flask(Scaffold):
         """Returns ``True`` if autoescaping should be active for the given
         template name. If no template name is given, returns `True`.
 
+        .. versionchanged:: 2.2
+            Autoescaping is now enabled by default for ``.svg`` files.
+
         .. versionadded:: 0.5
         """
         if filename is None:
             return True
-        return filename.endswith((".html", ".htm", ".xml", ".xhtml"))
+        return filename.endswith((".html", ".htm", ".xml", ".xhtml", ".svg"))
 
     def update_template_context(self, context: dict) -> None:
         """Update the template context with some commonly used variables.
@@ -811,38 +1010,59 @@ class Flask(Scaffold):
             rv.update(processor())
         return rv
 
-    #: What environment the app is running in. Flask and extensions may
-    #: enable behaviors based on the environment, such as enabling debug
-    #: mode. This maps to the :data:`ENV` config key. This is set by the
-    #: :envvar:`FLASK_ENV` environment variable and may not behave as
-    #: expected if set in code.
-    #:
-    #: **Do not enable development when deploying in production.**
-    #:
-    #: Default: ``'production'``
-    env = ConfigAttribute("ENV")
+    @property
+    def env(self) -> str:
+        """What environment the app is running in. This maps to the :data:`ENV` config
+        key.
+
+        **Do not enable development when deploying in production.**
+
+        Default: ``'production'``
+
+        .. deprecated:: 2.2
+            Will be removed in Flask 2.3.
+        """
+        import warnings
+
+        warnings.warn(
+            "'app.env' is deprecated and will be removed in Flask 2.3."
+            " Use 'app.debug' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.config["ENV"]
+
+    @env.setter
+    def env(self, value: str) -> None:
+        import warnings
+
+        warnings.warn(
+            "'app.env' is deprecated and will be removed in Flask 2.3."
+            " Use 'app.debug' instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        self.config["ENV"] = value
 
     @property
     def debug(self) -> bool:
-        """Whether debug mode is enabled. When using ``flask run`` to start
-        the development server, an interactive debugger will be shown for
-        unhandled exceptions, and the server will be reloaded when code
-        changes. This maps to the :data:`DEBUG` config key. This is
-        enabled when :attr:`env` is ``'development'`` and is overridden
-        by the ``FLASK_DEBUG`` environment variable. It may not behave as
-        expected if set in code.
+        """Whether debug mode is enabled. When using ``flask run`` to start the
+        development server, an interactive debugger will be shown for unhandled
+        exceptions, and the server will be reloaded when code changes. This maps to the
+        :data:`DEBUG` config key. It may not behave as expected if set late.
 
         **Do not enable debug mode when deploying in production.**
 
-        Default: ``True`` if :attr:`env` is ``'development'``, or
-        ``False`` otherwise.
+        Default: ``False``
         """
         return self.config["DEBUG"]
 
     @debug.setter
     def debug(self, value: bool) -> None:
         self.config["DEBUG"] = value
-        self.jinja_env.auto_reload = self.templates_auto_reload
+
+        if self.config["TEMPLATES_AUTO_RELOAD"] is None:
+            self.jinja_env.auto_reload = value
 
     def run(
         self,
@@ -899,9 +1119,7 @@ class Flask(Scaffold):
             If installed, python-dotenv will be used to load environment
             variables from :file:`.env` and :file:`.flaskenv` files.
 
-            If set, the :envvar:`FLASK_ENV` and :envvar:`FLASK_DEBUG`
-            environment variables will override :attr:`env` and
-            :attr:`debug`.
+            The :envvar:`FLASK_DEBUG` environment variable will override :attr:`debug`.
 
             Threaded mode is enabled by default.
 
@@ -928,7 +1146,12 @@ class Flask(Scaffold):
 
             # if set, let env vars override previous values
             if "FLASK_ENV" in os.environ:
-                self.env = get_env()
+                print(
+                    "'FLASK_ENV' is deprecated and will not be used in"
+                    " Flask 2.3. Use 'FLASK_DEBUG' instead.",
+                    file=sys.stderr,
+                )
+                self.config["ENV"] = os.environ.get("FLASK_ENV") or "production"
                 self.debug = get_debug_flag()
             elif "FLASK_DEBUG" in os.environ:
                 self.debug = get_debug_flag()
@@ -960,7 +1183,7 @@ class Flask(Scaffold):
         options.setdefault("use_debugger", self.debug)
         options.setdefault("threaded", True)
 
-        cli.show_server_banner(self.env, self.debug, self.name, False)
+        cli.show_server_banner(self.debug, self.name)
 
         from werkzeug.serving import run_simple
 
@@ -1482,8 +1705,12 @@ class Flask(Scaffold):
         """
         exc_info = sys.exc_info()
         got_request_exception.send(self, exception=e)
+        propagate = self.config["PROPAGATE_EXCEPTIONS"]
 
-        if self.propagate_exceptions:
+        if propagate is None:
+            propagate = self.testing or self.debug
+
+        if propagate:
             # Re-raise if called with an active exception, otherwise
             # raise the passed in exception.
             if exc_info[1] is e:
@@ -1926,7 +2153,7 @@ class Flask(Scaffold):
                 )
                 status = headers = None
             elif isinstance(rv, (dict, list)):
-                rv = jsonify(rv)
+                rv = self.json.response(rv)
             elif isinstance(rv, BaseResponse) or callable(rv):
                 # evaluate a WSGI callable, or coerce a different response
                 # class to the correct type
@@ -2224,7 +2451,7 @@ class Flask(Scaffold):
         :data:`request` point at the request for the created
         environment. ::
 
-            with test_request_context(...):
+            with app.test_request_context(...):
                 generate_report()
 
         When using the shell, it may be easier to push and pop the

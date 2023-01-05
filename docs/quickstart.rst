@@ -41,12 +41,12 @@ itself.
 
 To run the application, use the ``flask`` command or
 ``python -m flask``. You need to tell the Flask where your application
-is with the ``-app`` option.
+is with the ``--app`` option.
 
 .. code-block:: text
 
     $ flask --app hello run
-     * Serving Flask app 'hello' (lazy loading)
+     * Serving Flask app 'hello'
      * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
 
 .. admonition:: Application Discovery Behavior
@@ -104,14 +104,12 @@ error occurs during a request.
     security risk. Do not run the development server or debugger in a
     production environment.
 
-To enable all development features, set the ``--env`` option to
-``development``.
+To enable debug mode, use the ``--debug`` option.
 
 .. code-block:: text
 
-    $ flask --app hello --env development run
-     * Serving Flask app 'hello' (lazy loading)
-     * Environment: development
+    $ flask --app hello run --debug
+     * Serving Flask app 'hello'
      * Debug mode: on
      * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
      * Restarting with stat
@@ -120,8 +118,7 @@ To enable all development features, set the ``--env`` option to
 
 See also:
 
--   :doc:`/server` and :doc:`/cli` for information about running in
-    development mode.
+-   :doc:`/server` and :doc:`/cli` for information about running in debug mode.
 -   :doc:`/debugging` for information about using the built-in debugger
     and other debuggers.
 -   :doc:`/logging` and :doc:`/errorhandling` to log errors and display
@@ -359,6 +356,14 @@ Generating HTML from within Python is not fun, and actually pretty
 cumbersome because you have to do the HTML escaping on your own to keep
 the application secure.  Because of that Flask configures the `Jinja2
 <https://palletsprojects.com/p/jinja/>`_ template engine for you automatically.
+
+Templates can be used to generate any type of text file. For web applications, you'll
+primarily be generating HTML pages, but you can also generate markdown, plain text for
+emails, and anything else.
+
+For a reference to HTML, CSS, and other web APIs, use the `MDN Web Docs`_.
+
+.. _MDN Web Docs: https://developer.mozilla.org/
 
 To render a template you can use the :func:`~flask.render_template`
 method.  All you have to do is provide the name of the template and the
