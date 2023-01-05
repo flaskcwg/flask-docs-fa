@@ -1,3 +1,147 @@
+Version 2.2.3
+-------------
+
+Unreleased
+
+-   Autoescaping is now enabled by default for ``.svg`` files. Inside
+    templates this behavior can be changed with the ``autoescape`` tag.
+    :issue:`4831`
+-   Fix the type of ``template_folder`` to accept ``pathlib.Path``. :issue:`4892`
+-   Add ``--debug`` option to the ``flask run`` command. :issue:`4777`
+
+
+Version 2.2.2
+-------------
+
+Released 2022-08-08
+
+-   Update Werkzeug dependency to >= 2.2.2. This includes fixes related
+    to the new faster router, header parsing, and the development
+    server. :pr:`4754`
+-   Fix the default value for ``app.env`` to be ``"production"``. This
+    attribute remains deprecated. :issue:`4740`
+
+
+Version 2.2.1
+-------------
+
+Released 2022-08-03
+
+-   Setting or accessing ``json_encoder`` or ``json_decoder`` raises a
+    deprecation warning. :issue:`4732`
+
+
+Version 2.2.0
+-------------
+
+Released 2022-08-01
+
+-   Remove previously deprecated code. :pr:`4667`
+
+    -   Old names for some ``send_file`` parameters have been removed.
+        ``download_name`` replaces ``attachment_filename``, ``max_age``
+        replaces ``cache_timeout``, and ``etag`` replaces ``add_etags``.
+        Additionally, ``path`` replaces ``filename`` in
+        ``send_from_directory``.
+    -   The ``RequestContext.g`` property returning ``AppContext.g`` is
+        removed.
+
+-   Update Werkzeug dependency to >= 2.2.
+-   The app and request contexts are managed using Python context vars
+    directly rather than Werkzeug's ``LocalStack``. This should result
+    in better performance and memory use. :pr:`4682`
+
+    -   Extension maintainers, be aware that ``_app_ctx_stack.top``
+        and ``_request_ctx_stack.top`` are deprecated. Store data on
+        ``g`` instead using a unique prefix, like
+        ``g._extension_name_attr``.
+
+-   The ``FLASK_ENV`` environment variable and ``app.env`` attribute are
+    deprecated, removing the distinction between development and debug
+    mode. Debug mode should be controlled directly using the ``--debug``
+    option or ``app.run(debug=True)``. :issue:`4714`
+-   Some attributes that proxied config keys on ``app`` are deprecated:
+    ``session_cookie_name``, ``send_file_max_age_default``,
+    ``use_x_sendfile``, ``propagate_exceptions``, and
+    ``templates_auto_reload``. Use the relevant config keys instead.
+    :issue:`4716`
+-   Add new customization points to the ``Flask`` app object for many
+    previously global behaviors.
+
+    -   ``flask.url_for`` will call ``app.url_for``. :issue:`4568`
+    -   ``flask.abort`` will call ``app.aborter``.
+        ``Flask.aborter_class`` and ``Flask.make_aborter`` can be used
+        to customize this aborter. :issue:`4567`
+    -   ``flask.redirect`` will call ``app.redirect``. :issue:`4569`
+    -   ``flask.json`` is an instance of ``JSONProvider``. A different
+        provider can be set to use a different JSON library.
+        ``flask.jsonify`` will call ``app.json.response``, other
+        functions in ``flask.json`` will call corresponding functions in
+        ``app.json``. :pr:`4692`
+
+-   JSON configuration is moved to attributes on the default
+    ``app.json`` provider. ``JSON_AS_ASCII``, ``JSON_SORT_KEYS``,
+    ``JSONIFY_MIMETYPE``, and ``JSONIFY_PRETTYPRINT_REGULAR`` are
+    deprecated. :pr:`4692`
+-   Setting custom ``json_encoder`` and ``json_decoder`` classes on the
+    app or a blueprint, and the corresponding ``json.JSONEncoder`` and
+    ``JSONDecoder`` classes, are deprecated. JSON behavior can now be
+    overridden using the ``app.json`` provider interface. :pr:`4692`
+-   ``json.htmlsafe_dumps`` and ``json.htmlsafe_dump`` are deprecated,
+    the function is built-in to Jinja now. :pr:`4692`
+-   Refactor ``register_error_handler`` to consolidate error checking.
+    Rewrite some error messages to be more consistent. :issue:`4559`
+-   Use Blueprint decorators and functions intended for setup after
+    registering the blueprint will show a warning. In the next version,
+    this will become an error just like the application setup methods.
+    :issue:`4571`
+-   ``before_first_request`` is deprecated. Run setup code when creating
+    the application instead. :issue:`4605`
+-   Added the ``View.init_every_request`` class attribute. If a view
+    subclass sets this to ``False``, the view will not create a new
+    instance on every request. :issue:`2520`.
+-   A ``flask.cli.FlaskGroup`` Click group can be nested as a
+    sub-command in a custom CLI. :issue:`3263`
+-   Add ``--app`` and ``--debug`` options to the ``flask`` CLI, instead
+    of requiring that they are set through environment variables.
+    :issue:`2836`
+-   Add ``--env-file`` option to the ``flask`` CLI. This allows
+    specifying a dotenv file to load in addition to ``.env`` and
+    ``.flaskenv``. :issue:`3108`
+-   It is no longer required to decorate custom CLI commands on
+    ``app.cli`` or ``blueprint.cli`` with ``@with_appcontext``, an app
+    context will already be active at that point. :issue:`2410`
+-   ``SessionInterface.get_expiration_time`` uses a timezone-aware
+    value. :pr:`4645`
+-   View functions can return generators directly instead of wrapping
+    them in a ``Response``. :pr:`4629`
+-   Add ``stream_template`` and ``stream_template_string`` functions to
+    render a template as a stream of pieces. :pr:`4629`
+-   A new implementation of context preservation during debugging and
+    testing. :pr:`4666`
+
+    -   ``request``, ``g``, and other context-locals point to the
+        correct data when running code in the interactive debugger
+        console. :issue:`2836`
+    -   Teardown functions are always run at the end of the request,
+        even if the context is preserved. They are also run after the
+        preserved context is popped.
+    -   ``stream_with_context`` preserves context separately from a
+        ``with client`` block. It will be cleaned up when
+        ``response.get_data()`` or ``response.close()`` is called.
+
+-   Allow returning a list from a view function, to convert it to a
+    JSON response like a dict is. :issue:`4672`
+-   When type checking, allow ``TypedDict`` to be returned from view
+    functions. :pr:`4695`
+-   Remove the ``--eager-loading/--lazy-loading`` options from the
+    ``flask run`` command. The app is always eager loaded the first
+    time, then lazily loaded in the reloader. The reloader always prints
+    errors immediately but continues serving. Remove the internal
+    ``DispatchingApp`` middleware used by the previous implementation.
+    :issue:`4715`
+
+
 Version 2.1.3
 -------------
 
@@ -996,12 +1140,8 @@ Released 2011-09-29, codename Rakija
     earlier feedback when users forget to import view code ahead of
     time.
 -   Added the ability to register callbacks that are only triggered once
-<<<<<<< HEAD
-    at the beginning of the first request. (``before_first_request``)
-=======
     at the beginning of the first request with
     ``Flask.before_first_request``.
->>>>>>> sync
 -   Malformed JSON data will now trigger a bad request HTTP exception
     instead of a value error which usually would result in a 500
     internal server error if not handled. This is a backwards

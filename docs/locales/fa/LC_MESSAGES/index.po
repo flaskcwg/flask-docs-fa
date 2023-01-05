@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-20 15:30+0430\n"
+"POT-Creation-Date: 2023-01-05 18:50+0330\n"
 "PO-Revision-Date: 2022-04-16 00:40+0430\n"
 "Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
-"Plural-Forms: nplurals=2; plural=(n==0 || n==1)\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../index.rst:4
 msgid "Welcome to Flask"
 msgstr "به فلاسک خوش آمدید"
 
-msgid "فلاسک: توسعه وب، یکبار برای همیشه"
+msgid "Flask: web development, one drop at a time"
 msgstr ""
 
 #: ../../index.rst:11
@@ -65,13 +65,12 @@ msgstr "راهنمای کاربر"
 
 #: ../../index.rst:32
 msgid ""
-"This part of the documentation, which is mostly prose, begins with some "
-"background information about Flask, then focuses on step-by-step "
-"instructions for web development with Flask."
+"Flask provides configuration and conventions, with sensible defaults, to "
+"get started. This section of the documentation explains the different "
+"parts of the Flask framework and how they can be used, customized, and "
+"extended. Beyond Flask itself, look for community-maintained extensions "
+"to add even more functionality."
 msgstr ""
-"این قسمت از مستندات بیشتر متن هستند و با برخی از اطلاعات پس‌زمینه ای "
-"فلاسک شروع می‌شود. سپس بر روی دستور عمل های گام به گام توسعه وب با فلاسک "
-"تمرکز می‌کند."
 
 #: ../../index.rst:65
 msgid "API Reference"
@@ -89,10 +88,28 @@ msgstr ""
 msgid "Additional Notes"
 msgstr "یادداشت های اضافی"
 
-#: ../../index.rst:79
-msgid "Design notes, legal information and changelog are here for the interested."
-msgstr "یادداشت های طراحی، اطلاعات حقوقی و تغییرات در اینجا برای علاقمندان است."
-
 #~ msgid "Flask: web development, one drop at a time"
 #~ msgstr "فلاسک: توسعه وب، یکبار برای همیشه"
+
+#~ msgid "فلاسک: توسعه وب، یکبار برای همیشه"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This part of the documentation, which"
+#~ " is mostly prose, begins with some"
+#~ " background information about Flask, then"
+#~ " focuses on step-by-step instructions"
+#~ " for web development with Flask."
+#~ msgstr ""
+#~ "این قسمت از مستندات بیشتر متن "
+#~ "هستند و با برخی از اطلاعات "
+#~ "پس‌زمینه ای فلاسک شروع می‌شود. سپس "
+#~ "بر روی دستور عمل های گام به "
+#~ "گام توسعه وب با فلاسک تمرکز "
+#~ "می‌کند."
+
+#~ msgid ""
+#~ "Design notes, legal information and "
+#~ "changelog are here for the interested."
+#~ msgstr "یادداشت های طراحی، اطلاعات حقوقی و تغییرات در اینجا برای علاقمندان است."
 

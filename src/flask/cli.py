@@ -10,17 +10,15 @@ import traceback
 import typing as t
 from functools import update_wrapper
 from operator import attrgetter
-from threading import Lock
-from threading import Thread
 
 import click
 from click.core import ParameterSource
+from werkzeug import run_simple
 from werkzeug.serving import is_running_from_reloader
 from werkzeug.utils import import_string
 
 from .globals import current_app
 from .helpers import get_debug_flag
-from .helpers import get_env
 from .helpers import get_load_dotenv
 
 if t.TYPE_CHECKING:
@@ -216,8 +214,6 @@ def prepare_import(path):
 
 
 def locate_app(module_name, app_name, raise_if_not_found=True):
-    __traceback_hide__ = True  # noqa: F841
-
     try:
         __import__(module_name)
     except ImportError:
@@ -267,74 +263,6 @@ version_option = click.Option(
 )
 
 
-class DispatchingApp:
-    """Special application that dispatches to a Flask application which
-    is imported by name in a background thread.  If an error happens
-    it is recorded and shown as part of the WSGI handling which in case
-    of the Werkzeug debugger means that it shows up in the browser.
-    """
-
-    def __init__(self, loader, use_eager_loading=None):
-        self.loader = loader
-        self._app = None
-        self._lock = Lock()
-        self._bg_loading_exc = None
-
-        if use_eager_loading is None:
-            use_eager_loading = not is_running_from_reloader()
-
-        if use_eager_loading:
-            self._load_unlocked()
-        else:
-            self._load_in_background()
-
-    def _load_in_background(self):
-        # Store the Click context and push it in the loader thread so
-        # script_info is still available.
-        ctx = click.get_current_context(silent=True)
-
-        def _load_app():
-            __traceback_hide__ = True  # noqa: F841
-
-            with self._lock:
-                if ctx is not None:
-                    click.globals.push_context(ctx)
-
-                try:
-                    self._load_unlocked()
-                except Exception as e:
-                    self._bg_loading_exc = e
-
-        t = Thread(target=_load_app, args=())
-        t.start()
-
-    def _flush_bg_loading_exception(self):
-        __traceback_hide__ = True  # noqa: F841
-        exc = self._bg_loading_exc
-
-        if exc is not None:
-            self._bg_loading_exc = None
-            raise exc
-
-    def _load_unlocked(self):
-        __traceback_hide__ = True  # noqa: F841
-        self._app = rv = self.loader()
-        self._bg_loading_exc = None
-        return rv
-
-    def __call__(self, environ, start_response):
-        __traceback_hide__ = True  # noqa: F841
-        if self._app is not None:
-            return self._app(environ, start_response)
-        self._flush_bg_loading_exception()
-        with self._lock:
-            if self._app is not None:
-                rv = self._app
-            else:
-                rv = self._load_unlocked()
-            return rv(environ, start_response)
-
-
 class ScriptInfo:
     """Helper object to deal with Flask applications.  This is usually not
     necessary to interface with as it's used internally in the dispatching
@@ -366,8 +294,6 @@ class ScriptInfo:
         this multiple times will just result in the already loaded app to
         be returned.
         """
-        __traceback_hide__ = True  # noqa: F841
-
         if self._loaded_app is not None:
             return self._loaded_app
 
@@ -492,29 +418,6 @@ _app_option = click.Option(
 )
 
 
-def _set_env(ctx: click.Context, param: click.Option, value: str | None) -> str | None:
-    if value is None:
-        return None
-
-    # Set with env var instead of ScriptInfo.load so that it can be
-    # accessed early during a factory function.
-    os.environ["FLASK_ENV"] = value
-    return value
-
-
-_env_option = click.Option(
-    ["-E", "--env"],
-    metavar="NAME",
-    help=(
-        "The execution environment name to set in 'app.env'. Defaults to"
-        " 'production'. 'development' will enable 'app.debug' and start the"
-        " debugger and reloader when running the server."
-    ),
-    expose_value=False,
-    callback=_set_env,
-)
-
-
 def _set_debug(ctx: click.Context, param: click.Option, value: bool) -> bool | None:
     # If the flag isn't provided, it will default to False. Don't use
     # that, let debug be set by env in that case.
@@ -534,7 +437,7 @@ def _set_debug(ctx: click.Context, param: click.Option, value: bool) -> bool | N
 
 _debug_option = click.Option(
     ["--debug/--no-debug"],
-    help="Set 'app.debug' separately from '--env'.",
+    help="Set debug mode.",
     expose_value=False,
     callback=_set_debug,
 )
@@ -590,12 +493,10 @@ class FlaskGroup(AppGroup):
     :param load_dotenv: Load the nearest :file:`.env` and :file:`.flaskenv`
         files to set environment variables. Will also change the working
         directory to the directory containing the first file found.
-    :param set_debug_flag: Set the app's debug flag based on the active
-        environment
+    :param set_debug_flag: Set the app's debug flag.
 
     .. versionchanged:: 2.2
-        Added the ``-A/--app``, ``-E/--env``, ``--debug/--no-debug``,
-        and ``-e/--env-file`` options.
+        Added the ``-A/--app``, ``--debug/--no-debug``, ``-e/--env-file`` options.
 
     .. versionchanged:: 2.2
         An app context is pushed when running ``app.cli`` commands, so
@@ -620,7 +521,7 @@ class FlaskGroup(AppGroup):
         # callback. This allows users to make a custom group callback
         # without losing the behavior. --env-file must come first so
         # that it is eagerly evaluated before --app.
-        params.extend((_env_file_option, _app_option, _env_option, _debug_option))
+        params.extend((_env_file_option, _app_option, _debug_option))
 
         if add_version_option:
             params.append(version_option)
@@ -811,7 +712,7 @@ def load_dotenv(path: str | os.PathLike | None = None) -> bool:
     return loaded  # True if at least one file was located and loaded.
 
 
-def show_server_banner(env, debug, app_import_path, eager_loading):
+def show_server_banner(debug, app_import_path):
     """Show extra startup messages the first time the server is run,
     ignoring the reloader.
     """
@@ -819,22 +720,7 @@ def show_server_banner(env, debug, app_import_path, eager_loading):
         return
 
     if app_import_path is not None:
-        message = f" * Serving Flask app {app_import_path!r}"
-
-        if not eager_loading:
-            message += " (lazy loading)"
-
-        click.echo(message)
-
-    click.echo(f" * Environment: {env}")
-
-    if env == "production":
-        click.secho(
-            "   WARNING: This is a development server. Do not use it in"
-            " a production deployment.\n   Use a production WSGI server"
-            " instead.",
-            fg="red",
-        )
+        click.echo(f" * Serving Flask app '{app_import_path}'")
 
     if debug is not None:
         click.echo(f" * Debug mode: {'on' if debug else 'off'}")
@@ -964,12 +850,6 @@ class SeparatedPathType(click.Path):
     "is active if debug is enabled.",
 )
 @click.option(
-    "--eager-loading/--lazy-loading",
-    default=None,
-    help="Enable or disable eager loading. By default eager "
-    "loading is enabled if the reloader is disabled.",
-)
-@click.option(
     "--with-threads/--without-threads",
     default=True,
     help="Enable or disable multithreading.",
@@ -1000,7 +880,6 @@ def run_command(
     port,
     reload,
     debugger,
-    eager_loading,
     with_threads,
     cert,
     extra_files,
@@ -1011,10 +890,26 @@ def run_command(
     This server is for development purposes only. It does not provide
     the stability, security, or performance of production WSGI servers.
 
-    The reloader and debugger are enabled by default with the
-    '--env development' or '--debug' options.
+    The reloader and debugger are enabled by default with the '--debug'
+    option.
     """
-    app = DispatchingApp(info.load_app, use_eager_loading=eager_loading)
+    try:
+        app = info.load_app()
+    except Exception as e:
+        if is_running_from_reloader():
+            # When reloading, print out the error immediately, but raise
+            # it later so the debugger or server can handle it.
+            traceback.print_exc()
+            err = e
+
+            def app(environ, start_response):
+                raise err from None
+
+        else:
+            # When not reloading, raise the error immediately so the
+            # command fails.
+            raise e from None
+
     debug = get_debug_flag()
 
     if reload is None:
@@ -1023,9 +918,7 @@ def run_command(
     if debugger is None:
         debugger = debug
 
-    show_server_banner(get_env(), debug, info.app_import_path, eager_loading)
-
-    from werkzeug.serving import run_simple
+    show_server_banner(debug, info.app_import_path)
 
     run_simple(
         host,
@@ -1038,6 +931,9 @@ def run_command(
         extra_files=extra_files,
         exclude_patterns=exclude_patterns,
     )
+
+
+run_command.params.insert(0, _debug_option)
 
 
 @click.command("shell", short_help="Run a shell in the app context.")
@@ -1054,7 +950,7 @@ def shell_command() -> None:
 
     banner = (
         f"Python {sys.version} on {sys.platform}\n"
-        f"App: {current_app.import_name} [{current_app.env}]\n"
+        f"App: {current_app.import_name}\n"
         f"Instance: {current_app.instance_path}"
     )
     ctx: dict = {}

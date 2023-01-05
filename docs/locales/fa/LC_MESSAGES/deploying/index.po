@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-17 12:24+0430\n"
+"POT-Creation-Date: 2023-01-05 18:50+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../deploying/index.rst:2
 msgid "Deploying to Production"
@@ -95,43 +95,37 @@ msgstr ""
 
 #: ../../deploying/index.rst:69
 msgid ""
-"`Heroku <https://devcenter.heroku.com/articles/getting-started-with-"
-"python>`_"
-msgstr ""
-
-#: ../../deploying/index.rst:70
-msgid ""
 "`Google App Engine "
 "<https://cloud.google.com/appengine/docs/standard/python3/building-app>`_"
 msgstr ""
 
-#: ../../deploying/index.rst:71
+#: ../../deploying/index.rst:70
 msgid ""
 "`Google Cloud Run <https://cloud.google.com/run/docs/quickstarts/build-"
 "and-deploy/deploy-python-service>`_"
 msgstr ""
 
-#: ../../deploying/index.rst:72
+#: ../../deploying/index.rst:71
 msgid ""
 "`AWS Elastic Beanstalk "
 "<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-"
 "python-flask.html>`_"
 msgstr ""
 
-#: ../../deploying/index.rst:73
+#: ../../deploying/index.rst:72
 msgid ""
 "`Microsoft Azure <https://docs.microsoft.com/en-us/azure/app-service"
 "/quickstart-python>`_"
 msgstr ""
 
-#: ../../deploying/index.rst:75
+#: ../../deploying/index.rst:74
 msgid ""
 "This list is not exhaustive, and you should evaluate these and other "
 "services based on your application's needs. Different services will have "
 "different capabilities, configuration, pricing, and support."
 msgstr ""
 
-#: ../../deploying/index.rst:79
+#: ../../deploying/index.rst:78
 msgid ""
 "You'll probably need to :doc:`proxy_fix` when using most hosting "
 "platforms."
@@ -200,3 +194,9 @@ msgstr ""
 
 #~ msgid "Self-hosted options"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "`Heroku <https://devcenter.heroku.com/articles/getting-"
+#~ "started-with-python>`_"
+#~ msgstr ""
+

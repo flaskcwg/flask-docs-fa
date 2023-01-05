@@ -1,13 +1,13 @@
 import importlib.util
+import json
 import os
 import pathlib
 import pkgutil
 import sys
 import typing as t
 from collections import defaultdict
+from datetime import timedelta
 from functools import update_wrapper
-from json import JSONDecoder
-from json import JSONEncoder
 
 from jinja2 import FileSystemLoader
 from werkzeug.exceptions import default_exceptions
@@ -76,18 +76,24 @@ class Scaffold:
 
     #: JSON encoder class used by :func:`flask.json.dumps`. If a
     #: blueprint sets this, it will be used instead of the app's value.
-    json_encoder: t.Optional[t.Type[JSONEncoder]] = None
+    #:
+    #: .. deprecated:: 2.2
+    #:      Will be removed in Flask 2.3.
+    json_encoder: t.Union[t.Type[json.JSONEncoder], None] = None
 
     #: JSON decoder class used by :func:`flask.json.loads`. If a
     #: blueprint sets this, it will be used instead of the app's value.
-    json_decoder: t.Optional[t.Type[JSONDecoder]] = None
+    #:
+    #: .. deprecated:: 2.2
+    #:      Will be removed in Flask 2.3.
+    json_decoder: t.Union[t.Type[json.JSONDecoder], None] = None
 
     def __init__(
         self,
         import_name: str,
         static_folder: t.Optional[t.Union[str, os.PathLike]] = None,
         static_url_path: t.Optional[str] = None,
-        template_folder: t.Optional[str] = None,
+        template_folder: t.Optional[t.Union[str, os.PathLike]] = None,
         root_path: t.Optional[str] = None,
     ):
         #: The name of the package or module that this object belongs
@@ -298,12 +304,15 @@ class Scaffold:
 
         .. versionadded:: 0.9
         """
-        value = current_app.send_file_max_age_default
+        value = current_app.config["SEND_FILE_MAX_AGE_DEFAULT"]
 
         if value is None:
             return None
 
-        return int(value.total_seconds())
+        if isinstance(value, timedelta):
+            return int(value.total_seconds())
+
+        return value
 
     def send_static_file(self, filename: str) -> "Response":
         """The view function used to serve files from
