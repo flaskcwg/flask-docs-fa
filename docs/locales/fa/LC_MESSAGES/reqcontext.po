@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 17:06+0430\n"
+"POT-Creation-Date: 2024-02-02 18:20+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: ../../reqcontext.rst:4
 msgid "The Request Context"
@@ -105,24 +105,24 @@ msgid ""
 "with your test data. ::"
 msgstr ""
 
-#: ../../reqcontext.rst:79
+#: ../../reqcontext.rst:80
 msgid ""
 "If you see that error somewhere else in your code not related to testing,"
 " it most likely indicates that you should move that code into a view "
 "function."
 msgstr ""
 
-#: ../../reqcontext.rst:83
+#: ../../reqcontext.rst:84
 msgid ""
 "For information on how to use the request context from the interactive "
 "Python shell, see :doc:`/shell`."
 msgstr ""
 
-#: ../../reqcontext.rst:88
+#: ../../reqcontext.rst:89
 msgid "How the Context Works"
 msgstr ""
 
-#: ../../reqcontext.rst:90
+#: ../../reqcontext.rst:91
 msgid ""
 "The :meth:`Flask.wsgi_app` method is called to handle each request. It "
 "manages the contexts during the request. Internally, the request and "
@@ -131,7 +131,7 @@ msgid ""
 "the top item."
 msgstr ""
 
-#: ../../reqcontext.rst:96
+#: ../../reqcontext.rst:97
 msgid ""
 "When the request starts, a :class:`~ctx.RequestContext` is created and "
 "pushed, which creates and pushes an :class:`~ctx.AppContext` first if a "
@@ -141,7 +141,7 @@ msgid ""
 "handling the request."
 msgstr ""
 
-#: ../../reqcontext.rst:103
+#: ../../reqcontext.rst:104
 msgid ""
 "Other contexts may be pushed to change the proxies during a request. "
 "While this is not a common pattern, it can be used in advanced "
@@ -149,7 +149,7 @@ msgid ""
 "applications together."
 msgstr ""
 
-#: ../../reqcontext.rst:108
+#: ../../reqcontext.rst:109
 msgid ""
 "After the request is dispatched and a response is generated and sent, the"
 " request context is popped, which then pops the application context. "
@@ -158,25 +158,25 @@ msgid ""
 "execute even if an unhandled exception occurred during dispatch."
 msgstr ""
 
-#: ../../reqcontext.rst:118
+#: ../../reqcontext.rst:119
 msgid "Callbacks and Errors"
 msgstr ""
 
-#: ../../reqcontext.rst:120
+#: ../../reqcontext.rst:121
 msgid ""
 "Flask dispatches a request in multiple stages which can affect the "
 "request, response, and how errors are handled. The contexts are active "
 "during all of these stages."
 msgstr ""
 
-#: ../../reqcontext.rst:124
+#: ../../reqcontext.rst:125
 msgid ""
 "A :class:`Blueprint` can add handlers for these events that are specific "
 "to the blueprint. The handlers for a blueprint will run if the blueprint "
 "owns the route that matches the request."
 msgstr ""
 
-#: ../../reqcontext.rst:128
+#: ../../reqcontext.rst:129
 msgid ""
 "Before each request, :meth:`~Flask.before_request` functions are called. "
 "If one of these functions return a value, the other functions are "
@@ -184,21 +184,21 @@ msgid ""
 "function is not called."
 msgstr ""
 
-#: ../../reqcontext.rst:133
+#: ../../reqcontext.rst:134
 msgid ""
 "If the :meth:`~Flask.before_request` functions did not return a response,"
 " the view function for the matched route is called and returns a "
 "response."
 msgstr ""
 
-#: ../../reqcontext.rst:137
+#: ../../reqcontext.rst:138
 msgid ""
 "The return value of the view is converted into an actual response object "
 "and passed to the :meth:`~Flask.after_request` functions. Each function "
 "returns a modified or new response object."
 msgstr ""
 
-#: ../../reqcontext.rst:141
+#: ../../reqcontext.rst:142
 msgid ""
 "After the response is returned, the contexts are popped, which calls the "
 ":meth:`~Flask.teardown_request` and :meth:`~Flask.teardown_appcontext` "
@@ -206,7 +206,7 @@ msgid ""
 "raised at any point above."
 msgstr ""
 
-#: ../../reqcontext.rst:146
+#: ../../reqcontext.rst:147
 msgid ""
 "If an exception is raised before the teardown functions, Flask tries to "
 "match it with an :meth:`~Flask.errorhandler` function to handle the "
@@ -216,7 +216,7 @@ msgid ""
 "called, and are passed the exception object."
 msgstr ""
 
-#: ../../reqcontext.rst:153
+#: ../../reqcontext.rst:154
 msgid ""
 "If debug mode is enabled, unhandled exceptions are not converted to a "
 "``500`` response and instead are propagated to the WSGI server. This "
@@ -224,11 +224,11 @@ msgid ""
 "the traceback."
 msgstr ""
 
-#: ../../reqcontext.rst:160
+#: ../../reqcontext.rst:161
 msgid "Teardown Callbacks"
 msgstr ""
 
-#: ../../reqcontext.rst:162
+#: ../../reqcontext.rst:163
 msgid ""
 "The teardown callbacks are independent of the request dispatch, and are "
 "instead called by the contexts when they are popped. The functions are "
@@ -239,7 +239,7 @@ msgid ""
 "fail."
 msgstr ""
 
-#: ../../reqcontext.rst:170
+#: ../../reqcontext.rst:171
 msgid ""
 "During testing, it can be useful to defer popping the contexts after the "
 "request ends, so that their data can be accessed in the test function. "
@@ -247,14 +247,12 @@ msgid ""
 "contexts until the ``with`` block exits."
 msgstr ""
 
-#: ../../reqcontext.rst:204
+#: ../../reqcontext.rst:205
 msgid "Signals"
 msgstr ""
 
-#: ../../reqcontext.rst:206
-msgid ""
-"If :data:`~signals.signals_available` is true, the following signals are "
-"sent:"
+#: ../../reqcontext.rst:207
+msgid "The following signals are sent:"
 msgstr ""
 
 #: ../../reqcontext.rst:209
@@ -263,30 +261,30 @@ msgid ""
 "functions are called."
 msgstr ""
 
-#: ../../reqcontext.rst:212
+#: ../../reqcontext.rst:211
 msgid ""
 ":data:`request_finished` is sent after the :meth:`~Flask.after_request` "
 "functions are called."
 msgstr ""
 
-#: ../../reqcontext.rst:215
+#: ../../reqcontext.rst:213
 msgid ""
 ":data:`got_request_exception` is sent when an exception begins to be "
 "handled, but before an :meth:`~Flask.errorhandler` is looked up or "
 "called."
 msgstr ""
 
-#: ../../reqcontext.rst:219
+#: ../../reqcontext.rst:215
 msgid ""
 ":data:`request_tearing_down` is sent after the "
 ":meth:`~Flask.teardown_request` functions are called."
 msgstr ""
 
-#: ../../reqcontext.rst:226
+#: ../../reqcontext.rst:222
 msgid "Notes On Proxies"
 msgstr ""
 
-#: ../../reqcontext.rst:228
+#: ../../reqcontext.rst:224
 msgid ""
 "Some of the objects provided by Flask are proxies to other objects. The "
 "proxies are accessed in the same way for each worker thread, but point to"
@@ -294,26 +292,26 @@ msgid ""
 " this page."
 msgstr ""
 
-#: ../../reqcontext.rst:233
+#: ../../reqcontext.rst:229
 msgid ""
 "Most of the time you don't have to care about that, but there are some "
 "exceptions where it is good to know that this object is actually a proxy:"
 msgstr ""
 
-#: ../../reqcontext.rst:236
+#: ../../reqcontext.rst:232
 msgid ""
 "The proxy objects cannot fake their type as the actual object types. If "
 "you want to perform instance checks, you have to do that on the object "
 "being proxied."
 msgstr ""
 
-#: ../../reqcontext.rst:239
+#: ../../reqcontext.rst:235
 msgid ""
 "The reference to the proxied object is needed in some situations, such as"
 " sending :doc:`signals` or passing data to a background thread."
 msgstr ""
 
-#: ../../reqcontext.rst:243
+#: ../../reqcontext.rst:239
 msgid ""
 "If you need to access the underlying object that is proxied, use the "
 ":meth:`~werkzeug.local.LocalProxy._get_current_object` method::"
@@ -397,3 +395,7 @@ msgstr ""
 #~ "exceptions."
 #~ msgstr ""
 
+#~ msgid ""
+#~ "If :data:`~signals.signals_available` is true, "
+#~ "the following signals are sent:"
+#~ msgstr ""

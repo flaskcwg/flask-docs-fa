@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 15:03+0330\n"
+"POT-Creation-Date: 2024-02-02 18:20+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: ../../security.rst:2
 msgid "Security Considerations"
@@ -56,7 +56,7 @@ msgid "generating HTML without the help of Jinja2"
 msgstr ""
 
 #: ../../security.rst:26
-msgid "calling :class:`~flask.Markup` on data submitted by users"
+msgid "calling :class:`~markupsafe.Markup` on data submitted by users"
 msgstr ""
 
 #: ../../security.rst:27
@@ -400,4 +400,7 @@ msgstr ""
 #~ msgid ""
 #~ "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X"
 #~ "-XSS-Protection"
+#~ msgstr ""
+
+#~ msgid "calling :class:`~flask.Markup` on data submitted by users"
 #~ msgstr ""

@@ -44,7 +44,7 @@ html_context = {
         ProjectLink("سورس کد", "https://github.com/pallets/flask/"),
         ProjectLink("ردیاب مشکلات", "https://github.com/pallets/flask/issues/"),
         ProjectLink("چت", "https://discord.gg/pallets"),
-                ProjectLink(
+        ProjectLink(
             "سورس کد ترجمه مستنندات", "https://github.com/flaskcwg/flask-docs-fa"
         ),
     ]
@@ -57,7 +57,7 @@ singlehtml_sidebars = {"index": ["project.html", "localtoc.html", "ethicalads.ht
 html_static_path = ["_static"]
 html_favicon = "_static/shortcut-icon.png"
 html_logo = "_static/flask-vertical.png"
-html_title = f"مستندات فلسک  ({version"
+html_title = f"مستندات فلسک  ({version}"
 html_show_sourcelink = False
 
 # custom css ----------------------------------------------------------

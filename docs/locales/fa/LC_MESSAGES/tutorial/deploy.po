@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 17:06+0430\n"
+"POT-Creation-Date: 2024-02-02 18:20+0330\n"
 "PO-Revision-Date: 2022-05-24 16:19+0430\n"
 "Last-Translator: Komeil Parseh <ahmdparsh129@gmail.com>\n"
 "Language: fa\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
-"Plural-Forms: nplurals=2; plural=(n==0 || n==1)\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: ../../tutorial/deploy.rst:2
 msgid "Deploy to Production"
@@ -47,25 +47,11 @@ msgstr "ساخت و نصب"
 
 #: ../../tutorial/deploy.rst:17
 msgid ""
-"When you want to deploy your application elsewhere, you build a "
-"distribution file. The current standard for Python distribution is the "
-"*wheel* format, with the ``.whl`` extension. Make sure the wheel library "
-"is installed first:"
+"When you want to deploy your application elsewhere, you build a *wheel* "
+"(``.whl``) file. Install and use the ``build`` tool to do this."
 msgstr ""
-"هنگامی که می خواهید برنامه خود را در جای دیگری مستقر کنید، یک فایل توزیع "
-"می سازید. استاندارد فعلی برای توزیع پایتون فرمت *wheel* با پسوند ``.whl``"
-" است. ابتدا مطمئن شوید که کتابخانه wheel نصب شده باشد:"
 
-#: ../../tutorial/deploy.rst:26
-msgid ""
-"Running ``setup.py`` with Python gives you a command line tool to issue "
-"build-related commands. The ``bdist_wheel`` command will build a wheel "
-"distribution file."
-msgstr ""
-"اجرای ``setup.py`` با پایتون به شما یک ابزار خط فرمان برای صدور دستورات "
-"مربوط به ساخت می دهد. دستور ``bdist_wheel`` یک فایل توزیع wheel می‌سازد."
-
-#: ../../tutorial/deploy.rst:34
+#: ../../tutorial/deploy.rst:25
 msgid ""
 "You can find the file in ``dist/flaskr-1.0.0-py3-none-any.whl``. The file"
 " name is in the format of {project name}-{version}-{python tag} -{abi "
@@ -75,7 +61,7 @@ msgstr ""
 "نام فایل در قالب {project name}-{version}-{python tag} -{abi "
 "tag}-{platform tag} می باشد."
 
-#: ../../tutorial/deploy.rst:38
+#: ../../tutorial/deploy.rst:29
 msgid ""
 "Copy this file to another machine, :ref:`set up a new virtualenv "
 "<install-create-env>`, then install the file with ``pip``."
@@ -83,11 +69,11 @@ msgstr ""
 "این فایل را در دستگاه دیگری کپی کنید، :ref:`یک virualenv را راه‌اندازی "
 "کنید <install-create-env>` ، سپس فایل را با ``pip`` نصب کنید."
 
-#: ../../tutorial/deploy.rst:46
+#: ../../tutorial/deploy.rst:37
 msgid "Pip will install your project along with its dependencies."
 msgstr "Pip پروژه شما را به همراه وابستگی های آن نصب می کند."
 
-#: ../../tutorial/deploy.rst:48
+#: ../../tutorial/deploy.rst:39
 msgid ""
 "Since this is a different machine, you need to run ``init-db`` again to "
 "create the database in the instance folder."
@@ -95,21 +81,22 @@ msgstr ""
 "از آنجایی که این یک ماشین متفاوت است، برای ایجاد پایگاه داده در پوشه "
 "نمونه، باید ``init-db`` را دوباره اجرا کنید."
 
-#: ../../tutorial/deploy.rst:55
+#: ../../tutorial/deploy.rst:46
+#, fuzzy
 msgid ""
 "When Flask detects that it's installed (not in editable mode), it uses a "
 "different directory for the instance folder. You can find it at "
-"``venv/var/flaskr-instance`` instead."
+"``.venv/var/flaskr-instance`` instead."
 msgstr ""
 "هنگامی که فلاسک تشخیص می دهد که نصب شده است (در حالت قابل ویرایش نیست)، "
 "از دایرکتوری دیگری برای پوشه نمونه استفاده می کند. در عوض می‌توانید آن را"
 " در ``venv/var/flaskr-instance``  پیدا کنید."
 
-#: ../../tutorial/deploy.rst:61
+#: ../../tutorial/deploy.rst:52
 msgid "Configure the Secret Key"
 msgstr "پیکربندی کلید مخفی(Secret Key)"
 
-#: ../../tutorial/deploy.rst:63
+#: ../../tutorial/deploy.rst:54
 msgid ""
 "In the beginning of the tutorial that you gave a default value for "
 ":data:`SECRET_KEY`. This should be changed to some random bytes in "
@@ -121,11 +108,11 @@ msgstr ""
 "می‌توانند از کلید عمومی  ``'dev'`` برای اصلاح کوکی جلسه یا هر چیز دیگری "
 "که از کلید مخفی استفاده می‌کند استفاده کنند."
 
-#: ../../tutorial/deploy.rst:68
+#: ../../tutorial/deploy.rst:59
 msgid "You can use the following command to output a random secret key:"
 msgstr "برای دریافت یک کلید مخفی تصادفی می توانید از دستور زیر استفاده کنید:"
 
-#: ../../tutorial/deploy.rst:76
+#: ../../tutorial/deploy.rst:67
 msgid ""
 "Create the ``config.py`` file in the instance folder, which the factory "
 "will read from if it exists. Copy the generated value into it."
@@ -133,11 +120,12 @@ msgstr ""
 "فایل ``config.py`` را در پوشه نمونه ایجاد کنید که در صورت وجود، کارخانه "
 "از آن می خواند. مقدار تولید شده را در آن کپی کنید."
 
-#: ../../tutorial/deploy.rst:79
-msgid "``venv/var/flaskr-instance/config.py``"
+#: ../../tutorial/deploy.rst:70
+#, fuzzy
+msgid "``.venv/var/flaskr-instance/config.py``"
 msgstr "``venv/var/flaskr-instance/config.py``"
 
-#: ../../tutorial/deploy.rst:84
+#: ../../tutorial/deploy.rst:75
 msgid ""
 "You can also set any other necessary configuration here, although "
 "``SECRET_KEY`` is the only one needed for Flaskr."
@@ -145,11 +133,11 @@ msgstr ""
 "همچنین می‌توانید هر پیکربندی ضروری دیگری را در اینجا تنظیم کنید، اگرچه "
 "``SECRET_KEY`` تنها مورد نیاز برای Flaskr است."
 
-#: ../../tutorial/deploy.rst:89
+#: ../../tutorial/deploy.rst:80
 msgid "Run with a Production Server"
 msgstr "اجرای یک سرور کار(Production)"
 
-#: ../../tutorial/deploy.rst:91
+#: ../../tutorial/deploy.rst:82
 msgid ""
 "When running publicly rather than in development, you should not use the "
 "built-in development server (``flask run``). The development server is "
@@ -160,7 +148,7 @@ msgstr ""
 "``flask run`` ). سرور توسعه توسط Werkzeug برای راحتی ارائه شده است، اما "
 "به گونه ای طراحی نشده است که کارآمد، پایدار یا ایمن باشد."
 
-#: ../../tutorial/deploy.rst:96
+#: ../../tutorial/deploy.rst:87
 msgid ""
 "Instead, use a production WSGI server. For example, to use `Waitress`_, "
 "first install it in the virtual environment:"
@@ -168,7 +156,7 @@ msgstr ""
 "در عوض، از سرور WSGI تولیدی استفاده کنید. به عنوان مثال، برای استفاده از "
 "`Waitress`_, ، ابتدا آن را در محیط مجازی نصب کنید:"
 
-#: ../../tutorial/deploy.rst:103
+#: ../../tutorial/deploy.rst:94
 #, fuzzy
 msgid ""
 "You need to tell Waitress about your application, but it doesn't use "
@@ -179,7 +167,7 @@ msgstr ""
 "مانند ``flask run`` استفاده نمی کند. شما باید به آن بگویید وارد کند و از "
 "کارخانه برنامه استفاده کند تا یک شی برنامه را دریافت کند."
 
-#: ../../tutorial/deploy.rst:113
+#: ../../tutorial/deploy.rst:104
 msgid ""
 "See :doc:`/deploying/index` for a list of many different ways to host "
 "your application. Waitress is just an example, chosen for the tutorial "
@@ -191,7 +179,7 @@ msgstr ""
 "از ویندوز و لینوکس پشتیبانی می کند. سرورهای WSGI و گزینه های استقرار "
 "بیشتری وجود دارد که می توانید برای پروژه خود انتخاب کنید."
 
-#: ../../tutorial/deploy.rst:120
+#: ../../tutorial/deploy.rst:111
 msgid "Continue to :doc:`next`."
 msgstr "با :doc:`next` ادامه دهید."
 
@@ -207,3 +195,31 @@ msgstr "با :doc:`next` ادامه دهید."
 #~ msgid "Powershell"
 #~ msgstr "پاورشل(Powershell)"
 
+#~ msgid ""
+#~ "When you want to deploy your "
+#~ "application elsewhere, you build a "
+#~ "distribution file. The current standard "
+#~ "for Python distribution is the *wheel*"
+#~ " format, with the ``.whl`` extension. "
+#~ "Make sure the wheel library is "
+#~ "installed first:"
+#~ msgstr ""
+#~ "هنگامی که می خواهید برنامه خود را"
+#~ " در جای دیگری مستقر کنید، یک "
+#~ "فایل توزیع می سازید. استاندارد فعلی "
+#~ "برای توزیع پایتون فرمت *wheel* با "
+#~ "پسوند ``.whl`` است. ابتدا مطمئن شوید "
+#~ "که کتابخانه wheel نصب شده باشد:"
+
+#~ msgid ""
+#~ "Running ``setup.py`` with Python gives "
+#~ "you a command line tool to issue"
+#~ " build-related commands. The "
+#~ "``bdist_wheel`` command will build a "
+#~ "wheel distribution file."
+#~ msgstr ""
+#~ "اجرای ``setup.py`` با پایتون به شما "
+#~ "یک ابزار خط فرمان برای صدور "
+#~ "دستورات مربوط به ساخت می دهد. "
+#~ "دستور ``bdist_wheel`` یک فایل توزیع "
+#~ "wheel می‌سازد."
