@@ -3,8 +3,6 @@ from __future__ import annotations
 import typing as t
 from http import HTTPStatus
 
-import typing_extensions as te
-
 from flask import Flask
 from flask import jsonify
 from flask import stream_template
@@ -31,16 +29,16 @@ def hello_json() -> Response:
 
 
 @app.route("/json/dict")
-def hello_json_dict() -> t.Dict[str, t.Any]:
+def hello_json_dict() -> dict[str, t.Any]:
     return {"response": "Hello, World!"}
 
 
 @app.route("/json/dict")
-def hello_json_list() -> t.List[t.Any]:
+def hello_json_list() -> list[t.Any]:
     return [{"message": "Hello"}, {"message": "World"}]
 
 
-class StatusJSON(te.TypedDict):
+class StatusJSON(t.TypedDict):
     status: str
 
 

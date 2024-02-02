@@ -42,19 +42,20 @@ You should then end up with something like that::
 But how do you run your application now?  The naive ``python
 yourapplication/__init__.py`` will not work.  Let's just say that Python
 does not want modules in packages to be the startup file.  But that is not
-a big problem, just add a new file called :file:`setup.py` next to the inner
-:file:`yourapplication` folder with the following contents::
+a big problem, just add a new file called :file:`pyproject.toml` next to the inner
+:file:`yourapplication` folder with the following contents:
 
-    from setuptools import setup
+.. code-block:: toml
 
-    setup(
-        name='yourapplication',
-        packages=['yourapplication'],
-        include_package_data=True,
-        install_requires=[
-            'flask',
-        ],
-    )
+    [project]
+    name = "yourapplication"
+    dependencies = [
+        "flask",
+    ]
+
+    [build-system]
+    requires = ["flit_core<4"]
+    build-backend = "flit_core.buildapi"
 
 Install your application so it is importable:
 
@@ -65,6 +66,8 @@ Install your application so it is importable:
 To use the ``flask`` command and run your application you need to set
 the ``--app`` option that tells Flask where to find the application
 instance:
+
+.. code-block:: text
 
     $ flask --app yourapplication run
 
@@ -98,7 +101,7 @@ And this is what :file:`views.py` would look like::
 You should then end up with something like that::
 
     /yourapplication
-        setup.py
+        pyproject.toml
         /yourapplication
             __init__.py
             views.py

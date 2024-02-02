@@ -47,35 +47,23 @@ Debug Mode
 
 The :data:`DEBUG` config value is special because it may behave inconsistently if
 changed after the app has begun setting up. In order to set debug mode reliably, use the
-``--debug`` option on the ``flask run`` command. ``flask run`` will use the interactive
-debugger and reloader by default in debug mode.
+``--debug`` option on the ``flask`` or ``flask run`` command. ``flask run`` will use the
+interactive debugger and reloader by default in debug mode.
 
 .. code-block:: text
 
     $ flask --app hello run --debug
 
 Using the option is recommended. While it is possible to set :data:`DEBUG` in your
-config or code, this is strongly discouraged. It can't be read early by the ``flask run``
-command, and some systems or extensions may have already configured themselves based on
-a previous value.
+config or code, this is strongly discouraged. It can't be read early by the
+``flask run`` command, and some systems or extensions may have already configured
+themselves based on a previous value.
 
 
 Builtin Configuration Values
 ----------------------------
 
 The following configuration values are used internally by Flask:
-
-.. py:data:: ENV
-
-    What environment the app is running in. The :attr:`~flask.Flask.env` attribute maps
-    to this config key.
-
-    Default: ``'production'``
-
-    .. deprecated:: 2.2
-        Will be removed in Flask 2.3. Use ``--debug`` instead.
-
-    .. versionadded:: 1.0
 
 .. py:data:: DEBUG
 
@@ -146,11 +134,16 @@ The following configuration values are used internally by Flask:
 
 .. py:data:: SESSION_COOKIE_DOMAIN
 
-    The domain match rule that the session cookie will be valid for. If not
-    set, the cookie will be valid for all subdomains of :data:`SERVER_NAME`.
-    If ``False``, the cookie's domain will not be set.
+    The value of the ``Domain`` parameter on the session cookie. If not set, browsers
+    will only send the cookie to the exact domain it was set from. Otherwise, they
+    will send it to any subdomain of the given value as well.
+
+    Not setting this value is more restricted and secure than setting it.
 
     Default: ``None``
+
+    .. versionchanged:: 2.3
+        Not set by default, does not fall back to ``SERVER_NAME``.
 
 .. py:data:: SESSION_COOKIE_PATH
 
@@ -231,18 +224,13 @@ The following configuration values are used internally by Flask:
     Inform the application what host and port it is bound to. Required
     for subdomain route matching support.
 
-    If set, will be used for the session cookie domain if
-    :data:`SESSION_COOKIE_DOMAIN` is not set. Modern web browsers will
-    not allow setting cookies for domains without a dot. To use a domain
-    locally, add any names that should route to the app to your
-    ``hosts`` file. ::
-
-        127.0.0.1 localhost.dev
-
     If set, ``url_for`` can generate external URLs with only an application
     context instead of a request context.
 
     Default: ``None``
+
+    .. versionchanged:: 2.3
+        Does not affect ``SESSION_COOKIE_DOMAIN``.
 
 .. py:data:: APPLICATION_ROOT
 
@@ -270,52 +258,6 @@ The following configuration values are used internally by Flask:
     read for security.
 
     Default: ``None``
-
-.. py:data:: JSON_AS_ASCII
-
-    Serialize objects to ASCII-encoded JSON. If this is disabled, the
-    JSON returned from ``jsonify`` will contain Unicode characters. This
-    has security implications when rendering the JSON into JavaScript in
-    templates, and should typically remain enabled.
-
-    Default: ``True``
-
-    .. deprecated:: 2.2
-        Will be removed in Flask 2.3. Set ``app.json.ensure_ascii``
-        instead.
-
-.. py:data:: JSON_SORT_KEYS
-
-    Sort the keys of JSON objects alphabetically. This is useful for caching
-    because it ensures the data is serialized the same way no matter what
-    Python's hash seed is. While not recommended, you can disable this for a
-    possible performance improvement at the cost of caching.
-
-    Default: ``True``
-
-    .. deprecated:: 2.2
-        Will be removed in Flask 2.3. Set ``app.json.sort_keys``
-        instead.
-
-.. py:data:: JSONIFY_PRETTYPRINT_REGULAR
-
-    :func:`~flask.jsonify` responses will be output with newlines,
-    spaces, and indentation for easier reading by humans. Always enabled
-    in debug mode.
-
-    Default: ``False``
-
-    .. deprecated:: 2.2
-        Will be removed in Flask 2.3. Set ``app.json.compact`` instead.
-
-.. py:data:: JSONIFY_MIMETYPE
-
-    The mimetype of ``jsonify`` responses.
-
-    Default: ``'application/json'``
-
-    .. deprecated:: 2.2
-        Will be removed in Flask 2.3. Set ``app.json.mimetype`` instead.
 
 .. py:data:: TEMPLATES_AUTO_RELOAD
 
@@ -381,14 +323,13 @@ The following configuration values are used internally by Flask:
 .. versionchanged:: 2.2
     Removed ``PRESERVE_CONTEXT_ON_EXCEPTION``.
 
-.. versionchanged:: 2.2
-    ``JSON_AS_ASCII``, ``JSON_SORT_KEYS``,
-    ``JSONIFY_MIMETYPE``, and ``JSONIFY_PRETTYPRINT_REGULAR`` will be
-    removed in Flask 2.3. The default ``app.json`` provider has
+.. versionchanged:: 2.3
+    ``JSON_AS_ASCII``, ``JSON_SORT_KEYS``, ``JSONIFY_MIMETYPE``, and
+    ``JSONIFY_PRETTYPRINT_REGULAR`` were removed. The default ``app.json`` provider has
     equivalent attributes instead.
 
-.. versionchanged:: 2.2
-    ``ENV`` will be removed in Flask 2.3. Use ``--debug`` instead.
+.. versionchanged:: 2.3
+    ``ENV`` was removed.
 
 
 Configuring from Python Files
@@ -469,8 +410,8 @@ from a TOML file:
 
 .. code-block:: python
 
-    import toml
-    app.config.from_file("config.toml", load=toml.load)
+    import tomllib
+    app.config.from_file("config.toml", load=tomllib.load, text=False)
 
 Or from a JSON file:
 

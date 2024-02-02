@@ -1,6 +1,7 @@
+import importlib.metadata
+
 import click
 import pytest
-import werkzeug
 
 import flask
 from flask import appcontext_popped
@@ -9,11 +10,6 @@ from flask.globals import _cv_request
 from flask.json import jsonify
 from flask.testing import EnvironBuilder
 from flask.testing import FlaskCliRunner
-
-try:
-    import blinker
-except ImportError:
-    blinker = None
 
 
 def test_environ_defaults_from_config(app, client):
@@ -43,34 +39,35 @@ def test_environ_defaults(app, client, app_ctx, req_ctx):
         assert rv.data == b"http://localhost/"
 
 
-def test_environ_base_default(app, client, app_ctx):
+def test_environ_base_default(app, client):
     @app.route("/")
     def index():
-        flask.g.user_agent = flask.request.headers["User-Agent"]
-        return flask.request.remote_addr
+        flask.g.remote_addr = flask.request.remote_addr
+        flask.g.user_agent = flask.request.user_agent.string
+        return ""
 
-    rv = client.get("/")
-    assert rv.data == b"127.0.0.1"
-    assert flask.g.user_agent == f"werkzeug/{werkzeug.__version__}"
+    with client:
+        client.get("/")
+        assert flask.g.remote_addr == "127.0.0.1"
+        assert flask.g.user_agent == (
+            f"Werkzeug/{importlib.metadata.version('werkzeug')}"
+        )
 
 
-def test_environ_base_modified(app, client, app_ctx):
+def test_environ_base_modified(app, client):
     @app.route("/")
     def index():
-        flask.g.user_agent = flask.request.headers["User-Agent"]
-        return flask.request.remote_addr
+        flask.g.remote_addr = flask.request.remote_addr
+        flask.g.user_agent = flask.request.user_agent.string
+        return ""
 
-    client.environ_base["REMOTE_ADDR"] = "0.0.0.0"
+    client.environ_base["REMOTE_ADDR"] = "192.168.0.22"
     client.environ_base["HTTP_USER_AGENT"] = "Foo"
-    rv = client.get("/")
-    assert rv.data == b"0.0.0.0"
-    assert flask.g.user_agent == "Foo"
 
-    client.environ_base["REMOTE_ADDR"] = "0.0.0.1"
-    client.environ_base["HTTP_USER_AGENT"] = "Bar"
-    rv = client.get("/")
-    assert rv.data == b"0.0.0.1"
-    assert flask.g.user_agent == "Bar"
+    with client:
+        client.get("/")
+        assert flask.g.remote_addr == "192.168.0.22"
+        assert flask.g.user_agent == "Foo"
 
 
 def test_client_open_environ(app, client, request):
@@ -206,10 +203,10 @@ def test_session_transactions_keep_context(app, client, req_ctx):
 
 def test_session_transaction_needs_cookies(app):
     c = app.test_client(use_cookies=False)
-    with pytest.raises(RuntimeError) as e:
+
+    with pytest.raises(TypeError, match="Cookies are disabled."):
         with c.session_transaction():
             pass
-    assert "cookies" in str(e.value)
 
 
 def test_test_client_context_binding(app, client):
@@ -222,7 +219,7 @@ def test_test_client_context_binding(app, client):
 
     @app.route("/other")
     def other():
-        1 // 0
+        raise ZeroDivisionError
 
     with client:
         resp = client.get("/")
@@ -230,18 +227,15 @@ def test_test_client_context_binding(app, client):
         assert resp.data == b"Hello World!"
         assert resp.status_code == 200
 
+    with client:
         resp = client.get("/other")
         assert not hasattr(flask.g, "value")
         assert b"Internal Server Error" in resp.data
         assert resp.status_code == 500
         flask.g.value = 23
 
-    try:
-        flask.g.value
-    except (AttributeError, RuntimeError):
-        pass
-    else:
-        raise AssertionError("some kind of exception expected")
+    with pytest.raises(RuntimeError):
+        flask.g.value  # noqa: B018
 
 
 def test_reuse_client(client):
@@ -285,7 +279,6 @@ def test_json_request_and_response(app, client):
         assert rv.get_json() == json_data
 
 
-@pytest.mark.skipif(blinker is None, reason="blinker is not installed")
 def test_client_json_no_app_context(app, client):
     @app.route("/hello", methods=["POST"])
     def hello():

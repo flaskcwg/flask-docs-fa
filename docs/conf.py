@@ -39,14 +39,12 @@ html_theme = "flask"
 html_theme_options = {"index_sidebar_logo": False}
 html_context = {
     "project_links": [
-        ProjectLink("حمایت مالی", "https://palletsprojects.com/donate"),
-        ProjectLink("نسخه های منتشر شده در PyPi", "https://pypi.org/project/Flask/"),
-        ProjectLink("سورس کد فلاسک", "https://github.com/pallets/flask/"),
-        ProjectLink("گزارش مشکل ترجمه", "https://github.com/pallets/flask/issues/"),
-        ProjectLink("وب‌سایت", "https://palletsprojects.com/p/flask/"),
-        ProjectLink("توییتر", "https://twitter.com/PalletsTeam"),
+        ProjectLink("دونیت", "https://palletsprojects.com/donate"),
+        ProjectLink("ریلیزهای Pypi", "https://pypi.org/project/Flask/"),
+        ProjectLink("سورس کد", "https://github.com/pallets/flask/"),
+        ProjectLink("ردیاب مشکلات", "https://github.com/pallets/flask/issues/"),
         ProjectLink("چت", "https://discord.gg/pallets"),
-        ProjectLink(
+                ProjectLink(
             "سورس کد ترجمه مستنندات", "https://github.com/flaskcwg/flask-docs-fa"
         ),
     ]
@@ -57,9 +55,9 @@ html_sidebars = {
 }
 singlehtml_sidebars = {"index": ["project.html", "localtoc.html", "ethicalads.html"]}
 html_static_path = ["_static"]
-html_favicon = "_static/flask-icon.png"
-html_logo = "_static/flask-icon.png"
-html_title = f"مستندات فلاسک ({version})"
+html_favicon = "_static/shortcut-icon.png"
+html_logo = "_static/flask-vertical.png"
+html_title = f"مستندات فلسک  ({version"
 html_show_sourcelink = False
 
 # custom css ----------------------------------------------------------

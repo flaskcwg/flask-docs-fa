@@ -1,11 +1,10 @@
 Make the Project Installable
 ============================
 
-Making your project installable means that you can build a
-*distribution* file and install that in another environment, just like
-you installed Flask in your project's environment. This makes deploying
-your project the same as installing any other library, so you're using
-all the standard Python tools to manage everything.
+Making your project installable means that you can build a *wheel* file and install that
+in another environment, just like you installed Flask in your project's environment.
+This makes deploying your project the same as installing any other library, so you're
+using all the standard Python tools to manage everything.
 
 Installing also comes with other benefits that might not be obvious from
 the tutorial or as a new Python user, including:
@@ -28,50 +27,27 @@ the tutorial or as a new Python user, including:
 Describe the Project
 --------------------
 
-The ``setup.py`` file describes your project and the files that belong
-to it.
+The ``pyproject.toml`` file describes your project and how to build it.
 
-.. code-block:: python
-    :caption: ``setup.py``
+.. code-block:: toml
+    :caption: ``pyproject.toml``
 
-    from setuptools import find_packages, setup
+    [project]
+    name = "flaskr"
+    version = "1.0.0"
+    description = "The basic blog app built in the Flask tutorial."
+    dependencies = [
+        "flask",
+    ]
 
-    setup(
-        name='flaskr',
-        version='1.0.0',
-        packages=find_packages(),
-        include_package_data=True,
-        install_requires=[
-            'flask',
-        ],
-    )
+    [build-system]
+    requires = ["flit_core<4"]
+    build-backend = "flit_core.buildapi"
 
-
-``packages`` tells Python what package directories (and the Python files
-they contain) to include. ``find_packages()`` finds these directories
-automatically so you don't have to type them out. To include other
-files, such as the static and templates directories,
-``include_package_data`` is set. Python needs another file named
-``MANIFEST.in`` to tell what this other data is.
-
-.. code-block:: none
-    :caption: ``MANIFEST.in``
-
-    include flaskr/schema.sql
-    graft flaskr/static
-    graft flaskr/templates
-    global-exclude *.pyc
-
-This tells Python to copy everything in the ``static`` and ``templates``
-directories, and the ``schema.sql`` file, but to exclude all bytecode
-files.
-
-See the official `Packaging tutorial <packaging tutorial_>`_ and
-`detailed guide <packaging guide_>`_ for more explanation of the files
-and options used.
+See the official `Packaging tutorial <packaging tutorial_>`_ for more
+explanation of the files and options used.
 
 .. _packaging tutorial: https://packaging.python.org/tutorials/packaging-projects/
-.. _packaging guide: https://packaging.python.org/guides/distributing-packages-using-setuptools/
 
 
 Install the Project
@@ -83,10 +59,10 @@ Use ``pip`` to install your project in the virtual environment.
 
     $ pip install -e .
 
-This tells pip to find ``setup.py`` in the current directory and install
-it in *editable* or *development* mode. Editable mode means that as you
-make changes to your local code, you'll only need to re-install if you
-change the metadata about the project, such as its dependencies.
+This tells pip to find ``pyproject.toml`` in the current directory and install the
+project in *editable* or *development* mode. Editable mode means that as you make
+changes to your local code, you'll only need to re-install if you change the metadata
+about the project, such as its dependencies.
 
 You can observe that the project is now installed with ``pip list``.
 
@@ -103,9 +79,7 @@ You can observe that the project is now installed with ``pip list``.
     Jinja2         2.10
     MarkupSafe     1.0
     pip            9.0.3
-    setuptools     39.0.1
     Werkzeug       0.14.1
-    wheel          0.30.0
 
 Nothing changes from how you've been running your project so far.
 ``--app`` is still set to ``flaskr`` and ``flask run`` still runs

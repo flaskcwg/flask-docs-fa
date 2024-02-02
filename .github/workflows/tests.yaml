@@ -1,34 +1,49 @@
-name: Test Docs
+name: Tests
 on:
   push:
     branches:
       - main
-    paths:
-      - docs/**/**.po
+      - '*.x'
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+      - '*.rst'
   pull_request:
-    branches:
-      - main
-    paths:
-      - docs/**/**.po
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+      - '*.rst'
 jobs:
   tests:
-    name: Run tests 🤖
-    runs-on: ubuntu-latest
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: Linux, python: '3.12', os: ubuntu-latest, tox: py312}
+          - {name: Windows, python: '3.12', os: windows-latest, tox: py312}
+          - {name: Mac, python: '3.12', os: macos-latest, tox: py312}
+          - {name: '3.11', python: '3.11', os: ubuntu-latest, tox: py311}
+          - {name: '3.10', python: '3.10', os: ubuntu-latest, tox: py310}
+          - {name: '3.9', python: '3.9', os: ubuntu-latest, tox: py39}
+          - {name: '3.8', python: '3.8', os: ubuntu-latest, tox: py38}
+          - {name: 'PyPy', python: 'pypy-3.10', os: ubuntu-latest, tox: pypy310}
+          - {name: 'Minimum Versions', python: '3.12', os: ubuntu-latest, tox: py312-min}
+          - {name: 'Development Versions', python: '3.8', os: ubuntu-latest, tox: py38-dev}
+          - {name: Typing, python: '3.12', os: ubuntu-latest, tox: typing}
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-      - name: Set up Python 3 🐍
-        uses: actions/setup-python@v3
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c
         with:
-          python-version: "3.10"
-          cache: "pip"
-          cache-dependency-path: "requirements/*.txt"
-      - name: Update PIP ✨
-        run: |
-          pip install -U wheel setuptools pip
-      - name: Install tox 📦
-        run: pip install tox
-      - name: Run tests 🚀
-        run: tox -e docs
+          python-version: ${{ matrix.python }}
+          cache: 'pip'
+          cache-dependency-path: requirements*/*.txt
+      - name: cache mypy
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2
+        with:
+          path: ./.mypy_cache
+          key: mypy|${{ matrix.python }}|${{ hashFiles('pyproject.toml') }}
+        if: matrix.tox == 'typing'
+      - run: pip install tox
+      - run: tox run -e ${{ matrix.tox }}

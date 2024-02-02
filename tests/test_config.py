@@ -1,11 +1,9 @@
 import json
 import os
-import textwrap
 
 import pytest
 
 import flask
-
 
 # config keys used for the TestConfig
 TEST_KEY = "foo"
@@ -30,10 +28,20 @@ def test_config_from_object():
     common_object_test(app)
 
 
-def test_config_from_file():
+def test_config_from_file_json():
     app = flask.Flask(__name__)
     current_dir = os.path.dirname(os.path.abspath(__file__))
     app.config.from_file(os.path.join(current_dir, "static", "config.json"), json.load)
+    common_object_test(app)
+
+
+def test_config_from_file_toml():
+    tomllib = pytest.importorskip("tomllib", reason="tomllib added in 3.11")
+    app = flask.Flask(__name__)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    app.config.from_file(
+        os.path.join(current_dir, "static", "config.toml"), tomllib.load, text=False
+    )
     common_object_test(app)
 
 
@@ -233,17 +241,10 @@ def test_get_namespace():
 
 
 @pytest.mark.parametrize("encoding", ["utf-8", "iso-8859-15", "latin-1"])
-def test_from_pyfile_weird_encoding(tmpdir, encoding):
-    f = tmpdir.join("my_config.py")
-    f.write_binary(
-        textwrap.dedent(
-            f"""
-            # -*- coding: {encoding} -*-
-            TEST_VALUE = "föö"
-            """
-        ).encode(encoding)
-    )
+def test_from_pyfile_weird_encoding(tmp_path, encoding):
+    f = tmp_path / "my_config.py"
+    f.write_text(f'# -*- coding: {encoding} -*-\nTEST_VALUE = "föö"\n', encoding)
     app = flask.Flask(__name__)
-    app.config.from_pyfile(str(f))
+    app.config.from_pyfile(os.fspath(f))
     value = app.config["TEST_VALUE"]
     assert value == "föö"

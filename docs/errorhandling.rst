@@ -69,7 +69,6 @@ See also:
 -   Sentry also supports catching errors from a worker queue
     (RQ, Celery, etc.) in a similar fashion. See the `Python SDK docs
     <https://docs.sentry.io/platforms/python/>`__ for more information.
--   `Getting started with Sentry <https://docs.sentry.io/quickstart/?platform=python>`__
 -   `Flask-specific documentation <https://docs.sentry.io/platforms/python/guides/flask/>`__
 
 
@@ -232,7 +231,7 @@ responses, you could also pass them through directly.
 Error handlers still respect the exception class hierarchy. If you
 register handlers for both ``HTTPException`` and ``Exception``, the
 ``Exception`` handler will not handle ``HTTPException`` subclasses
-because it the ``HTTPException`` handler is more specific.
+because the ``HTTPException`` handler is more specific.
 
 
 Unhandled Exceptions
