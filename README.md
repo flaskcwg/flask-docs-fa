@@ -185,7 +185,7 @@ $ git push origin {name}
 * [X] quickstart [@mmdbalkhi](https://github.com/mmdbalkhi/) Komeil Parseh
 * [ ] reqcontext
 * [ ] security
-* [ ] server
+* [X] server [@Abol-010](https://github.com/Abol-010) Abol
 * [x] shell [@ja74d](https://github.com/ja74d) Javad Pournosrat
 * [ ] signals
 * [X] templating [@mmdbalkhi](https://github.com/mmdbalkhi/) komeil parseh
