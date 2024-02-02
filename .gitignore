@@ -8,3 +8,5 @@ htmlcov/
 docs/_build/
 dist/
 venv/
+env/
+src/Flask.egg-info/

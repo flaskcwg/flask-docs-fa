@@ -1,25 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2010 Pallets
 # This file is distributed under the same license as the Flask package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Abol-010 <abole@gilmail.ir>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-02 18:20+0330\n"
+"POT-Creation-Date: 2023-01-05 18:50+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Abol-010 <abole@gilmail.ir>\n"
 "Language-Team: fa <ahmdparsh129@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../server.rst:4
 msgid "Development Server"
-msgstr ""
+msgstr "سرور توسعه"
 
 #: ../../server.rst:6
 msgid ""
@@ -27,6 +27,9 @@ msgid ""
 "development server. In debug mode, this server provides an interactive "
 "debugger and will reload when code is changed."
 msgstr ""
+"فلسک برای راه اندازی اپلیکیشن یک دستور ``run`` فراهم کرده "
+"با یک محیط توسعه. در حالت خطایاب, این سرور یک "
+"خطایاب تعاملی و بارگزاری مجدد تغییرات اعمال شده در کد را فراهم میکند. "
 
 #: ../../server.rst:12
 msgid ""
@@ -34,14 +37,18 @@ msgid ""
 "intended for use only during local development. It is not designed to be "
 "particularly efficient, stable, or secure."
 msgstr ""
+"از محیط توسعه در زمان پیاده کردن اپلیکیشن استفاده نکنید. "
+"زیرا فقط برای استفاده در حین توسعه محلی در نظر گرفته شده. "
+"و همچنین برای کارآمدی, پایداری و امن بودن طراحی نشده. "
 
 #: ../../server.rst:16
 msgid "See :doc:`/deploying/index` for deployment options."
 msgstr ""
+"برای دیدن امکانات پیاده سازی :doc:`/deploying/index` را ببینید. "
 
 #: ../../server.rst:19
 msgid "Command Line"
-msgstr ""
+msgstr "خط دستور"
 
 #: ../../server.rst:21
 msgid ""
@@ -49,6 +56,10 @@ msgid ""
 "development server. Use the ``--app`` option to point to your "
 "application, and the ``--debug`` option to enable debug mode."
 msgstr ""
+"راه پیشنهادی برای راه اندازی محیط توسعه دستور ``flask run`` میباشد. "
+"از سوییچ ``app--`` برای اشاره به برنامه خود  "
+"و همچنین از ``debug--`` برای فعال کردن حالت خطایاب استفاده کنید. "
+
 
 #: ../../server.rst:29
 msgid ""
@@ -57,10 +68,14 @@ msgid ""
 "--help`` to see the available options, and :doc:`/cli` for detailed "
 "instructions about configuring and using the CLI."
 msgstr ""
+"این دستور حالت خطایاب را فعال میکند, از جمله خطایاب تعاملی و بارگذار کننده مجدد, "
+" و سپس سرور را بر http://localhost:5000 راه اندازی میکند. "
+"برای دیدن امکانات قابل استفاده از ``flask run --help `` و "
+"همچنین از :doc:`/cli` برای جزئیات دستورالعمل های مربوط به پیکربندی و استفاده از خط دستور استفاده کنید. "
 
 #: ../../server.rst:38
 msgid "Address already in use"
-msgstr ""
+msgstr "آدرس در حال استفاده"
 
 #: ../../server.rst:40
 msgid ""
@@ -68,6 +83,9 @@ msgid ""
 "when the server tries to start. It may have one of the following "
 "messages:"
 msgstr ""
+"اگر برنامه دیگری در حال استفاده از پورت 5000 است, یک ``OSError`` را خواهید دید "
+"زمانی که سرور در حال تلاش برای راه اندازی است. "
+"احتمالا یکی از پیام های زیر را دریافت خواهید کرد: "
 
 #: ../../server.rst:44
 msgid "``OSError: [Errno 98] Address already in use``"
@@ -84,6 +102,8 @@ msgid ""
 "Either identify and stop the other program, or use ``flask run --port "
 "5001`` to pick a different port."
 msgstr ""
+"یا برنامه دیگر را شناسایی و متوقف کنید, یا از ``flask run --port "
+""5001`` برای استفاده از یک پورت دیگر استفاده کنید. "
 
 #: ../../server.rst:51
 msgid ""
@@ -91,6 +111,9 @@ msgid ""
 "a port, then use other operating system tools stop that process. The "
 "following example shows that process id 6847 is using port 5000."
 msgstr ""
+"میتوانید از ``netstat`` یا ``lsof`` برای شناسایی شماره پروسه ای که درحال "
+"استفاده از یک پورت است استفاده کنید, و یا از دیگر ابزار های سیستم عامل برای متوقف سازی آن پروسه. "
+"مثال روبه رو شماره پروسه 6847 را در حال استفاده از پورت 5000 نشان میدهد.  "
 
 #: ../../server.rst:57
 msgid "``netstat`` (Linux)"
@@ -111,10 +134,14 @@ msgid ""
 " port by searching for \"AirPlay Receiver\" in System Preferences and "
 "toggling it off."
 msgstr ""
+"مک اواس monterey و دیگر نسخه ها به صورت خودکار سرویسی را راه اندازی میکنند که از پورت "
+"5000 استفاده میکند. میتوانید به جای استفاده از پورت دیگری با "
+" جستجو برای \"AirPlay Receiver\" در System Preferences و خاموش کردن آن "
+"آن سرویس دیگر را خاموش کنید. "
 
 #: ../../server.rst:84
 msgid "Deferred Errors on Reload"
-msgstr ""
+msgstr "خطاهای به تعویق افتاده در بارگزاری مجدد"
 
 #: ../../server.rst:86
 msgid ""
@@ -123,6 +150,10 @@ msgid ""
 "initialization errors into the code. Accessing the site will show the "
 "interactive debugger for the error, rather than crashing the server."
 msgstr ""
+"زمانی که از دستور ``flask run`` با بارگزار کننده مجدد استفاده میکنید, سرور "
+"راه اندازی برنامه را ادامه خواهد داد حتی اگر شما خطاهای سینتکس "
+"و یا دیگر خطاهای اولیه در کد را مرتکب شوید. دسترسی به سایت خطایاب تعاملی را "
+"برای خطاها نمایش خواهد داد, به جای خراب شدن سرور. "
 
 #: ../../server.rst:91
 msgid ""
@@ -131,10 +162,14 @@ msgid ""
 "site is accessed. This is intended to make errors more visible initially "
 "while still allowing the server to handle errors on reload."
 msgstr ""
+"اگر خطای سینتکس قبل از فراخوانی ``flask run`` رخ دهد, فورا "
+"از کار خواهد افتاد و رد خطا را به جای منتظر ماندن نمایش خواهد داد تا "
+"زمانی که سایت قابل دسترسی باشد. این در ابتدا جهت بیشتر نمایان کردن خطاهاست "
+"و در عین حال به سرور اجازه میدهد تا خطاها را هنگام بارگذاری مجدد مدیریت کند. "
 
 #: ../../server.rst:98
 msgid "In Code"
-msgstr ""
+msgstr "در کد"
 
 #: ../../server.rst:100
 msgid ""
@@ -144,12 +179,19 @@ msgid ""
 "is that the server will crash if there are errors when reloading. "
 "``debug=True`` can be passed to enable debug mode."
 msgstr ""
+"همچنین سرور توسعه میتواند از پایتون راه اندازی شود با متود :meth:`Flask.run`. "
+"این متود ورودی های مشابه امکانات خط دستوری را برای کنترل کردن سرور دریافت میکند. "
+"تفاوت اصلی آن با دستور خط دستوری این است که درصورتی که خطایی هنگام بارگزاری مجدد "
+"وجود داشته باشد سرور خراب خواهد شد.  "
+"``debug=True`` را میتوان برای فعال سازی حالت خطایابی ارسال کرد. "
 
 #: ../../server.rst:105
 msgid ""
 "Place the call in a main block, otherwise it will interfere when trying "
 "to import and run the application with a production server later."
 msgstr ""
+"فراخوانی را در یک بخش اصلی بگذارید, در غیر این صورت هنگام تلاش  "
+"برای وارد کردن و اجرای برنامه با سرور تداخل ایجاد خواهد کرد "
 
 #~ msgid ""
 #~ "You can use ``netstat`` to identify "
